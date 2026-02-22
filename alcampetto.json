@@ -7,22 +7,35 @@
     "indirizzo": "Via Benedetto Croce",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.49409, "lng": 9.11730 },
-    "note": "Ben tenuto. Superficie in buone condizioni",
+    "note": "Ben tenuto. Superficie in ottime condizioni",
     "note_en": "Well maintained. Surface in good condition",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/001/overview.jpg", "dettagli": ["photos/001/dettaglio-1.jpg", "photos/001/dettaglio-2.jpg", "photos/001/dettaglio-3.jpg"] }
   },
   {
     "id": "002",
-    "data": "2025-02-21",
+    "data": "2025-02-22",
     "nome": "Campetto di Parco Ghezzi",
     "nome_en": "Ghezzi Park Basketball Court",
     "indirizzo": "Via Alessandro Manzoni",
     "zona": "Novate Milanese",
-    "coordinate": { "lat": 45.53423, "lng": 9.13799 },
-    "note": "Superficie in buone condizioni, uno dei due canestri è sprovvisto di retina.",
-    "note_en": "Surface in good condition. In one of the basket the net is missing.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/002/overview.jpg", "dettagli": ["photos/002/dettaglio-1.jpg", "photos/002/dettaglio-2.jpg"] }
+    "coordinate": { "lat": 45.53419, "lng": 9.13800 },
+    "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina.",
+    "note_en": "Surface in fair condition. In one of the basket the net is missing.",
+    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
+    "foto": { "overview": "photos/002/overview.jpg", "dettagli": ["photos/002/dettaglio-1.jpg", "photos/002/dettaglio-2.jpg", "photos/002/dettaglio-3.jpg"] }
+  },
+  {
+    "id": "003",
+    "data": "2025-02-22",
+    "nome": "Campetto di via Antonio Gramsci",
+    "nome_en": "Antonio Gramsci Street Basketball Court",
+    "indirizzo": "Via Antonio Gramsci",
+    "zona": "Novate Milanese",
+    "coordinate": { "lat": 45.52903, "lng": 9.13307 },
+    "note": "Superficie in ottime condizioni.",
+    "note_en": "Surface in very good condition.",
+    "recintato": true, "gratuito": true, "illuminato": true, "coperto": false,
+    "foto": { "overview": "photos/003/overview.jpg", "dettagli": ["photos/003/dettaglio-1.jpg", "photos/003/dettaglio-2.jpg", "photos/003/dettaglio-3.jpg"] }
   }
 ]
