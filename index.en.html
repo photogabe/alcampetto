@@ -703,7 +703,7 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
 });
 
 // ── Load data
-fetch('alcampetto.json')
+fetch('alcampetto.json?v=' + Date.now())
   .then(r => r.json())
   .then(json => {
     DATA = json;
