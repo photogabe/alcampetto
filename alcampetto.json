@@ -15,8 +15,8 @@
   {
     "id": "002",
     "data": "2025-02-22",
-    "nome": "Campetto di Parco Ghezzi",
-    "nome_en": "Ghezzi Park Basketball Court",
+    "nome": "Campetto di Parco Carlo Ghezzi",
+    "nome_en": "Carlo Ghezzi Park Basketball Court",
     "indirizzo": "Via Alessandro Manzoni",
     "zona": "Novate Milanese",
     "coordinate": { "lat": 45.53419, "lng": 9.13800 },
@@ -37,5 +37,18 @@
     "note_en": "Surface in very good condition.",
     "recintato": true, "gratuito": true, "illuminato": true, "coperto": false,
     "foto": { "overview": "photos/003/overview.jpg", "dettagli": ["photos/003/dettaglio-1.jpg", "photos/003/dettaglio-2.jpg", "photos/003/dettaglio-3.jpg"] }
+  },
+  {
+    "id": "004",
+    "data": "2025-02-21",
+    "nome": "Campetto di Parco Donatori del sangue",
+    "nome_en": "Blood Donors Park Basketball Court",
+    "indirizzo": "Via delle Rimembranze",
+    "zona": "Novate Milanese",
+    "coordinate": { "lat": 45.53043, "lng": 9.14597 },
+    "note": "Superficie in buone condizioni.",
+    "note_en": "Surface in good condition.",
+    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/004/overview.jpg", "dettagli": ["photos/004/dettaglio-1.jpg", "photos/004/dettaglio-2.jpg"] }
   }
 ]
