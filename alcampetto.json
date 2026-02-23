@@ -7,10 +7,10 @@
     "indirizzo": "Via Benedetto Croce",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.49409, "lng": 9.11730 },
-    "note": "Ben tenuto. Superficie in ottime condizioni",
-    "note_en": "Well maintained. Surface in good condition",
+    "note": "Ben tenuto. Superficie in ottime condizioni. Una rete danneggiata.",
+    "note_en": "Well maintained. Surface in good condition. One basket net damaged.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/001/overview.jpg", "dettagli": ["photos/001/dettaglio-1.jpg", "photos/001/dettaglio-2.jpg", "photos/001/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/001/overview.jpg", "dettagli": ["photos/001/dettaglio-1.jpg", "photos/001/dettaglio-2.jpg", "photos/001/dettaglio-3.jpg", "photos/001/dettaglio-4.jpg"] }
   },
   {
     "id": "002",
@@ -50,5 +50,18 @@
     "note_en": "Surface in good condition.",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/004/overview.jpg", "dettagli": ["photos/004/dettaglio-1.jpg", "photos/004/dettaglio-2.jpg"] }
+  },
+  {
+    "id": "005",
+    "data": "2025-02-23",
+    "nome": "Campetto Kellogs",
+    "nome_en": "Kellogs Basketball Court",
+    "indirizzo": "Via Francesco Goya",
+    "zona": "Milano / Municipio 8",
+    "coordinate": { "lat": 45.48631, "lng": 9.13270 },
+    "note": "Superficie in discrete condizioni.",
+    "note_en": "Surface in fair condition.",
+    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
+    "foto": { "overview": "photos/005/overview.jpg", "dettagli": ["photos/005/dettaglio-1.jpg", "photos/005/dettaglio-2.jpg", "photos/005/dettaglio-3.jpg"] }
   }
 ]
