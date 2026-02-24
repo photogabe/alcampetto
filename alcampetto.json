@@ -63,5 +63,18 @@
     "note_en": "Surface in fair condition.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
     "foto": { "overview": "photos/005/overview.jpg", "dettagli": ["photos/005/dettaglio-1.jpg", "photos/005/dettaglio-2.jpg", "photos/005/dettaglio-3.jpg"] }
+  },
+  {
+    "id": "006",
+    "data": "2025-02-24",
+    "nome": "Campetto di Viale Salmoiraghi",
+    "nome_en": "Avenue Angelo Salmoiraghi Basketball Court",
+    "indirizzo": "Viale Angelo Salmoiraghi",
+    "zona": "Milano / Municipio 8",
+    "coordinate": { "lat": 45.48535, "lng": 9.13936 },
+    "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione.",
+    "note_en": "Little basketball court on asphalt, both rims with their net. Lit by one street light.",
+    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
+    "foto": { "overview": "photos/006/overview.jpg", "dettagli": ["photos/006/dettaglio-1.jpg", "photos/006/dettaglio-2.jpg"] }
   }
 ]
