@@ -1,4 +1,4 @@
-# 🏀 ALCAMPETTO: Basketball playgrounds in Milan metro a Milano e dintorni
+# 🏀 ALCAMPETTO: Basketball playgrounds in Milan and surrounding areas
 A collection of free-access basketball courts in Milan and surrounding areas.
 
 For each court, the following are available:
