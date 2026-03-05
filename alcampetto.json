@@ -67,8 +67,8 @@
   {
     "id": "006",
     "data": "2025-02-24",
-    "nome": "Campetto di Viale Salmoiraghi",
-    "nome_en": "Avenue Angelo Salmoiraghi Basketball Court",
+    "nome": "Campetto di Viale Angelo Salmoiraghi",
+    "nome_en": "Angelo Salmoiraghi Street Basketball Court",
     "indirizzo": "Viale Angelo Salmoiraghi",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.48535, "lng": 9.13936 },
@@ -76,5 +76,18 @@
     "note_en": "Little basketball court on asphalt, both rims with their net. Lit by one street light.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
     "foto": { "overview": "photos/006/overview.jpg", "dettagli": ["photos/006/dettaglio-1.jpg", "photos/006/dettaglio-2.jpg"] }
+  },
+  {
+    "id": "007",
+    "data": "2025-02-28",
+    "nome": "Campetto di Via Giovanni Montemartini",
+    "nome_en": "Giovani Montemartini Street Basketball Court",
+    "indirizzo": "Via Giovanni Montemartini angolo via Fabio Massimo",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.43630, "lng": 9.22849 },
+    "note": "Campetto con entrambi i canestri provvisti di retina. Superficie usurata.",
+    "note_en": "Court with both rims without net. court surface worn out.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/007/overview.jpg", "dettagli": ["photos/007/dettaglio-1.jpg", "photos/007/dettaglio-2.jpg", "photos/007/dettaglio-3.jpg", "photos/007/dettaglio-4.jpg"] }
   }
 ]
