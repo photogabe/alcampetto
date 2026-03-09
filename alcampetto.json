@@ -85,9 +85,22 @@
     "indirizzo": "Via Giovanni Montemartini angolo via Fabio Massimo",
     "zona": "Milano / Municipio 4",
     "coordinate": { "lat": 45.43630, "lng": 9.22849 },
-    "note": "Campetto con entrambi i canestri provvisti di retina. Superficie usurata.",
-    "note_en": "Court with both rims without net. court surface worn out.",
+    "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
+    "note_en": "Court with both rims without net. Court surface worn out.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/007/overview.jpg", "dettagli": ["photos/007/dettaglio-1.jpg", "photos/007/dettaglio-2.jpg", "photos/007/dettaglio-3.jpg", "photos/007/dettaglio-4.jpg"] }
+  },
+  {
+    "id": "008",
+    "data": "2025-03-09",
+    "nome": "Campetto di Via Ravenna",
+    "nome_en": "Ravenna Street Basketball Court",
+    "indirizzo": "Via Ravenna",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.43426, "lng": 9.22040 },
+    "note": "Piccolo campetto con un canestro sprovvisto di retina. Superficie usurata.",
+    "note_en": "Small court with both rims without net. Court surface worn out.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/008/overview.jpg", "dettagli": ["photos/008/dettaglio-1.jpg", "photos/008/dettaglio-2.jpg", "photos/008/dettaglio-3.jpg"] }
   }
 ]

@@ -1,4 +1,4 @@
-# 🏀 ALCAMPETTO: Basketball playgrounds in Milan and surrounding areas
+# 🏀 Basketball playgrounds in Milan and surrounding areas
 A collection of free-access basketball courts in Milan and surrounding areas.
 
 For each court, the following are available:
@@ -12,13 +12,13 @@ For each court, the following are available:
 - photo gallery: at least three images for each court.
 
 ## Note on images
-The images in this repository are web-optimized (low resolution) to ensure a reasonably smooth browsing.
+The images in this repository are web-optimized (resized compared to the original and with a low resolution) to ensure a reasonably smooth browsing.
 
 
 ---
 
 
-# 🏀 ALCAMPETTO: campetti di basket a Milano e dintorni
+# 🏀 campetti di basket a Milano e dintorni
 Una raccolta di campetti di basket, ad accesso libero, nell'area metropolitana di Milano.
 
 Per ogni campetto censito sono disponibili:
@@ -31,4 +31,4 @@ Per ogni campetto censito sono disponibili:
 - galleria fotografica: almeno tre immagini per ogni campetto.
 
 ## Nota sulle foto
-Le immagini di questo repository hanno una bassa risoluzione per garantire una velocità di consultazione accettabile.
+Le immagini di questo repository hanno dimensioni ridotte rispetto agli originali e una bassa risoluzione per garantire una velocità di consultazione accettabile.
