@@ -1,7 +1,7 @@
 [
   {
     "id": "001",
-    "data": "2025-02-20",
+    "data": "2026-02-20",
     "nome": "Campetto di Parco Vieira De Mello",
     "nome_en": "Vieira De Mello Park Basketball Court",
     "indirizzo": "Via Benedetto Croce",
@@ -14,7 +14,7 @@
   },
   {
     "id": "002",
-    "data": "2025-02-22",
+    "data": "2026-02-22",
     "nome": "Campetto di Parco Carlo Ghezzi",
     "nome_en": "Carlo Ghezzi Park Basketball Court",
     "indirizzo": "Via Alessandro Manzoni",
@@ -27,7 +27,7 @@
   },
   {
     "id": "003",
-    "data": "2025-02-22",
+    "data": "2026-02-22",
     "nome": "Campetto di via Antonio Gramsci",
     "nome_en": "Antonio Gramsci Street Basketball Court",
     "indirizzo": "Via Antonio Gramsci",
@@ -40,7 +40,7 @@
   },
   {
     "id": "004",
-    "data": "2025-02-21",
+    "data": "2026-02-21",
     "nome": "Campetto di Parco Donatori del sangue",
     "nome_en": "Blood Donors Park Basketball Court",
     "indirizzo": "Via delle Rimembranze",
@@ -53,7 +53,7 @@
   },
   {
     "id": "005",
-    "data": "2025-02-23",
+    "data": "2026-02-23",
     "nome": "Campetto Kellogs",
     "nome_en": "Kellogs Basketball Court",
     "indirizzo": "Via Francesco Goya",
@@ -66,7 +66,7 @@
   },
   {
     "id": "006",
-    "data": "2025-02-24",
+    "data": "2026-02-24",
     "nome": "Campetto di Viale Angelo Salmoiraghi",
     "nome_en": "Angelo Salmoiraghi Street Basketball Court",
     "indirizzo": "Viale Angelo Salmoiraghi",
@@ -79,7 +79,7 @@
   },
   {
     "id": "007",
-    "data": "2025-02-28",
+    "data": "2026-02-28",
     "nome": "Campetto di Via Giovanni Montemartini",
     "nome_en": "Giovani Montemartini Street Basketball Court",
     "indirizzo": "Via Giovanni Montemartini angolo via Fabio Massimo",
@@ -92,7 +92,7 @@
   },
   {
     "id": "008",
-    "data": "2025-03-09",
+    "data": "2026-02-28",
     "nome": "Campetto di Via Ravenna",
     "nome_en": "Ravenna Street Basketball Court",
     "indirizzo": "Via Ravenna",
@@ -102,5 +102,18 @@
     "note_en": "Small court with both rims without net. Court surface worn out.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/008/overview.jpg", "dettagli": ["photos/008/dettaglio-1.jpg", "photos/008/dettaglio-2.jpg", "photos/008/dettaglio-3.jpg"] }
+  },
+  {
+    "id": "009",
+    "data": "2026-03-09",
+    "nome": "Campetto di Via del Futurismo",
+    "nome_en": "Futurismo Street Basketball Court",
+    "indirizzo": "Via del Futurismo",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.43493, "lng": 9.24435 },
+    "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura.",
+    "note_en": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time",
+    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/009/overview.jpg", "dettagli": ["photos/009/dettaglio-1.jpg", "photos/009/dettaglio-2.jpg", "photos/009/dettaglio-3.jpg", "photos/009/dettaglio-4.jpg"] }
   }
 ]

@@ -1,7 +1,7 @@
-# 🏀 Basketball playgrounds in Milan and surrounding areas
+# 🏀 Basketball courts in Milan metropolitan area
 A collection of free-access basketball courts in Milan and surrounding areas.
 
-For each court, the following are available:
+For each court, the following data points are available:
 
 - geographic details: address and GPS coordinates;
 
@@ -18,10 +18,11 @@ The images in this repository are web-optimized (resized compared to the origina
 ---
 
 
-# 🏀 campetti di basket a Milano e dintorni
+# 🏀 campetti nell'area metropolitana di Milano
 Una raccolta di campetti di basket, ad accesso libero, nell'area metropolitana di Milano.
 
-Per ogni campetto censito sono disponibili:
+Per ogni campetto censito sono disponibili i seguenti dati:
+
 - dettagli geografici: indirizzo e coordinate GPS;
 
 - caratteristiche: presenza o meno di recinzione, illuminazione e copertura;
