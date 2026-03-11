@@ -105,7 +105,7 @@
   },
   {
     "id": "009",
-    "data": "2026-03-09",
+    "data": "2026-02-28",
     "nome": "Campetto di Via del Futurismo",
     "nome_en": "Futurismo Street Basketball Court",
     "indirizzo": "Via del Futurismo",
@@ -115,5 +115,18 @@
     "note_en": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/009/overview.jpg", "dettagli": ["photos/009/dettaglio-1.jpg", "photos/009/dettaglio-2.jpg", "photos/009/dettaglio-3.jpg", "photos/009/dettaglio-4.jpg"] }
+  },
+  {
+    "id": "010",
+    "data": "2026-03-01",
+    "nome": "Campetto di Via Arcivescovo Calabiana",
+    "nome_en": "Archbishop Calabiana Street Basketball Court",
+    "indirizzo": "Via Arcivescovo Calabiana",
+    "zona": "Milano / Municipio 5",
+    "coordinate": { "lat": 45.44305, "lng": 9.20811 },
+    "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa",
+    "note_en": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/010/overview.jpg", "dettagli": ["photos/010/dettaglio-1.jpg", "photos/010/dettaglio-2.jpg", "photos/010/dettaglio-3.jpg"] }
   }
 ]
