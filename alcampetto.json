@@ -128,5 +128,18 @@
     "note_en": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/010/overview.jpg", "dettagli": ["photos/010/dettaglio-1.jpg", "photos/010/dettaglio-2.jpg", "photos/010/dettaglio-3.jpg"] }
+  },
+  {
+    "id": "011",
+    "data": "2026-02-28",
+    "nome": "Campetto di Giardino Vincenzo Muccioli",
+    "nome_en": "Vincenzo Muccioli Park Basketball Court",
+    "indirizzo": "Via Moisè Loria",
+    "zona": "Milano / Municipio 6",
+    "coordinate": { "lat": 45.45568, "lng": 9.15965 },
+    "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo",
+    "note_en": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court.",
+    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
+    "foto": { "overview": "photos/011/overview.jpg", "dettagli": ["photos/011/dettaglio-1.jpg"] }
   }
 ]
