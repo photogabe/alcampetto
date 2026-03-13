@@ -141,5 +141,18 @@
     "note_en": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
     "foto": { "overview": "photos/011/overview.jpg", "dettagli": ["photos/011/dettaglio-1.jpg"] }
+  },
+  {
+    "id": "012",
+    "data": "2026-03-10",
+    "nome": "Campetto di via Sapri",
+    "nome_en": "Sapri Street Basketball Court",
+    "indirizzo": "Via Sapri",
+    "zona": "Milano / Municipio 8",
+    "coordinate": { "lat": 45.50538, "lng": 9.12978 },
+    "note": "Campetto in discrete condizioni, entrambi i canestri con retina.",
+    "note_en": "Court in fair condition, both rims without their net.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/012/overview.jpg", "dettagli": ["photos/012/dettaglio-1.jpg", "photos/012/dettaglio-2.jpg", "photos/012/dettaglio-3.jpg"] }
   }
 ]
