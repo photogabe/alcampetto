@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALCAMPETTO 🏀 — About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF5F1F;
+    --black: #0d0d0d;
+    --dark: #161616;
+    --mid: #242424;
+    --line: #2e2e2e;
+    --text: #e8e8e8;
+    --muted: #888;
+    --green: #4ade80;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-body: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    z-index: 1;
+    border-bottom: 3px solid var(--orange);
+    background: var(--dark);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.2rem 0;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: var(--orange);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .logo span { color: var(--text); }
+
+  .tagline {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-left: 2px solid var(--line);
+    padding-left: 1rem;
+    line-height: 1.6;
+  }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    background: var(--mid);
+    border: 1px solid var(--line);
+    color: var(--green);
+    padding: 0.35rem 0.75rem;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .dot-live {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    display: inline-block;
+    margin-right: 0.3rem;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    background: var(--mid);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .lang-btn:hover { border-color: var(--orange); color: var(--text); }
+  .lang-btn.active { border-color: var(--orange); color: var(--orange); }
+  .lang-btn .flag { font-size: 1rem; line-height: 1; }
+
+  /* ── CONTENT ── */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--orange);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.25rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 0.9rem;
+  }
+
+  .section p, ul {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #c8c8c8;
+    margin-bottom: 0.85rem;
+  }
+
+  .section ul {
+    margin-left: 2em;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  .section a {
+    color: var(--orange);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .section a:hover { border-color: var(--orange); }
+
+  .meta-block {
+    background: var(--dark);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--orange);
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.8;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .meta-block strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--line);
+    background: var(--dark);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+
+  .footer-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+  .footer-meta a { color: var(--orange); text-decoration: none; }
+
+  .json-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    background: var(--mid);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .json-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+  @media (max-width: 600px) {
+    header, footer { padding-left: 1rem; padding-right: 1rem; }
+    main { padding: 0 1rem; margin: 2rem auto; }
+    .tagline { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a class="logo" href="index.en.html">AL<span>CAMPETTO</span> 🏀</a>
+    <div class="tagline">
+      Open dataset · MIT Licence<br>
+      Free basketball courts · Milan &amp; surroundings
+    </div>
+  </div>
+  <div class="badge"><span class="dot-live"></span>OPEN DATA · v0.1.0</div>
+  <div class="lang-switch">
+    <a class="lang-btn active" href="about.en.html">About</a>
+    <a class="lang-btn" href="about.html"><span class="flag">🇮🇹</span> IT</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">About</div>
+
+  <div class="section">
+    <div class="section-title">The Project</div>
+    <p><strong><span style="color:var(--orange)">Al</span>Campetto</strong> is a photographic atlas of basketball courts. The images of this collection are geolocated and enriched with other metadata. They document the condition of the municipal courts in the Milan metropolitan area.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">How to Contribute</div>
+    <p>In this early stage, contributions are collected exclusively by opening issues or via pull requests on the project's GitHub repository.</p>
+    <p>I will soon be using <a href="https://tally.so/">Tally</a> to streamline the data collection process.</p>
+<p>To contribute, just collect three to five photos in acceptable lighting conditions:</p>
+
+    <ul>
+      <li><strong>an overview</strong>: a photo taken at eye level from a corner of the court, including both basketball hoops;</li>
+      <li><strong>one detailed photo for each basketball hoop</strong>;</li>
+      <li><em>(optional)</em> <strong>a detail of the surface</strong></li>
+      <li><em>(optional)</em> in the case of restricted access, a photo of the <strong>time card</strong> displayed by the municipality.</li>
+    </ul>
+
+    <p style="margin-top: 1em;">In addition to what stated above, remember to collect:</p>
+    <ul>
+      <li>geographic coordinates (ideally from the center of the court);</li>
+      <li><strong>address</strong>;</li>
+      <li>whether the court is <strong>fenced</strong>;</li>
+      <li>whether is <strong>indoors</strong>;</li>
+      <li>whether is <strong>lit</strong>.</li>
+    </ul>
+    <p><strong>Qualitative notes</strong> are an integral part of the dataset: a brief comment on the overall condition of the facility, always using neutral language. Even a neglected court remains a resource for the neighborhood.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The Dataset</div>
+     <p>The dataset is distributed under a license granting a high degree of freedom, in JSON format and with reference to the Milan metropolitan area.</p>
+    <div class="meta-block">
+      <strong>License</strong> · MIT License<br>
+      <strong>Format</strong> · JSON<br>
+      <strong>Scope</strong> · Municipality of Milan and metropolitan area<br>
+      <strong>Repository</strong> · <a href="https://github.com/" target="_blank" style="color:var(--orange)">github.com/alcampetto</a>
+    </div>
+    <p>The data collected for each court is deliberately minimal. There are lots of courts in and around Milan, and the time available for the survey is limited. I designed a collection process could be completed in less than three minutes.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Support me <em>(at no costs)</em></div>
+    <p>One easy way to show support, love, gratitude and your inexhaustible joy, without spending a single cent, is to follow me on Instagram <a href="https://www.instagram.com/gab.gigliotti/">@gab.gigliotti</a>, grazie!</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-meta">
+    Dataset released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
+    Contribute on <a href="https://github.com/" target="_blank">GitHub</a> ·<br>
+    Data verified on the ground by volunteers · ALCAMPETTO project
+  </div>
+  <a class="json-btn" href="alcampetto.json" target="_blank" download>
+    ⬇ Download alcampetto.json
+  </a>
+</footer>
+
+</body>
+</html>
