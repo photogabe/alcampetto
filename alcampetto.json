@@ -86,7 +86,7 @@
     "zona": "Milano / Municipio 4",
     "coordinate": { "lat": 45.43630, "lng": 9.22849 },
     "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
-    "note_en": "Court with both rims without net. Court surface worn out.",
+    "note_en": "Both rims without net. Court surface worn out.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/007/overview.jpg", "dettagli": ["photos/007/dettaglio-1.jpg", "photos/007/dettaglio-2.jpg", "photos/007/dettaglio-3.jpg", "photos/007/dettaglio-4.jpg"] }
   },
@@ -127,7 +127,7 @@
     "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa",
     "note_en": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/010/overview.jpg", "dettagli": ["photos/010/dettaglio-1.jpg", "photos/010/dettaglio-2.jpg", "photos/010/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/010/overview.webp", "dettagli": ["photos/010/dettaglio-1.webp", "photos/010/dettaglio-2.webp", "photos/010/dettaglio-3.webp"] }
   },
   {
     "id": "011",
@@ -140,7 +140,7 @@
     "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo",
     "note_en": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/011/overview.jpg", "dettagli": ["photos/011/dettaglio-1.jpg"] }
+    "foto": { "overview": "photos/011/overview.webp", "dettagli": ["photos/011/dettaglio-1.webp"] }
   },
   {
     "id": "012",
@@ -151,8 +151,21 @@
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.50538, "lng": 9.12978 },
     "note": "Campetto in discrete condizioni, entrambi i canestri con retina.",
-    "note_en": "Court in fair condition, both rims without their net.",
+    "note_en": "Court in fair condition, both rims with net.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/012/overview.jpg", "dettagli": ["photos/012/dettaglio-1.jpg", "photos/012/dettaglio-2.jpg", "photos/012/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/012/overview.webp", "dettagli": ["photos/012/dettaglio-1.webp", "photos/012/dettaglio-2.webp", "photos/012/dettaglio-3.webp"] }
+  },
+  {
+    "id": "013",
+    "data": "2026-03-10",
+    "nome": "Campetto di via Nicola Fabrizi",
+    "nome_en": "Nicola Fabrizi Street Basketball Court",
+    "indirizzo": "Via Nicola Fabrizi",
+    "zona": "Milano / Municipio 8",
+    "coordinate": { "lat": 45.51052, "lng": 9.13236 },
+    "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
+    "note_en": "Both rims without net. Court surface worn out.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/013/overview.webp", "dettagli": ["photos/013/dettaglio-1.webp", "photos/013/dettaglio-2.webp", "photos/013/dettaglio-3.webp"] }
   }
 ]
