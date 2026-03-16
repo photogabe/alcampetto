@@ -88,7 +88,7 @@
     "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
     "note_en": "Both rims without net. Court surface worn out.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/007/overview.jpg", "dettagli": ["photos/007/dettaglio-1.jpg", "photos/007/dettaglio-2.jpg", "photos/007/dettaglio-3.jpg", "photos/007/dettaglio-4.jpg"] }
+    "foto": { "overview": "photos/007/overview.webp", "dettagli": ["photos/007/dettaglio-1.webp", "photos/007/dettaglio-2.webp", "photos/007/dettaglio-3.webp", "photos/007/dettaglio-4.webp"] }
   },
   {
     "id": "008",
@@ -101,7 +101,7 @@
     "note": "Piccolo campetto con un canestro sprovvisto di retina. Superficie usurata.",
     "note_en": "Small court with both rims without net. Court surface worn out.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/008/overview.jpg", "dettagli": ["photos/008/dettaglio-1.jpg", "photos/008/dettaglio-2.jpg", "photos/008/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/008/overview.webp", "dettagli": ["photos/008/dettaglio-1.webp", "photos/008/dettaglio-2.webp", "photos/008/dettaglio-3.webp"] }
   },
   {
     "id": "009",
@@ -114,7 +114,7 @@
     "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura.",
     "note_en": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/009/overview.jpg", "dettagli": ["photos/009/dettaglio-1.jpg", "photos/009/dettaglio-2.jpg", "photos/009/dettaglio-3.jpg", "photos/009/dettaglio-4.jpg"] }
+    "foto": { "overview": "photos/009/overview.webp", "dettagli": ["photos/009/dettaglio-1.webp", "photos/009/dettaglio-2.webp", "photos/009/dettaglio-3.webp", "photos/009/dettaglio-4.webp"] }
   },
   {
     "id": "010",
@@ -167,5 +167,18 @@
     "note_en": "Both rims without net. Court surface worn out.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/013/overview.webp", "dettagli": ["photos/013/dettaglio-1.webp", "photos/013/dettaglio-2.webp", "photos/013/dettaglio-3.webp"] }
+  },
+  {
+    "id": "014",
+    "data": "2026-03-14",
+    "nome": "Campetto di via Dora Baltea",
+    "nome_en": "Dora Baltea Street Basketball Court",
+    "indirizzo": "Via Dora Baltea",
+    "zona": "Milano / Municipio 9",
+    "coordinate": { "lat": 45.528242, "lng": 9.166438 },
+    "note": "Un canestro senza rete. Superficie di gioco decente",
+    "note_en": "One rim without net. Surface in fair condition.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/014/overview.webp", "dettagli": ["photos/014/dettaglio-1.webp", "photos/014/dettaglio-2.webp", "photos/014/dettaglio-3.webp"] }
   }
 ]
