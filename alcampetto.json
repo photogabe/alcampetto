@@ -10,7 +10,7 @@
     "note": "Ben tenuto. Superficie in ottime condizioni. Una rete danneggiata.",
     "note_en": "Well maintained. Surface in good condition. One basket net damaged.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/001/overview.jpg", "dettagli": ["photos/001/dettaglio-1.jpg", "photos/001/dettaglio-2.jpg", "photos/001/dettaglio-3.jpg", "photos/001/dettaglio-4.jpg"] }
+    "foto": { "overview": "photos/001/overview.webp", "dettagli": ["photos/001/dettaglio-1.webp", "photos/001/dettaglio-2.webp", "photos/001/dettaglio-3.webp", "photos/001/dettaglio-4.webp"] }
   },
   {
     "id": "002",
@@ -23,7 +23,7 @@
     "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina.",
     "note_en": "Surface in fair condition. In one of the basket the net is missing.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/002/overview.jpg", "dettagli": ["photos/002/dettaglio-1.jpg", "photos/002/dettaglio-2.jpg", "photos/002/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/002/overview.webp", "dettagli": ["photos/002/dettaglio-1.webp", "photos/002/dettaglio-2.webp", "photos/002/dettaglio-3.webp"] }
   },
   {
     "id": "003",
@@ -36,7 +36,7 @@
     "note": "Superficie in ottime condizioni.",
     "note_en": "Surface in very good condition.",
     "recintato": true, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/003/overview.jpg", "dettagli": ["photos/003/dettaglio-1.jpg", "photos/003/dettaglio-2.jpg", "photos/003/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/003/overview.webp", "dettagli": ["photos/003/dettaglio-1.webp", "photos/003/dettaglio-2.webp", "photos/003/dettaglio-3.webp"] }
   },
   {
     "id": "004",
@@ -49,7 +49,7 @@
     "note": "Superficie in buone condizioni.",
     "note_en": "Surface in good condition.",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/004/overview.jpg", "dettagli": ["photos/004/dettaglio-1.jpg", "photos/004/dettaglio-2.jpg"] }
+    "foto": { "overview": "photos/004/overview.webp", "dettagli": ["photos/004/dettaglio-1.webp", "photos/004/dettaglio-2.webp"] }
   },
   {
     "id": "005",
@@ -62,7 +62,7 @@
     "note": "Superficie in discrete condizioni.",
     "note_en": "Surface in fair condition.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/005/overview.jpg", "dettagli": ["photos/005/dettaglio-1.jpg", "photos/005/dettaglio-2.jpg", "photos/005/dettaglio-3.jpg"] }
+    "foto": { "overview": "photos/005/overview.webp", "dettagli": ["photos/005/dettaglio-1.webp", "photos/005/dettaglio-2.webp", "photos/005/dettaglio-3.webp"] }
   },
   {
     "id": "006",
@@ -75,7 +75,7 @@
     "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione.",
     "note_en": "Little basketball court on asphalt, both rims with their net. Lit by one street light.",
     "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/006/overview.jpg", "dettagli": ["photos/006/dettaglio-1.jpg", "photos/006/dettaglio-2.jpg"] }
+    "foto": { "overview": "photos/006/overview.webp", "dettagli": ["photos/006/dettaglio-1.webp", "photos/006/dettaglio-2.webp"] }
   },
   {
     "id": "007",
