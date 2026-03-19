@@ -206,5 +206,18 @@
     "note_en": "A net is broke, a rim is missing. Court surface with several cracks. Card table with opening and closing time.",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/016/overview.webp", "dettagli": ["photos/016/dettaglio-1.webp", "photos/016/dettaglio-2.webp", "photos/016/dettaglio-3.webp", "photos/016/dettaglio-4.webp"] }
+  },
+  {
+    "id": "017",
+    "data": "2026-03-14",
+    "nome": "Campetto#1 di San Barnaba",
+    "nome_en": "Saint Barnaba Basketball Court",
+    "indirizzo": "Via San Barnaba",
+    "zona": "Milano / Municipio 1",
+    "coordinate": { "lat": 45.45940, "lng": 9.19752 },
+    "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arruginita.",
+    "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Right beside the half-court line you get a rusty trash container.",
+    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/017/overview.webp", "dettagli": ["photos/017/dettaglio-1.webp", "photos/017/dettaglio-2.webp", "photos/017/dettaglio-3.webp"] }
   }
 ]
