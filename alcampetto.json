@@ -215,9 +215,22 @@
     "indirizzo": "Via San Barnaba",
     "zona": "Milano / Municipio 1",
     "coordinate": { "lat": 45.45940, "lng": 9.19752 },
-    "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arruginita.",
-    "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Right beside the half-court line you get a rusty trash container.",
+    "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arruginita. Superficie usurata.",
+    "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Right beside the half-court line you get a rusty trash container. Court surface worn out.",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/017/overview.webp", "dettagli": ["photos/017/dettaglio-1.webp", "photos/017/dettaglio-2.webp", "photos/017/dettaglio-3.webp"] }
+  },
+  {
+    "id": "018",
+    "data": "2026-03-14",
+    "nome": "Campetto#2 di San Barnaba",
+    "nome_en": "Saint Barnaba Basketball Court",
+    "indirizzo": "Via San Barnaba",
+    "zona": "Milano / Municipio 1",
+    "coordinate": { "lat": 45.45927, "lng": 9.19816 },
+    "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. Superficie usurata.",
+    "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Court surface worn out.",
+    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/018/overview.webp", "dettagli": ["photos/018/dettaglio-1.webp", "photos/018/dettaglio-2.webp", "photos/018/dettaglio-3.webp"] }
   }
 ]
