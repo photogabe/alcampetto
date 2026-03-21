@@ -232,5 +232,18 @@
     "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Court surface worn out.",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/018/overview.webp", "dettagli": ["photos/018/dettaglio-1.webp", "photos/018/dettaglio-2.webp", "photos/018/dettaglio-3.webp"] }
+  },
+  {
+    "id": "019",
+    "data": "2026-03-14",
+    "nome": "Campetto di Parco Sempione",
+    "nome_en": "Sempione Park Basketball Court",
+    "indirizzo": "Via Enrico Ibsen",
+    "zona": "Milano / Municipio 1",
+    "coordinate": { "lat": 45.47365, "lng": 9.17580 },
+    "note": "Ben tenuto. Superficie in buone condizioni.",
+    "note_en": "Well maintained. Surface in good condition.",
+    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/019/overview.webp", "dettagli": ["photos/019/dettaglio-1.webp", "photos/019/dettaglio-2.webp", "photos/019/dettaglio-3.webp"] }
   }
 ]
