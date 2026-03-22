@@ -17,6 +17,9 @@ The images in this repository are web-optimized (resized compared to the origina
 ## "Al Campetto" the website
 Find your court easily through this easy to use website: [https://photogabe.github.io/alcampetto/index.en.html](https://photogabe.github.io/alcampetto/index.en.html)
 
+## Dataset Version
+This dataset version is 0.1.0
+
 ---
 
 
@@ -39,3 +42,7 @@ Le immagini di questo repository hanno dimensioni ridotte rispetto agli original
 
 ## "Al Campetto", il sito
 Trova il tuo campetto con questo sito facile da consultare: [https://photogabe.github.io/alcampetto/index.html](https://photogabe.github.io/alcampetto/index.html)
+
+
+## Versione del set di dati
+La versione corrente, coincidente con quella iniziale, è la 0.1.0
