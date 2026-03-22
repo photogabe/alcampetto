@@ -6,506 +6,7 @@
 <title>ALCAMPETTO 🏀 — Open Dataset</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --orange: #FF5F1F;
-    --black: #0d0d0d;
-    --dark: #161616;
-    --mid: #242424;
-    --line: #2e2e2e;
-    --text: #e8e8e8;
-    --muted: #888;
-    --green: #4ade80;
-    --yellow: #fbbf24;
-    --font-display: 'Bebas Neue', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-    --font-body: 'IBM Plex Sans', sans-serif;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--black);
-    color: var(--text);
-    font-family: var(--font-body);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 48px 48px;
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* ── HEADER ── */
-  header {
-    position: relative;
-    z-index: 1;
-    border-bottom: 3px solid var(--orange);
-    background: var(--dark);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .header-left {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 1.2rem 0;
-  }
-
-  .logo {
-    font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    color: var(--orange);
-    letter-spacing: 0.04em;
-    line-height: 1;
-  }
-
-  .logo span { color: var(--text); }
-
-  .tagline {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border-left: 2px solid var(--line);
-    padding-left: 1rem;
-    line-height: 1.6;
-  }
-
-  .badge {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    background: var(--mid);
-    border: 1px solid var(--line);
-    color: var(--green);
-    padding: 0.35rem 0.75rem;
-    letter-spacing: 0.1em;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-
-  .dot-live {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--green);
-    display: inline-block;
-    margin-right: 0.3rem;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* ── CONTROLS ── */
-  .controls {
-    position: relative;
-    z-index: 1;
-    background: var(--dark);
-    border-bottom: 1px solid var(--line);
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .search-wrap {
-    position: relative;
-    flex: 1;
-    min-width: 200px;
-    max-width: 380px;
-  }
-
-  .search-wrap input {
-    width: 100%;
-    background: var(--mid);
-    border: 1px solid var(--line);
-    color: var(--text);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    padding: 0.6rem 1rem 0.6rem 2.4rem;
-    outline: none;
-    border-radius: 2px;
-    transition: border-color 0.2s;
-  }
-  .search-wrap input:focus { border-color: var(--orange); }
-  .search-wrap input::placeholder { color: var(--muted); }
-
-  .search-icon {
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-
-  .filter-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-
-  .filter-btn {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: var(--mid);
-    border: 1px solid var(--line);
-    color: var(--muted);
-    padding: 0.5rem 0.9rem;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.15s;
-  }
-  .filter-btn:hover { border-color: var(--orange); color: var(--text); }
-  .filter-btn.active { background: var(--orange); color: white; border-color: var(--orange); }
-
-  .sort-group {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .sort-label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-right: 0.2rem;
-  }
-
-  .sort-btn {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: var(--mid);
-    border: 1px solid var(--line);
-    color: var(--muted);
-    padding: 0.5rem 0.9rem;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.15s;
-  }
-  .sort-btn:hover { border-color: var(--orange); color: var(--text); }
-  .sort-btn.active { background: var(--mid); color: var(--orange); border-color: var(--orange); }
-
-  .count-label {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--muted);
-    margin-left: auto;
-  }
-  .count-label strong { color: var(--orange); }
-
-  /* ── GRID ── */
-  main {
-    position: relative;
-    z-index: 1;
-    padding: 1.5rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
-  }
-
-  /* ── CARD ── */
-  .card {
-    background: var(--dark);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: border-color 0.2s, transform 0.15s;
-    animation: fadeIn 0.4s ease both;
-  }
-  .card:hover { border-color: var(--orange); transform: translateY(-2px); }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Photo strip */
-  .card-photo {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    display: block;
-    background: var(--mid);
-    position: relative;
-  }
-  .card-photo-placeholder {
-    width: 100%;
-    height: 160px;
-    background: var(--mid);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .card-header {
-    background: var(--mid);
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .card-num {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    color: var(--orange);
-    line-height: 1;
-    margin-right: 0.75rem;
-    min-width: 2.5rem;
-  }
-
-  .card-name {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    letter-spacing: 0.04em;
-    line-height: 1.2;
-    flex: 1;
-  }
-
-  .card-date {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--muted);
-    white-space: nowrap;
-    margin-left: 0.5rem;
-  }
-
-  .card-body {
-    padding: 0.9rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
-  }
-
-  .info-row {
-    display: flex;
-    gap: 0.5rem;
-    align-items: flex-start;
-    font-size: 0.82rem;
-  }
-
-  .info-label {
-    font-family: var(--font-mono);
-    font-size: 0.63rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    min-width: 72px;
-    padding-top: 0.15rem;
-    flex-shrink: 0;
-  }
-
-  .info-val { color: var(--text); line-height: 1.4; }
-
-  /* Boolean pills */
-  .booleans {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-top: 0.25rem;
-  }
-
-  .bool-pill {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 1px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border: 1px solid;
-  }
-  .bool-pill.yes { background: #14532d; color: var(--green); border-color: #166534; }
-  .bool-pill.no  { background: #1c1c1c; color: var(--muted); border-color: var(--line); }
-
-  /* Detail thumbnails */
-  .thumbs {
-    display: flex;
-    gap: 0.4rem;
-    margin-top: 0.35rem;
-    overflow-x: auto;
-    padding-bottom: 0.1rem;
-  }
-  .thumbs img {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    border-radius: 2px;
-    border: 1px solid var(--line);
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: border-color 0.15s;
-  }
-  .thumbs img:hover { border-color: var(--orange); }
-
-  .card-footer {
-    padding: 0.65rem 1rem;
-    border-top: 1px solid var(--line);
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .maps-btn {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: transparent;
-    border: 1px solid var(--orange);
-    color: var(--orange);
-    padding: 0.35rem 0.75rem;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .maps-btn:hover { background: var(--orange); color: white; }
-
-  .coord {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--muted);
-    margin-left: auto;
-  }
-
-  /* ── LIGHTBOX ── */
-  #lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.92);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    cursor: zoom-out;
-  }
-  #lightbox.open { display: flex; }
-  #lightbox img {
-    max-width: 90vw;
-    max-height: 88vh;
-    border-radius: 3px;
-    border: 1px solid var(--line);
-    box-shadow: 0 0 80px rgba(255,95,31,0.15);
-  }
-  #lightbox-close {
-    position: absolute;
-    top: 1.2rem; right: 1.5rem;
-    color: var(--muted);
-    font-size: 1.5rem;
-    cursor: pointer;
-    font-family: var(--font-mono);
-    line-height: 1;
-    background: none;
-    border: none;
-  }
-
-  /* Empty / Loading */
-  .state-msg {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--line);
-    background: var(--dark);
-    padding: 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-meta {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    line-height: 1.8;
-  }
-  .footer-meta a { color: var(--orange); text-decoration: none; }
-
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .lang-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    background: var(--mid);
-    border: 1px solid var(--line);
-    color: var(--muted);
-    padding: 0.4rem 0.8rem;
-    border-radius: 2px;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .lang-btn:hover { border-color: var(--orange); color: var(--text); }
-  .lang-btn .flag { font-size: 1rem; line-height: 1; }
-
-  .json-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    background: var(--mid);
-    border: 1px solid var(--line);
-    color: var(--text);
-    padding: 0.5rem 1rem;
-    border-radius: 2px;
-    transition: all 0.15s;
-  }
-  .json-btn:hover { border-color: var(--orange); color: var(--orange); }
-
-  @media (max-width: 600px) {
-    header, .controls, main, footer { padding-left: 1rem; padding-right: 1rem; }
-    .tagline { display: none; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -517,13 +18,12 @@
 
 <header>
   <div class="header-left">
-    <div class="logo">AL<span>CAMPETTO</span> 🏀</div>
+    <a class="logo" href="index.en.html">AL<span>CAMPETTO</span> 🏀</a>
     <div class="tagline">
       Open dataset · MIT Licence<br>
       Free basketball courts · Milan &amp; surroundings
     </div>
   </div>
-  <div class="badge"><span class="dot-live"></span>OPEN DATA · v0.1.0</div>
   <div class="lang-switch">
     <a class="lang-btn" href="about.en.html">About</a>
     <a class="lang-btn" href="index.html"><span class="flag">🇮🇹</span> IT</a>
@@ -542,7 +42,7 @@
     <button class="filter-btn" data-filter="recintato">Fenced</button>
   </div>
   <div class="sort-group">
-    <span class="sort-label">Ordina</span>
+    <span class="sort-label">Sort</span>
     <button class="sort-btn active" data-sort="id">By #ID</button>
     <button class="sort-btn" data-sort="date">Most recent</button>
   </div>
@@ -577,6 +77,74 @@ function pill(label, value) {
   return `<span class="bool-pill ${value ? 'yes' : 'no'}">${value ? '✓' : '✗'} ${label}</span>`;
 }
 
+// ── IntersectionObserver per lazy render delle card
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '100px' });
+
+// ── Build a single card element
+function buildCard(c) {
+  const mapsUrl = `https://www.google.com/maps?q=${c.coordinate.lat},${c.coordinate.lng}`;
+  const coordStr = `${c.coordinate.lat.toFixed(4)}, ${c.coordinate.lng.toFixed(4)}`;
+
+  const photoHtml = (c.foto && c.foto.overview)
+    ? `<img class="card-photo" src="${c.foto.overview}" alt="Overview ${c.nome_en || c.nome}" loading="lazy" onclick="openLightbox('${c.foto.overview}')">`
+    : `<div class="card-photo-placeholder">🏀</div>`;
+
+  let thumbsHtml = '';
+  if (c.foto && c.foto.dettagli && c.foto.dettagli.length > 0) {
+    const imgs = c.foto.dettagli.map(url =>
+      `<img src="${url}" alt="Detail" loading="lazy" onclick="openLightbox('${url}')">`
+    ).join('');
+    thumbsHtml = `
+      <div class="info-row">
+        <div class="info-label">Photos</div>
+        <div class="thumbs">${imgs}</div>
+      </div>`;
+  }
+
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `
+    ${photoHtml}
+    <div class="card-header">
+      <div class="card-num">#${c.id}</div>
+      <div class="card-name">${c.nome_en || c.nome}</div>
+      <div class="card-date">${c.data}</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <div class="info-label">Address</div>
+        <div class="info-val">${c.indirizzo}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Area</div>
+        <div class="info-val">${c.zona}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Notes</div>
+        <div class="info-val">${c.note_en || c.note || '—'}</div>
+      </div>
+      ${thumbsHtml}
+      <div class="booleans">
+        ${pill('Lit', c.illuminato)}
+        ${pill('Fenced', c.recintato)}
+        ${pill('Indoors', c.coperto)}
+      </div>
+    </div>
+    <div class="card-footer">
+      <a class="maps-btn" href="${mapsUrl}" target="_blank">📍 Open in Maps</a>
+      <div class="coord">${coordStr}</div>
+    </div>
+  `;
+  return div;
+}
+
 // ── Render
 let DATA = [];
 let activeFilter = 'all';
@@ -592,68 +160,13 @@ function renderCards(data) {
     return;
   }
 
-  data.forEach((c, i) => {
-    const mapsUrl = `https://www.google.com/maps?q=${c.coordinate.lat},${c.coordinate.lng}`;
-    const coordStr = `${c.coordinate.lat.toFixed(4)}, ${c.coordinate.lng.toFixed(4)}`;
-
-    // Overview photo or placeholder
-    let photoHtml = '';
-    if (c.foto && c.foto.overview) {
-      photoHtml = `<img class="card-photo" src="${c.foto.overview}" alt="Vista generale ${c.nome_en || c.nome}" loading="lazy" onclick="openLightbox('${c.foto.overview}')">`;
-    } else {
-      photoHtml = `<div class="card-photo-placeholder">🏀</div>`;
-    }
-
-    // Detail thumbnails
-    let thumbsHtml = '';
-    if (c.foto && c.foto.dettagli && c.foto.dettagli.length > 0) {
-      const imgs = c.foto.dettagli.map(url =>
-        `<img src="${url}" alt="Dettaglio" loading="lazy" onclick="openLightbox('${url}')">`
-      ).join('');
-      thumbsHtml = `
-        <div class="info-row">
-          <div class="info-label">Photos</div>
-          <div class="thumbs">${imgs}</div>
-        </div>`;
-    }
-
-    const div = document.createElement('div');
-    div.className = 'card';
-    div.style.animationDelay = `${i * 0.04}s`;
-    div.innerHTML = `
-      ${photoHtml}
-      <div class="card-header">
-        <div class="card-num">#${c.id}</div>
-        <div class="card-name">${c.nome_en || c.nome}</div>
-        <div class="card-date">${c.data}</div>
-      </div>
-      <div class="card-body">
-        <div class="info-row">
-          <div class="info-label">Address</div>
-          <div class="info-val">${c.indirizzo}</div>
-        </div>
-        <div class="info-row">
-          <div class="info-label">Area</div>
-          <div class="info-val">${c.zona}</div>
-        </div>
-        <div class="info-row">
-          <div class="info-label">Notes</div>
-          <div class="info-val">${c.note_en || c.note || '—'}</div>
-        </div>
-        ${thumbsHtml}
-        <div class="booleans">
-          ${pill('Lit', c.illuminato)}
-          ${pill('Fenced', c.recintato)}
-          ${pill('Indoors', c.coperto)}
-        </div>
-      </div>
-      <div class="card-footer">
-        <a class="maps-btn" href="${mapsUrl}" target="_blank">📍 Open in Maps</a>
-        <div class="coord">${coordStr}</div>
-      </div>
-    `;
-    grid.appendChild(div);
+  const fragment = document.createDocumentFragment();
+  data.forEach(c => {
+    const card = buildCard(c);
+    observer.observe(card);
+    fragment.appendChild(card);
   });
+  grid.appendChild(fragment);
 }
 
 function applyFilters() {
@@ -667,10 +180,10 @@ function applyFilters() {
 
   if (q) {
     filtered = filtered.filter(c =>
-      c.nome.toLowerCase().includes(q) ||
+      (c.nome_en || c.nome).toLowerCase().includes(q) ||
       c.zona.toLowerCase().includes(q) ||
       c.indirizzo.toLowerCase().includes(q) ||
-      (c.note && c.note.toLowerCase().includes(q))
+      (c.note_en || c.note || '').toLowerCase().includes(q)
     );
   }
 
@@ -711,7 +224,6 @@ fetch('alcampetto.json?v=' + Date.now())
     applyFilters();
   })
   .catch(() => {
-    // Fallback: se il fetch non funziona in locale senza server, mostra messaggio
     document.getElementById('grid').innerHTML =
       '<div class="state-msg">⚠ To view data, start a local server<br><code style="font-size:0.75rem;color:#FF5F1F">python3 -m http.server</code><br>or deploy to GitHub Pages.</div>';
   });
