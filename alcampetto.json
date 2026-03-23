@@ -245,5 +245,18 @@
     "note_en": "Well maintained. Surface in good condition.",
     "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/019/overview.webp", "dettagli": ["photos/019/dettaglio-1.webp", "photos/019/dettaglio-2.webp", "photos/019/dettaglio-3.webp"] }
+  },
+  {
+    "id": "020",
+    "data": "2026-03-14",
+    "nome": "Campetto di Piazzale Salvatore Farina",
+    "nome_en": "Salvatore Farina Square Basketball Court",
+    "indirizzo": "Piazzale Salvatore Farina",
+    "zona": "Milano / Municipio 2",
+    "coordinate": { "lat": 45.49872, "lng": 9.20016 },
+    "note": "Superficie usurata, canestri con retina rotta",
+    "note_en": "Surface in poor condition. Both rims with broken net.",
+    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/020/overview.webp", "dettagli": ["photos/020/dettaglio-1.webp", "photos/020/dettaglio-2.webp", "photos/020/dettaglio-3.webp", "photos/020/dettaglio-4.webp"] }
   }
 ]
