@@ -258,5 +258,18 @@
     "note_en": "Surface in poor condition. Both rims with broken net.",
     "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
     "foto": { "overview": "photos/020/overview.webp", "dettagli": ["photos/020/dettaglio-1.webp", "photos/020/dettaglio-2.webp", "photos/020/dettaglio-3.webp", "photos/020/dettaglio-4.webp"] }
+  },
+  {
+    "id": "021",
+    "data": "2026-03-22",
+    "nome": "Campetto#1 di Viale Argonne",
+    "nome_en": "Avenue Argonne Basketball Court",
+    "indirizzo": "Viale Argonne",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.46816, "lng": 9.23073 },
+    "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina quasi totalmente strappata. Buona superficie.",
+    "note_en": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is almost completely shredded. Good surface.",
+    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
+    "foto": { "overview": "photos/021/overview.webp", "dettagli": ["photos/021/dettaglio-1.webp", "photos/021/dettaglio-2.webp"] }
   }
 ]
