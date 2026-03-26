@@ -1,232 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALCAMPETTO 🏀 — Open Dataset</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALCAMPETTO 🏀 — Open Dataset</title>
+
+  <!-- EXTERNAL DEPENDENCY: Google Fonts
+       Loads three font families from Google's CDN.
+       Without an internet connection the browser uses system fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Lightbox -->
-<div id="lightbox">
-  <button id="lightbox-close">✕</button>
-  <img id="lightbox-img" src="" alt="">
-</div>
-
-<header>
-  <div class="header-left">
-    <a class="logo" href="index.en.html">AL<span>CAMPETTO</span> 🏀</a>
-    <div class="tagline">
-      Open dataset · MIT Licence<br>
-      Free basketball courts · Milan &amp; surroundings
-    </div>
+  <!-- ═══════════════════════════════════════════════════════
+       LIGHTBOX
+       Full-screen photo viewer.
+       Managed by alcampetto.js.
+       ═══════════════════════════════════════════════════════ -->
+  <div id="lightbox">
+    <button id="lightbox-close">✕</button>
+    <img id="lightbox-img" src="" alt="">
   </div>
-  <div class="lang-switch">
-    <a class="lang-btn" href="about.en.html">About</a>
-    <a class="lang-btn" href="index.html"><span class="flag">🇮🇹</span> IT</a>
-  </div>
-</header>
 
-<div class="controls">
-  <div class="search-wrap">
-    <span class="search-icon">⌕</span>
-    <input type="text" id="search" placeholder="Search by name, area, address…">
-  </div>
-  <div class="filter-group">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="illuminato">Lit</button>
-    <button class="filter-btn" data-filter="coperto">Indoors</button>
-    <button class="filter-btn" data-filter="recintato">Fenced</button>
-  </div>
-  <div class="sort-group">
-    <span class="sort-label">Sort</span>
-    <button class="sort-btn active" data-sort="id">By #ID</button>
-    <button class="sort-btn" data-sort="date">Most recent</button>
-  </div>
-  <div class="count-label">Results: <strong id="count">—</strong></div>
-</div>
 
-<main id="grid">
-  <div class="state-msg">Loading data…</div>
-</main>
-
-<footer>
-  <div class="footer-meta">
-    Dataset released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
-    Contribute on <a href="https://github.com/" target="_blank">GitHub</a> ·<br>
-    Data verified on the ground by volunteers · ALCAMPETTO project
-  </div>
-  <a class="json-btn" href="alcampetto.json" target="_blank" download>
-    ⬇ Download alcampetto.json
-  </a>
-</footer>
-
-<script>
-// ── Lightbox
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightbox-img');
-document.getElementById('lightbox-close').addEventListener('click', () => lb.classList.remove('open'));
-lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
-function openLightbox(src) { lbImg.src = src; lb.classList.add('open'); }
-
-// ── Boolean pill helper
-function pill(label, value) {
-  return `<span class="bool-pill ${value ? 'yes' : 'no'}">${value ? '✓' : '✗'} ${label}</span>`;
-}
-
-// ── IntersectionObserver per lazy render delle card
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: '100px' });
-
-// ── Build a single card element
-function buildCard(c) {
-  const mapsUrl = `https://www.google.com/maps?q=${c.coordinate.lat},${c.coordinate.lng}`;
-  const coordStr = `${c.coordinate.lat.toFixed(4)}, ${c.coordinate.lng.toFixed(4)}`;
-
-  const photoHtml = (c.foto && c.foto.overview)
-    ? `<img class="card-photo" src="${c.foto.overview}" alt="Overview ${c.nome_en || c.nome}" loading="lazy" onclick="openLightbox('${c.foto.overview}')">`
-    : `<div class="card-photo-placeholder">🏀</div>`;
-
-  let thumbsHtml = '';
-  if (c.foto && c.foto.dettagli && c.foto.dettagli.length > 0) {
-    const imgs = c.foto.dettagli.map(url =>
-      `<img src="${url}" alt="Detail" loading="lazy" onclick="openLightbox('${url}')">`
-    ).join('');
-    thumbsHtml = `
-      <div class="info-row">
-        <div class="info-label">Photos</div>
-        <div class="thumbs">${imgs}</div>
-      </div>`;
-  }
-
-  const div = document.createElement('div');
-  div.className = 'card';
-  div.innerHTML = `
-    ${photoHtml}
-    <div class="card-header">
-      <div class="card-num">#${c.id}</div>
-      <div class="card-name">${c.nome_en || c.nome}</div>
-      <div class="card-date">${c.data}</div>
-    </div>
-    <div class="card-body">
-      <div class="info-row">
-        <div class="info-label">Address</div>
-        <div class="info-val">${c.indirizzo}</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Area</div>
-        <div class="info-val">${c.zona}</div>
-      </div>
-      <div class="info-row">
-        <div class="info-label">Notes</div>
-        <div class="info-val">${c.note_en || c.note || '—'}</div>
-      </div>
-      ${thumbsHtml}
-      <div class="booleans">
-        ${pill('Lit', c.illuminato)}
-        ${pill('Fenced', c.recintato)}
-        ${pill('Indoors', c.coperto)}
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════ -->
+  <header>
+    <div class="header-left">
+      <a class="logo" href="index.en.html">AL<span>CAMPETTO</span> 🏀</a>
+      <div class="tagline">
+        Open dataset · MIT Licence<br>
+        Free basketball courts · Milan &amp; surroundings
       </div>
     </div>
-    <div class="card-footer">
-      <a class="maps-btn" href="${mapsUrl}" target="_blank">📍 Open in Maps</a>
-      <div class="coord">${coordStr}</div>
+    <div class="lang-switch">
+      <a class="lang-btn" href="about.en.html">About</a>
+      <a class="lang-btn" href="index.html"><span class="flag">🇮🇹</span> IT</a>
     </div>
-  `;
-  return div;
-}
+  </header>
 
-// ── Render
-let DATA = [];
-let activeFilter = 'all';
-let activeSort = 'id';
 
-function renderCards(data) {
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  document.getElementById('count').textContent = data.length;
+  <!-- ═══════════════════════════════════════════════════════
+       CONTROLS BAR
+       ═══════════════════════════════════════════════════════ -->
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search" placeholder="Search by name, area, address…">
+    </div>
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="illuminato">Lit</button>
+      <button class="filter-btn" data-filter="coperto">Indoors</button>
+      <button class="filter-btn" data-filter="recintato">Fenced</button>
+    </div>
+    <div class="sort-group">
+      <span class="sort-label">Sort</span>
+      <button class="sort-btn active" data-sort="id">By #ID</button>
+      <button class="sort-btn" data-sort="date">Most recent</button>
+    </div>
+    <div class="count-label">Results: <strong id="count">—</strong></div>
+  </div>
 
-  if (data.length === 0) {
-    grid.innerHTML = '<div class="state-msg">No courts found 🏀</div>';
-    return;
-  }
 
-  const fragment = document.createDocumentFragment();
-  data.forEach(c => {
-    const card = buildCard(c);
-    observer.observe(card);
-    fragment.appendChild(card);
-  });
-  grid.appendChild(fragment);
-}
+  <!-- ═══════════════════════════════════════════════════════
+       COURT GRID
+       Cards are generated by alcampetto.js after
+       alcampetto.json is loaded.
+       ═══════════════════════════════════════════════════════ -->
+  <main id="grid">
+    <div class="state-msg">Loading data…</div>
+  </main>
 
-function applyFilters() {
-  const q = document.getElementById('search').value.toLowerCase().trim();
-  let filtered = [...DATA];
 
-  const boolFilters = ['illuminato', 'coperto', 'recintato'];
-  if (boolFilters.includes(activeFilter)) {
-    filtered = filtered.filter(c => c[activeFilter] === true);
-  }
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-meta">
+      Dataset released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
+      Contribute on <a href="https://github.com/" target="_blank">GitHub</a> ·<br>
+      Data verified on the ground · ALCAMPETTO project
+    </div>
+    <a class="json-btn" href="alcampetto.json" target="_blank" download>
+      ⬇ Download alcampetto.json
+    </a>
+  </footer>
 
-  if (q) {
-    filtered = filtered.filter(c =>
-      (c.nome_en || c.nome).toLowerCase().includes(q) ||
-      c.zona.toLowerCase().includes(q) ||
-      c.indirizzo.toLowerCase().includes(q) ||
-      (c.note_en || c.note || '').toLowerCase().includes(q)
-    );
-  }
 
-  if (activeSort === 'id') {
-    filtered.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-  } else if (activeSort === 'date') {
-    filtered.sort((a, b) => new Date(b.data) - new Date(a.data));
-  }
+  <!-- Shared JavaScript — included after the DOM so it can
+       find all HTML elements it needs to manage. -->
+  <script src="alcampetto.js"></script>
 
-  renderCards(filtered);
-}
-
-document.getElementById('search').addEventListener('input', applyFilters);
-
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
-    applyFilters();
-  });
-});
-
-document.querySelectorAll('.sort-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeSort = btn.dataset.sort;
-    applyFilters();
-  });
-});
-
-// ── Load data
-fetch('alcampetto.json?v=' + Date.now())
-  .then(r => r.json())
-  .then(json => {
-    DATA = json;
-    applyFilters();
-  })
-  .catch(() => {
-    document.getElementById('grid').innerHTML =
-      '<div class="state-msg">⚠ To view data, start a local server<br><code style="font-size:0.75rem;color:#FF5F1F">python3 -m http.server</code><br>or deploy to GitHub Pages.</div>';
-  });
-</script>
 </body>
 </html>
