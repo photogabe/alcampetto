@@ -1,87 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALCAMPETTO 🏀 — About</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALCAMPETTO 🏀 — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="header-left">
-    <a class="logo" href="index.en.html">AL<span>CAMPETTO</span> 🏀</a>
-    <div class="tagline">
-      Open dataset · MIT Licence<br>
-      Free basketball courts · Milan &amp; surroundings
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+       The "About" button has class .active: current page.
+       ═══════════════════════════════════════════════════════ -->
+  <header>
+    <div class="header-left">
+      <a class="logo" href="index.en.html">AL<span>CAMPETTO</span> 🏀</a>
+      <div class="tagline">
+        Open dataset · MIT Licence<br>
+        Free basketball courts · Milan &amp; surroundings
+      </div>
     </div>
-  </div>
-  <div class="lang-switch">
-    <a class="lang-btn active" href="about.en.html">About</a>
-    <a class="lang-btn" href="about.html"><span class="flag">🇮🇹</span> IT</a>
-  </div>
-</header>
-
-<main class="about">
-  <div class="page-title">About</div>
-
-  <div class="section">
-    <div class="section-title">The Project</div>
-    <p><strong><span style="color:var(--orange)">Al</span>Campetto</strong> is a photographic atlas of basketball courts. The images of this collection are geolocated and enriched with other metadata. They document the condition of the municipal courts in the Milan metropolitan area.</p>
-  </div>
-
-  <div class="section">
-    <div class="section-title">How to Contribute</div>
-    <p>In this early stage, contributions are collected exclusively by opening issues or via pull requests on the project's GitHub repository.</p>
-    <p>I will soon be using <a href="https://tally.so/">Tally</a> to streamline the data collection process.</p>
-    <p>To contribute, just collect three to five photos in acceptable lighting conditions:</p>
-    <ul>
-      <li><strong>an overview</strong>: a photo taken at eye level from a corner of the court, including both basketball hoops;</li>
-      <li><strong>one detailed photo for each basketball hoop</strong>;</li>
-      <li><em>(optional)</em> <strong>a detail of the surface</strong></li>
-      <li><em>(optional)</em> in the case of restricted access, a photo of the <strong>time card</strong> displayed by the municipality.</li>
-    </ul>
-    <p style="margin-top: 1em;">In addition to what stated above, remember to collect:</p>
-    <ul>
-      <li>geographic coordinates (ideally from the center of the court);</li>
-      <li><strong>address</strong>;</li>
-      <li>whether the court is <strong>fenced</strong>;</li>
-      <li>whether is <strong>indoors</strong>;</li>
-      <li>whether is <strong>lit</strong>.</li>
-    </ul>
-    <p><strong>Qualitative notes</strong> are an integral part of the dataset: a brief comment on the overall condition of the facility, always using neutral language. Even a neglected court remains a resource for the neighbourhood.</p>
-  </div>
-
-  <div class="section">
-    <div class="section-title">The Dataset</div>
-    <p>The dataset is distributed under a license granting a high degree of freedom, in JSON format and with reference to the Milan metropolitan area.</p>
-    <div class="meta-block">
-      <strong>License</strong> · MIT License<br>
-      <strong>Format</strong> · JSON<br>
-      <strong>Scope</strong> · Municipality of Milan and metropolitan area<br>
-      <strong>Repository</strong> · <a href="https://github.com/" target="_blank" style="color:var(--orange)">github.com/alcampetto</a>
+    <div class="lang-switch">
+      <a class="lang-btn active" href="about.en.html">About</a>
+      <a class="lang-btn" href="about.html"><span class="flag">🇮🇹</span> IT</a>
     </div>
-    <p>The data collected for each court is deliberately minimal. There are lots of courts in and around Milan, and the time available for the survey is limited. I designed a collection process could be completed in less than three minutes.</p>
-  </div>
+  </header>
 
-  <div class="section">
-    <div class="section-title">Support me <em>(at no costs)</em></div>
-    <p>One easy way to show support, love, gratitude and your inexhaustible joy, without spending a single cent, is to follow me on Instagram <a href="https://www.instagram.com/gab.gigliotti/">@gab.gigliotti</a>, grazie!</p>
-  </div>
-</main>
 
-<footer>
-  <div class="footer-meta">
-    Dataset released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
-    Contribute on <a href="https://github.com/" target="_blank">GitHub</a> ·<br>
-    Data verified on the ground by volunteers · ALCAMPETTO project
-  </div>
-  <a class="json-btn" href="alcampetto.json" target="_blank" download>
-    ⬇ Download alcampetto.json
-  </a>
-</footer>
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN CONTENT
+       The "about" class activates the single-column centred
+       layout defined in style.css.
+       ═══════════════════════════════════════════════════════ -->
+  <main class="about">
+
+    <div class="page-title">About</div>
+
+    <div class="section">
+      <div class="section-title">The Project</div>
+      <p><strong><span style="color:var(--orange)">Al</span>Campetto</strong> is a photographic atlas of basketball courts. The images of this collection are geolocated and enriched with other metadata. They document the condition of the municipal courts in the Milan metropolitan area.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">How to Contribute</div>
+      <p>In this early stage, contributions are collected exclusively by opening issues or via pull requests on the project's GitHub repository.</p>
+      <p>I will soon be using <a href="https://tally.so/">Tally</a> to streamline the data collection process.</p>
+      <p>To contribute, just collect three to five photos in acceptable lighting conditions:</p>
+      <ul>
+        <li><strong>an overview</strong>: a photo taken at eye level from a corner of the court, including both basketball hoops;</li>
+        <li><strong>one detailed photo for each basketball hoop</strong>;</li>
+        <li><em>(optional)</em> <strong>a detail of the surface</strong></li>
+        <li><em>(optional)</em> in the case of restricted access, a photo of the <strong>time card</strong> displayed by the municipality.</li>
+      </ul>
+      <p style="margin-top: 1em;">In addition to what stated above, remember to collect:</p>
+      <ul>
+        <li>geographic coordinates (ideally from the centre of the court);</li>
+        <li><strong>address</strong>;</li>
+        <li>whether the court is <strong>fenced</strong>;</li>
+        <li>whether it is <strong>indoors</strong>;</li>
+        <li>whether it is <strong>lit</strong>.</li>
+      </ul>
+      <p><strong>Qualitative notes</strong> are an integral part of the dataset: a brief comment on the overall condition of the facility, always using neutral language. Even a neglected court remains a resource for the neighbourhood.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">The Dataset</div>
+      <p>The dataset is distributed under a license granting a high degree of freedom, in JSON format and with reference to the Milan metropolitan area.</p>
+      <div class="meta-block">
+        <strong>License</strong> · MIT License<br>
+        <strong>Format</strong> · JSON<br>
+        <strong>Version</strong> · 0.3.0<br>
+        <strong>Scope</strong> · Municipality of Milan and metropolitan area<br>
+        <strong>Repository</strong> · <a href="https://github.com/" target="_blank" style="color:var(--orange)">github.com/alcampetto</a>
+      </div>
+      <p>The data collected for each court is deliberately minimal. There are lots of courts in and around Milan, and the time available for the survey is limited. I designed a collection process that could be completed in less than three minutes.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Support me <em>(at no cost)</em></div>
+      <p>One easy way to show support, love, gratitude and your inexhaustible joy, without spending a single cent, is to follow me on Instagram <a href="https://www.instagram.com/gab.gigliotti/">@gab.gigliotti</a>, grazie!</p>
+    </div>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-meta">
+      Dataset released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
+      Contribute on <a href="https://github.com/" target="_blank">GitHub</a> ·<br>
+      Data verified on the ground · ALCAMPETTO project
+    </div>
+    <a class="json-btn" href="alcampetto.json" target="_blank" download>
+      ⬇ Download alcampetto.json
+    </a>
+  </footer>
 
 </body>
 </html>

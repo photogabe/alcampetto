@@ -2,274 +2,628 @@
   {
     "id": "001",
     "data": "2026-02-20",
-    "nome": "Campetto di Parco Vieira De Mello",
-    "nome_en": "Vieira De Mello Park Basketball Court",
+    "aggiornato": "2026-02-20",
     "indirizzo": "Via Benedetto Croce",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.49409, "lng": 9.11730 },
-    "note": "Ben tenuto. Superficie in ottime condizioni. Una rete danneggiata.",
-    "note_en": "Well maintained. Surface in good condition. One basket net damaged.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/001/overview.webp", "dettagli": ["photos/001/dettaglio-1.webp", "photos/001/dettaglio-2.webp", "photos/001/dettaglio-3.webp", "photos/001/dettaglio-4.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/001/overview.webp",
+      "dettagli": [
+        "photos/001/dettaglio-1.webp", "photos/001/dettaglio-2.webp", "photos/001/dettaglio-3.webp", "photos/001/dettaglio-4.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Parco Vieira De Mello",
+        "note": "Ben tenuto. Superficie in ottime condizioni. Una rete danneggiata."
+      },
+      "en": {
+        "nome": "Vieira De Mello Park Basketball Court",
+        "note": "Well maintained. Surface in good condition. One basket net damaged."
+      }
+    }
   },
   {
     "id": "002",
     "data": "2026-02-22",
-    "nome": "Campetto di Parco Carlo Ghezzi",
-    "nome_en": "Carlo Ghezzi Park Basketball Court",
+    "aggiornato": "2026-02-22",
     "indirizzo": "Via Alessandro Manzoni",
     "zona": "Novate Milanese",
     "coordinate": { "lat": 45.53419, "lng": 9.13800 },
-    "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina.",
-    "note_en": "Surface in fair condition. In one of the basket the net is missing.",
-    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/002/overview.webp", "dettagli": ["photos/002/dettaglio-1.webp", "photos/002/dettaglio-2.webp", "photos/002/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": true,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/002/overview.webp",
+      "dettagli": [
+        "photos/002/dettaglio-1.webp",
+        "photos/002/dettaglio-2.webp",
+        "photos/002/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Parco Carlo Ghezzi",
+        "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina."
+      },
+      "en": {
+        "nome": "Carlo Ghezzi Park Basketball Court",
+        "note": "Surface in fair condition. In one of the basket the net is missing."
+      }
+    }
   },
   {
     "id": "003",
     "data": "2026-02-22",
-    "nome": "Campetto di via Antonio Gramsci",
-    "nome_en": "Antonio Gramsci Street Basketball Court",
+    "aggiornato": "2026-02-22",
     "indirizzo": "Via Antonio Gramsci",
     "zona": "Novate Milanese",
     "coordinate": { "lat": 45.52903, "lng": 9.13307 },
-    "note": "Superficie in ottime condizioni.",
-    "note_en": "Surface in very good condition.",
-    "recintato": true, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/003/overview.webp", "dettagli": ["photos/003/dettaglio-1.webp", "photos/003/dettaglio-2.webp", "photos/003/dettaglio-3.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": true,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/003/overview.webp",
+      "dettagli": [
+        "photos/003/dettaglio-1.webp",
+        "photos/003/dettaglio-2.webp",
+        "photos/003/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Antonio Gramsci",
+        "note": "Superficie in ottime condizioni."
+      },
+      "en": {
+        "nome": "Antonio Gramsci Street Basketball Court",
+        "note": "Surface in very good condition."
+      }
+    }
   },
   {
     "id": "004",
     "data": "2026-02-21",
-    "nome": "Campetto di Parco Donatori del sangue",
-    "nome_en": "Blood Donors Park Basketball Court",
+    "aggiornato": "2026-02-21",
     "indirizzo": "Via delle Rimembranze",
     "zona": "Novate Milanese",
     "coordinate": { "lat": 45.53043, "lng": 9.14597 },
-    "note": "Superficie in buone condizioni.",
-    "note_en": "Surface in good condition.",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/004/overview.webp", "dettagli": ["photos/004/dettaglio-1.webp", "photos/004/dettaglio-2.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/004/overview.webp",
+      "dettagli": [
+        "photos/004/dettaglio-1.webp",
+        "photos/004/dettaglio-2.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Parco Donatori del sangue",
+        "note": "Superficie in buone condizioni."
+      },
+      "en": {
+        "nome": "Blood Donors Park Basketball Cour",
+        "note": "Surface in good condition."
+      }
+    }
   },
   {
     "id": "005",
     "data": "2026-02-23",
-    "nome": "Campetto Kellogs",
-    "nome_en": "Kellogs Basketball Court",
+    "aggiornato": "2026-02-23",
     "indirizzo": "Via Francesco Goya",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.48631, "lng": 9.13270 },
-    "note": "Superficie in discrete condizioni.",
-    "note_en": "Surface in fair condition.",
-    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/005/overview.webp", "dettagli": ["photos/005/dettaglio-1.webp", "photos/005/dettaglio-2.webp", "photos/005/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": true,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/005/overview.webp",
+      "dettagli": [
+        "photos/005/dettaglio-1.webp",
+        "photos/005/dettaglio-2.webp",
+        "photos/005/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto Kellogs",
+        "note": "Superficie in discrete condizioni."
+      },
+      "en": {
+        "nome": "Kellogs Basketball Court.",
+        "note": "Surface in fair condition."
+      }
+    }
   },
   {
     "id": "006",
     "data": "2026-02-24",
-    "nome": "Campetto di Viale Angelo Salmoiraghi",
-    "nome_en": "Angelo Salmoiraghi Street Basketball Court",
+    "aggiornato": "2026-02-24",
     "indirizzo": "Viale Angelo Salmoiraghi",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.48535, "lng": 9.13936 },
-    "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione.",
-    "note_en": "Little basketball court on asphalt, both rims with their net. Lit by one street light.",
-    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/006/overview.webp", "dettagli": ["photos/006/dettaglio-1.webp", "photos/006/dettaglio-2.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": true,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/006/overview.webp",
+      "dettagli": [
+        "photos/006/dettaglio-1.webp",
+        "photos/006/dettaglio-2.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Viale Angelo Salmoiraghi",
+        "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione."
+      },
+      "en": {
+        "nome": "Angelo Salmoiraghi Avenue Basketball Court",
+        "note": "Little basketball court on asphalt, both rims with their net. Lit by one street light."
+      }
+    }
   },
   {
     "id": "007",
     "data": "2026-02-28",
-    "nome": "Campetto di Via Giovanni Montemartini",
-    "nome_en": "Giovani Montemartini Street Basketball Court",
+    "aggiornato": "2026-02-28",
     "indirizzo": "Via Giovanni Montemartini angolo via Fabio Massimo",
     "zona": "Milano / Municipio 4",
     "coordinate": { "lat": 45.43630, "lng": 9.22849 },
-    "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
-    "note_en": "Both rims without net. Court surface worn out.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/007/overview.webp", "dettagli": ["photos/007/dettaglio-1.webp", "photos/007/dettaglio-2.webp", "photos/007/dettaglio-3.webp", "photos/007/dettaglio-4.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/007/overview.webp",
+      "dettagli": [
+        "photos/007/dettaglio-1.webp",
+        "photos/007/dettaglio-2.webp",
+        "photos/007/dettaglio-3.webp",
+        "photos/007/dettaglio-4.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Via Giovanni Montemartini",
+        "note": "Campetto con entrambi i canestri senza retina. Superficie usurata."
+      },
+      "en": {
+        "nome": "Giovani Montemartini Street Basketball Court",
+        "note": "Both rims without net. Court surface worn out."
+      }
+    }
   },
   {
     "id": "008",
     "data": "2026-02-28",
-    "nome": "Campetto di Via Ravenna",
-    "nome_en": "Ravenna Street Basketball Court",
+    "aggiornato": "2026-02-28",
     "indirizzo": "Via Ravenna",
     "zona": "Milano / Municipio 4",
     "coordinate": { "lat": 45.43426, "lng": 9.22040 },
-    "note": "Piccolo campetto con un canestro sprovvisto di retina. Superficie usurata.",
-    "note_en": "Small court with both rims without net. Court surface worn out.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/008/overview.webp", "dettagli": ["photos/008/dettaglio-1.webp", "photos/008/dettaglio-2.webp", "photos/008/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/008/overview.webp",
+      "dettagli": [
+        "photos/008/dettaglio-1.webp",
+        "photos/008/dettaglio-2.webp",
+        "photos/008/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Via Ravenna",
+        "note": "Piccolo campetto con un canestro sprovvisto di retina. Superficie usurata."
+      },
+      "en": {
+        "nome": "Ravenna Street Basketball Court",
+        "note": "Small court with both rims without net. Court surface worn out."
+      }
+    }
   },
   {
     "id": "009",
     "data": "2026-02-28",
-    "nome": "Campetto di Via del Futurismo",
-    "nome_en": "Futurismo Street Basketball Court",
+    "aggiornato": "2026-02-28",
     "indirizzo": "Via del Futurismo",
     "zona": "Milano / Municipio 4",
     "coordinate": { "lat": 45.43493, "lng": 9.24435 },
-    "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura.",
-    "note_en": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/009/overview.webp", "dettagli": ["photos/009/dettaglio-1.webp", "photos/009/dettaglio-2.webp", "photos/009/dettaglio-3.webp", "photos/009/dettaglio-4.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/009/overview.webp",
+      "dettagli": [
+        "photos/009/dettaglio-1.webp",
+        "photos/009/dettaglio-2.webp",
+        "photos/009/dettaglio-3.webp",
+        "photos/009/dettaglio-4.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Via del Futurismo",
+        "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura."
+      },
+      "en": {
+        "nome": "Futurismo Street Basketball Court",
+        "note": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time."
+      }
+    }
   },
   {
     "id": "010",
     "data": "2026-03-01",
-    "nome": "Campetto di Via Arcivescovo Calabiana",
-    "nome_en": "Archbishop Calabiana Street Basketball Court",
+    "aggiornato": "2026-03-01",
     "indirizzo": "Via Arcivescovo Calabiana",
     "zona": "Milano / Municipio 5",
     "coordinate": { "lat": 45.44305, "lng": 9.20811 },
-    "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa",
-    "note_en": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/010/overview.webp", "dettagli": ["photos/010/dettaglio-1.webp", "photos/010/dettaglio-2.webp", "photos/010/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/010/overview.webp",
+      "dettagli": [
+        "photos/010/dettaglio-1.webp",
+        "photos/010/dettaglio-2.webp",
+        "photos/010/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Via Arcivescovo Calabiana",
+        "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa."
+      },
+      "en": {
+        "nome": "Archbishop Calabiana Street Basketball Court",
+        "note": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden."
+      }
+    }
   },
   {
     "id": "011",
     "data": "2026-02-28",
-    "nome": "Campetto di Giardino Vincenzo Muccioli",
-    "nome_en": "Vincenzo Muccioli Park Basketball Court",
+    "aggiornato": "2026-02-28",
     "indirizzo": "Via Moisè Loria",
     "zona": "Milano / Municipio 6",
     "coordinate": { "lat": 45.45568, "lng": 9.15965 },
-    "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo",
-    "note_en": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court.",
-    "recintato": false, "gratuito": true, "illuminato": true, "coperto": false,
-    "foto": { "overview": "photos/011/overview.webp", "dettagli": ["photos/011/dettaglio-1.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": true,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/011/overview.webp",
+      "dettagli": [
+        "photos/011/dettaglio-1.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Giardino Vincenzo Muccioli",
+        "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo."
+      },
+      "en": {
+        "nome": "Vincenzo Muccioli Park Basketball Court",
+        "note": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court."
+      }
+    }
   },
   {
     "id": "012",
     "data": "2026-03-10",
-    "nome": "Campetto di via Sapri",
-    "nome_en": "Sapri Street Basketball Court",
+    "aggiornato": "2026-03-10",
     "indirizzo": "Via Sapri",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.50538, "lng": 9.12978 },
-    "note": "Campetto in discrete condizioni, entrambi i canestri con retina.",
-    "note_en": "Court in fair condition, both rims with net.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/012/overview.webp", "dettagli": ["photos/012/dettaglio-1.webp", "photos/012/dettaglio-2.webp", "photos/012/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/012/overview.webp",
+      "dettagli": [
+        "photos/012/dettaglio-1.webp",
+        "photos/012/dettaglio-2.webp",
+        "photos/012/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di via Sapri",
+        "note": "Campetto in discrete condizioni, entrambi i canestri con retina."
+      },
+      "en": {
+        "nome": "Sapri Street Basketball Court",
+        "note": "Court in fair condition, both rims with net."
+      }
+    }
   },
   {
     "id": "013",
     "data": "2026-03-10",
-    "nome": "Campetto di via Nicola Fabrizi",
-    "nome_en": "Nicola Fabrizi Street Basketball Court",
+    "aggiornato": "2026-03-10",
     "indirizzo": "Via Nicola Fabrizi",
     "zona": "Milano / Municipio 8",
     "coordinate": { "lat": 45.51052, "lng": 9.13236 },
-    "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
-    "note_en": "Both rims without net. Court surface worn out.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/013/overview.webp", "dettagli": ["photos/013/dettaglio-1.webp", "photos/013/dettaglio-2.webp", "photos/013/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/013/overview.webp",
+      "dettagli": [
+        "photos/013/dettaglio-1.webp",
+        "photos/013/dettaglio-2.webp",
+        "photos/013/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di via Nicola Fabrizi",
+        "note": "Campetto con entrambi i canestri senza retina. Superficie usurata."
+      },
+      "en": {
+        "nome": "Nicola Fabrizi Street Basketball Court",
+        "note": "Both rims without net. Court surface worn out."
+      }
+    }
   },
   {
     "id": "014",
     "data": "2026-03-14",
-    "nome": "Campetto di via Dora Baltea",
-    "nome_en": "Dora Baltea Street Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Via Dora Baltea",
     "zona": "Milano / Municipio 9",
     "coordinate": { "lat": 45.528242, "lng": 9.166438 },
-    "note": "Un canestro senza rete. Superficie di gioco decente",
-    "note_en": "One rim without net. Surface in fair condition.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/014/overview.webp", "dettagli": ["photos/014/dettaglio-1.webp", "photos/014/dettaglio-2.webp", "photos/014/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/014/overview.webp",
+      "dettagli": [
+        "photos/014/dettaglio-1.webp",
+        "photos/014/dettaglio-2.webp",
+        "photos/014/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di via Dora Baltea",
+        "note": "Un canestro senza rete. Superficie di gioco decente."
+      },
+      "en": {
+        "nome": "Dora Baltea Street Basketball Court",
+        "note": "One rim without net. Surface in fair condition."
+      }
+    }
   },
   {
     "id": "015",
     "data": "2026-03-14",
-    "nome": "Campetto di viale Stelvio",
-    "nome_en": "Stelvio Street Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Viale Stelvio",
     "zona": "Milano / Municipio 9",
     "coordinate": { "lat": 45.49422, "lng": 9.18857 },
-    "note": "Campetto riqualificato da Slumsdunk. Un canestro con retina rotta. Superficie di gioco buona.",
-    "note_en": "Court regenerated by Slumsdunk. One rim with broken net. Surface in good condition.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/015/overview.webp", "dettagli": ["photos/015/dettaglio-1.webp", "photos/015/dettaglio-2.webp", "photos/015/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/015/overview.webp",
+      "dettagli": [
+        "photos/015/dettaglio-1.webp",
+        "photos/015/dettaglio-2.webp",
+        "photos/015/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di viale Stelvio",
+        "note": "Campetto riqualificato da Slumsdunk. Un canestro con retina rotta. Superficie di gioco buona."
+      },
+      "en": {
+        "nome": "Stelvio Avenue Basketball Court",
+        "note": "Court regenerated by Slumsdunk. One rim with broken net. Surface in good condition."
+      }
+    }
   },
   {
     "id": "016",
     "data": "2026-03-14",
-    "nome": "Campetto di giardino Bruno Munari",
-    "nome_en": "Bruno Munari Park Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Via Toce",
     "zona": "Milano / Municipio 9",
     "coordinate": { "lat": 45.49222, "lng": 9.18549 },
-    "note": "Un canestro con retina rotta, un altro mancante. Superficie con diverse crepe. Orari di accesso esposti in ingresso.",
-    "note_en": "A net is broke, a rim is missing. Court surface with several cracks. Card table with opening and closing time.",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/016/overview.webp", "dettagli": ["photos/016/dettaglio-1.webp", "photos/016/dettaglio-2.webp", "photos/016/dettaglio-3.webp", "photos/016/dettaglio-4.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/016/overview.webp",
+      "dettagli": [
+        "photos/016/dettaglio-1.webp",
+        "photos/016/dettaglio-2.webp",
+        "photos/016/dettaglio-3.webp",
+        "photos/016/dettaglio-4.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di giardino Bruno Munari",
+        "note": "Un canestro con retina rotta, un altro mancante. Superficie con diverse crepe. Orari di accesso esposti in ingresso."
+      },
+      "en": {
+        "nome": "Bruno Munari Park Basketball Court",
+        "note": "A net is broke, a rim is missing. Court surface with several cracks. Card table with opening and closing time."
+      }
+    }
   },
   {
     "id": "017",
     "data": "2026-03-14",
-    "nome": "Campetto#1 di San Barnaba",
-    "nome_en": "Saint Barnaba Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Via San Barnaba",
     "zona": "Milano / Municipio 1",
     "coordinate": { "lat": 45.45940, "lng": 9.19752 },
-    "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arruginita. Superficie usurata.",
-    "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Right beside the half-court line you get a rusty trash container. Court surface worn out.",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/017/overview.webp", "dettagli": ["photos/017/dettaglio-1.webp", "photos/017/dettaglio-2.webp", "photos/017/dettaglio-3.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/017/overview.webp",
+      "dettagli": [
+        "photos/017/dettaglio-1.webp",
+        "photos/017/dettaglio-2.webp",
+        "photos/017/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto#1 di Via San Barnaba",
+        "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arruginita. Superficie usurata."
+      },
+      "en": {
+        "nome": "Saint Barnaba Street Basketball Court#1",
+        "note": "Small fenced court, a sibling court can be found few meters away from this one. Right beside the half-court line you get a rusty trash container. Court surface worn out."
+      }
+    }
   },
   {
     "id": "018",
     "data": "2026-03-14",
-    "nome": "Campetto#2 di San Barnaba",
-    "nome_en": "Saint Barnaba Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Via San Barnaba",
     "zona": "Milano / Municipio 1",
     "coordinate": { "lat": 45.45927, "lng": 9.19816 },
-    "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. Superficie usurata.",
-    "note_en": "Small fenced court, a sibling court can be found few meters away from this one. Court surface worn out.",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/018/overview.webp", "dettagli": ["photos/018/dettaglio-1.webp", "photos/018/dettaglio-2.webp", "photos/018/dettaglio-3.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/018/overview.webp",
+      "dettagli": [
+        "photos/018/dettaglio-1.webp",
+        "photos/018/dettaglio-2.webp",
+        "photos/018/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto#2 di via San Barnaba",
+        "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. Superficie usurata."
+      },
+      "en": {
+        "nome": "Saint Barnaba Street Basketball Court#2",
+        "note": "Small fenced court, a sibling court can be found few meters away from this one. Court surface worn out."
+      }
+    }
   },
   {
     "id": "019",
     "data": "2026-03-14",
-    "nome": "Campetto di Parco Sempione",
-    "nome_en": "Sempione Park Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Via Enrico Ibsen",
     "zona": "Milano / Municipio 1",
     "coordinate": { "lat": 45.47365, "lng": 9.17580 },
-    "note": "Ben tenuto. Superficie in buone condizioni.",
-    "note_en": "Well maintained. Surface in good condition.",
-    "recintato": false, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/019/overview.webp", "dettagli": ["photos/019/dettaglio-1.webp", "photos/019/dettaglio-2.webp", "photos/019/dettaglio-3.webp"] }
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/019/overview.webp",
+      "dettagli": [
+        "photos/019/dettaglio-1.webp",
+        "photos/019/dettaglio-2.webp",
+        "photos/019/dettaglio-3.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Parco Sempione",
+        "note": "Ben tenuto. Superficie in buone condizioni."
+      },
+      "en": {
+        "nome": "Sempione Park Basketball Court",
+        "note": "Well maintained. Surface in good condition."
+      }
+    }
   },
   {
     "id": "020",
     "data": "2026-03-14",
-    "nome": "Campetto di Piazzale Salvatore Farina",
-    "nome_en": "Salvatore Farina Square Basketball Court",
+    "aggiornato": "2026-03-14",
     "indirizzo": "Piazzale Salvatore Farina",
     "zona": "Milano / Municipio 2",
     "coordinate": { "lat": 45.49872, "lng": 9.20016 },
-    "note": "Superficie usurata, canestri con retina rotta",
-    "note_en": "Surface in poor condition. Both rims with broken net.",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/020/overview.webp", "dettagli": ["photos/020/dettaglio-1.webp", "photos/020/dettaglio-2.webp", "photos/020/dettaglio-3.webp", "photos/020/dettaglio-4.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/020/overview.webp",
+      "dettagli": [
+        "photos/020/dettaglio-1.webp",
+        "photos/020/dettaglio-2.webp",
+        "photos/020/dettaglio-3.webp",
+        "photos/020/dettaglio-4.webp"
+        ]
+      },
+      "i18n": {
+      "it": {
+        "nome": "Campetto di Piazzale Salvatore Farina",
+        "note": "Superficie usurata, canestri con retina rotta."
+      },
+      "en": {
+        "nome": "Salvatore Farina Square Basketball Court",
+        "note": "Surface in poor condition. Both rims with broken net."
+      }
+    }
   },
   {
     "id": "021",
     "data": "2026-03-22",
-    "nome": "Campetto#1 di Viale Argonne",
-    "nome_en": "Avenue Argonne Basketball Court",
+    "aggiornato": "2026-03-22",
     "indirizzo": "Viale Argonne",
     "zona": "Milano / Municipio 4",
     "coordinate": { "lat": 45.46816, "lng": 9.23073 },
-    "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina quasi totalmente strappata. Buona superficie.",
-    "note_en": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is almost completely shredded. Good surface.",
-    "recintato": true, "gratuito": true, "illuminato": false, "coperto": false,
-    "foto": { "overview": "photos/021/overview.webp", "dettagli": ["photos/021/dettaglio-1.webp", "photos/021/dettaglio-2.webp"] }
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/021/overview.webp",
+      "dettagli": [
+        "photos/021/dettaglio-1.webp",
+        "photos/021/dettaglio-2.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto#1 di Viale Argonne",
+        "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina quasi totalmente strappata. Buona superficie."
+      },
+      "en": {
+        "nome": "Avenue Argonne Basketball Court#1",
+        "note": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is almost completely shredded. Good surface."
+      }
+    }
   }
 ]

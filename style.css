@@ -1,33 +1,84 @@
-/* ── ALCAMPETTO · style.css ── */
+/* =============================================================
+   ALCAMPETTO · style.css · v0.3.0
+   Foglio di stile condiviso da tutte le pagine del progetto.
 
-/* ── TOKENS ── */
+   DIPENDENZE ESTERNE:
+   Google Fonts — caricato nell'<head> di ogni pagina HTML con:
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue
+               &family=IBM+Plex+Mono:wght@400;600
+               &family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400
+               &display=swap" rel="stylesheet">
+   Senza connessione a internet il browser usa i font di sistema
+   come fallback (sans-serif e monospace).
+   ============================================================= */
+
+
+/* -------------------------------------------------------------
+   VARIABILI GLOBALI (CSS custom properties)
+   Modificare qui per cambiare l'aspetto dell'intero sito.
+
+   Colori principali:
+   --orange : colore accentuato, usato per loghi, bordi attivi,
+              link e pulsanti in evidenza. Modificare per cambiare
+              il colore dominante del sito.
+   --black  : sfondo della pagina
+   --dark   : sfondo di header, footer e card
+   --mid    : sfondo di elementi secondari (input, placeholder)
+   --line   : colore di bordi e linee di separazione
+   --text   : testo principale
+   --muted  : testo secondario (etichette, metadati)
+   --green  : pill booleane "sì" e indicatore freschezza verde
+   --yellow : indicatore freschezza giallo
+
+   Font:
+   --font-display : Bebas Neue · titoli e numeri grandi
+   --font-mono    : IBM Plex Mono · etichette e metadati
+   --font-body    : IBM Plex Sans · testo corrente
+   ------------------------------------------------------------- */
 :root {
-  --orange: #FF5F1F;
-  --black: #0d0d0d;
-  --dark: #161616;
-  --mid: #242424;
-  --line: #2e2e2e;
-  --text: #e8e8e8;
-  --muted: #888;
-  --green: #4ade80;
-  --yellow: #fbbf24;
+  --orange:       #FF5F1F;
+  --black:        #0d0d0d;
+  --dark:         #161616;
+  --mid:          #242424;
+  --line:         #2e2e2e;
+  --text:         #e8e8e8;
+  --muted:        #888;
+  --green:        #4ade80;
+  --yellow:       #fbbf24;
   --font-display: 'Bebas Neue', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+  --font-body:    'IBM Plex Sans', sans-serif;
 }
 
-/* ── RESET ── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* -------------------------------------------------------------
+   RESET BASE
+   Azzera margini e padding su tutti gli elementi.
+   box-sizing: border-box fa sì che padding e bordi siano
+   inclusi nella larghezza dichiarata — più intuitivo.
+   ------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background: var(--black);
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; /* evita scroll orizzontale accidentale */
 }
 
-/* Grid background */
+
+/* -------------------------------------------------------------
+   SFONDO A GRIGLIA
+   Griglia decorativa fissa dietro a tutto il contenuto.
+   Generata con due gradienti lineari sovrapposti.
+   · Per cambiare la spaziatura: background-size (default 48px)
+   · Per renderla più/meno visibile: opacity (default 0.4)
+   ------------------------------------------------------------- */
 body::before {
   content: '';
   position: fixed;
@@ -41,7 +92,12 @@ body::before {
   z-index: 0;
 }
 
-/* ── HEADER ── */
+
+/* -------------------------------------------------------------
+   HEADER
+   Barra superiore presente su tutte le pagine.
+   Contiene: logo, tagline, pulsanti About e cambio lingua.
+   ------------------------------------------------------------- */
 header {
   position: relative;
   z-index: 1;
@@ -62,6 +118,7 @@ header {
   padding: 1.2rem 0;
 }
 
+/* Logo — è un link <a> verso la homepage */
 .logo {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -70,6 +127,7 @@ header {
   line-height: 1;
   text-decoration: none;
 }
+/* "CAMPETTO" in colore testo, "AL" rimane arancione */
 .logo span { color: var(--text); }
 
 .tagline {
@@ -83,6 +141,7 @@ header {
   line-height: 1.6;
 }
 
+/* Gruppo pulsanti destra header (About, IT/EN) */
 .lang-switch {
   display: flex;
   align-items: center;
@@ -105,11 +164,17 @@ header {
   transition: all 0.15s;
   white-space: nowrap;
 }
-.lang-btn:hover { border-color: var(--orange); color: var(--text); }
+.lang-btn:hover  { border-color: var(--orange); color: var(--text); }
+/* Pagina corrente: bordo e testo arancione */
 .lang-btn.active { border-color: var(--orange); color: var(--orange); }
-.lang-btn .flag { font-size: 1rem; line-height: 1; }
+.lang-btn .flag  { font-size: 1rem; line-height: 1; }
 
-/* ── CONTROLS (index only) ── */
+
+/* -------------------------------------------------------------
+   BARRA CONTROLLI (index.html e index.en.html)
+   Contiene: ricerca testuale, filtri booleani, ordinamento,
+   contatore risultati.
+   ------------------------------------------------------------- */
 .controls {
   position: relative;
   z-index: 1;
@@ -141,7 +206,7 @@ header {
   border-radius: 2px;
   transition: border-color 0.2s;
 }
-.search-wrap input:focus { border-color: var(--orange); }
+.search-wrap input:focus        { border-color: var(--orange); }
 .search-wrap input::placeholder { color: var(--muted); }
 
 .search-icon {
@@ -168,7 +233,7 @@ header {
   border-radius: 2px;
   transition: all 0.15s;
 }
-.filter-btn:hover { border-color: var(--orange); color: var(--text); }
+.filter-btn:hover  { border-color: var(--orange); color: var(--text); }
 .filter-btn.active { background: var(--orange); color: white; border-color: var(--orange); }
 
 .sort-group {
@@ -199,8 +264,8 @@ header {
   border-radius: 2px;
   transition: all 0.15s;
 }
-.sort-btn:hover { border-color: var(--orange); color: var(--text); }
-.sort-btn.active { background: var(--mid); color: var(--orange); border-color: var(--orange); }
+.sort-btn:hover  { border-color: var(--orange); color: var(--text); }
+.sort-btn.active { color: var(--orange); border-color: var(--orange); }
 
 .count-label {
   font-family: var(--font-mono);
@@ -210,7 +275,13 @@ header {
 }
 .count-label strong { color: var(--orange); }
 
-/* ── GRID (index only) ── */
+
+/* -------------------------------------------------------------
+   GRIGLIA CARD (index.html e index.en.html)
+   Colonne automatiche: minimo 320px ciascuna.
+   · Per card più larghe: aumentare 320px
+   · Per card più strette: diminuire 320px
+   ------------------------------------------------------------- */
 main#grid {
   position: relative;
   z-index: 1;
@@ -220,7 +291,12 @@ main#grid {
   gap: 1rem;
 }
 
-/* ── CARD ── */
+
+/* -------------------------------------------------------------
+   CARD
+   La classe .visible viene aggiunta dall'IntersectionObserver
+   in alcampetto.js quando la card entra nel viewport.
+   ------------------------------------------------------------- */
 .card {
   background: var(--dark);
   border: 1px solid var(--line);
@@ -232,7 +308,6 @@ main#grid {
 }
 .card:hover { border-color: var(--orange); transform: translateY(-2px); }
 
-/* Card lazy-reveal animation — triggered by IntersectionObserver */
 .card.visible {
   animation: fadeIn 0.4s ease both;
 }
@@ -241,7 +316,8 @@ main#grid {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Photo */
+/* Foto panoramica in cima alla card
+   · Per foto più alte: aumentare height (default 160px) */
 .card-photo {
   width: 100%;
   height: 160px;
@@ -250,6 +326,7 @@ main#grid {
   background: var(--mid);
   cursor: zoom-in;
 }
+
 .card-photo-placeholder {
   width: 100%;
   height: 160px;
@@ -324,6 +401,43 @@ main#grid {
 
 .info-val { color: var(--text); line-height: 1.4; }
 
+
+/* -------------------------------------------------------------
+   INDICATORE DI FRESCHEZZA
+   Segnale visivo sull'aggiornamento dei dati.
+   Le soglie temporali sono in alcampetto.js (freshnessClass).
+   · Per cambiare i colori: modificare --green, --yellow, --muted
+   ------------------------------------------------------------- */
+.freshness {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-left: 0.4rem;
+}
+
+.freshness-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.freshness.fresh .freshness-dot { background: var(--green); }
+.freshness.fresh                 { color: var(--green); }
+.freshness.aging .freshness-dot  { background: var(--yellow); }
+.freshness.aging                  { color: var(--yellow); }
+.freshness.stale .freshness-dot  { background: var(--muted); }
+.freshness.stale                  { color: var(--muted); }
+
+
+/* -------------------------------------------------------------
+   PILL BOOLEANE (illuminato / recintato / coperto)
+   .yes = verde · .no = grigio scuro
+   ------------------------------------------------------------- */
 .booleans {
   display: flex;
   flex-wrap: wrap;
@@ -340,9 +454,14 @@ main#grid {
   text-transform: uppercase;
   border: 1px solid;
 }
-.bool-pill.yes { background: #14532d; color: var(--green); border-color: #166534; }
-.bool-pill.no  { background: #1c1c1c; color: var(--muted); border-color: var(--line); }
+.bool-pill.yes { background: #14532d; color: var(--green);  border-color: #166534; }
+.bool-pill.no  { background: #1c1c1c; color: var(--muted);  border-color: var(--line); }
 
+
+/* -------------------------------------------------------------
+   THUMBNAIL FOTO DI DETTAGLIO
+   · Per miniature più grandi: aumentare width e height (56px)
+   ------------------------------------------------------------- */
 .thumbs {
   display: flex;
   gap: 0.4rem;
@@ -361,6 +480,10 @@ main#grid {
 }
 .thumbs img:hover { border-color: var(--orange); }
 
+
+/* -------------------------------------------------------------
+   PIÈ DI CARD
+   ------------------------------------------------------------- */
 .card-footer {
   padding: 0.65rem 1rem;
   border-top: 1px solid var(--line);
@@ -380,7 +503,6 @@ main#grid {
   color: var(--orange);
   padding: 0.35rem 0.75rem;
   border-radius: 2px;
-  cursor: pointer;
   transition: all 0.15s;
 }
 .maps-btn:hover { background: var(--orange); color: white; }
@@ -392,28 +514,35 @@ main#grid {
   margin-left: auto;
 }
 
-/* ── LIGHTBOX ── */
+
+/* -------------------------------------------------------------
+   LIGHTBOX
+   Si attiva con la classe .open aggiunta da alcampetto.js.
+   ------------------------------------------------------------- */
 #lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.92);
+  background: rgba(0, 0, 0, 0.92);
   z-index: 100;
   align-items: center;
   justify-content: center;
   cursor: zoom-out;
 }
 #lightbox.open { display: flex; }
+
 #lightbox img {
   max-width: 90vw;
   max-height: 88vh;
   border-radius: 3px;
   border: 1px solid var(--line);
-  box-shadow: 0 0 80px rgba(255,95,31,0.15);
+  box-shadow: 0 0 80px rgba(255, 95, 31, 0.15);
 }
+
 #lightbox-close {
   position: absolute;
-  top: 1.2rem; right: 1.5rem;
+  top: 1.2rem;
+  right: 1.5rem;
   color: var(--muted);
   font-size: 1.5rem;
   cursor: pointer;
@@ -423,9 +552,12 @@ main#grid {
   border: none;
 }
 
-/* ── STATE MESSAGES ── */
+
+/* -------------------------------------------------------------
+   MESSAGGI DI STATO
+   ------------------------------------------------------------- */
 .state-msg {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
   text-align: center;
   padding: 4rem 2rem;
   color: var(--muted);
@@ -433,7 +565,11 @@ main#grid {
   font-size: 0.9rem;
 }
 
-/* ── ABOUT PAGE ── */
+
+/* -------------------------------------------------------------
+   PAGINA ABOUT (about.html e about.en.html)
+   · Per testo più largo o più stretto: modificare max-width
+   ------------------------------------------------------------- */
 main.about {
   position: relative;
   z-index: 1;
@@ -463,13 +599,14 @@ main.about {
   margin-bottom: 0.9rem;
 }
 
-.section p, .section ul {
+.section p,
+.section ul {
   font-size: 0.95rem;
   line-height: 1.75;
   color: #c8c8c8;
   margin-bottom: 0.85rem;
 }
-.section ul { margin-left: 2em; }
+.section ul       { margin-left: 2em; }
 .section p:last-child { margin-bottom: 0; }
 
 .section a {
@@ -494,7 +631,10 @@ main.about {
 }
 .meta-block strong { color: var(--text); font-weight: 600; }
 
-/* ── FOOTER ── */
+
+/* -------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------- */
 footer {
   position: relative;
   z-index: 1;
@@ -506,10 +646,8 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 0;
 }
 
-/* about pages need top margin on footer */
 main.about ~ footer { margin-top: 4rem; }
 
 .footer-meta {
@@ -538,9 +676,15 @@ main.about ~ footer { margin-top: 4rem; }
 }
 .json-btn:hover { border-color: var(--orange); color: var(--orange); }
 
-/* ── RESPONSIVE ── */
+
+/* -------------------------------------------------------------
+   RESPONSIVE — schermi stretti (max 600px)
+   ------------------------------------------------------------- */
 @media (max-width: 600px) {
-  header, .controls, main#grid, footer { padding-left: 1rem; padding-right: 1rem; }
+  header,
+  .controls,
+  main#grid,
+  footer     { padding-left: 1rem; padding-right: 1rem; }
   main.about { padding: 0 1rem; margin: 2rem auto; }
-  .tagline { display: none; }
+  .tagline   { display: none; }
 }
