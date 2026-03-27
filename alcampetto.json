@@ -625,5 +625,34 @@
         "note": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is almost completely shredded. Good surface."
       }
     }
+  },
+  {
+    "id": "022",
+    "data": "2026-03-22",
+    "aggiornato": "2026-03-22",
+    "indirizzo": "Viale Argonne",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.46810, "lng": 9.22712 },
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/022/overview.webp",
+      "dettagli": [
+        "photos/022/dettaglio-1.webp",
+        "photos/022/dettaglio-2.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto#2 di Viale Argonne",
+        "note": "Campetto con superficie in ottimo stato, un canestro mancante."
+      },
+      "en": {
+        "nome": "Avenue Argonne Basketball Court#2",
+        "note": "Surface in very good condition, a hoop is missing."
+      }
+    }
   }
 ]
