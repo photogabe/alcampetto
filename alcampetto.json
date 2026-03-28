@@ -654,5 +654,33 @@
         "note": "Surface in very good condition, a hoop is missing."
       }
     }
+  },
+  {
+    "id": "023",
+    "data": "2026-03-22",
+    "aggiornato": "2026-03-22",
+    "indirizzo": "Viale Argonne",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.46811, "lng": 9.22685 },
+    "recintato": true,
+    "gratuito": true,
+    "illuminato": false,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/023/overview.webp",
+      "dettagli": [
+        "photos/023/dettaglio-1.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto#3 di Viale Argonne",
+        "note": "Piccolo campetto a un solo canestro con superficie in ottimo stato."
+      },
+      "en": {
+        "nome": "Avenue Argonne Basketball Court#3",
+        "note": "Little court with one basktball hoop. Very good surface."
+      }
+    }
   }
 ]
