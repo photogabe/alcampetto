@@ -710,5 +710,35 @@
         "note": "Court with small backboards. Rims with shredded nets. Fair surface."
       }
     }
+  },
+  {
+    "id": "025",
+    "data": "2026-03-22",
+    "aggiornato": "2026-03-22",
+    "indirizzo": "Largo Marinai d'Italia",
+    "zona": "Milano / Municipio 4",
+    "coordinate": { "lat": 45.46033, "lng": 9.21643 },
+    "recintato": false,
+    "gratuito": true,
+    "illuminato": true,
+    "coperto": false,
+    "foto": {
+      "overview": "photos/025/overview.webp",
+      "dettagli": [
+        "photos/025/dettaglio-1.webp",
+        "photos/025/dettaglio-2.webp",
+        "photos/025/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Largo Marinai d'Italia (Parco Vittorio Formentano)",
+        "note": "Superficie in discrete condizioni. Un canestro con retina rotta e l'altro con rete di ferro. Illuminazione garantita da due faretti posto lungo uno stesso lato del campo."
+      },
+      "en": {
+        "nome": "Square Marinai d'Italia Basketball Court (Vittorio Formentano Park)",
+        "note": "Court surface in fair condition. A basketball hoops with an iron net the other one with a shredded ned. Lit by two street lights placed on the same court side."
+      }
+    }
   }
 ]
