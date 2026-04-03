@@ -1,10 +1,10 @@
 /* =============================================================
    ALCAMPETTO · alcampetto.js · v0.3.0
-   Logica JavaScript condivisa dalle pagine indice del progetto.
+   Logica JavaScript condivisa dalle pagine index del progetto.
    Incluso da: index.html (italiano) e index.en.html (inglese).
 
    La lingua viene rilevata automaticamente dall'attributo lang
-   del tag <html> di ogni pagina (es. <html lang="it">).
+   del tag html di ogni pagina).
 
    Per aggiungere una nuova lingua:
    1. Aggiungere un blocco nel dizionario I18N qui sotto
@@ -248,7 +248,7 @@ function buildCard(campetto) {
     +   '</div>'
     +   '<div class="info-row">'
     +     '<div class="info-label">' + T.labelArea + '</div>'
-    +     '<div class="info-val">'   + campetto.zona + '</div>'
+    +     '<div class="info-val">' + campetto.comune + (campetto.municipio ? ' \u2014 ' + campetto.municipio : '') + '</div>'
     +   '</div>'
     +   '<div class="info-row">'
     +     '<div class="info-label">' + T.labelNotes + '</div>'
@@ -317,7 +317,8 @@ function applyFilters() {
       var nome = (loc.nome || '').toLowerCase();
       var note = (loc.note || '').toLowerCase();
       return nome.indexOf(query) !== -1
-          || c.zona.toLowerCase().indexOf(query) !== -1
+          || c.comune.toLowerCase().indexOf(query) !== -1
+          || (c.municipio && c.municipio.toLowerCase().indexOf(query) !== -1)
           || c.indirizzo.toLowerCase().indexOf(query) !== -1
           || note.indexOf(query) !== -1;
     });
