@@ -1,7 +1,7 @@
 [
   {
     "id": "001",
-    "data": "2026-02-20",
+    "creato": "2026-02-20",
     "aggiornato": "2026-02-20",
     "indirizzo": "Via Benedetto Croce",
     "comune": "Milano",
@@ -35,7 +35,7 @@
   },
   {
     "id": "002",
-    "data": "2026-02-28",
+    "creato": "2026-02-28",
     "aggiornato": "2026-02-28",
     "indirizzo": "Via del Futurismo",
     "comune": "Milano",
@@ -69,7 +69,7 @@
   },
   {
     "id": "003",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Viale Stelvio",
     "comune": "Milano",
@@ -103,7 +103,7 @@
   },
   {
     "id": "004",
-    "data": "2026-02-21",
+    "creato": "2026-02-21",
     "aggiornato": "2026-02-21",
     "indirizzo": "Via delle Rimembranze",
     "comune": "Novate Milanese",
@@ -136,7 +136,7 @@
   },
   {
     "id": "005",
-    "data": "2026-02-23",
+    "creato": "2026-02-23",
     "aggiornato": "2026-02-23",
     "indirizzo": "Via Francesco Goya",
     "comune": "Milano",
@@ -170,7 +170,7 @@
   },
   {
     "id": "006",
-    "data": "2026-02-24",
+    "creato": "2026-02-24",
     "aggiornato": "2026-02-24",
     "indirizzo": "Viale Angelo Salmoiraghi",
     "comune": "Milano",
@@ -203,7 +203,7 @@
   },
   {
     "id": "007",
-    "data": "2026-02-28",
+    "creato": "2026-02-28",
     "aggiornato": "2026-02-28",
     "indirizzo": "Via Giovanni Montemartini angolo via Fabio Massimo",
     "comune": "Milano",
@@ -237,7 +237,7 @@
   },
   {
     "id": "008",
-    "data": "2026-02-28",
+    "creato": "2026-02-28",
     "aggiornato": "2026-02-28",
     "indirizzo": "Via Ravenna",
     "comune": "Milano",
@@ -271,7 +271,7 @@
   },
   {
     "id": "009",
-    "data": "2026-02-22",
+    "creato": "2026-02-22",
     "aggiornato": "2026-02-22",
     "indirizzo": "Via Alessandro Manzoni",
     "comune": "Novate Milanese",
@@ -305,7 +305,7 @@
   },
   {
     "id": "010",
-    "data": "2026-03-01",
+    "creato": "2026-03-01",
     "aggiornato": "2026-03-01",
     "indirizzo": "Via Arcivescovo Calabiana",
     "comune": "Milano",
@@ -339,7 +339,7 @@
   },
   {
     "id": "011",
-    "data": "2026-02-28",
+    "creato": "2026-02-28",
     "aggiornato": "2026-02-28",
     "indirizzo": "Via Moisè Loria",
     "comune": "Milano",
@@ -371,7 +371,7 @@
   },
   {
     "id": "012",
-    "data": "2026-03-10",
+    "creato": "2026-03-10",
     "aggiornato": "2026-03-10",
     "indirizzo": "Via Sapri",
     "comune": "Milano",
@@ -405,7 +405,7 @@
   },
   {
     "id": "013",
-    "data": "2026-03-10",
+    "creato": "2026-03-10",
     "aggiornato": "2026-03-10",
     "indirizzo": "Via Nicola Fabrizi",
     "comune": "Milano",
@@ -439,7 +439,7 @@
   },
   {
     "id": "014",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Via Dora Baltea",
     "comune": "Milano",
@@ -473,7 +473,7 @@
   },
   {
     "id": "015",
-    "data": "2026-02-22",
+    "creato": "2026-02-22",
     "aggiornato": "2026-02-22",
     "indirizzo": "Via Antonio Gramsci",
     "comune": "Novate Milanese",
@@ -507,7 +507,7 @@
   },
   {
     "id": "016",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Via Toce",
     "comune": "Milano",
@@ -541,7 +541,7 @@
   },
   {
     "id": "017",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Via San Barnaba",
     "comune": "Milano",
@@ -575,7 +575,7 @@
   },
   {
     "id": "018",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Via San Barnaba",
     "comune": "Milano",
@@ -609,7 +609,7 @@
   },
   {
     "id": "019",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Via Enrico Ibsen",
     "comune": "Milano",
@@ -643,7 +643,7 @@
   },
   {
     "id": "020",
-    "data": "2026-03-14",
+    "creato": "2026-03-14",
     "aggiornato": "2026-03-14",
     "indirizzo": "Piazzale Salvatore Farina",
     "comune": "Milano",
@@ -677,7 +677,7 @@
   },
   {
     "id": "021",
-    "data": "2026-03-22",
+    "creato": "2026-03-22",
     "aggiornato": "2026-03-22",
     "indirizzo": "Viale Argonne",
     "comune": "Milano",
@@ -710,7 +710,7 @@
   },
   {
     "id": "022",
-    "data": "2026-03-22",
+    "creato": "2026-03-22",
     "aggiornato": "2026-03-22",
     "indirizzo": "Viale Argonne",
     "comune": "Milano",
@@ -743,7 +743,7 @@
   },
   {
     "id": "023",
-    "data": "2026-03-22",
+    "creato": "2026-03-22",
     "aggiornato": "2026-03-22",
     "indirizzo": "Viale Argonne",
     "comune": "Milano",
@@ -775,7 +775,7 @@
   },
   {
     "id": "024",
-    "data": "2026-03-22",
+    "creato": "2026-03-22",
     "aggiornato": "2026-03-22",
     "indirizzo": "Corso Indipendenza",
     "comune": "Milano",
@@ -809,7 +809,7 @@
   },
   {
     "id": "025",
-    "data": "2026-03-22",
+    "creato": "2026-03-22",
     "aggiornato": "2026-03-22",
     "indirizzo": "Largo Marinai d'Italia",
     "comune": "Milano",

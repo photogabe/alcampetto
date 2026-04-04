@@ -237,8 +237,8 @@ function buildCard(campetto) {
     +   '<div class="card-num">#' + campetto.id + '</div>'
     +   '<div class="card-name">' + nome + '</div>'
     +   '<div class="card-date">'
-    +     campetto.data
-    +     freshnessHtml(campetto.aggiornato || campetto.data)
+    +     campetto.creato
+    +     freshnessHtml(campetto.aggiornato || campetto.creato)
     +   '</div>'
     + '</div>'
     + '<div class="card-body">'
@@ -331,7 +331,7 @@ function applyFilters() {
     });
   } else if (activeSort === 'date') {
     filtered.sort(function (a, b) {
-      return new Date(b.aggiornato || b.data) - new Date(a.aggiornato || a.data);
+      return new Date(b.aggiornato || b.creato) - new Date(a.aggiornato || a.creato);
     });
   }
 
