@@ -33,6 +33,9 @@ var I18N = {
     labelLit:      'Illuminato',
     labelFenced:   'Recintato',
     labelIndoors:  'Coperto',
+    labelHoops:    'canestri',
+    labelHalf:     'Mezzo campo',
+    labelThreePt:  'Linea da tre',
     openInMaps:    '📍 Apri in Maps',
     fresh:         'Aggiornato',
     aging:         'Da riverificare',
@@ -52,6 +55,9 @@ var I18N = {
     labelLit:      'Lit',
     labelFenced:   'Fenced',
     labelIndoors:  'Indoors',
+    labelHoops:    'hoops',
+    labelHalf:     'Half court',
+    labelThreePt:  'Three-pt line',
     openInMaps:    '📍 Open in Maps',
     fresh:         'Up to date',
     aging:         'Needs check',
@@ -199,8 +205,6 @@ function buildCard(campetto) {
   var note     = loc.note || '—';
   var mapsUrl  = 'https://www.google.com/maps?q='
                + campetto.coordinate.lat + ',' + campetto.coordinate.lng;
-  var coordStr = campetto.coordinate.lat.toFixed(4)
-               + ', ' + campetto.coordinate.lng.toFixed(4);
 
   /* Foto panoramica o placeholder */
   var photoHtml = '';
@@ -256,14 +260,16 @@ function buildCard(campetto) {
     +   '</div>'
     +   thumbsHtml
     +   '<div class="booleans">'
-    +     pill(T.labelLit,     campetto.illuminato)
-    +     pill(T.labelFenced,  campetto.recintato)
-    +     pill(T.labelIndoors, campetto.coperto)
+    +     '<span class="bool-pill yes">' + campetto.canestri + ' ' + T.labelHoops + '</span>'
+    +     pill(T.labelLit,      campetto.illuminato)
+    +     pill(T.labelFenced,   campetto.recintato)
+    +     pill(T.labelThreePt,  campetto.linea_da_tre)
+    +     (campetto.mezzo_campo ? pill(T.labelHalf, true) : '')
+    +     (campetto.coperto     ? pill(T.labelIndoors, true) : '')
     +   '</div>'
     + '</div>'
     + '<div class="card-footer">'
     +   '<a class="maps-btn" href="' + mapsUrl + '" target="_blank">' + T.openInMaps + '</a>'
-    +   '<div class="coord">' + coordStr + '</div>'
     + '</div>';
 
   return div;
