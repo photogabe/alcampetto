@@ -204,24 +204,24 @@ function buildCard(campetto) {
   var nome     = loc.nome || '';
   var note     = loc.note || '—';
   var mapsUrl  = 'https://www.google.com/maps?q='
-               + campetto.coordinate.lat + ',' + campetto.coordinate.lng;
+               + campetto.coordinates.lat + ',' + campetto.coordinates.lng;
 
   /* Foto panoramica o placeholder */
   var photoHtml = '';
-  if (campetto.foto && campetto.foto.overview) {
+  if (campetto.photos && campetto.photos.overview) {
     photoHtml = '<img class="card-photo"'
-              + ' src="' + campetto.foto.overview + '"'
+              + ' src="' + campetto.photos.overview + '"'
               + ' alt="' + nome + '"'
               + ' loading="lazy"'
-              + ' onclick="openLightbox(\'' + campetto.foto.overview + '\')">';
+              + ' onclick="openLightbox(\'' + campetto.photos.overview + '\')">';
   } else {
     photoHtml = '<div class="card-photo-placeholder">🏀</div>';
   }
 
   /* Thumbnail foto di dettaglio */
   var thumbsHtml = '';
-  if (campetto.foto && campetto.foto.dettagli && campetto.foto.dettagli.length > 0) {
-    var imgs = campetto.foto.dettagli.map(function (url) {
+  if (campetto.photos && campetto.photos.details && campetto.photos.details.length > 0) {
+    var imgs = campetto.photos.details.map(function (url) {
       return '<img src="' + url + '" alt="' + T.labelPhotos + '"'
            + ' loading="lazy"'
            + ' onclick="openLightbox(\'' + url + '\')">';
@@ -241,18 +241,18 @@ function buildCard(campetto) {
     +   '<div class="card-num">#' + campetto.id + '</div>'
     +   '<div class="card-name">' + nome + '</div>'
     +   '<div class="card-date">'
-    +     campetto.creato
-    +     freshnessHtml(campetto.aggiornato || campetto.creato)
+    +     campetto.created
+    +     freshnessHtml(campetto.updated || campetto.created)
     +   '</div>'
     + '</div>'
     + '<div class="card-body">'
     +   '<div class="info-row">'
     +     '<div class="info-label">' + T.labelAddress + '</div>'
-    +     '<div class="info-val">'   + campetto.indirizzo + '</div>'
+    +     '<div class="info-val">'   + campetto.address + '</div>'
     +   '</div>'
     +   '<div class="info-row">'
     +     '<div class="info-label">' + T.labelArea + '</div>'
-    +     '<div class="info-val">' + campetto.comune + (campetto.municipio ? ' \u2014 ' + campetto.municipio : '') + '</div>'
+    +     '<div class="info-val">' + campetto.city + (campetto.district ? ' \u2014 ' + campetto.district : '') + '</div>'
     +   '</div>'
     +   '<div class="info-row">'
     +     '<div class="info-label">' + T.labelNotes + '</div>'
@@ -260,12 +260,12 @@ function buildCard(campetto) {
     +   '</div>'
     +   thumbsHtml
     +   '<div class="booleans">'
-    +     '<span class="bool-pill yes">' + campetto.canestri + ' ' + T.labelHoops + '</span>'
-    +     pill(T.labelLit,      campetto.illuminato)
-    +     pill(T.labelFenced,   campetto.recintato)
-    +     pill(T.labelThreePt,  campetto.linea_da_tre)
-    +     (campetto.mezzo_campo ? pill(T.labelHalf, true) : '')
-    +     (campetto.coperto     ? pill(T.labelIndoors, true) : '')
+    +     '<span class="bool-pill yes">' + campetto.hoops + ' ' + T.labelHoops + '</span>'
+    +     pill(T.labelLit,      campetto.lit)
+    +     pill(T.labelFenced,   campetto.fenced)
+    +     pill(T.labelThreePt,  campetto.three_pt_line)
+    +     (campetto.half_court ? pill(T.labelHalf, true) : '')
+    +     (campetto.indoor     ? pill(T.labelIndoors, true) : '')
     +   '</div>'
     + '</div>'
     + '<div class="card-footer">'
@@ -309,7 +309,7 @@ function applyFilters() {
   var filtered = DATA.slice();
 
   /* Filtro per proprietà booleana */
-  var boolFilters = ['illuminato', 'coperto', 'recintato'];
+  var boolFilters = ['lit', 'indoor', 'fenced'];
   if (boolFilters.indexOf(activeFilter) !== -1) {
     filtered = filtered.filter(function (c) {
       return c[activeFilter] === true;
@@ -323,9 +323,9 @@ function applyFilters() {
       var nome = (loc.nome || '').toLowerCase();
       var note = (loc.note || '').toLowerCase();
       return nome.indexOf(query) !== -1
-          || c.comune.toLowerCase().indexOf(query) !== -1
-          || (c.municipio && c.municipio.toLowerCase().indexOf(query) !== -1)
-          || c.indirizzo.toLowerCase().indexOf(query) !== -1
+          || c.city.toLowerCase().indexOf(query) !== -1
+          || (c.district && c.district.toLowerCase().indexOf(query) !== -1)
+          || c.address.toLowerCase().indexOf(query) !== -1
           || note.indexOf(query) !== -1;
     });
   }
@@ -337,7 +337,7 @@ function applyFilters() {
     });
   } else if (activeSort === 'date') {
     filtered.sort(function (a, b) {
-      return new Date(b.aggiornato || b.creato) - new Date(a.aggiornato || a.creato);
+      return new Date(b.updated || b.created) - new Date(a.updated || a.created);
     });
   }
 

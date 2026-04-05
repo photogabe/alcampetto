@@ -1,22 +1,25 @@
 [
   {
     "id": "001",
-    "creato": "2026-02-20",
-    "aggiornato": "2026-02-20",
-    "indirizzo": "Via Benedetto Croce",
-    "comune": "Milano",
-    "municipio": "Municipio 8",
-    "coordinate": { "lat": 45.49409, "lng": 9.11730 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-20",
+    "updated": "2026-02-20",
+    "address": "Via Benedetto Croce",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.49409,
+      "lng": 9.1173
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/001/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/001/dettaglio-1.webp",
         "photos/001/dettaglio-2.webp",
         "photos/001/dettaglio-3.webp"
@@ -35,28 +38,31 @@
   },
   {
     "id": "002",
-    "creato": "2026-02-28",
-    "aggiornato": "2026-02-28",
-    "indirizzo": "Via del Futurismo",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.43493, "lng": 9.24435 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-28",
+    "updated": "2026-02-28",
+    "address": "Via del Futurismo",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.43493,
+      "lng": 9.24435
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/002/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/002/dettaglio-1.webp",
         "photos/002/dettaglio-2.webp",
         "photos/002/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Via del Futurismo",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura."
@@ -69,28 +75,31 @@
   },
   {
     "id": "003",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Viale Stelvio",
-    "comune": "Milano",
-    "municipio": "Municipio 9",
-    "coordinate": { "lat": 45.49422, "lng": 9.18857 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Viale Stelvio",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.49422,
+      "lng": 9.18857
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/003/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/003/dettaglio-1.webp",
         "photos/003/dettaglio-2.webp",
         "photos/003/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di viale Stelvio",
         "note": "Campetto riqualificato da Slumsdunk. Un canestro con retina rotta. Superficie di gioco buona."
@@ -103,27 +112,30 @@
   },
   {
     "id": "004",
-    "creato": "2026-02-21",
-    "aggiornato": "2026-02-21",
-    "indirizzo": "Via delle Rimembranze",
-    "comune": "Novate Milanese",
-    "municipio": null,
-    "coordinate": { "lat": 45.53043, "lng": 9.14597 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-21",
+    "updated": "2026-02-21",
+    "address": "Via delle Rimembranze",
+    "city": "Novate Milanese",
+    "district": null,
+    "coordinates": {
+      "lat": 45.53043,
+      "lng": 9.14597
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/004/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/004/dettaglio-1.webp",
         "photos/004/dettaglio-2.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Parco Donatori del sangue",
         "note": "Superficie in buone condizioni."
@@ -136,22 +148,25 @@
   },
   {
     "id": "005",
-    "creato": "2026-02-23",
-    "aggiornato": "2026-02-23",
-    "indirizzo": "Via Francesco Goya",
-    "comune": "Milano",
-    "municipio": "Municipio 8",
-    "coordinate": { "lat": 45.48631, "lng": 9.13270 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": true,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-23",
+    "updated": "2026-02-23",
+    "address": "Via Francesco Goya",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.48631,
+      "lng": 9.1327
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "photos": {
       "overview": "photos/005/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/005/dettaglio-1.webp",
         "photos/005/dettaglio-2.webp",
         "photos/005/dettaglio-3.webp"
@@ -170,22 +185,25 @@
   },
   {
     "id": "006",
-    "creato": "2026-02-24",
-    "aggiornato": "2026-02-24",
-    "indirizzo": "Viale Angelo Salmoiraghi",
-    "comune": "Milano",
-    "municipio": "Municipio 8",
-    "coordinate": { "lat": 45.48535, "lng": 9.13936 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": false,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": true,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "address": "Viale Angelo Salmoiraghi",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.48535,
+      "lng": 9.13936
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "photos": {
       "overview": "photos/006/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/006/dettaglio-1.webp",
         "photos/006/dettaglio-2.webp"
       ]
@@ -203,28 +221,31 @@
   },
   {
     "id": "007",
-    "creato": "2026-02-28",
-    "aggiornato": "2026-02-28",
-    "indirizzo": "Via Giovanni Montemartini angolo via Fabio Massimo",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.43630, "lng": 9.22849 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-28",
+    "updated": "2026-02-28",
+    "address": "Via Giovanni Montemartini angolo via Fabio Massimo",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.4363,
+      "lng": 9.22849
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/007/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/007/dettaglio-1.webp",
         "photos/007/dettaglio-2.webp",
         "photos/007/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Via Giovanni Montemartini",
         "note": "Campetto con entrambi i canestri senza retina. Superficie usurata."
@@ -237,22 +258,25 @@
   },
   {
     "id": "008",
-    "creato": "2026-02-28",
-    "aggiornato": "2026-02-28",
-    "indirizzo": "Via Ravenna",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.43426, "lng": 9.22040 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": false,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-28",
+    "updated": "2026-02-28",
+    "address": "Via Ravenna",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.43426,
+      "lng": 9.2204
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/008/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/008/dettaglio-1.webp",
         "photos/008/dettaglio-2.webp",
         "photos/008/dettaglio-3.webp"
@@ -271,22 +295,25 @@
   },
   {
     "id": "009",
-    "creato": "2026-02-22",
-    "aggiornato": "2026-02-22",
-    "indirizzo": "Via Alessandro Manzoni",
-    "comune": "Novate Milanese",
-    "municipio": null,
-    "coordinate": { "lat": 45.53419, "lng": 9.13800 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": true,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-22",
+    "updated": "2026-02-22",
+    "address": "Via Alessandro Manzoni",
+    "city": "Novate Milanese",
+    "district": null,
+    "coordinates": {
+      "lat": 45.53419,
+      "lng": 9.138
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "photos": {
       "overview": "photos/009/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/009/dettaglio-1.webp",
         "photos/009/dettaglio-2.webp",
         "photos/009/dettaglio-3.webp"
@@ -305,28 +332,31 @@
   },
   {
     "id": "010",
-    "creato": "2026-03-01",
-    "aggiornato": "2026-03-01",
-    "indirizzo": "Via Arcivescovo Calabiana",
-    "comune": "Milano",
-    "municipio": "Municipio 5",
-    "coordinate": { "lat": 45.44305, "lng": 9.20811 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-01",
+    "updated": "2026-03-01",
+    "address": "Via Arcivescovo Calabiana",
+    "city": "Milano",
+    "district": "Municipio 5",
+    "coordinates": {
+      "lat": 45.44305,
+      "lng": 9.20811
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/010/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/010/dettaglio-1.webp",
         "photos/010/dettaglio-2.webp",
         "photos/010/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Via Arcivescovo Calabiana",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa."
@@ -339,26 +369,29 @@
   },
   {
     "id": "011",
-    "creato": "2026-02-28",
-    "aggiornato": "2026-02-28",
-    "indirizzo": "Via Moisè Loria",
-    "comune": "Milano",
-    "municipio": "Municipio 6",
-    "coordinate": { "lat": 45.45568, "lng": 9.15965 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": true,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-28",
+    "updated": "2026-02-28",
+    "address": "Via Moisè Loria",
+    "city": "Milano",
+    "district": "Municipio 6",
+    "coordinates": {
+      "lat": 45.45568,
+      "lng": 9.15965
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "photos": {
       "overview": "photos/011/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/011/dettaglio-1.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Giardino Vincenzo Muccioli",
         "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo."
@@ -371,28 +404,31 @@
   },
   {
     "id": "012",
-    "creato": "2026-03-10",
-    "aggiornato": "2026-03-10",
-    "indirizzo": "Via Sapri",
-    "comune": "Milano",
-    "municipio": "Municipio 8",
-    "coordinate": { "lat": 45.50538, "lng": 9.12978 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "address": "Via Sapri",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.50538,
+      "lng": 9.12978
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/012/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/012/dettaglio-1.webp",
         "photos/012/dettaglio-2.webp",
         "photos/012/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di via Sapri",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina."
@@ -405,28 +441,31 @@
   },
   {
     "id": "013",
-    "creato": "2026-03-10",
-    "aggiornato": "2026-03-10",
-    "indirizzo": "Via Nicola Fabrizi",
-    "comune": "Milano",
-    "municipio": "Municipio 8",
-    "coordinate": { "lat": 45.51052, "lng": 9.13236 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": false,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "address": "Via Nicola Fabrizi",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.51052,
+      "lng": 9.13236
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/013/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/013/dettaglio-1.webp",
         "photos/013/dettaglio-2.webp",
         "photos/013/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di via Nicola Fabrizi",
         "note": "Campetto con entrambi i canestri senza retina. Superficie usurata."
@@ -439,28 +478,31 @@
   },
   {
     "id": "014",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Via Dora Baltea",
-    "comune": "Milano",
-    "municipio": "Municipio 9",
-    "coordinate": { "lat": 45.528242, "lng": 9.166438 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Via Dora Baltea",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.528242,
+      "lng": 9.166438
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/014/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/014/dettaglio-1.webp",
         "photos/014/dettaglio-2.webp",
         "photos/014/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di via Dora Baltea",
         "note": "Un canestro senza rete. Superficie di gioco decente."
@@ -473,22 +515,25 @@
   },
   {
     "id": "015",
-    "creato": "2026-02-22",
-    "aggiornato": "2026-02-22",
-    "indirizzo": "Via Antonio Gramsci",
-    "comune": "Novate Milanese",
-    "municipio": null,
-    "coordinate": { "lat": 45.52903, "lng": 9.13307 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": true,
-    "coperto": false,
-    "foto": {
+    "created": "2026-02-22",
+    "updated": "2026-02-22",
+    "address": "Via Antonio Gramsci",
+    "city": "Novate Milanese",
+    "district": null,
+    "coordinates": {
+      "lat": 45.52903,
+      "lng": 9.13307
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "photos": {
       "overview": "photos/015/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/015/dettaglio-1.webp",
         "photos/015/dettaglio-2.webp",
         "photos/015/dettaglio-3.webp"
@@ -507,28 +552,31 @@
   },
   {
     "id": "016",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Via Toce",
-    "comune": "Milano",
-    "municipio": "Municipio 9",
-    "coordinate": { "lat": 45.49222, "lng": 9.18549 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Via Toce",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.49222,
+      "lng": 9.18549
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/016/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/016/dettaglio-1.webp",
         "photos/016/dettaglio-2.webp",
         "photos/016/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di giardino Bruno Munari",
         "note": "Un canestro con retina rotta, un altro mancante. Superficie con diverse crepe. Orari di accesso esposti in ingresso."
@@ -541,28 +589,31 @@
   },
   {
     "id": "017",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Via San Barnaba",
-    "comune": "Milano",
-    "municipio": "Municipio 1",
-    "coordinate": { "lat": 45.45940, "lng": 9.19752 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Via San Barnaba",
+    "city": "Milano",
+    "district": "Municipio 1",
+    "coordinates": {
+      "lat": 45.4594,
+      "lng": 9.19752
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/017/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/017/dettaglio-1.webp",
         "photos/017/dettaglio-2.webp",
         "photos/017/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto#1 di Via San Barnaba",
         "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arrugginita. Superficie usurata."
@@ -575,28 +626,31 @@
   },
   {
     "id": "018",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Via San Barnaba",
-    "comune": "Milano",
-    "municipio": "Municipio 1",
-    "coordinate": { "lat": 45.45927, "lng": 9.19816 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Via San Barnaba",
+    "city": "Milano",
+    "district": "Municipio 1",
+    "coordinates": {
+      "lat": 45.45927,
+      "lng": 9.19816
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/018/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/018/dettaglio-1.webp",
         "photos/018/dettaglio-2.webp",
         "photos/018/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto#2 di via San Barnaba",
         "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. Superficie usurata."
@@ -609,28 +663,31 @@
   },
   {
     "id": "019",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Via Enrico Ibsen",
-    "comune": "Milano",
-    "municipio": "Municipio 1",
-    "coordinate": { "lat": 45.47365, "lng": 9.17580 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Via Enrico Ibsen",
+    "city": "Milano",
+    "district": "Municipio 1",
+    "coordinates": {
+      "lat": 45.47365,
+      "lng": 9.1758
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/019/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/019/dettaglio-1.webp",
         "photos/019/dettaglio-2.webp",
         "photos/019/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Parco Sempione",
         "note": "Ben tenuto. Superficie in buone condizioni."
@@ -643,28 +700,31 @@
   },
   {
     "id": "020",
-    "creato": "2026-03-14",
-    "aggiornato": "2026-03-14",
-    "indirizzo": "Piazzale Salvatore Farina",
-    "comune": "Milano",
-    "municipio": "Municipio 2",
-    "coordinate": { "lat": 45.49872, "lng": 9.20016 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": false,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "address": "Piazzale Salvatore Farina",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.49872,
+      "lng": 9.20016
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/020/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/020/dettaglio-1.webp",
         "photos/020/dettaglio-2.webp",
         "photos/020/dettaglio-3.webp"
-        ]
-      },
-      "i18n": {
+      ]
+    },
+    "i18n": {
       "it": {
         "nome": "Campetto di Piazzale Salvatore Farina",
         "note": "Superficie usurata, canestri con retina rotta."
@@ -677,22 +737,25 @@
   },
   {
     "id": "021",
-    "creato": "2026-03-22",
-    "aggiornato": "2026-03-22",
-    "indirizzo": "Viale Argonne",
-    "comune": "Milano",
-    "municipio": "Municipio 3",
-    "coordinate": { "lat": 45.46816, "lng": 9.23073 },
-    "canestri": 1,
-    "mezzo_campo": true,
-    "linea_da_tre": false,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "address": "Viale Argonne",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.46816,
+      "lng": 9.23073
+    },
+    "hoops": 1,
+    "half_court": true,
+    "three_pt_line": false,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/021/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/021/dettaglio-1.webp",
         "photos/021/dettaglio-2.webp"
       ]
@@ -710,22 +773,25 @@
   },
   {
     "id": "022",
-    "creato": "2026-03-22",
-    "aggiornato": "2026-03-22",
-    "indirizzo": "Viale Argonne",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.46810, "lng": 9.22712 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "address": "Viale Argonne",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.4681,
+      "lng": 9.22712
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/022/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/022/dettaglio-1.webp",
         "photos/022/dettaglio-2.webp"
       ]
@@ -743,22 +809,25 @@
   },
   {
     "id": "023",
-    "creato": "2026-03-22",
-    "aggiornato": "2026-03-22",
-    "indirizzo": "Viale Argonne",
-    "comune": "Milano",
-    "municipio": "Municipio 3",
-    "coordinate": { "lat": 45.46811, "lng": 9.22685 },
-    "canestri": 1,
-    "mezzo_campo": true,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "address": "Viale Argonne",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.46811,
+      "lng": 9.22685
+    },
+    "hoops": 1,
+    "half_court": true,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/023/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/023/dettaglio-1.webp"
       ]
     },
@@ -775,22 +844,25 @@
   },
   {
     "id": "024",
-    "creato": "2026-03-22",
-    "aggiornato": "2026-03-22",
-    "indirizzo": "Corso Indipendenza",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.46806, "lng": 9.21535 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": true,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "address": "Corso Indipendenza",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.46806,
+      "lng": 9.21535
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/024/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/024/dettaglio-1.webp",
         "photos/024/dettaglio-2.webp",
         "photos/024/dettaglio-3.webp"
@@ -809,22 +881,25 @@
   },
   {
     "id": "025",
-    "creato": "2026-03-22",
-    "aggiornato": "2026-03-22",
-    "indirizzo": "Largo Marinai d'Italia",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.46033, "lng": 9.21643 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": true,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "address": "Largo Marinai d'Italia",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.46033,
+      "lng": 9.21643
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "photos": {
       "overview": "photos/025/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/025/dettaglio-1.webp",
         "photos/025/dettaglio-2.webp",
         "photos/025/dettaglio-3.webp"
@@ -843,22 +918,25 @@
   },
   {
     "id": "026",
-    "creato": "2026-03-22",
-    "aggiornato": "2026-03-22",
-    "indirizzo": "Viale Lazio",
-    "comune": "Milano",
-    "municipio": "Municipio 4",
-    "coordinate": { "lat": 45.45510, "lng": 9.20838 },
-    "canestri": 2,
-    "mezzo_campo": false,
-    "linea_da_tre": true,
-    "recintato": false,
-    "gratuito": true,
-    "illuminato": false,
-    "coperto": false,
-    "foto": {
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "address": "Viale Lazio",
+    "city": "Milano",
+    "district": "Municipio 4",
+    "coordinates": {
+      "lat": 45.4551,
+      "lng": 9.20838
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
       "overview": "photos/026/overview.webp",
-      "dettagli": [
+      "details": [
         "photos/026/dettaglio-1.webp",
         "photos/026/dettaglio-2.webp",
         "photos/026/dettaglio-3.webp"
