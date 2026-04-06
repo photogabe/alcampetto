@@ -1,70 +1,103 @@
 🇬🇧 English | [🇮🇹 Italiano](README.it.md)
 
+![ALCAMPETTO — Basketball courts in Milan](assets/banner.webp)
+
 # 🏀 Basketball courts in Milan metropolitan area
-A collection of free-access basketball courts in Milan and surrounding areas.
+
+A photographic atlas of free-access basketball courts in Milan and surrounding areas.
+
+**[Browse the atlas →](https://photogabe.github.io/alcampetto/index.en.html)**
 
 For each court, the following data points are available:
 
 - geographic details: address and GPS coordinates;
+- court features: number of hoops, three-point line, fencing, lighting, indoor/outdoor;
+- qualitative notes on the condition of hoops and court surface;
+- photo gallery: from two to five images per court;
+- freshness indicator (green if data is less than 12 months old, yellow between 12 and 24 months, grey if older).
 
-- features: availability of fences, lampposts, indoors facilities;
+## Contribute
 
-- qualitative notes: condition of hoops and court surface;
-
-- photo gallery: from two to five images for each court;
-
-- up to date status (green if data has been recorded less than 12 month from today, yellow if data has been recorded between 12 and 24 months, gray if the court card data is older than 24 months).
+Found a court that's missing? Report it through the **[contribution form](https://tally.so/r/QKYOlX)** or open an issue / pull request on this repository.
 
 ## Note on images
-The images in this repository are web-optimized (resized compared to the original and with a low resolution in webp format) to ensure a reasonably smooth browsing.
 
-## "Al Campetto" the website
-Find your court easily through this easy to use website: [https://photogabe.github.io/alcampetto/index.en.html](https://photogabe.github.io/alcampetto/index.en.html)
+The images in this repository are web-optimized (resized and converted to webp format) to ensure smooth browsing. They are not intended as high-resolution prints.
 
-## Dataset Version
-Current version is 0.3.0
-At this stage of the project (0.x) compatibility with previous versions of the json structure is not granted.
+## Dataset version
+
+Current version is **0.4.0**.
+At this stage of the project (0.x), compatibility with previous versions of the JSON structure is not guaranteed.
 
 ## Data schema
 
-Each court is described by a JSON object with the following fields.
+Each court is described by a JSON object. Fields are grouped by category.
+
+### Identification
 
 | Field | Type | Description |
 |---|---|---|
 | `id` | `string` | Unique court identifier (e.g. `"001"`). |
-| `data` | `string` | Date the record was first created, `YYYY-MM-DD` format. |
-| `aggiornato` | `string` | Date of the last update, `YYYY-MM-DD` format. |
-| `indirizzo` | `string` | Street or square nearest to the court. |
-| `zona` | `string` | Administrative area (e.g. `"Milano / Municipio 8"`). |
-| `coordinate` | `object` | Geographic position with `lat` and `lng` (WGS 84). |
-| `recintato` | `boolean` | `true` if the court is fenced. |
-| `gratuito` | `boolean` | `true` if access is free of charge. |
-| `illuminato` | `boolean` | `true` if the court has lighting for evening play. |
-| `coperto` | `boolean` | `true` if the court is indoors or has a roof cover. |
-| `foto` | `object` | Contains `overview` (wide-angle photo) and `dettagli` (array of additional photos). Paths are relative to the project root. |
+| `created` | `string` | Date the record was first created, `YYYY-MM-DD`. |
+| `updated` | `string` | Date of the last update, `YYYY-MM-DD`. |
+
+### Location
+
+| Field | Type | Description |
+|---|---|---|
+| `address` | `string` | Street or square nearest to the court. |
+| `city` | `string` | Municipality name (e.g. `"Milano"`, `"Sesto San Giovanni"`). |
+| `district` | `string\|null` | Administrative subdivision (e.g. `"Municipio 8"`). `null` for municipalities without subdivisions. |
+| `coordinates` | `object` | Geographic position with `lat` and `lng` (WGS 84). |
+
+### Court features
+
+| Field | Type | Description |
+|---|---|---|
+| `hoops` | `integer` | Number of hoops (typically 1, 2 or 4). |
+| `half_court` | `boolean` | `true` if the court is a half court only. |
+| `three_pt_line` | `boolean` | `true` if a three-point line is marked on the surface. |
+| `fenced` | `boolean` | `true` if the court is enclosed by a fence. |
+| `free` | `boolean` | `true` if access is free of charge. |
+| `lit` | `boolean` | `true` if the court has lighting for evening play. |
+| `indoor` | `boolean` | `true` if the court is indoors or has a roof cover. |
+
+### Media and text
+
+| Field | Type | Description |
+|---|---|---|
+| `photos` | `object` | Contains `overview` (wide-angle photo) and `details` (array of close-up photos). Paths are relative to the project root. |
 | `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name) and `note` (free-text description of condition and features). |
 
-### Minimal example
+### Example
 
 ```json
 {
   "id": "001",
-  "data": "2026-02-01",
-  "aggiornato": "2026-02-01",
-  "indirizzo": "Via Benedetto Croce",
-  "zona": "Milano / Municipio 8",
-  "coordinate": { "lat": 45.49409, "lng": 9.11730 },
-  "recintato": true,
-  "gratuito": true,
-  "illuminato": false,
-  "coperto": false,
-  "foto": {
-    "overview": "photos/001/overview.jpg",
-    "dettagli": ["photos/001/dettaglio-1.jpg"]
+  "created": "2026-02-20",
+  "updated": "2026-02-20",
+  "address": "Via Benedetto Croce",
+  "city": "Milano",
+  "district": "Municipio 8",
+  "coordinates": { "lat": 45.49409, "lng": 9.11730 },
+  "hoops": 2,
+  "half_court": false,
+  "three_pt_line": true,
+  "fenced": false,
+  "free": true,
+  "lit": false,
+  "indoor": false,
+  "photos": {
+    "overview": "photos/001/overview.webp",
+    "details": [
+      "photos/001/dettaglio-1.webp",
+      "photos/001/dettaglio-2.webp",
+      "photos/001/dettaglio-3.webp"
+    ]
   },
   "i18n": {
-    "it": { "nome": "Campetto di Parco Vieira De Mello", "note": "Ben tenuto." },
-    "en": { "nome": "Vieira De Mello Park Basketball Court", "note": "Well maintained." }
+    "it": { "nome": "Campetto di Giardini Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
+    "en": { "nome": "Giardini Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
   }
 }
 ```
