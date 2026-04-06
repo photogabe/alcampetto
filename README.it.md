@@ -18,7 +18,9 @@ Per ogni campetto censito sono disponibili i seguenti dati:
 
 ## Contribuisci
 
-Conosci un campetto che manca? Segnalalo attraverso il **[modulo di segnalazione](https://tally.so/r/QKYOlX)** oppure apri una issue / pull request su questo repository.
+Conosci un campetto che manca? Segnalalo attraverso il **[modulo di segnalazione](https://tally.so/r/QKYOlX)**.
+
+Prima di aprire una pull request, [apri una issue](https://github.com/photogabe/alcampetto/issues/new) per discutere la tua proposta e ricevere un riscontro dal maintainer.
 
 ## Nota sulle foto
 
@@ -96,8 +98,8 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
     ]
   },
   "i18n": {
-    "it": { "nome": "Campetto di Giardini Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
-    "en": { "nome": "Giardini Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
+    "it": { "nome": "Campetto di Giardino Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
+    "en": { "nome": "Giardino Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
   }
 }
 ```
