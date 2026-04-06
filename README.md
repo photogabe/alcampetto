@@ -18,7 +18,9 @@ For each court, the following data points are available:
 
 ## Contribute
 
-Found a court that's missing? Report it through the **[contribution form](https://tally.so/r/QKYOlX)** or open an issue / pull request on this repository.
+Found a court that's missing? Report it through the **[contribution form](https://tally.so/r/QKYOlX)**.
+
+Before opening a pull request, please [open an issue](https://github.com/photogabe/alcampetto/issues/new) first to discuss your idea and get feedback from the maintainer.
 
 ## Note on images
 
@@ -96,8 +98,8 @@ Each court is described by a JSON object. Fields are grouped by category.
     ]
   },
   "i18n": {
-    "it": { "nome": "Campetto di Giardini Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
-    "en": { "nome": "Giardini Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
+    "it": { "nome": "Campetto di Giardino Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
+    "en": { "nome": "Giardino Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
   }
 }
 ```

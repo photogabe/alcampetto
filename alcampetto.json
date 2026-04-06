@@ -3,7 +3,7 @@
     "id": "001",
     "created": "2026-02-20",
     "updated": "2026-02-20",
-    "address": "Via Benedetto Croce",
+    "address": "Giardino Sergio Vieira De Mello",
     "city": "Milano",
     "district": "Municipio 8",
     "coordinates": {
@@ -27,11 +27,11 @@
     },
     "i18n": {
       "it": {
-        "nome": "Campetto di Giardini Vieira De Mello",
+        "nome": "Campetto di Giardino Sergio Vieira De Mello",
         "note": "Ben tenuto. Superficie in ottime condizioni. Una rete danneggiata."
       },
       "en": {
-        "nome": "Giardini Vieira De Mello Basketball Court",
+        "nome": "Giardino Sergio Vieira De Mello Basketball Court",
         "note": "Well maintained. Surface in good condition. One basket net damaged."
       }
     }
@@ -777,7 +777,7 @@
     "updated": "2026-03-22",
     "address": "Viale Argonne",
     "city": "Milano",
-    "district": "Municipio 4",
+    "district": "Municipio 3",
     "coordinates": {
       "lat": 45.4681,
       "lng": 9.22712
@@ -950,6 +950,43 @@
       "en": {
         "nome": "Viale Lazio Basketball Court",
         "note": "Court surface in good condition. Both hoops with their net. Transparent backboards."
+      }
+    }
+  },
+  {
+    "id": "027",
+    "created": "2026-03-18",
+    "updated": "2026-03-18",
+    "address": "Parco Aldo Aniasi",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.47905,
+      "lng": 9.10909
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
+      "overview": "photos/027/overview.webp",
+      "details": [
+        "photos/027/dettaglio-1.webp",
+        "photos/027/dettaglio-2.webp",
+        "photos/027/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto#1 di Parco Aldo Aniasi",
+        "note": "Superficie in condizioni discrete. Entrambi i canestri con retina."
+      },
+      "en": {
+        "nome": "Parco Aldo Aniasi Court#1",
+        "note": "Court surface in fair condition. Both hoops with their net."
       }
     }
   }
