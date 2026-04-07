@@ -20,7 +20,7 @@ Per ogni campetto censito sono disponibili i seguenti dati:
 
 Conosci un campetto che manca? Segnalalo attraverso il **[modulo di segnalazione](https://tally.so/r/QKYOlX)**.
 
-Prima di aprire una pull request, [apri una issue](https://github.com/photogabe/alcampetto/issues/new) per discutere la tua proposta e ricevere un riscontro dal maintainer.
+Prima di inoltrare una pull request, [apri una issue](https://github.com/photogabe/alcampetto/issues/new) per discutere la tua proposta e ricevere un riscontro dal maintainer.
 
 ## Nota sulle foto
 

@@ -748,7 +748,7 @@
     },
     "hoops": 1,
     "half_court": true,
-    "three_pt_line": false,
+    "three_pt_line": true,
     "fenced": true,
     "free": true,
     "lit": false,
@@ -986,6 +986,43 @@
       },
       "en": {
         "nome": "Parco Aldo Aniasi Court#1",
+        "note": "Court surface in fair condition. Both hoops with their net."
+      }
+    }
+  },
+  {
+    "id": "028",
+    "created": "2026-03-18",
+    "updated": "2026-03-18",
+    "address": "Parco Aldo Aniasi",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.47931,
+      "lng": 9.10886
+    },
+    "hoops": 2,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "photos": {
+      "overview": "photos/028/overview.webp",
+      "details": [
+        "photos/028/dettaglio-1.webp",
+        "photos/028/dettaglio-2.webp",
+        "photos/028/dettaglio-3.webp"
+      ]
+    },
+    "i18n": {
+      "it": {
+        "nome": "Campetto#2 di Parco Aldo Aniasi",
+        "note": "Superficie in condizioni discrete. Entrambi i canestri con retina."
+      },
+      "en": {
+        "nome": "Parco Aldo Aniasi Court#2",
         "note": "Court surface in fair condition. Both hoops with their net."
       }
     }

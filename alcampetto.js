@@ -1,5 +1,5 @@
 /* =============================================================
-   ALCAMPETTO · alcampetto.js · v0.3.0
+   ALCAMPETTO · alcampetto.js · v0.4.0
    Logica JavaScript condivisa dalle pagine index del progetto.
    Incluso da: index.html (italiano) e index.en.html (inglese).
 
@@ -34,6 +34,7 @@ var I18N = {
     labelFenced:   'Recintato',
     labelIndoors:  'Coperto',
     labelHoops:    'canestri',
+    labelHoop:     'canestro',
     labelHalf:     'Mezzo campo',
     labelThreePt:  'Linea da tre',
     openInMaps:    '📍 Apri in Maps',
@@ -56,6 +57,7 @@ var I18N = {
     labelFenced:   'Fenced',
     labelIndoors:  'Indoors',
     labelHoops:    'hoops',
+    labelHoop:     'hoop',
     labelHalf:     'Half court',
     labelThreePt:  'Three-pt line',
     openInMaps:    '📍 Open in Maps',
@@ -241,7 +243,7 @@ function buildCard(campetto) {
     +   '<div class="card-num">#' + campetto.id + '</div>'
     +   '<div class="card-name">' + nome + '</div>'
     +   '<div class="card-date">'
-    +     campetto.created
+    +     (campetto.updated || campetto.created)
     +     freshnessHtml(campetto.updated || campetto.created)
     +   '</div>'
     + '</div>'
@@ -260,7 +262,7 @@ function buildCard(campetto) {
     +   '</div>'
     +   thumbsHtml
     +   '<div class="booleans">'
-    +     '<span class="bool-pill yes">' + campetto.hoops + ' ' + T.labelHoops + '</span>'
+    +     '<span class="bool-pill yes">' + campetto.hoops + ' ' + (campetto.hoops === 1 ? T.labelHoop : T.labelHoops) + '</span>'
     +     pill(T.labelLit,      campetto.lit)
     +     pill(T.labelFenced,   campetto.fenced)
     +     pill(T.labelThreePt,  campetto.three_pt_line)
@@ -309,7 +311,7 @@ function applyFilters() {
   var filtered = DATA.slice();
 
   /* Filtro per proprietà booleana */
-  var boolFilters = ['lit', 'indoor', 'fenced'];
+  var boolFilters = ['lit', 'three_pt_line', 'fenced'];
   if (boolFilters.indexOf(activeFilter) !== -1) {
     filtered = filtered.filter(function (c) {
       return c[activeFilter] === true;
