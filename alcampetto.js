@@ -1,5 +1,5 @@
 /* =============================================================
-   ALCAMPETTO · alcampetto.js · v0.4.0
+   ALCAMPETTO · alcampetto.js
    Logica JavaScript condivisa dalle pagine index del progetto.
    Incluso da: index.html (italiano) e index.en.html (inglese).
 
@@ -90,6 +90,56 @@ var activeSort   = 'id';
 
 
 /* =============================================================
+   UTILITÀ DI SANITIZZAZIONE
+   Proteggono l'interfaccia da contenuti malevoli nel JSON.
+   ============================================================= */
+
+/* Verifica che un URL foto sia un percorso relativo sicuro.
+   Accetta solo percorsi che iniziano con "photos/" e non
+   contengono schemi (javascript:, data:, http:, ecc.).
+   Restituisce il percorso originale se valido, stringa vuota
+   altrimenti. */
+function safePhotoUrl(url) {
+  if (typeof url !== 'string') { return ''; }
+  var trimmed = url.trim();
+  if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed)) { return ''; }
+  if (!trimmed.startsWith('photos/'))          { return ''; }
+  return trimmed;
+}
+
+
+/* =============================================================
+   HELPER DOM
+   Funzioni brevi per costruire nodi in modo leggibile.
+   Ogni valore testuale passa da textContent, che il browser
+   non interpreta mai come HTML → XSS impossibile by design.
+   ============================================================= */
+
+/* Crea un elemento con tag e classe opzionale */
+function el(tag, className) {
+  var node = document.createElement(tag);
+  if (className) { node.className = className; }
+  return node;
+}
+
+/* Crea un elemento con tag, classe e contenuto testuale */
+function textEl(tag, className, content) {
+  var node = el(tag, className);
+  node.textContent = content;
+  return node;
+}
+
+/* Costruisce una riga etichetta + valore (pattern ripetuto
+   tre volte in ogni card: Indirizzo, Zona, Note) */
+function infoRow(label, value) {
+  var row = el('div', 'info-row');
+  row.appendChild(textEl('div', 'info-label', label));
+  row.appendChild(textEl('div', 'info-val',   value));
+  return row;
+}
+
+
+/* =============================================================
    LIGHTBOX
    Apre e chiude il visualizzatore foto a schermo intero.
    ============================================================= */
@@ -99,6 +149,7 @@ var lightboxImg   = document.getElementById('lightbox-img');
 var lightboxClose = document.getElementById('lightbox-close');
 
 function openLightbox(src) {
+  if (!safePhotoUrl(src)) { return; }
   lightboxImg.src = src;
   lightbox.classList.add('open');
 }
@@ -141,14 +192,15 @@ function freshnessClass(isoDateString) {
   return 'stale';
 }
 
-/* Restituisce l'HTML dell'indicatore di freschezza */
-function freshnessHtml(isoDateString) {
+/* Restituisce un nodo DOM per l'indicatore di freschezza */
+function freshnessNode(isoDateString) {
   var cssClass = freshnessClass(isoDateString);
   var label    = T[cssClass];
-  return '<span class="freshness ' + cssClass + '">'
-       +   '<span class="freshness-dot"></span>'
-       +   label
-       + '</span>';
+
+  var span = el('span', 'freshness ' + cssClass);
+  span.appendChild(el('span', 'freshness-dot'));
+  span.appendChild(document.createTextNode(label));
+  return span;
 }
 
 
@@ -156,11 +208,12 @@ function freshnessHtml(isoDateString) {
    PILL BOOLEANE
    label : stringa da mostrare (es. "Illuminato")
    value : true → pill verde · false → pill grigia
+   Restituisce un nodo DOM <span>.
    ============================================================= */
-function pill(label, value) {
+function pillNode(label, value) {
   var cssClass = value ? 'yes' : 'no';
   var icon     = value ? '✓'   : '✗';
-  return '<span class="bool-pill ' + cssClass + '">' + icon + ' ' + label + '</span>';
+  return textEl('span', 'bool-pill ' + cssClass, icon + ' ' + label);
 }
 
 
@@ -197,84 +250,139 @@ function getLocalised(campetto) {
 
 /* =============================================================
    COSTRUZIONE DI UNA CARD
-   Riceve un oggetto campetto dal JSON e restituisce
-   un elemento DOM <div class="card"> pronto per la griglia.
+   Riceve un oggetto campetto dal JSON e restituisce un elemento
+   DOM <article class="card"> pronto per la griglia.
+
+   L'albero viene costruito interamente con DOM API: ogni valore
+   testuale proveniente dal JSON passa da textContent, rendendo
+   impossibile l'iniezione di HTML malevolo (XSS) by design.
+
+   Struttura generata:
+   article.card
+   ├── img.card-photo | div.card-photo-placeholder
+   ├── header.card-header
+   │   ├── div.card-num
+   │   ├── div.card-name
+   │   └── div.card-date + span.freshness
+   ├── div.card-body
+   │   ├── div.info-row  (Indirizzo)
+   │   ├── div.info-row  (Zona)
+   │   ├── div.info-row  (Note)
+   │   ├── div.info-row  (Foto thumbnail, opzionale)
+   │   └── div.booleans  (pill canestri, illuminato, ecc.)
+   └── footer.card-footer
+       └── a.maps-btn
    ============================================================= */
 function buildCard(campetto) {
 
-  var loc      = getLocalised(campetto);
-  var nome     = loc.nome || '';
-  var note     = loc.note || '—';
-  var mapsUrl  = 'https://www.google.com/maps?q='
-               + campetto.coordinates.lat + ',' + campetto.coordinates.lng;
+  var loc  = getLocalised(campetto);
+  var nome = loc.nome || '';
+  var note = loc.note || '—';
 
-  /* Foto panoramica o placeholder */
-  var photoHtml = '';
-  if (campetto.photos && campetto.photos.overview) {
-    photoHtml = '<img class="card-photo"'
-              + ' src="' + campetto.photos.overview + '"'
-              + ' alt="' + nome + '"'
-              + ' loading="lazy"'
-              + ' onclick="openLightbox(\'' + campetto.photos.overview + '\')">';
+  /* ── Coordinate: accetta solo valori numerici finiti ── */
+  var lat = parseFloat(campetto.coordinates.lat);
+  var lng = parseFloat(campetto.coordinates.lng);
+  var mapsUrl = (isFinite(lat) && isFinite(lng))
+              ? 'https://www.google.com/maps?q=' + lat + ',' + lng
+              : '#';
+
+  /* ── Radice della card ── */
+  var card = el('article', 'card');
+
+
+  /* ── Foto panoramica (o placeholder) ── */
+
+  var overviewUrl = campetto.photos ? safePhotoUrl(campetto.photos.overview) : '';
+
+  if (overviewUrl) {
+    var photo   = el('img', 'card-photo');
+    photo.src   = overviewUrl;
+    photo.alt   = nome;
+    photo.loading = 'lazy';
+    photo.dataset.photo = overviewUrl;
+    card.appendChild(photo);
   } else {
-    photoHtml = '<div class="card-photo-placeholder">🏀</div>';
+    card.appendChild(textEl('div', 'card-photo-placeholder', '\uD83C\uDFC0'));
   }
 
-  /* Thumbnail foto di dettaglio */
-  var thumbsHtml = '';
+
+  /* ── Header: numero, nome, data + freschezza ── */
+
+  var header = el('header', 'card-header');
+
+  header.appendChild(textEl('div', 'card-num',  '#' + campetto.id));
+  header.appendChild(textEl('div', 'card-name', nome));
+
+  var dateStr = campetto.updated || campetto.created;
+  var dateDiv = el('div', 'card-date');
+    dateDiv.appendChild(document.createTextNode(dateStr));
+    dateDiv.appendChild(freshnessNode(dateStr));
+  header.appendChild(dateDiv);
+
+  card.appendChild(header);
+
+
+  /* ── Body: righe informative + pill booleane ── */
+
+  var body = el('div', 'card-body');
+
+  body.appendChild(infoRow(T.labelAddress, campetto.address));
+
+  var area = campetto.city
+           + (campetto.district ? ' \u2014 ' + campetto.district : '');
+  body.appendChild(infoRow(T.labelArea, area));
+
+  body.appendChild(infoRow(T.labelNotes, note));
+
+  /* Thumbnail foto di dettaglio (opzionale) */
   if (campetto.photos && campetto.photos.details && campetto.photos.details.length > 0) {
-    var imgs = campetto.photos.details.map(function (url) {
-      return '<img src="' + url + '" alt="' + T.labelPhotos + '"'
-           + ' loading="lazy"'
-           + ' onclick="openLightbox(\'' + url + '\')">';
-    }).join('');
-    thumbsHtml = '<div class="info-row">'
-               +   '<div class="info-label">' + T.labelPhotos + '</div>'
-               +   '<div class="thumbs">' + imgs + '</div>'
-               + '</div>';
+    var thumbRow = el('div', 'info-row');
+    thumbRow.appendChild(textEl('div', 'info-label', T.labelPhotos));
+
+    var thumbs = el('div', 'thumbs');
+    campetto.photos.details.forEach(function (url) {
+      var safe = safePhotoUrl(url);
+      if (!safe) { return; }
+      var img     = el('img');
+      img.src     = safe;
+      img.alt     = T.labelPhotos;
+      img.loading = 'lazy';
+      img.dataset.photo = safe;
+      thumbs.appendChild(img);
+    });
+    thumbRow.appendChild(thumbs);
+    body.appendChild(thumbRow);
   }
 
-  var div = document.createElement('div');
-  div.className = 'card';
+  /* Pill booleane (canestri, illuminato, recintato, ecc.) */
+  var bools      = el('div', 'booleans');
+  var hoopsCount = parseInt(campetto.hoops, 10) || 0;
+  var hoopsLabel = hoopsCount + ' ' + (hoopsCount === 1 ? T.labelHoop : T.labelHoops);
 
-  div.innerHTML =
-      photoHtml
-    + '<div class="card-header">'
-    +   '<div class="card-num">#' + campetto.id + '</div>'
-    +   '<div class="card-name">' + nome + '</div>'
-    +   '<div class="card-date">'
-    +     (campetto.updated || campetto.created)
-    +     freshnessHtml(campetto.updated || campetto.created)
-    +   '</div>'
-    + '</div>'
-    + '<div class="card-body">'
-    +   '<div class="info-row">'
-    +     '<div class="info-label">' + T.labelAddress + '</div>'
-    +     '<div class="info-val">'   + campetto.address + '</div>'
-    +   '</div>'
-    +   '<div class="info-row">'
-    +     '<div class="info-label">' + T.labelArea + '</div>'
-    +     '<div class="info-val">' + campetto.city + (campetto.district ? ' \u2014 ' + campetto.district : '') + '</div>'
-    +   '</div>'
-    +   '<div class="info-row">'
-    +     '<div class="info-label">' + T.labelNotes + '</div>'
-    +     '<div class="info-val">'   + note + '</div>'
-    +   '</div>'
-    +   thumbsHtml
-    +   '<div class="booleans">'
-    +     '<span class="bool-pill yes">' + campetto.hoops + ' ' + (campetto.hoops === 1 ? T.labelHoop : T.labelHoops) + '</span>'
-    +     pill(T.labelLit,      campetto.lit)
-    +     pill(T.labelFenced,   campetto.fenced)
-    +     pill(T.labelThreePt,  campetto.three_pt_line)
-    +     (campetto.half_court ? pill(T.labelHalf, true) : '')
-    +     (campetto.indoor     ? pill(T.labelIndoors, true) : '')
-    +   '</div>'
-    + '</div>'
-    + '<div class="card-footer">'
-    +   '<a class="maps-btn" href="' + mapsUrl + '" target="_blank">' + T.openInMaps + '</a>'
-    + '</div>';
+  bools.appendChild(textEl('span', 'bool-pill yes', hoopsLabel));
+  bools.appendChild(pillNode(T.labelLit,     campetto.lit));
+  bools.appendChild(pillNode(T.labelFenced,  campetto.fenced));
+  bools.appendChild(pillNode(T.labelThreePt, campetto.three_pt_line));
+  if (campetto.half_court) { bools.appendChild(pillNode(T.labelHalf,    true)); }
+  if (campetto.indoor)     { bools.appendChild(pillNode(T.labelIndoors, true)); }
 
-  return div;
+  body.appendChild(bools);
+  card.appendChild(body);
+
+
+  /* ── Footer: link a Google Maps ── */
+
+  var footer = el('footer', 'card-footer');
+  var mapsLink    = el('a', 'maps-btn');
+  mapsLink.href   = mapsUrl;
+  mapsLink.target = '_blank';
+  mapsLink.rel    = 'noopener';
+  mapsLink.textContent = T.openInMaps;
+  footer.appendChild(mapsLink);
+
+  card.appendChild(footer);
+
+  return card;
 }
 
 
@@ -301,6 +409,20 @@ function renderCards(lista) {
   });
   grid.appendChild(fragment);
 }
+
+
+/* =============================================================
+   EVENT DELEGATION — LIGHTBOX
+   Un unico listener sulla griglia gestisce i click su tutte
+   le immagini (panoramiche e thumbnail). L'URL della foto è
+   letto dall'attributo data-photo, già validato in buildCard.
+   ============================================================= */
+document.getElementById('grid').addEventListener('click', function (event) {
+  var img = event.target.closest('[data-photo]');
+  if (img) {
+    openLightbox(img.getAttribute('data-photo'));
+  }
+});
 
 
 /* =============================================================
