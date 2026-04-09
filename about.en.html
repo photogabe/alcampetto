@@ -8,12 +8,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Photography protocol ── */
+    .protocol-court {
+      background: var(--dark);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 1rem 0.5rem 0.5rem;
+      margin: 1.25rem 0;
+      overflow: hidden;
+    }
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .proto-card {
+      background: var(--dark);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 1rem;
+    }
+    .proto-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      flex-shrink: 0;
+    }
+    .proto-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .proto-desc {
+      font-size: 0.82rem;
+      color: #c8c8c8;
+      line-height: 1.6;
+    }
+    .proto-rule {
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 600px) {
+      .protocol-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
        HEADER
-       The "About" button has class .active: current page.
        ═══════════════════════════════════════════════════════ -->
   <header class="site-header">
     <div class="header-left">
@@ -38,8 +99,6 @@
 
   <!-- ═══════════════════════════════════════════════════════
        MAIN CONTENT
-       The "about" class activates the single-column centred
-       layout defined in style.css.
        ═══════════════════════════════════════════════════════ -->
   <main class="about">
 
@@ -55,6 +114,93 @@
       <p>Found a court that's missing? Report it through the <a href="https://tally.so/r/QKYOlX"><strong>contribution form</strong></a>.</p>
       <p>Before opening a pull request, please <a href="https://github.com/photogabe/alcampetto/issues/new">open an issue</a> first to discuss your idea and get feedback from the maintainer.</p>
       <p><strong>Qualitative notes</strong> are an integral part of the dataset: a brief comment on the overall condition of the facility, always using neutral language. Even a neglected court remains a resource for the neighbourhood.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Photography Protocol</div>
+      <p>Each court is documented with 4 standard shots, taken following shared positions and criteria to ensure consistency and comparability across the courts in the dataset.</p>
+
+      <!-- Top-down court view -->
+      <div class="protocol-court">
+        <svg width="100%" viewBox="0 0 680 310" role="img">
+          <title>Shooting positions — top-down view</title>
+          <desc>Top-down view of a basketball court with the 4 numbered shooting positions and directional arrows</desc>
+          <defs>
+            <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#FF5F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <!-- Court surface -->
+          <rect x="90" y="30" width="500" height="250" rx="3" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1"/>
+          <!-- Center line -->
+          <line x1="340" y1="30" x2="340" y2="280" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Center circle -->
+          <circle cx="340" cy="155" r="36" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Left paint -->
+          <rect x="90" y="105" width="90" height="100" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Right paint -->
+          <rect x="500" y="105" width="90" height="100" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Left 3pt line -->
+          <path d="M 90,52 L 154,52 A 108,108 0 0 1 154,258 L 90,258" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Right 3pt line -->
+          <path d="M 590,52 L 526,52 A 108,108 0 0 0 526,258 L 590,258" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Baskets -->
+          <circle cx="122" cy="155" r="5" fill="none" stroke="#555" stroke-width="1.2"/>
+          <circle cx="558" cy="155" r="5" fill="none" stroke="#555" stroke-width="1.2"/>
+          <!-- Position 1 -->
+          <circle cx="90" cy="280" r="13" fill="#FF5F1F"/>
+          <text x="90" y="284" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">1</text>
+          <line x1="100" y1="271" x2="127" y2="249" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Position 2 -->
+          <circle cx="180" cy="155" r="13" fill="#FF5F1F"/>
+          <text x="180" y="159" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">2</text>
+          <line x1="167" y1="155" x2="142" y2="155" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Position 3 -->
+          <circle cx="500" cy="155" r="13" fill="#FF5F1F"/>
+          <text x="500" y="159" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">3</text>
+          <line x1="513" y1="155" x2="538" y2="155" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Position 4 -->
+          <circle cx="340" cy="155" r="13" fill="#FF5F1F"/>
+          <text x="340" y="159" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">4</text>
+          <line x1="340" y1="168" x2="340" y2="184" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Caption -->
+          <text x="340" y="298" text-anchor="middle" font-size="10" fill="#555" font-family="'IBM Plex Mono', monospace">top-down view — arrows = shooting direction</text>
+        </svg>
+      </div>
+
+      <!-- 4 cards -->
+      <div class="protocol-grid">
+        <div class="proto-card">
+          <div class="proto-num">1</div>
+          <div class="proto-name">Overview</div>
+          <div class="proto-desc">From the least obstructed corner, at eye level. Full court in frame, landscape orientation.</div>
+          <div class="proto-rule">Priority: full court visible</div>
+        </div>
+        <div class="proto-card">
+          <div class="proto-num">2</div>
+          <div class="proto-name">Hoop 1</div>
+          <div class="proto-desc">From the free-throw line, central axis of the paint, facing the basket. Frame: hoop, backboard and part of the paint.</div>
+        </div>
+        <div class="proto-card">
+          <div class="proto-num">3</div>
+          <div class="proto-name">Hoop 2</div>
+          <div class="proto-desc">Same as photo 2, opposite end.</div>
+          <div class="proto-rule">Mirror of photo 2</div>
+        </div>
+        <div class="proto-card">
+          <div class="proto-num">4</div>
+          <div class="proto-name">Surface</div>
+          <div class="proto-desc">At centre court, standing upright. Camera pointing straight down. Frame: centre circle and half-court line.</div>
+          <div class="proto-rule">Nadir — no angle</div>
+        </div>
+      </div>
+
+      <div class="meta-block">
+        <strong>Time of day</strong> · Morning, preferably early. Later morning accepted with adequate light.<br>
+        <strong>Court</strong> · Empty, no people in frame.<br>
+        <strong>Light</strong> · Natural, soft. Clear or overcast sky both acceptable. Avoid harsh midday direct light.<br>
+        <strong>Equipment</strong> · DSLR or mirrorless (RAW preferred). Smartphone accepted as a secondary option.
+      </div>
     </div>
 
     <div class="section">

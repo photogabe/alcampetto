@@ -8,12 +8,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Protocollo fotografico ── */
+    .protocol-court {
+      background: var(--dark);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 1rem 0.5rem 0.5rem;
+      margin: 1.25rem 0;
+      overflow: hidden;
+    }
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .proto-card {
+      background: var(--dark);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 1rem;
+    }
+    .proto-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      flex-shrink: 0;
+    }
+    .proto-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .proto-desc {
+      font-size: 0.82rem;
+      color: #c8c8c8;
+      line-height: 1.6;
+    }
+    .proto-rule {
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 600px) {
+      .protocol-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
        HEADER
-       Il pulsante "About" ha classe .active: pagina corrente.
        ═══════════════════════════════════════════════════════ -->
   <header class="site-header">
     <div class="header-left">
@@ -38,8 +99,6 @@
 
   <!-- ═══════════════════════════════════════════════════════
        CONTENUTO PRINCIPALE
-       La classe "about" attiva il layout a colonna singola
-       centrata definito in style.css.
        ═══════════════════════════════════════════════════════ -->
   <main class="about">
 
@@ -52,10 +111,96 @@
 
     <div class="section">
       <div class="section-title">Come Contribuire</div>
-        <p>Conosci un campetto che manca? Proponilo compilando il <a href="https://tally.so/r/QKYOlX"><strong>modulo di segnalazione</strong></a>.
-        <p>Se sei uno sviluppatore e vuoi usare GitHub, ti chiedo di <a href="https://github.com/photogabe/alcampetto/issues/new">aprire una issue</a> prima di inoltrare una pull request, in modo da discutere la tua proposta e ricevere un riscontro dal maintainer.</p>
-
+      <p>Conosci un campetto che manca? Proponilo compilando il <a href="https://tally.so/r/QKYOlX"><strong>modulo di segnalazione</strong></a>.</p>
+      <p>Se sei uno sviluppatore e vuoi usare GitHub, ti chiedo di <a href="https://github.com/photogabe/alcampetto/issues/new">aprire una issue</a> prima di inoltrare una pull request, in modo da discutere la tua proposta e ricevere un riscontro dal maintainer.</p>
       <p>Parte integrante del set di dati sono le <strong>note qualitative</strong>: un breve commento sullo stato complessivo della struttura che potrai lasciare usando sempre un linguaggio neutro. Anche un campetto trascurato, resta una risorsa per il quartiere.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Protocollo Fotografico</div>
+      <p>Ogni campetto viene documentato con 4 foto standard, scattate seguendo posizioni e criteri condivisi per garantire uniformità e comparabilità tra le strutture censite.</p>
+
+      <!-- Vista dall'alto -->
+      <div class="protocol-court">
+        <svg width="100%" viewBox="0 0 680 310" role="img">
+          <title>Posizioni di scatto sul campetto — vista dall'alto</title>
+          <desc>Vista dall'alto con le 4 posizioni di scatto numerate e le frecce che indicano la direzione di scatto</desc>
+          <defs>
+            <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#FF5F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <!-- Court surface -->
+          <rect x="90" y="30" width="500" height="250" rx="3" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1"/>
+          <!-- Center line -->
+          <line x1="340" y1="30" x2="340" y2="280" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Center circle -->
+          <circle cx="340" cy="155" r="36" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Left paint -->
+          <rect x="90" y="105" width="90" height="100" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Right paint -->
+          <rect x="500" y="105" width="90" height="100" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Left 3pt line -->
+          <path d="M 90,52 L 154,52 A 108,108 0 0 1 154,258 L 90,258" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Right 3pt line -->
+          <path d="M 590,52 L 526,52 A 108,108 0 0 0 526,258 L 590,258" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+          <!-- Baskets -->
+          <circle cx="122" cy="155" r="5" fill="none" stroke="#555" stroke-width="1.2"/>
+          <circle cx="558" cy="155" r="5" fill="none" stroke="#555" stroke-width="1.2"/>
+          <!-- Position 1 -->
+          <circle cx="90" cy="280" r="13" fill="#FF5F1F"/>
+          <text x="90" y="284" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">1</text>
+          <line x1="100" y1="271" x2="127" y2="249" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Position 2 -->
+          <circle cx="180" cy="155" r="13" fill="#FF5F1F"/>
+          <text x="180" y="159" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">2</text>
+          <line x1="167" y1="155" x2="142" y2="155" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Position 3 -->
+          <circle cx="500" cy="155" r="13" fill="#FF5F1F"/>
+          <text x="500" y="159" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">3</text>
+          <line x1="513" y1="155" x2="538" y2="155" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Position 4 -->
+          <circle cx="340" cy="155" r="13" fill="#FF5F1F"/>
+          <text x="340" y="159" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="white" font-family="'IBM Plex Mono', monospace">4</text>
+          <line x1="340" y1="168" x2="340" y2="184" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ao)"/>
+          <!-- Caption -->
+          <text x="340" y="298" text-anchor="middle" font-size="10" fill="#555" font-family="'IBM Plex Mono', monospace">vista dall'alto — frecce = direzione di scatto</text>
+        </svg>
+      </div>
+
+      <!-- 4 card -->
+      <div class="protocol-grid">
+        <div class="proto-card">
+          <div class="proto-num">1</div>
+          <div class="proto-name">Vista d'insieme</div>
+          <div class="proto-desc">Dal vertice più libero da ostacoli, altezza d'occhio. Campo intero nel frame, orientamento landscape.</div>
+          <div class="proto-rule">Priorità alla visibilità del campo completo</div>
+        </div>
+        <div class="proto-card">
+          <div class="proto-num">2</div>
+          <div class="proto-name">Canestro 1</div>
+          <div class="proto-desc">Dalla linea di tiro libero, asse centrale del pitturato. Frontale verso il canestro. Frame: canestro, tabellone e parte del pitturato.</div>
+        </div>
+        <div class="proto-card">
+          <div class="proto-num">3</div>
+          <div class="proto-name">Canestro 2</div>
+          <div class="proto-desc">Identica alla foto 2, lato opposto.</div>
+          <div class="proto-rule">Simmetrica rispetto alla foto 2</div>
+        </div>
+        <div class="proto-card">
+          <div class="proto-num">4</div>
+          <div class="proto-name">Superficie</div>
+          <div class="proto-desc">A centrocampo, in piedi. Fotocamera verticale verso il basso. Frame: semicerchio e linea di centrocampo.</div>
+          <div class="proto-rule">Nadir puro — nessuna angolazione</div>
+        </div>
+      </div>
+
+      <div class="meta-block">
+        <strong>Orario</strong> · Mattino, preferibilmente nelle prime ore. Accettabile nel corso della mattinata con luce adeguata.<br>
+        <strong>Campo</strong> · Vuoto, nessuna persona nel frame.<br>
+        <strong>Luce</strong> · Naturale, morbida. Cielo sereno o coperto entrambi accettabili. Da evitare la luce dura di metà giornata.<br>
+        <strong>Attrezzatura</strong> · Reflex o mirrorless (RAW preferito). Smartphone accettato come soluzione secondaria.
+      </div>
     </div>
 
     <div class="section">

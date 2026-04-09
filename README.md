@@ -26,6 +26,32 @@ Before opening a pull request, please [open an issue](https://github.com/photoga
 
 The images in this repository are web-optimized (resized and converted to webp format) to ensure smooth browsing. They are not intended as high-resolution prints.
 
+## Photography protocol
+
+All images are captured following a standardised protocol to ensure consistency and comparability across courts.
+
+### General conditions
+
+- **Time of day:** morning, preferably early (soft light, empty courts). Photos taken later in the morning are also accepted, provided lighting conditions are adequate.
+- **Court:** empty, no people in frame.
+- **Light:** natural. Overcast or clear sky both acceptable. Avoid harsh midday direct light.
+- **Equipment:** DSLR or mirrorless camera (RAW files preferred). Smartphones are accepted as a secondary option; photos may be replaced in the future with higher-resolution shots.
+
+### The 4 standard shots
+
+![Photography protocol — shooting positions](assets/court-protocol.svg)
+
+| # | Name | Position | Subject |
+|---|---|---|---|
+| 1 | Overview | Least obstructed corner, eye level | Full court in frame, landscape orientation |
+| 2 | Hoop 1 | Free-throw line, central axis of the paint | Hoop, backboard and part of the paint |
+| 3 | Hoop 2 | Free-throw line, opposite end | Same as photo 2, mirrored |
+| 4 | Surface | Centre court, standing upright | Camera pointing straight down (nadir); centre circle and half-court line in frame |
+
+### Documented exceptions
+
+- The 4 standard shots may be supplemented — never replaced — by additional photos documenting particular conditions of the court.
+
 ## Dataset version
 
 Current version is **0.4.0**.
@@ -57,18 +83,19 @@ Each court is described by a JSON object. Fields are grouped by category.
 | Field | Type | Description |
 |---|---|---|
 | `hoops` | `integer` | Number of hoops (typically 1, 2 or 4). |
+| `surface` | `string` | Materials used for the surface. |
 | `half_court` | `boolean` | `true` if the court is a half court only. |
-| `three_pt_line` | `boolean` | `true` if a three-point line is marked on the surface. |
-| `fenced` | `boolean` | `true` if the court is enclosed by a fence. |
-| `free` | `boolean` | `true` if access is free of charge. |
-| `lit` | `boolean` | `true` if the court has lighting for evening play. |
-| `indoor` | `boolean` | `true` if the court is indoors or has a roof cover. |
+| `three_pt_line` | `boolean` | `true` If a three-point line is marked on the surface. |
+| `fenced` | `boolean` | `true` If the court is enclosed by a fence. |
+| `free` | `boolean` | `true` If access is free of charge. |
+| `lit` | `boolean` | `true` If the court has lighting for evening play. |
+| `indoor` | `boolean` | `true` If the court is indoors or has a roof cover. |
 
 ### Media and text
 
 | Field | Type | Description |
 |---|---|---|
-| `photos` | `object` | Contains `overview` (wide-angle photo) and `details` (array of close-up photos). Paths are relative to the project root. |
+| `photos` | `object` | Contains `overview` (wide-angle photo) and `details` (array of close-up photos). See photography protocol section. Paths are relative to the project root. |
 | `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name) and `note` (free-text description of condition and features). |
 
 ### Example
@@ -83,6 +110,7 @@ Each court is described by a JSON object. Fields are grouped by category.
   "district": "Municipio 8",
   "coordinates": { "lat": 45.49409, "lng": 9.11730 },
   "hoops": 2,
+  "surface": "cemento"
   "half_court": false,
   "three_pt_line": true,
   "fenced": false,

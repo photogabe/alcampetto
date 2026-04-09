@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="340" viewBox="0 0 680 340" role="img">
+  <title>Protocollo fotografico — posizioni di scatto</title>
+  <desc>Vista dall'alto di un campetto di basket con le 4 posizioni di scatto numerate</desc>
+
+  <!-- Background -->
+  <rect width="680" height="340" fill="#161616"/>
+
+  <!-- Court surface -->
+  <rect x="90" y="40" width="500" height="250" rx="3" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1"/>
+
+  <!-- Center line -->
+  <line x1="340" y1="40" x2="340" y2="290" stroke="#3a3a3a" stroke-width="0.8"/>
+
+  <!-- Center circle -->
+  <circle cx="340" cy="165" r="36" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+
+  <!-- Left paint -->
+  <rect x="90" y="115" width="90" height="100" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+
+  <!-- Right paint -->
+  <rect x="500" y="115" width="90" height="100" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+
+  <!-- Left 3pt line -->
+  <path d="M 90,62 L 154,62 A 108,108 0 0 1 154,268 L 90,268" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+
+  <!-- Right 3pt line -->
+  <path d="M 590,62 L 526,62 A 108,108 0 0 0 526,268 L 590,268" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+
+  <!-- Left basket -->
+  <circle cx="122" cy="165" r="5" fill="none" stroke="#888" stroke-width="1.2"/>
+
+  <!-- Right basket -->
+  <circle cx="558" cy="165" r="5" fill="none" stroke="#888" stroke-width="1.2"/>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#FF5F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Position 1 -->
+  <circle cx="90" cy="290" r="13" fill="#FF5F1F"/>
+  <text x="90" y="295" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="white">1</text>
+  <line x1="100" y1="281" x2="127" y2="258" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- Position 2 -->
+  <circle cx="180" cy="165" r="13" fill="#FF5F1F"/>
+  <text x="180" y="170" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="white">2</text>
+  <line x1="167" y1="165" x2="142" y2="165" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- Position 3 -->
+  <circle cx="500" cy="165" r="13" fill="#FF5F1F"/>
+  <text x="500" y="170" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="white">3</text>
+  <line x1="513" y1="165" x2="538" y2="165" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- Position 4 -->
+  <circle cx="340" cy="165" r="13" fill="#FF5F1F"/>
+  <text x="340" y="170" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="white">4</text>
+  <line x1="340" y1="178" x2="340" y2="194" stroke="#FF5F1F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- Caption -->
+  <text x="340" y="318" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#555">vista dall'alto — frecce = direzione di scatto</text>
+</svg>
