@@ -2,9 +2,9 @@
 
 ![ALCAMPETTO — Campetti da basket a Milano](assets/banner.webp)
 
-# 🏀 Campetti nell'area metropolitana di Milano
+# 🏀 Campetti di basket a Milano
 
-Un atlante fotografico di campetti di basket, ad accesso libero, nell'area metropolitana di Milano.
+Un atlante fotografico di campetti di basket, ad accesso libero, a Milano.
 
 **[Consulta l'atlante →](https://photogabe.github.io/alcampetto/index.html)**
 
