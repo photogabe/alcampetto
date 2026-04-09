@@ -2,7 +2,7 @@
 
 ![ALCAMPETTO — Basketball courts in Milan](assets/banner.webp)
 
-# 🏀 Basketball courts in Milan metropolitan area
+# 🏀 Basketball courts in Milan
 
 A photographic atlas of free-access basketball courts in Milan and surrounding areas.
 
