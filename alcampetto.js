@@ -87,6 +87,7 @@ var T = I18N[LANG];
 var DATA         = [];
 var activeFilter = 'all';
 var activeSort   = 'id';
+var mapsProvider = localStorage.getItem('mapsProvider') || 'google';
 
 
 /* =============================================================
@@ -249,6 +250,20 @@ function getLocalised(campetto) {
 
 
 /* =============================================================
+   URL MAPPE ESTERNE
+   Genera l'URL per aprire le coordinate nell'app di mappe
+   selezionata dall'utente (Google Maps o OpenStreetMap).
+   ============================================================= */
+function getMapsUrl(lat, lng) {
+  if (!isFinite(lat) || !isFinite(lng)) { return '#'; }
+  if (mapsProvider === 'osm') {
+    return 'https://www.openstreetmap.org/?mlat=' + lat + '&mlon=' + lng + '#map=18/' + lat + '/' + lng;
+  }
+  return 'https://www.google.com/maps?q=' + lat + ',' + lng;
+}
+
+
+/* =============================================================
    COSTRUZIONE DI UNA CARD
    Riceve un oggetto campetto dal JSON e restituisce un elemento
    DOM <article class="card"> pronto per la griglia.
@@ -282,9 +297,6 @@ function buildCard(campetto) {
   /* ── Coordinate: accetta solo valori numerici finiti ── */
   var lat = parseFloat(campetto.coordinates.lat);
   var lng = parseFloat(campetto.coordinates.lng);
-  var mapsUrl = (isFinite(lat) && isFinite(lng))
-              ? 'https://www.google.com/maps?q=' + lat + ',' + lng
-              : '#';
 
   /* ── Radice della card ── */
   var card = el('article', 'card');
@@ -374,7 +386,9 @@ function buildCard(campetto) {
 
   var footer = el('footer', 'card-footer');
   var mapsLink    = el('a', 'maps-btn');
-  mapsLink.href   = mapsUrl;
+  mapsLink.dataset.lat = lat;
+  mapsLink.dataset.lng = lng;
+  mapsLink.href   = getMapsUrl(lat, lng);
   mapsLink.target = '_blank';
   mapsLink.rel    = 'noopener';
   mapsLink.textContent = T.openInMaps;
@@ -503,6 +517,40 @@ document.querySelectorAll('.sort-btn').forEach(function (btn) {
     applyFilters();
   });
 });
+
+
+/* =============================================================
+   LISTENER — TOGGLE PROVIDER MAPPE
+   ============================================================= */
+function updateAllMapsLinks() {
+  document.querySelectorAll('.maps-btn').forEach(function (btn) {
+    var lat = parseFloat(btn.dataset.lat);
+    var lng = parseFloat(btn.dataset.lng);
+    btn.href = getMapsUrl(lat, lng);
+  });
+}
+
+document.querySelectorAll('.provider-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.provider-btn').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+    mapsProvider = btn.dataset.provider;
+    localStorage.setItem('mapsProvider', mapsProvider);
+    updateAllMapsLinks();
+  });
+});
+
+/* Inizializza lo stato del toggle dal localStorage */
+if (mapsProvider !== 'google') {
+  document.querySelectorAll('.provider-btn').forEach(function (btn) {
+    btn.classList.remove('active');
+    if (btn.dataset.provider === mapsProvider) {
+      btn.classList.add('active');
+    }
+  });
+}
 
 
 /* =============================================================
