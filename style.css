@@ -172,6 +172,24 @@ body::before {
 .lang-btn.active { border-color: var(--orange); color: var(--orange); }
 .lang-btn .flag  { font-size: 1rem; line-height: 1; }
 
+.provider-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  background: var(--mid);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.provider-btn:hover  { border-color: var(--orange); color: var(--text); }
+.provider-btn.active { border-color: var(--orange); color: var(--orange); }
+
 
 /* -------------------------------------------------------------
    BARRA CONTROLLI (index.html e index.en.html)
