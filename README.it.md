@@ -22,9 +22,37 @@ Conosci un campetto che manca? Segnalalo attraverso il **[modulo di segnalazione
 
 Prima di inoltrare una pull request, [apri una issue](https://github.com/photogabe/alcampetto/issues/new) per discutere la tua proposta e ricevere un riscontro dal maintainer.
 
+## Protocollo fotografico
+
+Le immagini sono scattate secondo un protocollo standardizzato che garantisce uniformità e comparabilità tra i campetti censiti.
+
+### Condizioni generali
+
+- **Orario:** mattino, preferibilmente nelle prime ore (luce morbida, campi vuoti). Sono accettate anche foto scattate nel corso della mattinata, purché in condizioni di luce adeguata.
+- **Campo:** vuoto, senza persone nel frame.
+- **Luce:** naturale. Cielo sereno o coperto entrambi accettabili. Da evitare la luce diretta e dura di metà giornata.
+- **Attrezzatura:** fotocamera reflex o mirrorless (file RAW preferito). Lo smartphone è accettato come soluzione secondaria; le foto potranno essere sostituite in futuro da scatti ad alta definizione.
+
+### Le 4 foto standard
+
+![Protocollo fotografico — posizioni di scatto](assets/court-protocol.svg)
+
+| # | Nome | Posizione | Soggetto |
+|---|---|---|---|
+| 1 | Vista d'insieme | Vertice più libero da ostacoli, altezza d'occhio | Campo intero nel frame, orientamento landscape |
+| 2 | Canestro 1 | Linea di tiro libero, asse centrale del pitturato | Canestro, tabellone e parte del pitturato |
+| 3 | Canestro 2 | Linea di tiro libero, lato opposto | Identico alla foto 2, lato specchiato |
+| 4 | Superficie | Centrocampo, in piedi | Fotocamera verticale verso il basso; semicerchio e linea di centrocampo nel frame |
+
+### Eccezioni documentate
+
+- Le 4 foto standard possono essere integrate da scatti aggiuntivi che documentano condizioni particolari del campo.
+
+
 ## Nota sulle foto
 
 Le immagini di questo repository hanno dimensioni ridotte e sono in formato webp per garantire una velocità di consultazione accettabile. Non sono destinate alla stampa.
+
 
 ## Versione del set di dati
 
@@ -57,18 +85,19 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 | Campo | Tipo | Descrizione |
 |---|---|---|
 | `hoops` | `integer` | Numero di canestri (tipicamente 1, 2 o 4). |
-| `half_court` | `boolean` | `true` se si tratta di un mezzo campo. |
+| `surface` | `string` | Materiali usati per la superficie. |
+| `half_court` | `boolean` | `true` Se si tratta di un mezzo campo. |
 | `three_pt_line` | `boolean` | `true` se la linea da tre punti è tracciata sulla superficie. |
-| `fenced` | `boolean` | `true` se il campo è delimitato da una recinzione. |
-| `free` | `boolean` | `true` se l'accesso è libero e gratuito. |
-| `lit` | `boolean` | `true` se è presente illuminazione per il gioco serale. |
-| `indoor` | `boolean` | `true` se il campo è al coperto o dotato di tettoia. |
+| `fenced` | `boolean` | `true` Se il campo è delimitato da una recinzione. |
+| `free` | `boolean` | `true` Se l'accesso è libero e gratuito. |
+| `lit` | `boolean` | `true` Se è presente illuminazione per il gioco serale. |
+| `indoor` | `boolean` | `true` Se il campo è al coperto o dotato di tettoia. |
 
 ### Media e testi
 
 | Campo | Tipo | Descrizione |
 |---|---|---|
-| `photos` | `object` | Contiene `overview` (foto panoramica) e `details` (array di foto di dettaglio). I percorsi sono relativi alla root del progetto. |
+| `photos` | `object` | Contiene `overview` (foto panoramica) e `details` (array di foto di dettaglio). Vedi sezione sul protocollo fotografico. I percorsi sono relativi alla root del progetto. |
 | `i18n` | `object` | Testi localizzati, indicizzati per codice lingua ISO 639-1 (`it`, `en`, …). Ogni lingua fornisce `nome` (nome del campetto) e `note` (descrizione libera sullo stato e le caratteristiche). |
 
 ### Esempio

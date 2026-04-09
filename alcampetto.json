@@ -11,7 +11,7 @@
       "lng": 9.1173
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -33,7 +33,7 @@
       },
       "en": {
         "nome": "Giardino Sergio Vieira De Mello Basketball Court",
-        "note": "Well maintained. Surface in good condition. One basket net damaged."
+        "note": "Well maintained. Surface in very good condition. One basket net damaged."
       }
     }
   },
