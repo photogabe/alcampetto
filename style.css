@@ -298,6 +298,87 @@ body::before {
 
 
 /* -------------------------------------------------------------
+   TAB VISTA (Griglia / Mappa)
+   Due tab minimali tra la barra controlli e il contenuto.
+   La tab attiva ha un bordo inferiore arancione.
+   ------------------------------------------------------------- */
+.view-tabs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  padding: 0 2rem;
+  background: var(--dark);
+  border-bottom: 1px solid var(--line);
+}
+
+.view-tab {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.view-tab:hover  { color: var(--text); }
+.view-tab.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+
+/* -------------------------------------------------------------
+   MAPPA LEAFLET
+   Il contenitore è nascosto per default (display:none).
+   La classe .active lo rende visibile.
+   L'altezza occupa la viewport meno header, controlli e tab.
+   ------------------------------------------------------------- */
+#map {
+  display: none;
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 200px);
+  min-height: 400px;
+}
+#map.active { display: block; }
+
+/* Override popup Leaflet per tema scuro */
+#map .leaflet-popup-content-wrapper {
+  background: var(--dark);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+#map .leaflet-popup-tip {
+  background: var(--dark);
+}
+#map .leaflet-popup-content {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  margin: 0.75rem 1rem;
+}
+
+.map-popup-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+.map-popup-address {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.map-popup-hoops {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--green);
+}
+
+
+/* -------------------------------------------------------------
    GRIGLIA CARD (index.html e index.en.html)
    Colonne automatiche: minimo 320px ciascuna.
    · Per card più larghe: aumentare 320px
@@ -704,8 +785,10 @@ main.about ~ .site-footer { margin-top: 4rem; }
 @media (max-width: 600px) {
   .site-header,
   .controls,
+  .view-tabs,
   main#grid,
   .site-footer { padding-left: 1rem; padding-right: 1rem; }
   main.about { padding: 0 1rem; margin: 2rem auto; }
   .tagline   { display: none; }
+  #map { height: calc(100vh - 160px); min-height: 300px; }
 }
