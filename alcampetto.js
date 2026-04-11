@@ -328,6 +328,10 @@ function switchView(view) {
        che il contenitore diventa visibile */
     setTimeout(function () { leafletMap.invalidateSize(); }, 100);
   }
+}
+
+
+/* =============================================================
    URL MAPPE ESTERNE
    Genera l'URL per aprire le coordinate nell'app di mappe
    selezionata dall'utente (Google Maps o OpenStreetMap).
@@ -608,6 +612,7 @@ document.querySelectorAll('.view-tab').forEach(function (tab) {
   });
 });
 
+/* =============================================================
    LISTENER — TOGGLE PROVIDER MAPPE
    ============================================================= */
 function updateAllMapsLinks() {
