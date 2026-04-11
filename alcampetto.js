@@ -84,9 +84,13 @@ var T = I18N[LANG];
 /* -------------------------------------------------------------
    STATO DELL'INTERFACCIA
    ------------------------------------------------------------- */
-var DATA         = [];
-var activeFilter = 'all';
-var activeSort   = 'id';
+var DATA          = [];
+var activeFilter  = 'all';
+var activeSort    = 'id';
+var activeView    = 'grid';
+var leafletMap    = null;
+var markersLayer  = null;
+var lastFiltered  = [];
 
 
 /* =============================================================
@@ -245,6 +249,83 @@ function getLocalised(campetto) {
     return campetto.i18n['it'];
   }
   return { nome: '', note: '—' };
+}
+
+
+/* =============================================================
+   MAPPA LEAFLET
+   Inizializzazione lazy: la mappa viene creata solo al primo
+   click sul tab "Mappa". I marker sono gestiti in un LayerGroup
+   separato, svuotato e ripopolato ad ogni cambio di filtri.
+   I popup usano DOM API (textContent) per coerenza XSS-safe.
+   ============================================================= */
+
+/* Crea la mappa Leaflet centrata su Milano (solo al primo uso) */
+function initMap() {
+  if (leafletMap) { return; }
+  leafletMap = L.map('map').setView([45.464, 9.19], 12);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(leafletMap);
+  markersLayer = L.layerGroup().addTo(leafletMap);
+  updateMapMarkers(lastFiltered);
+}
+
+/* Aggiorna i marker sulla mappa in base alla lista filtrata */
+function updateMapMarkers(lista) {
+  if (!markersLayer) { return; }
+  markersLayer.clearLayers();
+
+  var bounds = [];
+  lista.forEach(function (c) {
+    var lat = parseFloat(c.coordinates.lat);
+    var lng = parseFloat(c.coordinates.lng);
+    if (!isFinite(lat) || !isFinite(lng)) { return; }
+
+    var loc        = getLocalised(c);
+    var nome       = loc.nome || '';
+    var hoopsCount = parseInt(c.hoops, 10) || 0;
+    var hoopsLabel = hoopsCount + ' ' + (hoopsCount === 1 ? T.labelHoop : T.labelHoops);
+
+    /* Popup costruito con DOM API — nessun innerHTML dal JSON */
+    var popup = el('div', 'map-popup');
+    popup.appendChild(textEl('div', 'map-popup-name', '#' + c.id + ' \u2014 ' + nome));
+    popup.appendChild(textEl('div', 'map-popup-address', c.address));
+    popup.appendChild(textEl('div', 'map-popup-hoops', hoopsLabel));
+
+    var marker = L.marker([lat, lng]).bindPopup(popup);
+    markersLayer.addLayer(marker);
+    bounds.push([lat, lng]);
+  });
+
+  if (bounds.length > 0) {
+    leafletMap.fitBounds(bounds, { padding: [30, 30] });
+  }
+}
+
+/* Alterna tra vista griglia e vista mappa */
+function switchView(view) {
+  activeView = view;
+  var grid = document.getElementById('grid');
+  var map  = document.getElementById('map');
+
+  document.querySelectorAll('.view-tab').forEach(function (tab) {
+    tab.classList.remove('active');
+    if (tab.dataset.view === view) { tab.classList.add('active'); }
+  });
+
+  if (view === 'grid') {
+    grid.style.display = '';
+    map.classList.remove('active');
+  } else {
+    grid.style.display = 'none';
+    map.classList.add('active');
+    initMap();
+    /* Leaflet ha bisogno di ricalcolare le dimensioni dopo
+       che il contenitore diventa visibile */
+    setTimeout(function () { leafletMap.invalidateSize(); }, 100);
+  }
 }
 
 
@@ -465,7 +546,9 @@ function applyFilters() {
     });
   }
 
+  lastFiltered = filtered;
   renderCards(filtered);
+  updateMapMarkers(filtered);
 }
 
 
@@ -501,6 +584,16 @@ document.querySelectorAll('.sort-btn').forEach(function (btn) {
     btn.classList.add('active');
     activeSort = btn.dataset.sort;
     applyFilters();
+  });
+});
+
+
+/* =============================================================
+   LISTENER — TAB VISTA (Griglia / Mappa)
+   ============================================================= */
+document.querySelectorAll('.view-tab').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    switchView(tab.dataset.view);
   });
 });
 
