@@ -38,6 +38,7 @@ var I18N = {
     labelHalf:     'Mezzo campo',
     labelThreePt:  'Linea da tre',
     openInMaps:    '📍 Apri in Maps',
+    labelBattito:  'Battito',
     fresh:         'Aggiornato',
     aging:         'Da riverificare',
     stale:         'Datato'
@@ -61,6 +62,7 @@ var I18N = {
     labelHalf:     'Half court',
     labelThreePt:  'Three-pt line',
     openInMaps:    '📍 Open in Maps',
+    labelBattito:  'Heartbeat',
     fresh:         'Up to date',
     aging:         'Needs check',
     stale:         'Outdated'
@@ -106,6 +108,16 @@ var lastFiltered  = [];
    Restituisce il percorso originale se valido, stringa vuota
    altrimenti. */
 function safePhotoUrl(url) {
+  if (typeof url !== 'string') { return ''; }
+  var trimmed = url.trim();
+  if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed)) { return ''; }
+  if (!trimmed.startsWith('photos/'))          { return ''; }
+  return trimmed;
+}
+
+/* Verifica che un URL audio sia un percorso relativo sicuro.
+   Stesse regole di safePhotoUrl: accetta solo "photos/…". */
+function safeAudioUrl(url) {
   if (typeof url !== 'string') { return ''; }
   var trimmed = url.trim();
   if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed)) { return ''; }
@@ -169,6 +181,67 @@ lightbox.addEventListener('click', function (event) {
     lightbox.classList.remove('open');
   }
 });
+
+
+/* =============================================================
+   PLAYER AUDIO "BATTITO"
+   Tracciato ECG animato che riproduce l'audio del rimbalzo
+   di una palla sul campetto — il battito del campetto.
+   ============================================================= */
+
+/* Dati del tracciato ECG (due cicli cardiaci stilizzati) */
+var ECG_PATH = 'M0,12 L6,12 L8,10 L10,12 L12,12 L13.5,3 L15,21 L16.5,9 L18,12 L24,12 L27,8 L30,12 L40,12 L46,12 L48,10 L50,12 L52,12 L53.5,3 L55,21 L56.5,9 L58,12 L64,12 L67,8 L70,12 L80,12';
+
+/* Crea un elemento SVG con il tracciato ECG.
+   cssClass distingue sfondo (muted) e primo piano (orange). */
+function buildEcgSvg(cssClass) {
+  var ns  = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', '0 0 80 24');
+  svg.setAttribute('class', cssClass);
+  svg.setAttribute('aria-hidden', 'true');
+  var path = document.createElementNS(ns, 'path');
+  path.setAttribute('d', ECG_PATH);
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', 'currentColor');
+  path.setAttribute('stroke-width', '1.5');
+  path.setAttribute('stroke-linejoin', 'round');
+  svg.appendChild(path);
+  return svg;
+}
+
+/* Avvia o ferma la riproduzione audio del battito.
+   Gestisce il ciclo play/pause e l'animazione CSS. */
+function toggleBattito(btn) {
+  var url = btn.dataset.audio;
+
+  /* Se sta suonando → ferma e resetta */
+  if (btn._audio && !btn._audio.paused) {
+    btn._audio.pause();
+    btn._audio.currentTime = 0;
+    btn.classList.remove('playing');
+    return;
+  }
+
+  /* Crea l'elemento Audio al primo utilizzo */
+  if (!btn._audio) {
+    var safe = safeAudioUrl(url);
+    if (!safe) { return; }
+    btn._audio = new Audio(safe);
+    btn._audio.addEventListener('ended', function () {
+      btn.classList.remove('playing');
+    });
+  }
+
+  /* Avvia riproduzione con reset animazione */
+  btn._audio.currentTime = 0;
+  btn.classList.remove('playing');
+  void btn.offsetWidth;
+  btn.classList.add('playing');
+  btn._audio.play().catch(function () {
+    btn.classList.remove('playing');
+  });
+}
 
 
 /* =============================================================
@@ -354,9 +427,10 @@ function getMapsUrl(lat, lng) {
    testuale proveniente dal JSON passa da textContent, rendendo
    impossibile l'iniezione di HTML malevolo (XSS) by design.
 
-   Struttura generata:
+   Struttura generata (layout "Respiro duale"):
    article.card
    ├── img.card-photo | div.card-photo-placeholder
+   ├── div.thumbs  (ribbon sovrapposto alla foto, opzionale)
    ├── header.card-header
    │   ├── div.card-num
    │   ├── div.card-name
@@ -365,10 +439,10 @@ function getMapsUrl(lat, lng) {
    │   ├── div.info-row  (Indirizzo)
    │   ├── div.info-row  (Zona)
    │   ├── div.info-row  (Note)
-   │   ├── div.info-row  (Foto thumbnail, opzionale)
    │   └── div.booleans  (pill canestri, illuminato, ecc.)
    └── footer.card-footer
-       └── a.maps-btn
+       ├── a.maps-btn
+       └── button.battito-btn (player audio, opzionale)
    ============================================================= */
 function buildCard(campetto) {
 
@@ -400,6 +474,24 @@ function buildCard(campetto) {
   }
 
 
+  /* ── Ribbon thumbnail (sovrapposto al bordo inferiore della foto) ── */
+
+  if (campetto.photos && campetto.photos.details && campetto.photos.details.length > 0) {
+    var thumbs = el('div', 'thumbs');
+    campetto.photos.details.forEach(function (url) {
+      var safe = safePhotoUrl(url);
+      if (!safe) { return; }
+      var img     = el('img');
+      img.src     = safe;
+      img.alt     = T.labelPhotos;
+      img.loading = 'lazy';
+      img.dataset.photo = safe;
+      thumbs.appendChild(img);
+    });
+    card.appendChild(thumbs);
+  }
+
+
   /* ── Header: numero, nome, data + freschezza ── */
 
   var header = el('header', 'card-header');
@@ -428,26 +520,6 @@ function buildCard(campetto) {
 
   body.appendChild(infoRow(T.labelNotes, note));
 
-  /* Thumbnail foto di dettaglio (opzionale) */
-  if (campetto.photos && campetto.photos.details && campetto.photos.details.length > 0) {
-    var thumbRow = el('div', 'info-row');
-    thumbRow.appendChild(textEl('div', 'info-label', T.labelPhotos));
-
-    var thumbs = el('div', 'thumbs');
-    campetto.photos.details.forEach(function (url) {
-      var safe = safePhotoUrl(url);
-      if (!safe) { return; }
-      var img     = el('img');
-      img.src     = safe;
-      img.alt     = T.labelPhotos;
-      img.loading = 'lazy';
-      img.dataset.photo = safe;
-      thumbs.appendChild(img);
-    });
-    thumbRow.appendChild(thumbs);
-    body.appendChild(thumbRow);
-  }
-
   /* Pill booleane (canestri, illuminato, recintato, ecc.) */
   var bools      = el('div', 'booleans');
   var hoopsCount = parseInt(campetto.hoops, 10) || 0;
@@ -464,7 +536,7 @@ function buildCard(campetto) {
   card.appendChild(body);
 
 
-  /* ── Footer: link a Google Maps ── */
+  /* ── Footer: link a Google Maps + player audio battito ── */
 
   var footer = el('footer', 'card-footer');
   var mapsLink    = el('a', 'maps-btn');
@@ -475,6 +547,23 @@ function buildCard(campetto) {
   mapsLink.rel    = 'noopener';
   mapsLink.textContent = T.openInMaps;
   footer.appendChild(mapsLink);
+
+  /* Player audio "battito" — visibile solo se il campetto
+     ha un file audio associato (campo "audio" nel JSON) */
+  var audioUrl = campetto.audio ? safeAudioUrl(campetto.audio) : '';
+  if (audioUrl) {
+    var battitoBtn = el('button', 'battito-btn');
+    battitoBtn.type = 'button';
+    battitoBtn.dataset.audio = audioUrl;
+
+    var ecgWrap = el('div', 'battito-ecg');
+    ecgWrap.appendChild(buildEcgSvg('battito-ecg-bg'));
+    ecgWrap.appendChild(buildEcgSvg('battito-ecg-fg'));
+    battitoBtn.appendChild(ecgWrap);
+
+    battitoBtn.appendChild(textEl('span', 'battito-label', T.labelBattito));
+    footer.appendChild(battitoBtn);
+  }
 
   card.appendChild(footer);
 
@@ -508,12 +597,18 @@ function renderCards(lista) {
 
 
 /* =============================================================
-   EVENT DELEGATION — LIGHTBOX
+   EVENT DELEGATION — LIGHTBOX + BATTITO
    Un unico listener sulla griglia gestisce i click su tutte
-   le immagini (panoramiche e thumbnail). L'URL della foto è
-   letto dall'attributo data-photo, già validato in buildCard.
+   le immagini (lightbox) e sui pulsanti battito (audio).
    ============================================================= */
 document.getElementById('grid').addEventListener('click', function (event) {
+  /* Player audio battito */
+  var battitoBtn = event.target.closest('.battito-btn');
+  if (battitoBtn) {
+    toggleBattito(battitoBtn);
+    return;
+  }
+  /* Lightbox foto */
   var img = event.target.closest('[data-photo]');
   if (img) {
     openLightbox(img.getAttribute('data-photo'));

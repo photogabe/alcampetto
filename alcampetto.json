@@ -49,7 +49,7 @@
       "lng": 9.24435
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "granulato sferoidale di quarzo",
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
@@ -66,11 +66,11 @@
     },
     "i18n": {
       "it": {
-        "nome": "Campetto di Via del Futurismo",
+        "nome": "Campetto di Parco dell'Alberello",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura."
       },
       "en": {
-        "nome": "Via del Futurismo Basketball Court",
+        "nome": "Parco dell'Alberello Basketball Court",
         "note": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time."
       }
     }
@@ -87,7 +87,7 @@
       "lng": 9.18857
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -162,7 +162,7 @@
       "lng": 9.1327
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "asfalto",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
