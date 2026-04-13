@@ -116,12 +116,12 @@ function safePhotoUrl(url) {
 }
 
 /* Verifica che un URL audio sia un percorso relativo sicuro.
-   Stesse regole di safePhotoUrl: accetta solo "photos/…". */
+   Accetta solo percorsi che iniziano con "audio/". */
 function safeAudioUrl(url) {
   if (typeof url !== 'string') { return ''; }
   var trimmed = url.trim();
   if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed)) { return ''; }
-  if (!trimmed.startsWith('photos/'))          { return ''; }
+  if (!trimmed.startsWith('audio/'))           { return ''; }
   return trimmed;
 }
 
@@ -159,26 +159,138 @@ function infoRow(label, value) {
 
 /* =============================================================
    LIGHTBOX
-   Apre e chiude il visualizzatore foto a schermo intero.
+   Overlay fullscreen: hero + mosaico Mondrian + foto d'autore.
+   Il contenuto viene costruito dinamicamente dal dato del
+   campetto cliccato.
    ============================================================= */
 
 var lightbox      = document.getElementById('lightbox');
-var lightboxImg   = document.getElementById('lightbox-img');
 var lightboxClose = document.getElementById('lightbox-close');
 
-function openLightbox(src) {
-  if (!safePhotoUrl(src)) { return; }
-  lightboxImg.src = src;
-  lightbox.classList.add('open');
+/* Tenta di caricare la variante -full.webp di una foto.
+   Se il file non esiste, il browser ricade sulla versione
+   standard tramite l'handler onerror. */
+function setFullImg(imgEl, src) {
+  var fullSrc = src.replace(/\.webp$/, '-full.webp');
+  imgEl.src = fullSrc;
+  imgEl.onerror = function () {
+    imgEl.onerror = null;
+    imgEl.src = src;
+  };
 }
 
-lightboxClose.addEventListener('click', function () {
-  lightbox.classList.remove('open');
-});
+/* Costruisce l'intero overlay a partire da un oggetto campetto */
+function openLightbox(campetto) {
+  var loc      = getLocalised(campetto);
+  var nome     = loc.nome || '';
+  var captions = loc.captions || {};
+  var photos   = campetto.photos || {};
 
-lightbox.addEventListener('click', function (event) {
-  if (event.target === lightbox) {
-    lightbox.classList.remove('open');
+  /* Rimuove il contenuto precedente (mantiene il pulsante ✕) */
+  while (lightbox.lastChild !== lightboxClose) {
+    lightbox.removeChild(lightbox.lastChild);
+  }
+
+  /* ── Hero: overview a schermo pieno ── */
+  var overviewUrl = safePhotoUrl(photos.overview);
+  if (overviewUrl) {
+    var hero    = el('section', 'lb-hero');
+    var heroImg = el('img');
+    setFullImg(heroImg, overviewUrl);
+    heroImg.alt = nome;
+    hero.appendChild(heroImg);
+
+    var cap  = el('div', 'lb-hero-caption');
+    cap.appendChild(textEl('h2', '', nome));
+    var meta = campetto.city
+             + (campetto.district ? ' \u00b7 ' + campetto.district : '')
+             + ' \u00b7 #' + campetto.id;
+    cap.appendChild(textEl('div', 'lb-hero-meta', meta));
+    hero.appendChild(cap);
+    lightbox.appendChild(hero);
+  }
+
+  /* ── Mosaico Mondrian: contesto + dettagli ── */
+  var mosaicPhotos = [];
+
+  var contextUrl = photos.context ? safePhotoUrl(photos.context) : '';
+  if (contextUrl) {
+    mosaicPhotos.push({ src: contextUrl, caption: captions.context || null });
+  }
+
+  var detailCaptions = captions.details || [];
+  if (photos.details) {
+    photos.details.forEach(function (url, i) {
+      var safe = safePhotoUrl(url);
+      if (safe) {
+        mosaicPhotos.push({ src: safe, caption: detailCaptions[i] || null });
+      }
+    });
+  }
+
+  if (mosaicPhotos.length > 0) {
+    var mondrian = el('section', 'lb-mondrian');
+    mosaicPhotos.forEach(function (photo) {
+      var cell = el('div', 'm-cell');
+      cell.style.backgroundImage = 'url(' + photo.src + ')';
+      var img  = el('img');
+      setFullImg(img, photo.src);
+      img.alt     = photo.caption || '';
+      img.loading = 'lazy';
+      img.onload  = function () {
+        if (img.naturalHeight > img.naturalWidth) {
+          cell.classList.add('portrait');
+        } else {
+          cell.classList.add('landscape');
+        }
+      };
+      cell.appendChild(img);
+      if (photo.caption) {
+        cell.appendChild(textEl('div', 'm-caption', photo.caption));
+      }
+      mondrian.appendChild(cell);
+    });
+    lightbox.appendChild(mondrian);
+  }
+
+  /* ── Foto d'autore (opzionale, staccata) ── */
+  var autorePhotos   = photos.autore || [];
+  var autoreCaptions = captions.autore || [];
+  if (autorePhotos.length > 0) {
+    var section = el('section', 'lb-autore');
+    section.appendChild(el('div', 'lb-autore-sep'));
+    autorePhotos.forEach(function (url, i) {
+      var safe = safePhotoUrl(url);
+      if (!safe) { return; }
+      var item = el('div', 'lb-autore-item');
+      var img  = el('img');
+      setFullImg(img, safe);
+      img.alt = autoreCaptions[i] || '';
+      item.appendChild(img);
+      if (autoreCaptions[i]) {
+        item.appendChild(textEl('div', 'lb-autore-caption', autoreCaptions[i]));
+      }
+      section.appendChild(item);
+    });
+    lightbox.appendChild(section);
+  }
+
+  /* Mostra l'overlay */
+  lightbox.classList.add('open');
+  lightbox.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+    closeLightbox();
   }
 });
 
@@ -456,6 +568,7 @@ function buildCard(campetto) {
 
   /* ── Radice della card ── */
   var card = el('article', 'card');
+  card._campetto = campetto;
 
 
   /* ── Foto panoramica (o placeholder) ── */
@@ -478,7 +591,7 @@ function buildCard(campetto) {
 
   if (campetto.photos && campetto.photos.details && campetto.photos.details.length > 0) {
     var thumbs = el('div', 'thumbs');
-    campetto.photos.details.forEach(function (url) {
+    campetto.photos.details.slice(0, 3).forEach(function (url) {
       var safe = safePhotoUrl(url);
       if (!safe) { return; }
       var img     = el('img');
@@ -611,7 +724,10 @@ document.getElementById('grid').addEventListener('click', function (event) {
   /* Lightbox foto */
   var img = event.target.closest('[data-photo]');
   if (img) {
-    openLightbox(img.getAttribute('data-photo'));
+    var card = img.closest('.card');
+    if (card && card._campetto) {
+      openLightbox(card._campetto);
+    }
   }
 });
 
