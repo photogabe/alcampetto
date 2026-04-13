@@ -772,15 +772,18 @@ main#grid {
 
 
 /* ── Mosaico (contesto + dettagli) ──
-   Flexbox con wrap: le foto si incastrano una accanto
-   all'altra, separate da 4px di nero. Su schermi larghi
-   si affiancano, su schermi stretti si impilano.
-   Le foto riempiono completamente la cella (cover).
+   Flexbox con wrap e align-items: flex-start — le foto si
+   affiancano allineate in alto, ciascuna con la propria
+   altezza naturale. Come in una tela di Mondrian i rettangoli
+   non finiscono tutti lungo la stessa linea.
+   Le foto non vengono mai croppate: sono sempre visibili
+   per intero. Solo 4px di nero le separano.
    ─────────────────────────────────────────────── */
 
 .lb-mondrian {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   gap: 4px;
   background: var(--black);
 }
@@ -788,7 +791,6 @@ main#grid {
 .lb-mondrian .m-cell {
   flex: 1 1 30%;
   min-width: 180px;
-  height: 50vh;
   overflow: hidden;
   position: relative;
 }
@@ -797,8 +799,7 @@ main#grid {
 
 .lb-mondrian .m-cell img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -1125,7 +1126,6 @@ main.about ~ .site-footer { margin-top: 4rem; }
   }
   .lb-mondrian .m-cell img {
     height: auto;
-    object-fit: contain;
   }
   .lb-mondrian .m-caption { opacity: 1; }
 
