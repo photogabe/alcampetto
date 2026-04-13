@@ -97,8 +97,13 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 
 | Campo | Tipo | Descrizione |
 |---|---|---|
-| `photos` | `object` | Contiene `overview` (foto panoramica) e `details` (array di foto di dettaglio). Vedi sezione sul protocollo fotografico. I percorsi sono relativi alla root del progetto. |
-| `i18n` | `object` | Testi localizzati, indicizzati per codice lingua ISO 639-1 (`it`, `en`, …). Ogni lingua fornisce `nome` (nome del campetto) e `note` (descrizione libera sullo stato e le caratteristiche). |
+| `photos` | `array` | Array di rilevazioni fotografiche, ordinate dalla più recente alla più vecchia. Ogni elemento è un oggetto con i campi descritti sotto. `photos[0]` è sempre la rilevazione corrente. |
+| `photos[].date` | `string` | Data della rilevazione, formato `YYYY-MM-DD`. |
+| `photos[].overview` | `string\|null` | Foto panoramica. Percorso relativo alla root del progetto. |
+| `photos[].context` | `string\|null` | Foto di contesto (opzionale). |
+| `photos[].details` | `array` | Array di foto di dettaglio. Vedi sezione sul protocollo fotografico. |
+| `photos[].autore` | `array` | Array di foto d'autore (opzionale). |
+| `i18n` | `object` | Testi localizzati, indicizzati per codice lingua ISO 639-1 (`it`, `en`, …). Ogni lingua fornisce `nome` (nome del campetto), `note` (descrizione libera) e `captions` (array di didascalie parallelo a `photos`). |
 
 ### Esempio
 
@@ -112,23 +117,37 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
   "district": "Municipio 8",
   "coordinates": { "lat": 45.49409, "lng": 9.11730 },
   "hoops": 2,
+  "surface": "cemento",
   "half_court": false,
   "three_pt_line": true,
   "fenced": false,
   "free": true,
   "lit": false,
   "indoor": false,
-  "photos": {
-    "overview": "photos/001/overview.webp",
-    "details": [
-      "photos/001/dettaglio-1.webp",
-      "photos/001/dettaglio-2.webp",
-      "photos/001/dettaglio-3.webp"
-    ]
-  },
+  "photos": [
+    {
+      "date": "2026-02-20",
+      "overview": "photos/001/overview.webp",
+      "context": null,
+      "details": [
+        "photos/001/dettaglio-1.webp",
+        "photos/001/dettaglio-2.webp",
+        "photos/001/dettaglio-3.webp"
+      ],
+      "autore": []
+    }
+  ],
   "i18n": {
-    "it": { "nome": "Campetto di Giardino Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
-    "en": { "nome": "Giardino Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
+    "it": {
+      "nome": "Campetto di Giardino Vieira De Mello",
+      "note": "Ben tenuto. Superficie in ottime condizioni.",
+      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+    },
+    "en": {
+      "nome": "Giardino Vieira De Mello Basketball Court",
+      "note": "Well maintained. Surface in good condition.",
+      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+    }
   }
 }
 ```

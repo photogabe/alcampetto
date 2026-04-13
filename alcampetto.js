@@ -39,6 +39,11 @@ var I18N = {
     labelThreePt:  'Linea da tre',
     openInMaps:    '📍 Apri in Maps',
     labelBattito:  'Battito',
+    labelArchive:  'Archivio fotografico',
+    labelSurveys:  'rilevazioni',
+    labelOverview: 'overview',
+    labelContext:  'contesto',
+    labelDetail:   'dettaglio',
     fresh:         'Aggiornato',
     aging:         'Da riverificare',
     stale:         'Datato'
@@ -63,6 +68,11 @@ var I18N = {
     labelThreePt:  'Three-pt line',
     openInMaps:    '📍 Open in Maps',
     labelBattito:  'Heartbeat',
+    labelArchive:  'Photo archive',
+    labelSurveys:  'surveys',
+    labelOverview: 'overview',
+    labelContext:  'context',
+    labelDetail:   'detail',
     fresh:         'Up to date',
     aging:         'Needs check',
     stale:         'Outdated'
@@ -179,12 +189,16 @@ function setFullImg(imgEl, src) {
   };
 }
 
-/* Costruisce l'intero overlay a partire da un oggetto campetto */
+/* Costruisce l'intero overlay a partire da un oggetto campetto.
+   photos è un array di rilevazioni (photos[0] = più recente).
+   Se il campetto ha più di una rilevazione, una sezione
+   "contact sheet" mostra le versioni precedenti delle foto. */
 function openLightbox(campetto) {
-  var loc      = getLocalised(campetto);
-  var nome     = loc.nome || '';
-  var captions = loc.captions || {};
-  var photos   = campetto.photos || {};
+  var loc       = getLocalised(campetto);
+  var nome      = loc.nome || '';
+  var allPhotos = campetto.photos || [];
+  var latest    = allPhotos[0] || {};
+  var captions  = (loc.captions && loc.captions[0]) || {};
 
   /* Rimuove il contenuto precedente (mantiene il pulsante ✕) */
   while (lightbox.lastChild !== lightboxClose) {
@@ -192,7 +206,7 @@ function openLightbox(campetto) {
   }
 
   /* ── Hero: overview a schermo pieno ── */
-  var overviewUrl = safePhotoUrl(photos.overview);
+  var overviewUrl = safePhotoUrl(latest.overview);
   if (overviewUrl) {
     var hero    = el('section', 'lb-hero');
     var heroImg = el('img');
@@ -213,14 +227,14 @@ function openLightbox(campetto) {
   /* ── Mosaico Mondrian: contesto + dettagli ── */
   var mosaicPhotos = [];
 
-  var contextUrl = photos.context ? safePhotoUrl(photos.context) : '';
+  var contextUrl = latest.context ? safePhotoUrl(latest.context) : '';
   if (contextUrl) {
     mosaicPhotos.push({ src: contextUrl, caption: captions.context || null });
   }
 
   var detailCaptions = captions.details || [];
-  if (photos.details) {
-    photos.details.forEach(function (url, i) {
+  if (latest.details) {
+    latest.details.forEach(function (url, i) {
       var safe = safePhotoUrl(url);
       if (safe) {
         mosaicPhotos.push({ src: safe, caption: detailCaptions[i] || null });
@@ -254,7 +268,7 @@ function openLightbox(campetto) {
   }
 
   /* ── Foto d'autore (opzionale, staccata) ── */
-  var autorePhotos   = photos.autore || [];
+  var autorePhotos   = latest.autore || [];
   var autoreCaptions = captions.autore || [];
   if (autorePhotos.length > 0) {
     var section = el('section', 'lb-autore');
@@ -275,10 +289,150 @@ function openLightbox(campetto) {
     lightbox.appendChild(section);
   }
 
+  /* ── Contact sheet (solo se più di una rilevazione) ── */
+  if (allPhotos.length > 1) {
+    lightbox.appendChild(buildContactSheet(allPhotos, latest.date));
+  }
+
   /* Mostra l'overlay */
   lightbox.classList.add('open');
   lightbox.scrollTop = 0;
   document.body.style.overflow = 'hidden';
+}
+
+
+/* =============================================================
+   CONTACT SHEET TEMPORALE
+   Sezione che compare nel lightbox quando un campetto ha più
+   di una rilevazione fotografica. Mostra una striscia orizzontale
+   per ogni slot (overview, contesto, dettagli) che ha almeno
+   due versioni nel tempo.
+   ============================================================= */
+
+/* Formatta una data ISO in etichetta breve ("feb 2026") */
+function shortDate(iso) {
+  var d = new Date(iso);
+  var months = LANG === 'en'
+    ? ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']
+    : ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+  return months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+/* Costruisce l'intera sezione contact sheet */
+function buildContactSheet(allPhotos, latestDate) {
+  var cs = el('section', 'lb-contact-sheet');
+
+  var title = el('div', 'lb-contact-sheet-title');
+  title.textContent = T.labelArchive + ' \u00b7 '
+                    + allPhotos.length + ' ' + T.labelSurveys;
+  cs.appendChild(title);
+
+  /* Raccogli slot per tipo: ogni slot raggruppa le versioni
+     di una stessa foto (overview, contesto, dettaglio N)
+     attraverso le rilevazioni. */
+  var slots = {};
+
+  allPhotos.forEach(function (survey) {
+    if (survey.overview && safePhotoUrl(survey.overview)) {
+      if (!slots['overview']) { slots['overview'] = []; }
+      slots['overview'].push({ date: survey.date, url: survey.overview });
+    }
+    if (survey.context && safePhotoUrl(survey.context)) {
+      if (!slots['context']) { slots['context'] = []; }
+      slots['context'].push({ date: survey.date, url: survey.context });
+    }
+    if (survey.details) {
+      survey.details.forEach(function (url, i) {
+        if (!safePhotoUrl(url)) { return; }
+        var key = 'detail-' + (i + 1);
+        if (!slots[key]) { slots[key] = []; }
+        slots[key].push({ date: survey.date, url: url });
+      });
+    }
+  });
+
+  /* Ordine di rendering: overview, contesto, poi dettagli */
+  var slotOrder = ['overview', 'context'];
+  Object.keys(slots).forEach(function (k) {
+    if (slotOrder.indexOf(k) === -1) { slotOrder.push(k); }
+  });
+
+  /* Render solo slot con ≥ 2 versioni */
+  var hasContent = false;
+
+  slotOrder.forEach(function (slotName) {
+    var entries = slots[slotName];
+    if (!entries || entries.length < 2) { return; }
+    hasContent = true;
+
+    var row = el('div', 'cs-row');
+
+    /* Etichetta dello slot */
+    var label;
+    if (slotName === 'overview') { label = T.labelOverview; }
+    else if (slotName === 'context') { label = T.labelContext; }
+    else { label = T.labelDetail + ' ' + slotName.split('-')[1]; }
+    row.appendChild(textEl('div', 'cs-row-label', label));
+
+    var strip = el('div', 'cs-strip');
+
+    /* Container per la foto espansa (sotto la strip) */
+    var expandBox = el('div', 'cs-expand');
+
+    /* Ordine cronologico: più vecchia a sinistra */
+    var sorted = entries.slice().reverse();
+
+    sorted.forEach(function (entry) {
+      var isCurrent = (entry.date === latestDate);
+      var thumb = el('div', 'cs-thumb' + (isCurrent ? ' current' : ''));
+
+      var img     = el('img');
+      img.src     = safePhotoUrl(entry.url);
+      img.alt     = label + ' — ' + shortDate(entry.date);
+      img.loading = 'lazy';
+      thumb.appendChild(img);
+
+      thumb.appendChild(textEl('div', 'cs-thumb-date', shortDate(entry.date)));
+
+      /* Click → espande la foto sotto la striscia */
+      thumb.addEventListener('click', (function (e) {
+        return function () {
+          /* Toggle: se già aperta sulla stessa data, chiudi */
+          if (expandBox.classList.contains('open') && expandBox.dataset.date === e.date) {
+            expandBox.classList.remove('open');
+            return;
+          }
+          expandBox.innerHTML = '';
+
+          var inner = el('div', 'cs-expand-inner');
+          var expImg = el('img');
+          setFullImg(expImg, e.url);
+          expImg.alt = label + ' — ' + shortDate(e.date);
+          inner.appendChild(expImg);
+
+          var meta = el('div', 'cs-expand-meta');
+          meta.appendChild(textEl('span', '', label));
+          meta.appendChild(textEl('span', '', shortDate(e.date)));
+          inner.appendChild(meta);
+
+          expandBox.appendChild(inner);
+          expandBox.dataset.date = e.date;
+          expandBox.classList.add('open');
+        };
+      })(entry));
+
+      strip.appendChild(thumb);
+    });
+
+    row.appendChild(strip);
+    row.appendChild(expandBox);
+    cs.appendChild(row);
+  });
+
+  /* Se nessuno slot ha ≥ 2 versioni, non mostrare la sezione */
+  if (!hasContent) { return document.createDocumentFragment(); }
+
+  return cs;
 }
 
 function closeLightbox() {
@@ -571,9 +725,12 @@ function buildCard(campetto) {
   card._campetto = campetto;
 
 
-  /* ── Foto panoramica (o placeholder) ── */
+  /* ── Foto panoramica (o placeholder) ──
+     photos è un array di rilevazioni; la card mostra solo
+     la più recente (photos[0]). */
 
-  var overviewUrl = campetto.photos ? safePhotoUrl(campetto.photos.overview) : '';
+  var latestPhotos = (campetto.photos && campetto.photos[0]) || {};
+  var overviewUrl  = safePhotoUrl(latestPhotos.overview);
 
   if (overviewUrl) {
     var photo   = el('img', 'card-photo');
@@ -589,9 +746,9 @@ function buildCard(campetto) {
 
   /* ── Ribbon thumbnail (sovrapposto al bordo inferiore della foto) ── */
 
-  if (campetto.photos && campetto.photos.details && campetto.photos.details.length > 0) {
+  if (latestPhotos.details && latestPhotos.details.length > 0) {
     var thumbs = el('div', 'thumbs');
-    campetto.photos.details.slice(0, 3).forEach(function (url) {
+    latestPhotos.details.slice(0, 3).forEach(function (url) {
       var safe = safePhotoUrl(url);
       if (!safe) { return; }
       var img     = el('img');
