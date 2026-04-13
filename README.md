@@ -95,8 +95,13 @@ Each court is described by a JSON object. Fields are grouped by category.
 
 | Field | Type | Description |
 |---|---|---|
-| `photos` | `object` | Contains `overview` (wide-angle photo) and `details` (array of close-up photos). See photography protocol section. Paths are relative to the project root. |
-| `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name) and `note` (free-text description of condition and features). |
+| `photos` | `array` | Array of photo surveys, ordered from most recent to oldest. Each element is an object with the fields described below. `photos[0]` is always the current survey. |
+| `photos[].date` | `string` | Date of the survey, `YYYY-MM-DD`. |
+| `photos[].overview` | `string\|null` | Wide-angle photo. Path relative to the project root. |
+| `photos[].context` | `string\|null` | Context photo (optional). |
+| `photos[].details` | `array` | Array of close-up photos. See photography protocol section. |
+| `photos[].autore` | `array` | Array of artistic photos (optional). |
+| `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name), `note` (free-text description) and `captions` (array of caption objects parallel to `photos`). |
 
 ### Example
 
@@ -110,24 +115,37 @@ Each court is described by a JSON object. Fields are grouped by category.
   "district": "Municipio 8",
   "coordinates": { "lat": 45.49409, "lng": 9.11730 },
   "hoops": 2,
-  "surface": "cemento"
+  "surface": "cemento",
   "half_court": false,
   "three_pt_line": true,
   "fenced": false,
   "free": true,
   "lit": false,
   "indoor": false,
-  "photos": {
-    "overview": "photos/001/overview.webp",
-    "details": [
-      "photos/001/dettaglio-1.webp",
-      "photos/001/dettaglio-2.webp",
-      "photos/001/dettaglio-3.webp"
-    ]
-  },
+  "photos": [
+    {
+      "date": "2026-02-20",
+      "overview": "photos/001/overview.webp",
+      "context": null,
+      "details": [
+        "photos/001/dettaglio-1.webp",
+        "photos/001/dettaglio-2.webp",
+        "photos/001/dettaglio-3.webp"
+      ],
+      "autore": []
+    }
+  ],
   "i18n": {
-    "it": { "nome": "Campetto di Giardino Vieira De Mello", "note": "Ben tenuto. Superficie in ottime condizioni." },
-    "en": { "nome": "Giardino Vieira De Mello Basketball Court", "note": "Well maintained. Surface in good condition." }
+    "it": {
+      "nome": "Campetto di Giardino Vieira De Mello",
+      "note": "Ben tenuto. Superficie in ottime condizioni.",
+      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+    },
+    "en": {
+      "nome": "Giardino Vieira De Mello Basketball Court",
+      "note": "Well maintained. Surface in good condition.",
+      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+    }
   }
 }
 ```

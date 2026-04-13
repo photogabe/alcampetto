@@ -19,36 +19,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/001/overview.webp",
-      "context": null,
-      "details": [
-        "photos/001/dettaglio-1.webp",
-        "photos/001/dettaglio-2.webp",
-        "photos/001/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-20",
+        "overview": "photos/001/overview.webp",
+        "context": null,
+        "details": [
+          "photos/001/dettaglio-1.webp",
+          "photos/001/dettaglio-2.webp",
+          "photos/001/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Giardino Sergio Vieira De Mello",
         "note": "Ben tenuto. Superficie in ottime condizioni. Una rete danneggiata.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Giardino Sergio Vieira De Mello Basketball Court",
         "note": "Well maintained. Surface in very good condition. One basket net damaged.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -72,36 +87,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/002/overview.webp",
-      "context": null,
-      "details": [
-        "photos/002/dettaglio-1.webp",
-        "photos/002/dettaglio-2.webp",
-        "photos/002/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-28",
+        "overview": "photos/002/overview.webp",
+        "context": null,
+        "details": [
+          "photos/002/dettaglio-1.webp",
+          "photos/002/dettaglio-2.webp",
+          "photos/002/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Parco dell'Alberello",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Parco dell'Alberello Basketball Court",
         "note": "Court in fair condition, both rims with their net. On the fence you can find opening and closing time.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -125,36 +155,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/003/overview.webp",
-      "context": null,
-      "details": [
-        "photos/003/dettaglio-1.webp",
-        "photos/003/dettaglio-2.webp",
-        "photos/003/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/003/overview.webp",
+        "context": null,
+        "details": [
+          "photos/003/dettaglio-1.webp",
+          "photos/003/dettaglio-2.webp",
+          "photos/003/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di viale Stelvio",
         "note": "Campetto riqualificato da Slumsdunk. Un canestro con retina rotta. Superficie di gioco buona.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Viale Stelvio Basketball Court",
         "note": "Court regenerated by Slumsdunk. One rim with broken net. Surface in good condition.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -178,35 +223,48 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/004/overview.webp",
-      "context": null,
-      "details": [
-        "photos/004/dettaglio-1.webp",
-        "photos/004/dettaglio-2.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-21",
+        "overview": "photos/004/overview.webp",
+        "context": null,
+        "details": [
+          "photos/004/dettaglio-1.webp",
+          "photos/004/dettaglio-2.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Parco Donatori del sangue",
         "note": "Superficie in buone condizioni.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Parco Donatori del sangue Basketball Court",
         "note": "Surface in good condition.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -230,36 +288,51 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/005/overview.webp",
-      "context": null,
-      "details": [
-        "photos/005/dettaglio-1.webp",
-        "photos/005/dettaglio-2.webp",
-        "photos/005/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-23",
+        "overview": "photos/005/overview.webp",
+        "context": null,
+        "details": [
+          "photos/005/dettaglio-1.webp",
+          "photos/005/dettaglio-2.webp",
+          "photos/005/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di via Enrico Terzaghi",
         "note": "Superficie in discrete condizioni. Campetto riqualificato da Kellogs.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Enrico Terzaghi Basketball Court.",
         "note": "Surface in fair condition. Court regenerated by Kellogs.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -283,35 +356,48 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/006/overview.webp",
-      "context": null,
-      "details": [
-        "photos/006/dettaglio-1.webp",
-        "photos/006/dettaglio-2.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-24",
+        "overview": "photos/006/overview.webp",
+        "context": null,
+        "details": [
+          "photos/006/dettaglio-1.webp",
+          "photos/006/dettaglio-2.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Via Collecchio",
         "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Collecchio Basketball Court",
         "note": "Little basketball court on asphalt, both rims with their net. Lit by one street light.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -335,36 +421,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/007/overview.webp",
-      "context": null,
-      "details": [
-        "photos/007/dettaglio-1.webp",
-        "photos/007/dettaglio-2.webp",
-        "photos/007/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-28",
+        "overview": "photos/007/overview.webp",
+        "context": null,
+        "details": [
+          "photos/007/dettaglio-1.webp",
+          "photos/007/dettaglio-2.webp",
+          "photos/007/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Via Giovanni Montemartini",
         "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Giovanni Montemartini Basketball Court",
         "note": "Both rims without net. Court surface worn out.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -388,36 +489,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/008/overview.webp",
-      "context": null,
-      "details": [
-        "photos/008/dettaglio-1.webp",
-        "photos/008/dettaglio-2.webp",
-        "photos/008/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-28",
+        "overview": "photos/008/overview.webp",
+        "context": null,
+        "details": [
+          "photos/008/dettaglio-1.webp",
+          "photos/008/dettaglio-2.webp",
+          "photos/008/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Via Ravenna",
         "note": "Piccolo campetto con un canestro sprovvisto di retina. Superficie usurata.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Ravenna Basketball Court",
         "note": "Small court with both rims without net. Court surface worn out.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -441,36 +557,51 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/009/overview.webp",
-      "context": null,
-      "details": [
-        "photos/009/dettaglio-1.webp",
-        "photos/009/dettaglio-2.webp",
-        "photos/009/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-22",
+        "overview": "photos/009/overview.webp",
+        "context": null,
+        "details": [
+          "photos/009/dettaglio-1.webp",
+          "photos/009/dettaglio-2.webp",
+          "photos/009/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Parco Carlo Ghezzi",
         "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Parco Carlo Ghezzi Basketball Court",
         "note": "Surface in fair condition. In one of the basket the net is missing.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -494,36 +625,51 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/010/overview.webp",
-      "context": null,
-      "details": [
-        "photos/010/dettaglio-1.webp",
-        "photos/010/dettaglio-2.webp",
-        "photos/010/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-01",
+        "overview": "photos/010/overview.webp",
+        "context": null,
+        "details": [
+          "photos/010/dettaglio-1.webp",
+          "photos/010/dettaglio-2.webp",
+          "photos/010/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Via Arcivescovo Calabiana",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Arcivescovo Calabiana Basketball Court",
         "note": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -547,34 +693,45 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/011/overview.webp",
-      "context": null,
-      "details": [
-        "photos/011/dettaglio-1.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-28",
+        "overview": "photos/011/overview.webp",
+        "context": null,
+        "details": [
+          "photos/011/dettaglio-1.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Giardino Vincenzo Muccioli",
         "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Giardino Vincenzo Muccioli Basketball Court",
         "note": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -598,36 +755,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/012/overview.webp",
-      "context": null,
-      "details": [
-        "photos/012/dettaglio-1.webp",
-        "photos/012/dettaglio-2.webp",
-        "photos/012/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-10",
+        "overview": "photos/012/overview.webp",
+        "context": null,
+        "details": [
+          "photos/012/dettaglio-1.webp",
+          "photos/012/dettaglio-2.webp",
+          "photos/012/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di via Sapri",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Sapri Basketball Court",
         "note": "Court in fair condition, both rims with net.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -651,36 +823,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/013/overview.webp",
-      "context": null,
-      "details": [
-        "photos/013/dettaglio-1.webp",
-        "photos/013/dettaglio-2.webp",
-        "photos/013/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-10",
+        "overview": "photos/013/overview.webp",
+        "context": null,
+        "details": [
+          "photos/013/dettaglio-1.webp",
+          "photos/013/dettaglio-2.webp",
+          "photos/013/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di via Nicola Fabrizi",
         "note": "Campetto con entrambi i canestri senza retina. Superficie usurata.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Nicola Fabrizi Basketball Court",
         "note": "Both rims without net. Court surface worn out.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -704,36 +891,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/014/overview.webp",
-      "context": null,
-      "details": [
-        "photos/014/dettaglio-1.webp",
-        "photos/014/dettaglio-2.webp",
-        "photos/014/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/014/overview.webp",
+        "context": null,
+        "details": [
+          "photos/014/dettaglio-1.webp",
+          "photos/014/dettaglio-2.webp",
+          "photos/014/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di via Dora Baltea",
         "note": "Un canestro senza rete. Superficie di gioco decente.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Dora Baltea Basketball Court",
         "note": "One rim without net. Surface in fair condition.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -757,36 +959,51 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/015/overview.webp",
-      "context": null,
-      "details": [
-        "photos/015/dettaglio-1.webp",
-        "photos/015/dettaglio-2.webp",
-        "photos/015/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-02-22",
+        "overview": "photos/015/overview.webp",
+        "context": null,
+        "details": [
+          "photos/015/dettaglio-1.webp",
+          "photos/015/dettaglio-2.webp",
+          "photos/015/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di via Antonio Gramsci",
         "note": "Superficie in ottime condizioni.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via Antonio Gramsci Basketball Court",
         "note": "Surface in very good condition.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -810,36 +1027,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/016/overview.webp",
-      "context": null,
-      "details": [
-        "photos/016/dettaglio-1.webp",
-        "photos/016/dettaglio-2.webp",
-        "photos/016/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/016/overview.webp",
+        "context": null,
+        "details": [
+          "photos/016/dettaglio-1.webp",
+          "photos/016/dettaglio-2.webp",
+          "photos/016/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di giardino Bruno Munari",
         "note": "Un canestro con retina rotta, un altro mancante. Superficie con diverse crepe. Orari di accesso esposti in ingresso.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Giardino Bruno Munari Basketball Court",
         "note": "A net is broke, a rim is missing. Court surface with several cracks. Card table with opening and closing time.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -863,36 +1095,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/017/overview.webp",
-      "context": null,
-      "details": [
-        "photos/017/dettaglio-1.webp",
-        "photos/017/dettaglio-2.webp",
-        "photos/017/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/017/overview.webp",
+        "context": null,
+        "details": [
+          "photos/017/dettaglio-1.webp",
+          "photos/017/dettaglio-2.webp",
+          "photos/017/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#1 di Via San Barnaba",
         "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arrugginita. Superficie usurata.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via San Barnaba Basketball Court#1",
         "note": "Small fenced court, a sibling court can be found few meters away from this one. Right beside the half-court line you get a rusty trash container. Court surface worn out.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -916,36 +1163,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/018/overview.webp",
-      "context": null,
-      "details": [
-        "photos/018/dettaglio-1.webp",
-        "photos/018/dettaglio-2.webp",
-        "photos/018/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/018/overview.webp",
+        "context": null,
+        "details": [
+          "photos/018/dettaglio-1.webp",
+          "photos/018/dettaglio-2.webp",
+          "photos/018/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#2 di via San Barnaba",
         "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. Superficie usurata.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Via San Barnaba Basketball Court#2",
         "note": "Small fenced court, a sibling court can be found few meters away from this one. Court surface worn out.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -969,36 +1231,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/019/overview.webp",
-      "context": null,
-      "details": [
-        "photos/019/dettaglio-1.webp",
-        "photos/019/dettaglio-2.webp",
-        "photos/019/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/019/overview.webp",
+        "context": null,
+        "details": [
+          "photos/019/dettaglio-1.webp",
+          "photos/019/dettaglio-2.webp",
+          "photos/019/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Parco Sempione",
         "note": "Ben tenuto. Superficie in buone condizioni.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Parco Sempione Basketball Court",
         "note": "Well maintained. Surface in good condition.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1022,36 +1299,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/020/overview.webp",
-      "context": null,
-      "details": [
-        "photos/020/dettaglio-1.webp",
-        "photos/020/dettaglio-2.webp",
-        "photos/020/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-14",
+        "overview": "photos/020/overview.webp",
+        "context": null,
+        "details": [
+          "photos/020/dettaglio-1.webp",
+          "photos/020/dettaglio-2.webp",
+          "photos/020/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Piazzale Salvatore Farina",
         "note": "Superficie usurata, canestri con retina rotta.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Piazzale Salvatore Farina Basketball Court",
         "note": "Surface in poor condition. Both rims with broken net.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1075,35 +1367,48 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/021/overview.webp",
-      "context": null,
-      "details": [
-        "photos/021/dettaglio-1.webp",
-        "photos/021/dettaglio-2.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-22",
+        "overview": "photos/021/overview.webp",
+        "context": null,
+        "details": [
+          "photos/021/dettaglio-1.webp",
+          "photos/021/dettaglio-2.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#1 di Viale Argonne",
         "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina quasi totalmente strappata. Buona superficie.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Viale Argonne Basketball Court#1",
         "note": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is almost completely shredded. Good surface.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1127,35 +1432,48 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/022/overview.webp",
-      "context": null,
-      "details": [
-        "photos/022/dettaglio-1.webp",
-        "photos/022/dettaglio-2.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-22",
+        "overview": "photos/022/overview.webp",
+        "context": null,
+        "details": [
+          "photos/022/dettaglio-1.webp",
+          "photos/022/dettaglio-2.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#2 di Viale Argonne",
         "note": "Campetto con superficie in ottimo stato, un canestro mancante.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Viale Argonne Basketball Court#2",
         "note": "Surface in very good condition, a hoop is missing.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1179,34 +1497,45 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/023/overview.webp",
-      "context": null,
-      "details": [
-        "photos/023/dettaglio-1.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-22",
+        "overview": "photos/023/overview.webp",
+        "context": null,
+        "details": [
+          "photos/023/dettaglio-1.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#3 di Viale Argonne",
         "note": "Piccolo campetto a un solo canestro con superficie in ottimo stato.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Viale Argonne Basketball Court#3",
         "note": "Little court with one basktball hoop. Very good surface.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1230,36 +1559,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/024/overview.webp",
-      "context": null,
-      "details": [
-        "photos/024/dettaglio-1.webp",
-        "photos/024/dettaglio-2.webp",
-        "photos/024/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-22",
+        "overview": "photos/024/overview.webp",
+        "context": null,
+        "details": [
+          "photos/024/dettaglio-1.webp",
+          "photos/024/dettaglio-2.webp",
+          "photos/024/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Corso Indipendenza",
         "note": "Campetto con tabelloni piccoli e retine rotte, superficie discreta",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Corso Independenza Basketball Court",
         "note": "Court with small backboards. Rims with shredded nets. Fair surface.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1283,36 +1627,51 @@
     "lit": true,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/025/overview.webp",
-      "context": null,
-      "details": [
-        "photos/025/dettaglio-1.webp",
-        "photos/025/dettaglio-2.webp",
-        "photos/025/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-22",
+        "overview": "photos/025/overview.webp",
+        "context": null,
+        "details": [
+          "photos/025/dettaglio-1.webp",
+          "photos/025/dettaglio-2.webp",
+          "photos/025/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Largo Marinai d'Italia (Parco Vittorio Formentano)",
         "note": "Superficie in discrete condizioni. Un canestro con retina rotta e l'altro con rete di ferro. Illuminazione garantita da due faretti posto lungo uno stesso lato del campo.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Largo Marinai d'Italia Basketball Court (Vittorio Formentano Park)",
         "note": "Court surface in fair condition. A basketball hoops with an iron net the other one with a shredded ned. Lit by two street lights placed on the same court side.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1336,36 +1695,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/026/overview.webp",
-      "context": null,
-      "details": [
-        "photos/026/dettaglio-1.webp",
-        "photos/026/dettaglio-2.webp",
-        "photos/026/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-22",
+        "overview": "photos/026/overview.webp",
+        "context": null,
+        "details": [
+          "photos/026/dettaglio-1.webp",
+          "photos/026/dettaglio-2.webp",
+          "photos/026/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto di Viale Lazio",
         "note": "Superficie in buone condizioni. Entrambi i canestri con retina. Tabelloni trasparenti.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Viale Lazio Basketball Court",
         "note": "Court surface in good condition. Both hoops with their net. Transparent backboards.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1389,36 +1763,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/027/overview.webp",
-      "context": null,
-      "details": [
-        "photos/027/dettaglio-1.webp",
-        "photos/027/dettaglio-2.webp",
-        "photos/027/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-18",
+        "overview": "photos/027/overview.webp",
+        "context": null,
+        "details": [
+          "photos/027/dettaglio-1.webp",
+          "photos/027/dettaglio-2.webp",
+          "photos/027/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#1 di Parco Aldo Aniasi",
         "note": "Superficie in condizioni discrete. Entrambi i canestri con retina.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Parco Aldo Aniasi Court#1",
         "note": "Court surface in fair condition. Both hoops with their net.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   },
@@ -1442,36 +1831,51 @@
     "lit": false,
     "indoor": false,
     "audio": null,
-    "photos": {
-      "overview": "photos/028/overview.webp",
-      "context": null,
-      "details": [
-        "photos/028/dettaglio-1.webp",
-        "photos/028/dettaglio-2.webp",
-        "photos/028/dettaglio-3.webp"
-      ],
-      "autore": []
-    },
+    "photos": [
+      {
+        "date": "2026-03-18",
+        "overview": "photos/028/overview.webp",
+        "context": null,
+        "details": [
+          "photos/028/dettaglio-1.webp",
+          "photos/028/dettaglio-2.webp",
+          "photos/028/dettaglio-3.webp"
+        ],
+        "autore": []
+      }
+    ],
     "i18n": {
       "it": {
         "nome": "Campetto#2 di Parco Aldo Aniasi",
         "note": "Superficie in condizioni discrete. Entrambi i canestri con retina.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       },
       "en": {
         "nome": "Parco Aldo Aniasi Court#2",
         "note": "Court surface in fair condition. Both hoops with their net.",
-        "captions": {
-          "overview": null,
-          "context": null,
-          "details": [null, null, null],
-          "autore": []
-        }
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
       }
     }
   }

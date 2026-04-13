@@ -866,6 +866,119 @@ main#grid {
 }
 
 
+/* ── Contact sheet temporale (archivio rilevazioni) ──
+   Sezione visibile nel lightbox solo quando un campetto
+   ha più di una rilevazione fotografica.  Per ogni slot
+   (overview, contesto, dettagli) che ha almeno due versioni
+   nel tempo viene mostrata una striscia orizzontale di
+   miniature, ordinata cronologicamente (la più vecchia
+   a sinistra).
+   ─────────────────────────────────────────────── */
+
+.lb-contact-sheet {
+  padding: 3rem 2rem 4rem;
+  border-top: 1px solid var(--line);
+}
+.lb-contact-sheet-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+}
+
+/* Ogni riga = uno slot fotografico nel tempo */
+.cs-row {
+  margin-bottom: 2.2rem;
+}
+.cs-row-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+  opacity: 0.6;
+}
+
+/* Striscia orizzontale di miniature */
+.cs-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  align-items: flex-end;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.cs-strip::-webkit-scrollbar       { height: 3px; }
+.cs-strip::-webkit-scrollbar-track { background: transparent; }
+.cs-strip::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
+.cs-thumb {
+  flex: 0 0 auto;
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.cs-thumb:hover { transform: scale(1.03); }
+
+.cs-thumb img {
+  width: 140px;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.cs-thumb.current img {
+  border-color: var(--orange);
+}
+
+.cs-thumb-date {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  text-align: center;
+}
+.cs-thumb.current .cs-thumb-date {
+  color: var(--orange);
+}
+
+/* Expand: foto ingrandita sotto la striscia.
+   La larghezza del contenitore inner è limitata,
+   l'altezza è determinata dal ratio naturale dell'immagine. */
+.cs-expand {
+  display: none;
+  margin-top: 0.8rem;
+}
+.cs-expand.open { display: block; }
+
+.cs-expand-inner {
+  display: inline-block;
+  max-width: 700px;
+  background: var(--dark);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.cs-expand-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cs-expand-meta {
+  padding: 0.8rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+
 /* -------------------------------------------------------------
    MESSAGGI DI STATO
    ------------------------------------------------------------- */
@@ -1015,4 +1128,9 @@ main.about ~ .site-footer { margin-top: 4rem; }
     height: 40vh;
   }
   .lb-mondrian .m-caption { opacity: 1; }
+
+  /* Contact sheet — mobile */
+  .cs-thumb { width: 110px; }
+  .cs-thumb img { width: 110px; }
+  .cs-expand-inner { max-width: 100%; }
 }
