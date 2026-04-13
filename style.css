@@ -798,7 +798,7 @@ main#grid {
 .lb-mondrian .m-cell.portrait  { flex: 1 1 22%; }
 
 .lb-mondrian .m-cell img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
