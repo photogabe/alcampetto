@@ -1121,13 +1121,48 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .thumbs img { width: 60px; height: 60px; }
   .battito-ecg { width: 60px; }
 
-  /* Lightbox — mobile */
+  /* Lightbox — mobile
+     Su schermi stretti le foto si impilano in verticale,
+     ciascuna occupa tutta la larghezza e l'altezza segue
+     il ratio naturale dell'immagine. Niente crop, niente
+     spazio vuoto ai lati. */
+
+  .lb-hero {
+    height: auto;
+  }
+  .lb-hero img {
+    height: auto;
+    object-fit: contain;
+  }
+  .lb-hero-caption {
+    padding: 2rem 1.2rem 1.2rem;
+  }
   .lb-hero-caption h2 { font-size: 2rem; }
-  .lb-mondrian .m-cell {
-    flex-basis: 100% !important;
-    height: 40vh;
+
+  .lb-mondrian {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .lb-mondrian .m-cell,
+  .lb-mondrian .m-cell.landscape,
+  .lb-mondrian .m-cell.portrait {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+  }
+  .lb-mondrian .m-cell::before {
+    display: none;
+  }
+  .lb-mondrian .m-cell img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
   .lb-mondrian .m-caption { opacity: 1; }
+
+  .lb-autore-item { width: 100%; }
+  .lb-autore-item img { max-height: none; }
 
   /* Contact sheet — mobile */
   .cs-thumb { width: 110px; }
