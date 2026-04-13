@@ -693,39 +693,176 @@ main#grid {
 
 /* -------------------------------------------------------------
    LIGHTBOX
-   Si attiva con la classe .open aggiunta da alcampetto.js.
+   Overlay fullscreen con hero, mosaico Mondrian e sezione
+   foto d'autore. Contenuto costruito da alcampetto.js.
    ------------------------------------------------------------- */
 #lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
   z-index: 100;
-  align-items: center;
-  justify-content: center;
-  cursor: zoom-out;
+  background: var(--black);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-#lightbox.open { display: flex; }
+#lightbox.open { display: block; }
 
-#lightbox img {
-  max-width: 90vw;
-  max-height: 88vh;
-  border-radius: 3px;
-  border: 1px solid var(--line);
-  box-shadow: 0 0 80px rgba(255, 95, 31, 0.15);
-}
+#lightbox::-webkit-scrollbar       { width: 4px; }
+#lightbox::-webkit-scrollbar-track { background: transparent; }
+#lightbox::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
 
 #lightbox-close {
-  position: absolute;
+  position: fixed;
   top: 1.2rem;
   right: 1.5rem;
+  z-index: 110;
   color: var(--muted);
   font-size: 1.5rem;
   cursor: pointer;
   font-family: var(--font-mono);
   line-height: 1;
-  background: none;
+  background: rgba(13, 13, 13, 0.7);
   border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  backdrop-filter: blur(8px);
+}
+#lightbox-close:hover { color: var(--text); }
+
+
+/* ── Hero (overview a schermo pieno) ── */
+
+.lb-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.lb-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lb-hero-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 2.5rem 2rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+.lb-hero-caption h2 {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--text);
+}
+.lb-hero-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+
+/* ── Mosaico Mondrian (contesto + dettagli) ──
+   Flexbox con wrap: ogni cella prende la larghezza adatta
+   alla sua orientazione (rilevata da JS al caricamento).
+   Le foto portrait restano strette, le landscape si allargano.
+   I bordi non si allineano tutti — come in un vero Mondrian.
+   ─────────────────────────────────────────────── */
+
+.lb-mondrian {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  background: var(--black);
+}
+
+.lb-mondrian .m-cell {
+  flex: 1 1 30%;
+  min-width: 180px;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.lb-mondrian .m-cell.landscape { flex: 2 1 45%; }
+.lb-mondrian .m-cell.portrait  { flex: 1 1 22%; }
+
+.lb-mondrian .m-cell::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: inherit;
+  filter: blur(20px) brightness(0.3);
+  z-index: 0;
+}
+.lb-mondrian .m-cell img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lb-mondrian .m-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1rem 0.8rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+.lb-mondrian .m-cell:hover .m-caption { opacity: 1; }
+
+
+/* ── Foto d'autore (staccata dal mosaico) ── */
+
+.lb-autore {
+  padding: 4rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lb-autore-sep {
+  width: 40px;
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 2.5rem;
+}
+.lb-autore-item {
+  max-width: 900px;
+  width: 88%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.lb-autore-item img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+.lb-autore-caption {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.8rem;
+  line-height: 1.5;
 }
 
 
@@ -870,4 +1007,12 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .card > .thumbs { margin-top: -22px; }
   .thumbs img { width: 60px; height: 60px; }
   .battito-ecg { width: 60px; }
+
+  /* Lightbox — mobile */
+  .lb-hero-caption h2 { font-size: 2rem; }
+  .lb-mondrian .m-cell {
+    flex-basis: 100% !important;
+    height: 40vh;
+  }
+  .lb-mondrian .m-caption { opacity: 1; }
 }
