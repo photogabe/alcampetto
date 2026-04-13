@@ -246,7 +246,6 @@ function openLightbox(campetto) {
     var mondrian = el('section', 'lb-mondrian');
     mosaicPhotos.forEach(function (photo) {
       var cell = el('div', 'm-cell');
-      cell.style.backgroundImage = 'url(' + photo.src + ')';
       var img  = el('img');
       setFullImg(img, photo.src);
       img.alt     = photo.caption || '';

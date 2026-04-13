@@ -771,17 +771,17 @@ main#grid {
 }
 
 
-/* ── Mosaico Mondrian (contesto + dettagli) ──
-   Flexbox con wrap: ogni cella prende la larghezza adatta
-   alla sua orientazione (rilevata da JS al caricamento).
-   Le foto portrait restano strette, le landscape si allargano.
-   I bordi non si allineano tutti — come in un vero Mondrian.
+/* ── Mosaico (contesto + dettagli) ──
+   Flexbox con wrap: le foto si incastrano una accanto
+   all'altra, separate da 4px di nero. Su schermi larghi
+   si affiancano, su schermi stretti si impilano.
+   Le foto riempiono completamente la cella (cover).
    ─────────────────────────────────────────────── */
 
 .lb-mondrian {
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 4px;
   background: var(--black);
 }
 
@@ -791,26 +791,14 @@ main#grid {
   height: 50vh;
   overflow: hidden;
   position: relative;
-  background-size: cover;
-  background-position: center;
 }
 .lb-mondrian .m-cell.landscape { flex: 2 1 45%; }
 .lb-mondrian .m-cell.portrait  { flex: 1 1 22%; }
 
-.lb-mondrian .m-cell::before {
-  content: '';
-  position: absolute;
-  inset: -20px;
-  background: inherit;
-  filter: blur(20px) brightness(0.3);
-  z-index: 0;
-}
 .lb-mondrian .m-cell img {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
@@ -826,7 +814,7 @@ main#grid {
   color: var(--muted);
   opacity: 0;
   transition: opacity 0.3s;
-  z-index: 2;
+  z-index: 1;
 }
 .lb-mondrian .m-cell:hover .m-caption { opacity: 1; }
 
@@ -1104,6 +1092,52 @@ main.about ~ .site-footer { margin-top: 4rem; }
 
 
 /* -------------------------------------------------------------
+   RESPONSIVE — Lightbox su tablet e mobile (max 1024px)
+   Copre iPad (portrait e landscape), telefoni in qualsiasi
+   orientamento. Le foto si impilano in verticale, ciascuna
+   occupa tutta la larghezza e l'altezza segue il ratio
+   naturale dell'immagine. Niente crop, niente spazio vuoto.
+   ------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .lb-hero {
+    height: auto;
+  }
+  .lb-hero img {
+    height: auto;
+    object-fit: contain;
+  }
+  .lb-hero-caption {
+    padding: 2rem 1.5rem 1.2rem;
+  }
+  .lb-hero-caption h2 { font-size: 1.5rem; }
+
+  .lb-mondrian {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .lb-mondrian .m-cell,
+  .lb-mondrian .m-cell.landscape,
+  .lb-mondrian .m-cell.portrait {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+  }
+  .lb-mondrian .m-cell img {
+    height: auto;
+    object-fit: contain;
+  }
+  .lb-mondrian .m-caption { opacity: 1; }
+
+  .lb-autore-item { width: 100%; }
+  .lb-autore-item img { max-height: none; }
+
+  /* Contact sheet */
+  .cs-expand-inner { max-width: 100%; }
+}
+
+
+/* -------------------------------------------------------------
    RESPONSIVE — schermi stretti (max 600px)
    ------------------------------------------------------------- */
 @media (max-width: 600px) {
@@ -1121,51 +1155,7 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .thumbs img { width: 60px; height: 60px; }
   .battito-ecg { width: 60px; }
 
-  /* Lightbox — mobile
-     Su schermi stretti le foto si impilano in verticale,
-     ciascuna occupa tutta la larghezza e l'altezza segue
-     il ratio naturale dell'immagine. Niente crop, niente
-     spazio vuoto ai lati. */
-
-  .lb-hero {
-    height: auto;
-  }
-  .lb-hero img {
-    height: auto;
-    object-fit: contain;
-  }
-  .lb-hero-caption {
-    padding: 2rem 1.2rem 1.2rem;
-  }
-  .lb-hero-caption h2 { font-size: 2rem; }
-
-  .lb-mondrian {
-    flex-direction: column;
-    gap: 2px;
-  }
-  .lb-mondrian .m-cell,
-  .lb-mondrian .m-cell.landscape,
-  .lb-mondrian .m-cell.portrait {
-    flex: none;
-    width: 100%;
-    height: auto;
-    min-width: 0;
-  }
-  .lb-mondrian .m-cell::before {
-    display: none;
-  }
-  .lb-mondrian .m-cell img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-  .lb-mondrian .m-caption { opacity: 1; }
-
-  .lb-autore-item { width: 100%; }
-  .lb-autore-item img { max-height: none; }
-
-  /* Contact sheet — mobile */
+  /* Contact sheet — thumbs più piccole */
   .cs-thumb { width: 110px; }
   .cs-thumb img { width: 110px; }
-  .cs-expand-inner { max-width: 100%; }
 }
