@@ -1879,4 +1879,76 @@
       }
     }
   }
+,
+  {
+    "id": "029",
+    "created": "2026-03-25",
+    "updated": "2026-03-25",
+    "address": "Piazzale Accursio",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.49290,
+      "lng": 9.14654
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-03-25",
+        "overview": "photos/029/overview.webp",
+        "context": null,
+        "details": [
+          "photos/029/hoop-1.webp",
+          "photos/029/hoop-2.webp",
+          "photos/029/surface.webp",
+          "photos/029/timecard.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Piazzale Accursio",
+        "note": "Superficie in condizioni discrete. Canestri senza retina.",
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
+      },
+      "en": {
+        "nome": "Piazzale Accursio Basketball Court",
+        "note": "Court surface in fair condition. Both hoops without net.",
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
+      }
+    }
+  }
 ]
