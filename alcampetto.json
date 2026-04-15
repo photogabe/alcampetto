@@ -1878,8 +1878,7 @@
         ]
       }
     }
-  }
-,
+  },
   {
     "id": "029",
     "created": "2026-03-25",
@@ -1941,6 +1940,74 @@
             "context": null,
             "details": [
               null,
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "030",
+    "created": "2026-03-25",
+    "updated": "2026-03-25",
+    "address": "Parco delle Cave",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.47519,
+      "lng": 9.10082
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-03-25",
+        "overview": "photos/030/overview.webp",
+        "context": null,
+        "details": [
+          "photos/030/hoop-1.webp",
+          "photos/030/hoop-2.webp",
+          "photos/030/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Parco delle Cave #1",
+        "note": "Linee di campo sbiadite o inesistenti. Canestri con retina.",
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
+              null,
+              null,
+              null
+            ],
+            "autore": []
+          }
+        ]
+      },
+      "en": {
+        "nome": "Parco delle Cave Basketball Court#1",
+        "note": "Court lines barely visible or non available. Both hoops with net.",
+        "captions": [
+          {
+            "overview": null,
+            "context": null,
+            "details": [
               null,
               null,
               null
