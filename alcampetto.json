@@ -18,7 +18,7 @@
     "free": true,
     "lit": false,
     "indoor": false,
-    "audio": null,
+    "audio": "audio/001/001_beat.mp3",
     "photos": [
       {
         "date": "2026-02-20",

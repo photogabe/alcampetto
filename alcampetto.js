@@ -454,9 +454,16 @@ document.addEventListener('keydown', function (e) {
    di una palla sul campetto — il battito del campetto.
    ============================================================= */
 
-/* Dati del tracciato ECG (due cicli cardiaci stilizzati) */
-var ECG_PATH = 'M0,12 L6,12 L8,10 L10,12 L12,12 L13.5,3 L15,21 L16.5,9 L18,12 L24,12 L27,8 L30,12 L40,12 L46,12 L48,10 L50,12 L52,12 L53.5,3 L55,21 L56.5,9 L58,12 L64,12 L67,8 L70,12 L80,12';
-
+/* Dati del tracciato ECG (tre cicli con micro-variazioni).
+   Ogni ciclo occupa ~27 unità SVG: baseline → onda P (Bézier) →
+   complesso QRS (picco netto) → onda T (Bézier) → baseline.
+   Le lievi differenze tra i cicli (ampiezza P/T, picco QRS,
+   lunghezza segmenti) rendono il battito più organico.
+   Tre cicli anziché quattro alleggeriscono la resa visiva
+   quando l'animazione si ripete su molte card in parallelo.
+   La durata dell'animazione in style.css deve corrispondere
+   alla durata dell'audio (10.104 s — audio/001/001_beat.mp3). */
+var ECG_PATH = 'M0,12 L4,12 Q6,10 8,12 L10,12 L11.5,2 L13,20 L14.5,12 L16.5,12 Q19,7.5 21.5,12 L27,12 L31,12 Q33,9.5 35,12 L37,12 L38.5,1.5 L40,20.5 L41.5,12 L43.5,12 Q46,8 48.5,12 L53,12 L57,12 Q59,10.5 61,12 L63,12 L64.5,2.5 L66,19.5 L67.5,11.5 L69.5,12 Q72,8.5 74.5,12 L80,12';
 /* Crea un elemento SVG con il tracciato ECG.
    cssClass distingue sfondo (muted) e primo piano (orange). */
 function buildEcgSvg(cssClass) {
