@@ -670,7 +670,7 @@ main#grid {
 }
 
 .battito-btn.playing .battito-ecg-fg {
-  animation: ecg-sweep 15s linear forwards;
+  animation: ecg-sweep 10.104s linear forwards;
 }
 
 @keyframes ecg-sweep {
