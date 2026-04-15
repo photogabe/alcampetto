@@ -348,7 +348,7 @@
       "lng": 9.13936
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "asfalto",
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
@@ -413,7 +413,7 @@
       "lng": 9.22849
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "granulato sferoidale di quarzo",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -617,7 +617,7 @@
       "lng": 9.20811
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "granulato sferoidale di quarzo",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -685,7 +685,7 @@
       "lng": 9.15965
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -747,7 +747,7 @@
       "lng": 9.12978
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -815,7 +815,7 @@
       "lng": 9.13236
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
@@ -883,7 +883,7 @@
       "lng": 9.166438
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "granulato sferoidale di quarzo",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -1019,7 +1019,7 @@
       "lng": 9.18549
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
@@ -1087,7 +1087,7 @@
       "lng": 9.19752
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "asfalto",
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
@@ -1155,7 +1155,7 @@
       "lng": 9.19816
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "asfalto",
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
@@ -1223,7 +1223,7 @@
       "lng": 9.1758
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -1291,7 +1291,7 @@
       "lng": 9.20016
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": false,
     "fenced": true,
@@ -1551,7 +1551,7 @@
       "lng": 9.21535
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "asfalto",
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
@@ -1619,7 +1619,7 @@
       "lng": 9.21643
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "granulato sferoidale di quarzo",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -1687,7 +1687,7 @@
       "lng": 9.20838
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -1755,7 +1755,7 @@
       "lng": 9.10909
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
@@ -1823,7 +1823,7 @@
       "lng": 9.10886
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
