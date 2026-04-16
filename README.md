@@ -101,7 +101,7 @@ Each court is described by a JSON object. Fields are grouped by category.
 | `photos[].context` | `string\|null` | Context photo (optional). |
 | `photos[].details` | `array` | Array of close-up photos. See photography protocol section. |
 | `photos[].autore` | `array` | Array of artistic photos (optional). |
-| `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name), `note` (free-text description) and `captions` (array of caption objects parallel to `photos`). |
+| `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name) and `note` (free-text description). |
 
 ### Example
 
@@ -138,13 +138,11 @@ Each court is described by a JSON object. Fields are grouped by category.
   "i18n": {
     "it": {
       "nome": "Campetto di Giardino Vieira De Mello",
-      "note": "Ben tenuto. Superficie in ottime condizioni.",
-      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+      "note": "Ben tenuto. Superficie in ottime condizioni."
     },
     "en": {
       "nome": "Giardino Vieira De Mello Basketball Court",
-      "note": "Well maintained. Surface in good condition.",
-      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+      "note": "Well maintained. Surface in good condition."
     }
   }
 }
