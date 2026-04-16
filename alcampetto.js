@@ -198,7 +198,6 @@ function openLightbox(campetto) {
   var nome      = loc.nome || '';
   var allPhotos = campetto.photos || [];
   var latest    = allPhotos[0] || {};
-  var captions  = (loc.captions && loc.captions[0]) || {};
 
   /* Rimuove il contenuto precedente (mantiene il pulsante ✕) */
   while (lightbox.lastChild !== lightboxClose) {
@@ -229,60 +228,45 @@ function openLightbox(campetto) {
 
   var contextUrl = latest.context ? safePhotoUrl(latest.context) : '';
   if (contextUrl) {
-    mosaicPhotos.push({ src: contextUrl, caption: captions.context || null });
+    mosaicPhotos.push(contextUrl);
   }
 
-  var detailCaptions = captions.details || [];
   if (latest.details) {
-    latest.details.forEach(function (url, i) {
+    latest.details.forEach(function (url) {
       var safe = safePhotoUrl(url);
       if (safe) {
-        mosaicPhotos.push({ src: safe, caption: detailCaptions[i] || null });
+        mosaicPhotos.push(safe);
       }
     });
   }
 
   if (mosaicPhotos.length > 0) {
     var mondrian = el('section', 'lb-mondrian');
-    mosaicPhotos.forEach(function (photo) {
+    mosaicPhotos.forEach(function (src) {
       var cell = el('div', 'm-cell');
       var img  = el('img');
-      setFullImg(img, photo.src);
-      img.alt     = photo.caption || '';
+      setFullImg(img, src);
+      img.alt     = '';
       img.loading = 'lazy';
-      img.onload  = function () {
-        if (img.naturalHeight > img.naturalWidth) {
-          cell.classList.add('portrait');
-        } else {
-          cell.classList.add('landscape');
-        }
-      };
       cell.appendChild(img);
-      if (photo.caption) {
-        cell.appendChild(textEl('div', 'm-caption', photo.caption));
-      }
       mondrian.appendChild(cell);
     });
     lightbox.appendChild(mondrian);
   }
 
   /* ── Foto d'autore (opzionale, staccata) ── */
-  var autorePhotos   = latest.autore || [];
-  var autoreCaptions = captions.autore || [];
+  var autorePhotos = latest.autore || [];
   if (autorePhotos.length > 0) {
     var section = el('section', 'lb-autore');
     section.appendChild(el('div', 'lb-autore-sep'));
-    autorePhotos.forEach(function (url, i) {
+    autorePhotos.forEach(function (url) {
       var safe = safePhotoUrl(url);
       if (!safe) { return; }
       var item = el('div', 'lb-autore-item');
       var img  = el('img');
       setFullImg(img, safe);
-      img.alt = autoreCaptions[i] || '';
+      img.alt = '';
       item.appendChild(img);
-      if (autoreCaptions[i]) {
-        item.appendChild(textEl('div', 'lb-autore-caption', autoreCaptions[i]));
-      }
       section.appendChild(item);
     });
     lightbox.appendChild(section);

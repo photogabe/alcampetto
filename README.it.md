@@ -103,7 +103,7 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 | `photos[].context` | `string\|null` | Foto di contesto (opzionale). |
 | `photos[].details` | `array` | Array di foto di dettaglio. Vedi sezione sul protocollo fotografico. |
 | `photos[].autore` | `array` | Array di foto d'autore (opzionale). |
-| `i18n` | `object` | Testi localizzati, indicizzati per codice lingua ISO 639-1 (`it`, `en`, …). Ogni lingua fornisce `nome` (nome del campetto), `note` (descrizione libera) e `captions` (array di didascalie parallelo a `photos`). |
+| `i18n` | `object` | Testi localizzati, indicizzati per codice lingua ISO 639-1 (`it`, `en`, …). Ogni lingua fornisce `nome` (nome del campetto) e `note` (descrizione libera). |
 
 ### Esempio
 
@@ -140,13 +140,11 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
   "i18n": {
     "it": {
       "nome": "Campetto di Giardino Vieira De Mello",
-      "note": "Ben tenuto. Superficie in ottime condizioni.",
-      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+      "note": "Ben tenuto. Superficie in ottime condizioni."
     },
     "en": {
       "nome": "Giardino Vieira De Mello Basketball Court",
-      "note": "Well maintained. Surface in good condition.",
-      "captions": [{ "overview": null, "context": null, "details": [null, null, null], "autore": [] }]
+      "note": "Well maintained. Surface in good condition."
     }
   }
 }
