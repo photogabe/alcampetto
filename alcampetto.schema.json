@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://photogabe.github.io/alcampetto/alcampetto.schema.json",
+  "title": "ALCAMPETTO dataset",
+  "description": "Atlante dei campetti di basket a Milano",
+  "type": "array",
+  "items": { "$ref": "#/$defs/campetto" },
+
+  "$defs": {
+    "campetto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "created", "updated",
+        "address", "city", "district", "coordinates",
+        "hoops", "surface",
+        "half_court", "three_pt_line", "fenced", "free", "lit", "indoor",
+        "audio", "photos", "i18n"
+      ],
+      "properties": {
+        "id":            { "type": "string", "pattern": "^[0-9]{3}$" },
+        "created":       { "type": "string", "format": "date" },
+        "updated":       { "type": "string", "format": "date" },
+        "address":       { "type": "string", "minLength": 1 },
+        "city":          { "type": "string", "minLength": 1 },
+        "district": {
+          "type": ["string", "null"],
+          "enum": [
+            "Municipio 1", "Municipio 2", "Municipio 3",
+            "Municipio 4", "Municipio 5", "Municipio 6",
+            "Municipio 7", "Municipio 8", "Municipio 9",
+            null
+          ]
+        },
+        "coordinates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lat", "lng"],
+          "properties": {
+            "lat": { "type": "number", "minimum": 45.35, "maximum": 45.60 },
+            "lng": { "type": "number", "minimum": 9.00,  "maximum": 9.35  }
+          }
+        },
+        "hoops":         { "type": "integer", "minimum": 1, "maximum": 5 },
+        "surface":       { "type": ["string", "null"] },
+        "half_court":    { "type": "boolean" },
+        "three_pt_line": { "type": "boolean" },
+        "fenced":        { "type": "boolean" },
+        "free":          { "type": "boolean" },
+        "lit":           { "type": "boolean" },
+        "indoor":        { "type": "boolean" },
+        "audio":         { "type": ["string", "null"] },
+        "photos": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/survey" }
+        },
+        "i18n": {
+          "type": "object",
+          "required": ["it", "en"],
+          "additionalProperties": { "$ref": "#/$defs/languages" },
+          "properties": {
+            "it": { "$ref": "#/$defs/languages" },
+            "en": { "$ref": "#/$defs/languages" }
+          }
+        }
+      }
+    },
+
+    "survey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "overview", "context", "details", "autore"],
+      "properties": {
+        "date":     { "type": "string", "format": "date" },
+        "overview": { "type": "string", "minLength": 1 },
+        "context":  { "type": ["string", "null"] },
+        "details":  {
+          "type": "array",
+          "minItems": 1,
+          "items":   { "type": "string", "minLength": 1 }
+        },
+        "autore":   {
+          "type": "array",
+          "items":   { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+
+    "languages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nome", "note"],
+      "properties": {
+        "nome": { "type": "string", "minLength": 1 },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
