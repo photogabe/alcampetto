@@ -1,0 +1,49 @@
+# .github/workflows/validate-dataset.yml
+#
+# Controlli automatici sul dataset di ALCAMPETTO.
+# Si attivano a ogni pull request (e a ogni push diretto su main, come rete
+# di sicurezza). Se uno dei controlli fallisce, la PR viene bloccata.
+#
+# Cosa verifica:
+#   1. alcampetto.json rispetta la forma descritta in alcampetto.schema.json
+#   2. tutti i file foto/audio referenziati nel JSON esistono davvero sul disco
+
+name: Validate dataset
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Scarica il codice della PR sul runner, così i passi successivi
+      # possono leggere alcampetto.json, lo schema, le foto, ecc.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Installa una versione fissa di Python sul runner.
+      # Fissare la versione evita sorprese future: oggi e fra un anno
+      # il controllo gira nello stesso modo.
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      # Installa check-jsonschema dal repository pubblico di pacchetti Python.
+      # È l'unica dipendenza esterna necessaria.
+      - name: Install check-jsonschema
+        run: pip install check-jsonschema
+
+      # Controllo 1: la forma del JSON rispetta lo schema?
+      # In caso negativo, l'output indica il campo e il motivo dell'errore.
+      - name: Validate alcampetto.json against schema
+        run: check-jsonschema --schemafile alcampetto.schema.json alcampetto.json
+
+      # Controllo 2: ogni foto/audio referenziato esiste davvero sul disco?
+      # In caso negativo, lo script elenca i file mancanti con il loro contesto.
+      - name: Verify asset paths
+        run: python3 scripts/check-assets.py
