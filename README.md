@@ -155,11 +155,11 @@ Each court is described by a JSON object. Fields are grouped by category.
 
 This project uses different licenses for different components:
 
-| Component | License |
-|-----------|---------|
-| Source code | [MIT](LICENSE-CODE) |
-| Data (JSON) | [CC BY 4.0](LICENSE-DATA) |
-| Photographs & Audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) |
+| Component | License | Applies to |
+|-----------|---------|------------|
+| Codice sorgente | [MIT](LICENSE-CODE) | README, .js, .html, .css, .json-schema files |
+| Dati (JSON) | [CC BY 4.0](LICENSE-DATA) | all photographs and audio files |
+| Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) | all data files (*.json) |
 
 The MIT license previously applied to all files has been replaced with component-specific licenses to better reflect the nature of each asset. This change is effective from [April 18th 2026].
 Photographs and audio were always subject to copyright law regardless of the license applied to the software component.
