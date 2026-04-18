@@ -97,6 +97,7 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 
 | Campo | Tipo | Descrizione |
 |---|---|---|
+| `audio` | `string\|null` | Percorso relativo alla root di progetto di un file audio registrato sul campo. |
 | `photos` | `array` | Array di rilevazioni fotografiche, ordinate dalla più recente alla più vecchia. Ogni elemento è un oggetto con i campi descritti sotto. `photos[0]` è sempre la rilevazione corrente. |
 | `photos[].date` | `string` | Data della rilevazione, formato `YYYY-MM-DD`. |
 | `photos[].overview` | `string\|null` | Foto panoramica. Percorso relativo alla root del progetto. |
@@ -149,6 +150,21 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
   }
 }
 ```
+
+
+## License
+
+Questo progetto usa licenze diverse per diverse componenti:
+
+| Component | License |
+|-----------|---------|
+| Codice sorgente | [MIT](LICENSE-CODE) |
+| Dati (JSON) | [CC BY 4.0](LICENSE-DATA) |
+| Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) |
+
+La licenza MIT precedentemente estesa a tutto il progetto è stata sostituita da licenze con perimetro circoscritto a componenti specifiche, ciò al fine di riflettere meglio la natura di ciascun asset. Questa modifica entra in vigore a partire dal 18 aprile 2026.
+Foto e audio sono sempre state soggette alla legge sul diritto d'autore indipendentemente dalla licenza applicata alla componente software.
+
 
 ---
 

@@ -95,6 +95,7 @@ Each court is described by a JSON object. Fields are grouped by category.
 
 | Field | Type | Description |
 |---|---|---|
+| `audio` | `string\|null` | Path relative to the project root to the file audio recorded on the court. |
 | `photos` | `array` | Array of photo surveys, ordered from most recent to oldest. Each element is an object with the fields described below. `photos[0]` is always the current survey. |
 | `photos[].date` | `string` | Date of the survey, `YYYY-MM-DD`. |
 | `photos[].overview` | `string\|null` | Wide-angle photo. Path relative to the project root. |
@@ -147,6 +148,22 @@ Each court is described by a JSON object. Fields are grouped by category.
   }
 }
 ```
+
+
+
+## License
+
+This project uses different licenses for different components:
+
+| Component | License |
+|-----------|---------|
+| Source code | [MIT](LICENSE-CODE) |
+| Data (JSON) | [CC BY 4.0](LICENSE-DATA) |
+| Photographs & Audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) |
+
+The MIT license previously applied to all files has been replaced with component-specific licenses to better reflect the nature of each asset. This change is effective from [April 18th 2026].
+Photographs and audio were always subject to copyright law regardless of the license applied to the software component.
+
 
 ---
 
