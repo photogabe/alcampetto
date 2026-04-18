@@ -156,11 +156,11 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 
 Questo progetto usa licenze diverse per diverse componenti:
 
-| Component | License |
-|-----------|---------|
-| Codice sorgente | [MIT](LICENSE-CODE) |
-| Dati (JSON) | [CC BY 4.0](LICENSE-DATA) |
-| Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) |
+| Componente | Licenza | Perimetro |
+|-----------|----------|-----------|
+| Codice sorgente | [MIT](LICENSE-CODE) | README, .js, .html, .css, .json-schema files |
+| Dati (JSON) | [CC BY 4.0](LICENSE-DATA) | tutte le foto e i file audio |
+| Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) | tutti i dati (*.json) |
 
 La licenza MIT precedentemente estesa a tutto il progetto è stata sostituita da licenze con perimetro circoscritto a componenti specifiche, ciò al fine di riflettere meglio la natura di ciascun asset. Questa modifica entra in vigore a partire dal 18 aprile 2026.
 Foto e audio sono sempre state soggette alla legge sul diritto d'autore indipendentemente dalla licenza applicata alla componente software.
