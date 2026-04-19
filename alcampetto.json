@@ -1380,5 +1380,49 @@
         "note": "Court lines barely visible or non available. Both hoops with net. Right beside another court in similar conditions."
       }
     }
+  },
+  {
+    "id": "032",
+    "created": "2026-04-12",
+    "updated": "2026-04-12",
+    "address": "Parco Villa Litta",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.51587,
+      "lng": 9.16482
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "audio": "audio/032/032-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-12",
+        "overview": "photos/032/overview.webp",
+        "context": "photos/032/context.webp",
+        "details": [
+          "photos/032/hoop-1.webp",
+          "photos/032/hoop-2.webp",
+          "photos/032/surface.webp"
+        ],
+        "autore": ["photos/032/auth-1.webp"]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Parco Villa Litta",
+        "note": "Ottima superficie di gioco. Uno dei due canestri presenta la retina sfilacciata. Quattro panchine disponibili. Il vivace parco offre un gradevole contesto."
+      },
+      "en": {
+        "nome": "Parco Villa Litta Basketball Court",
+        "note": "Very good surface. One rim with shredded net. Four benches available along the side lines. This lively park grants a pleasant setting."
+      }
+    }
   }
 ]
