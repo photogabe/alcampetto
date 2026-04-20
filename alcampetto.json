@@ -1424,5 +1424,49 @@
         "note": "Very good surface. One rim with shredded net. Four benches available along the side lines. This lively park grants a pleasant setting."
       }
     }
+  },
+  {
+    "id": "033",
+    "created": "2026-03-27",
+    "updated": "2026-03-27",
+    "address": "Piazza Aspromonte",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.48395,
+      "lng": 9.22024
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-03-27",
+        "overview": "photos/033/overview.webp",
+        "context": null,
+        "details": [
+          "photos/033/hoop-1.webp",
+          "photos/033/hoop-2.webp",
+          "photos/033/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Piazza Aspromonte (giardino Giulio Polotti)",
+        "note": "Piccolo campetto piacevolmente ombreggiato, superficie in buono stato ma con poco attrito. Entrambi i canestri hanno la retina. Una fontanella subito fuori dal campo."
+      },
+      "en": {
+        "nome": "Piazza Aspromonte (giardino Giulio Polotti) Basketball Court",
+        "note": "Trees cast a forgiving shade on this little court. Surface in good condition but with little friction. Both baskets have nets. A fountain is located just outside the court."
+      }
+    }
   }
 ]
