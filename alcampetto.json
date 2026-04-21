@@ -1460,12 +1460,56 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Piazza Aspromonte (giardino Giulio Polotti)",
+        "nome": "Campetto di Piazza Aspromonte (giardino Giulio Polotti)",
         "note": "Piccolo campetto piacevolmente ombreggiato, superficie in buono stato ma con poco attrito. Entrambi i canestri hanno la retina. Una fontanella subito fuori dal campo."
       },
       "en": {
         "nome": "Piazza Aspromonte (giardino Giulio Polotti) Basketball Court",
         "note": "Trees cast a forgiving shade on this little court. Surface in good condition but with little friction. Both baskets have nets. A fountain is located just outside the court."
+      }
+    }
+  },
+  {
+    "id": "034",
+    "created": "2026-03-28",
+    "updated": "2026-03-28",
+    "address": "Viale Teodorico",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.483988,
+      "lng": 9.151077
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-03-28",
+        "overview": "photos/034/overview.webp",
+        "context": null,
+        "details": [
+          "photos/034/hoop-1.webp",
+          "photos/034/hoop-2.webp",
+          "photos/034/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Viale Teodorico (angolo via Gattamelata)",
+        "note": "Superficie in buone condizioni, canestri integri, tabelloni trasparenti."
+      },
+      "en": {
+        "nome": "Viale Teodorico (via Gattamelata corner) Basketball Court",
+        "note": "Surface in good condition, unimpaired rims, transparent backboards."
       }
     }
   }
