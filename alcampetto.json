@@ -1512,5 +1512,49 @@
         "note": "Surface in good condition, unimpaired rims, transparent backboards."
       }
     }
+  },
+  {
+    "id": "035",
+    "created": "2026-04-12",
+    "updated": "2026-04-12",
+    "address": "Via Assietta (angolo via Cervi)",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.51639,
+      "lng": 9.15800
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": true,
+    "indoor": false,
+    "audio": "audio/035/035-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-12",
+        "overview": "photos/035/overview.webp",
+        "context": "photos/035/context.webp",
+        "details": [
+          "photos/035/hoop-1.webp",
+          "photos/035/hoop-2.webp",
+          "photos/035/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Parco Assietta Cervi",
+        "note": "Superficie in discrete condizioni; entrambi i canestri con retina; illuminazione garantita da tre fari dedicati posti sullo stesso lato. Sei panchine attorno al campo. Una fontanella a pochi metri."
+      },
+      "en": {
+        "nome": "Parco Assietta Cervi Basketball Court",
+        "note": "Surface in fair condition, both rims with net, court lit by three streetlights placed on the same court side. Six benches around the court. A fountain is located just outside the court."
+      }
+    }
   }
 ]
