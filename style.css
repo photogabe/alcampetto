@@ -952,6 +952,11 @@ main#grid {
   font-size: 0.9rem;
 }
 
+.state-msg code {
+  font-size: 0.75rem;
+  color: #FF5F1F;
+}
+
 
 /* -------------------------------------------------------------
    PAGINA ABOUT (about.html e about.en.html)
