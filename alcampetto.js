@@ -842,7 +842,10 @@ function renderCards(lista) {
   document.getElementById('count').textContent = lista.length;
 
   if (lista.length === 0) {
-    grid.innerHTML = '<div class="state-msg">' + T.noResults + '</div>';
+    var emptyMsg = document.createElement('div');
+    emptyMsg.className = 'state-msg';
+    emptyMsg.textContent = T.noResults;
+    grid.appendChild(emptyMsg);
     return;
   }
 
@@ -1018,10 +1021,16 @@ fetch('alcampetto.json?v=' + Date.now())
   .catch(function () {
     /* Fallback: il fetch fallisce con il protocollo file://
        Avviare un server locale: python3 -m http.server */
-    document.getElementById('grid').innerHTML =
-        '<div class="state-msg">'
-      + T.serverError + '<br>'
-      + '<code style="font-size:0.75rem;color:#FF5F1F">' + T.serverCmd + '</code><br>'
-      + T.serverHint
-      + '</div>';
+    var grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    var errMsg = document.createElement('div');
+    errMsg.className = 'state-msg';
+    errMsg.appendChild(document.createTextNode(T.serverError));
+    errMsg.appendChild(document.createElement('br'));
+    var cmd = document.createElement('code');
+    cmd.textContent = T.serverCmd;
+    errMsg.appendChild(cmd);
+    errMsg.appendChild(document.createElement('br'));
+    errMsg.appendChild(document.createTextNode(T.serverHint));
+    grid.appendChild(errMsg);
   });
