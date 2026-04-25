@@ -1556,5 +1556,50 @@
         "note": "Surface in fair condition, both rims with net, court lit by three streetlights placed on the same court side. Six benches around the court. A fountain is located just outside the court."
       }
     }
+  },
+  {
+    "id": "036",
+    "created": "2026-04-03",
+    "updated": "2026-04-03",
+    "address": "Via Bovisasca",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.508316,
+      "lng": 9.159970
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "free": true,
+    "lit": false,
+    "indoor": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-04-03",
+        "overview": "photos/036/overview.webp",
+        "context": null,
+        "details": [
+          "photos/036/hoop-1.webp",
+          "photos/036/hoop-2.webp",
+          "photos/036/surface.webp",
+          "photos/036/surface-2.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Via Bovisasca",
+        "note": "Superficie in discrete condizioni; entrambi i canestri con retina."
+      },
+      "en": {
+        "nome": "Via Bovisasca Basketball Court",
+        "note": "Surface in fair condition, both rims with net."
+      }
+    }
   }
 ]
