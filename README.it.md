@@ -11,7 +11,7 @@ Un atlante fotografico di campetti di basket, ad accesso libero, a Milano.
 Per ogni campetto censito sono disponibili i seguenti dati:
 
 - dettagli geografici: indirizzo e coordinate GPS;
-- caratteristiche del campo: numero di canestri, linea da tre, recinzione, illuminazione, copertura;
+- caratteristiche del campo: numero di canestri, linea da tre, recinzione, illuminazione;
 - note qualitative sullo stato della superficie di gioco e dei canestri;
 - galleria fotografica: dalle due alle cinque immagini per ciascun campetto;
 - indicatore di aggiornamento (verde se i dati sono stati raccolti meno di 12 mesi fa, giallo tra i 12 e i 24 mesi, grigio se più vecchi).
@@ -89,9 +89,7 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 | `half_court` | `boolean` | `true` Se si tratta di un mezzo campo. |
 | `three_pt_line` | `boolean` | `true` se la linea da tre punti è tracciata sulla superficie. |
 | `fenced` | `boolean` | `true` Se il campo è delimitato da una recinzione. |
-| `free` | `boolean` | `true` Se l'accesso è libero e gratuito. |
 | `lit` | `boolean` | `true` Se è presente illuminazione per il gioco serale. |
-| `indoor` | `boolean` | `true` Se il campo è al coperto o dotato di tettoia. |
 
 ### Media e testi
 
@@ -122,9 +120,7 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
   "half_court": false,
   "three_pt_line": true,
   "fenced": false,
-  "free": true,
   "lit": false,
-  "indoor": false,
   "photos": [
     {
       "date": "2026-02-20",

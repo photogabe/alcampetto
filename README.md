@@ -11,7 +11,7 @@ A photographic atlas of free-access basketball courts in Milan and surrounding a
 For each court, the following data points are available:
 
 - geographic details: address and GPS coordinates;
-- court features: number of hoops, three-point line, fencing, lighting, indoor/outdoor;
+- court features: number of hoops, three-point line, fencing, lighting;
 - qualitative notes on the condition of hoops and court surface;
 - photo gallery: from two to five images per court;
 - freshness indicator (green if data is less than 12 months old, yellow between 12 and 24 months, grey if older).
@@ -87,9 +87,7 @@ Each court is described by a JSON object. Fields are grouped by category.
 | `half_court` | `boolean` | `true` if the court is a half court only. |
 | `three_pt_line` | `boolean` | `true` If a three-point line is marked on the surface. |
 | `fenced` | `boolean` | `true` If the court is enclosed by a fence. |
-| `free` | `boolean` | `true` If access is free of charge. |
 | `lit` | `boolean` | `true` If the court has lighting for evening play. |
-| `indoor` | `boolean` | `true` If the court is indoors or has a roof cover. |
 
 ### Media and text
 
@@ -120,9 +118,7 @@ Each court is described by a JSON object. Fields are grouped by category.
   "half_court": false,
   "three_pt_line": true,
   "fenced": false,
-  "free": true,
   "lit": false,
-  "indoor": false,
   "photos": [
     {
       "date": "2026-02-20",
