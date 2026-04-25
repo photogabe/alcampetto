@@ -30,7 +30,8 @@
           "photos/001/2026-04-16/surface.webp",
           "photos/001/2026-04-16/benches.webp",
           "photos/001/2026-04-16/flyer.webp",
-          "photos/001/2026-04-16/shopping-cart.webp"
+          "photos/001/2026-04-16/shopping-cart.webp",
+          "photos/001/2026-04-16/noticeboard.webp"
         ],
         "autore": [ "photos/001/2026-04-16/auth-1.webp" ]
       },
@@ -175,7 +176,7 @@
     "free": true,
     "lit": false,
     "indoor": false,
-    "audio": null,
+    "audio": "audio/004/004-beat.mp3",
     "photos": [
       {
         "date": "2026-02-21",
@@ -218,7 +219,7 @@
     "free": true,
     "lit": true,
     "indoor": false,
-    "audio": null,
+    "audio": "audio/005/005-beat.mp3",
     "photos": [
       {
         "date": "2026-02-23",
@@ -1267,7 +1268,7 @@
     "free": true,
     "lit": true,
     "indoor": false,
-    "audio": null,
+    "audio": "audio/029/029-beat.mp3",
     "photos": [
       {
         "date": "2026-03-25",
@@ -1409,7 +1410,8 @@
         "details": [
           "photos/032/hoop-1.webp",
           "photos/032/hoop-2.webp",
-          "photos/032/surface.webp"
+          "photos/032/surface.webp",
+          "photos/032/timetable.webp"
         ],
         "autore": ["photos/032/auth-1.webp"]
       }
