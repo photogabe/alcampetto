@@ -1008,6 +1008,32 @@ if (mapsProvider !== 'google') {
 
 
 /* =============================================================
+   AGGIORNAMENTO TAGLINE
+   Calcola barra di progresso, numero di campetti mappati e
+   percentuale rispetto alla stima totale (~180).
+   La barra è larga 20 caratteri: ogni "█" vale il 5%.
+   ============================================================= */
+function updateTagline() {
+  var TOTAL_ESTIMATE = 180;
+  var BAR_WIDTH = 20;
+  var count = DATA.length;
+  var ratio = Math.min(count / TOTAL_ESTIMATE, 1);
+  var filled = Math.round(ratio * BAR_WIDTH);
+  var bar = '[' + '█'.repeat(filled) + '░'.repeat(BAR_WIDTH - filled) + ']';
+  var percent = Math.round(ratio * 100);
+
+  var barEl     = document.getElementById('progress-bar');
+  var countEl   = document.getElementById('court-count');
+  var totalEl   = document.getElementById('court-total');
+  var percentEl = document.getElementById('court-percent');
+  if (barEl)     barEl.textContent     = bar;
+  if (countEl)   countEl.textContent   = count;
+  if (totalEl)   totalEl.textContent   = TOTAL_ESTIMATE;
+  if (percentEl) percentEl.textContent = percent;
+}
+
+
+/* =============================================================
    CARICAMENTO DATI
    Il parametro ?v= con il timestamp impedisce al browser
    di usare una versione in cache del file JSON.
@@ -1016,6 +1042,7 @@ fetch('alcampetto.json?v=' + Date.now())
   .then(function (response) { return response.json(); })
   .then(function (json) {
     DATA = json;
+    updateTagline();
     applyFilters();
   })
   .catch(function () {
