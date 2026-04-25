@@ -32,7 +32,6 @@ var I18N = {
     labelPhotos:   'Foto',
     labelLit:      'Illuminato',
     labelFenced:   'Recintato',
-    labelIndoors:  'Coperto',
     labelHoops:    'canestri',
     labelHoop:     'canestro',
     labelHalf:     'Mezzo campo',
@@ -61,7 +60,6 @@ var I18N = {
     labelPhotos:   'Photos',
     labelLit:      'Lit',
     labelFenced:   'Fenced',
-    labelIndoors:  'Indoors',
     labelHoops:    'hoops',
     labelHoop:     'hoop',
     labelHalf:     'Half court',
@@ -790,7 +788,6 @@ function buildCard(campetto) {
   bools.appendChild(pillNode(T.labelFenced,  campetto.fenced));
   bools.appendChild(pillNode(T.labelThreePt, campetto.three_pt_line));
   if (campetto.half_court) { bools.appendChild(pillNode(T.labelHalf,    true)); }
-  if (campetto.indoor)     { bools.appendChild(pillNode(T.labelIndoors, true)); }
 
   body.appendChild(bools);
   card.appendChild(body);

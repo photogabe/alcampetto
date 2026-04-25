@@ -15,9 +15,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": "audio/001/001-beat.mp3",
     "photos": [
       {
@@ -73,9 +71,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -117,9 +113,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": "audio/003/003-beat.mp3",
     "photos": [
       {
@@ -173,9 +167,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": "audio/004/004-beat.mp3",
     "photos": [
       {
@@ -216,9 +208,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": "audio/005/005-beat.mp3",
     "photos": [
       {
@@ -260,9 +250,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -303,9 +291,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -347,9 +333,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -391,9 +375,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -435,9 +417,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -479,9 +459,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -521,9 +499,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -565,9 +541,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -609,9 +583,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -653,9 +625,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -697,9 +667,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -741,9 +709,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -785,9 +751,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -829,9 +793,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -873,9 +835,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -917,9 +877,7 @@
     "half_court": true,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -960,9 +918,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1003,9 +959,7 @@
     "half_court": true,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1045,9 +999,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1089,9 +1041,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1133,9 +1083,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1177,9 +1125,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1221,9 +1167,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1265,9 +1209,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": "audio/029/029-beat.mp3",
     "photos": [
       {
@@ -1310,9 +1252,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1354,9 +1294,7 @@
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1398,9 +1336,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": "audio/032/032-beat.mp3",
     "photos": [
       {
@@ -1443,9 +1379,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": true,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1487,9 +1421,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {
@@ -1531,9 +1463,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": true,
-    "indoor": false,
     "audio": "audio/035/035-beat.mp3",
     "photos": [
       {
@@ -1575,9 +1505,7 @@
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
-    "free": true,
     "lit": false,
-    "indoor": false,
     "audio": null,
     "photos": [
       {

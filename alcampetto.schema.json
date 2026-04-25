@@ -14,7 +14,7 @@
         "id", "created", "updated",
         "address", "city", "district", "coordinates",
         "hoops", "surface",
-        "half_court", "three_pt_line", "fenced", "free", "lit", "indoor",
+        "half_court", "three_pt_line", "fenced", "lit",
         "audio", "photos", "i18n"
       ],
       "properties": {
@@ -46,9 +46,7 @@
         "half_court":    { "type": "boolean" },
         "three_pt_line": { "type": "boolean" },
         "fenced":        { "type": "boolean" },
-        "free":          { "type": "boolean" },
         "lit":           { "type": "boolean" },
-        "indoor":        { "type": "boolean" },
         "audio":         { "type": ["string", "null"] },
         "photos": {
           "type": "array",
