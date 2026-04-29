@@ -1531,5 +1531,49 @@
         "note": "Surface in fair condition, both rims with net."
       }
     }
+  },
+  {
+    "id": "037",
+    "created": "2026-04-11",
+    "updated": "2026-04-11",
+    "address": "Giardino Roberto Bazlen",
+    "city": "Milano",
+    "district": "Municipio 1",
+    "coordinates": {
+      "lat": 45.45407,
+      "lng": 9.19724
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/037/037-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-03",
+        "overview": "photos/037/overview.webp",
+        "context": "photos/037/context.webp",
+        "details": [
+          "photos/037/hoop-1.webp",
+          "photos/037/hoop-2.webp",
+          "photos/037/surface.webp",
+          "photos/037/lime-tree.webp",
+          "photos/037/lime-tree-2.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Giardino Roberto Bazlen",
+        "note": "Il tiglio che offre riparo dal sole, è infestato da afidi, responsabili della sostanza appiccicosa che compromette la superficie del campo. Peccato per il tiglio che meriterebbe un intervento di disinfestazione e per i giocatori che non possono godere del tutto di questo piccolo campetto."
+      },
+      "en": {
+        "nome": "Giardino Roberto Bazlen Basketball Court",
+        "note": "The linden tree providing shade is infested with aphids, responsible for the sticky substance affecting the court's surface. It's a pity for the tree, which deserves pest control, and for the players, who can't fully enjoy this small court."
+      }
+    }
   }
 ]
