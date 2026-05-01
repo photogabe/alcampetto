@@ -1575,5 +1575,48 @@
         "note": "The linden tree providing shade is infested with aphids, responsible for the sticky substance affecting the court's surface. It's a pity for the tree, which deserves pest control, and for the players, who can't fully enjoy this small court."
       }
     }
+  },
+  {
+    "id": "038",
+    "created": "2026-04-11",
+    "updated": "2026-04-11",
+    "address": "Giardino Oriana Fallaci",
+    "city": "Milano",
+    "district": "Municipio 1",
+    "coordinates": {
+      "lat": 45.45317,
+      "lng": 9.19425
+    },
+    "hoops": 3,
+    "surface": "cemento",
+    "half_court": true,
+    "three_pt_line": true,
+    "fenced": true,
+    "lit": true,
+    "audio": "audio/038/038-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-03",
+        "overview": "photos/038/overview.webp",
+        "context": "photos/038/context.webp",
+        "details": [
+          "photos/038/hoop-1.webp",
+          "photos/038/hoop-2.webp",
+          "photos/038/hoop-3.webp",
+          "photos/038/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Giardino Oriana Fallaci",
+        "note": "Mezzo campetto che offre tre canestri, due dei quali (quelli laterali rispetto alla linea da tre) con un tabellone ridotto rispetto alle dimensioni standard. Superficie adeguata."
+      },
+      "en": {
+        "nome": "Giardino Oriana Fallaci Basketball Court",
+        "note": "A half-court with three hoops, two of which (the one on the side of the three-point line) have sub-standard size backboards. Fair surface."
+      }
+    }
   }
 ]
