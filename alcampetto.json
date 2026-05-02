@@ -376,7 +376,7 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": true,
-    "audio": null,
+    "audio": "audio/009/009-beat.mp3",
     "photos": [
       {
         "date": "2026-02-22",
@@ -1506,7 +1506,7 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": false,
-    "audio": null,
+    "audio": "audio/036/036-beat.mp3",
     "photos": [
       {
         "date": "2026-04-03",

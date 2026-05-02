@@ -84,8 +84,8 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 
 | Campo | Tipo | Descrizione |
 |---|---|---|
-| `hoops` | `integer` | Numero di canestri (tipicamente 1, 2 o 4). |
-| `surface` | `string` | Materiali usati per la superficie. |
+| `hoops` | `integer` | Numero di canestri (tipicamente 1, 2 o più). |
+| `surface` | `string` | Materiali usati per la superficie _(proprietà tracciata ma non ancora esposta)_. |
 | `half_court` | `boolean` | `true` Se si tratta di un mezzo campo. |
 | `three_pt_line` | `boolean` | `true` se la linea da tre punti è tracciata sulla superficie. |
 | `fenced` | `boolean` | `true` Se il campo è delimitato da una recinzione. |
