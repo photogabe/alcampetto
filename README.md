@@ -82,8 +82,8 @@ Each court is described by a JSON object. Fields are grouped by category.
 
 | Field | Type | Description |
 |---|---|---|
-| `hoops` | `integer` | Number of hoops (typically 1, 2 or 4). |
-| `surface` | `string` | Materials used for the surface. |
+| `hoops` | `integer` | Number of hoops (typically 1, 2 or more). |
+| `surface` | `string` | Materials used for the surface. _(property collected but not yet exposed)_ |
 | `half_court` | `boolean` | `true` if the court is a half court only. |
 | `three_pt_line` | `boolean` | `true` If a three-point line is marked on the surface. |
 | `fenced` | `boolean` | `true` If the court is enclosed by a fence. |
