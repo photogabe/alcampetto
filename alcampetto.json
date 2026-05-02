@@ -1596,7 +1596,7 @@
     "audio": "audio/038/038-beat.mp3",
     "photos": [
       {
-        "date": "2026-04-03",
+        "date": "2026-04-11",
         "overview": "photos/038/overview.webp",
         "context": "photos/038/context.webp",
         "details": [
@@ -1616,6 +1616,48 @@
       "en": {
         "nome": "Giardino Oriana Fallaci Basketball Court",
         "note": "A half-court with three hoops, two of which (the one on the side of the three-point line) have sub-standard size backboards. Fair surface."
+      }
+    }
+  },
+  {
+    "id": "039",
+    "created": "2026-04-12",
+    "updated": "2026-04-12",
+    "address": "Via Alessandro Bisnati",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.52146,
+      "lng": 9.17744
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/039/039-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-12",
+        "overview": "photos/039/overview.webp",
+        "context": "photos/039/context.webp",
+        "details": [
+          "photos/039/hoop-1.webp",
+          "photos/039/hoop-2.webp",
+          "photos/039/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Alessandro Bisnati",
+        "note": "Superficie usurata. Entrambi i canestri con retina."
+      },
+      "en": {
+        "nome": "Via Alessandro Bisnati Basketball Court",
+        "note": "Surface worn out. Both rims with net."
       }
     }
   }
