@@ -1661,4 +1661,47 @@
       }
     }
   }
+,
+  {
+    "id": "040",
+    "created": "2026-04-18",
+    "updated": "2026-04-18",
+    "address": "Piazzale Maciacchini",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.49825,
+      "lng": 9.188916
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/040/040-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-18",
+        "overview": "photos/040/overview.webp",
+        "context": "photos/040/context.webp",
+        "details": [
+          "photos/040/hoop-1.webp",
+          "photos/040/hoop-2.webp",
+          "photos/040/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di piazzale Maciacchini",
+        "note": "Campetto accogliente circondato da alberi, cinque piccoli lampioni intorno, quattro panchine e una fontanella"
+      },
+      "en": {
+        "nome": "Piazzale Maciacchini Basketball Court",
+        "note": "A cozy little court surrounded by trees, five small street lamps, four benches and a fountain"
+      }
+    }
+  }
 ]
