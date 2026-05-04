@@ -1660,8 +1660,7 @@
         "note": "Surface worn out. Both rims with net."
       }
     }
-  }
-,
+  },
   {
     "id": "040",
     "created": "2026-04-18",
@@ -1702,6 +1701,48 @@
       "en": {
         "nome": "Piazzale Maciacchini Basketball Court",
         "note": "A cozy little court surrounded by trees, five small street lamps, four benches and a fountain"
+      }
+    }
+  },
+  {
+    "id": "041",
+    "created": "2026-04-18",
+    "updated": "2026-04-18",
+    "address": "Via Sammartini",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.48969,
+      "lng": 9.20616
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "lit": true,
+    "audio": "audio/041/041-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-18",
+        "overview": "photos/041/overview.webp",
+        "context": "photos/041/context.webp",
+        "details": [
+          "photos/041/hoop-1.webp",
+          "photos/041/hoop-2.webp",
+          "photos/041/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Sammartini",
+        "note": "Buona superficie, entrambi i canestri con retina, ben sei panchine ai lati e una fontanella a bordo campo. L'illuminazione è garantita da 4 lampioni."
+      },
+      "en": {
+        "nome": "Via Sammartini Basketball Court",
+        "note": "Good surface, both rim with their net. Six benches alongside the court and a fountain too. Lighting is provided by four street lamps."
       }
     }
   }
