@@ -3,7 +3,7 @@
     "id": "001",
     "created": "2026-02-20",
     "updated": "2026-04-16",
-    "address": "Giardino Sergio Vieira De Mello",
+    "address": "Giardino Sergio Vieira de Mello",
     "city": "Milano",
     "district": "Municipio 8",
     "coordinates": {
@@ -46,11 +46,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Giardino Sergio Vieira De Mello",
+        "nome": "Campetto di Giardino Sergio Vieira de Mello",
         "note": "Campetto in buono stato, presenta ben undici panchine lungo i lati. Quattro piccoli lampioni ai lati dovrebbero garantire l'illuminazione notturna. Un canestro senza retina."
       },
       "en": {
-        "nome": "Giardino Sergio Vieira De Mello Basketball Court",
+        "nome": "Giardino Sergio Vieira de Mello Basketball Court",
         "note": "Court well mantained, with eleven benches along its sides. Four small streetlights on the sides should provide nighttime illumination. One rim without net."
       }
     }
