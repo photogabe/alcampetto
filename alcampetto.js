@@ -710,6 +710,14 @@ function buildCard(campetto) {
 
   /* ── Radice della card ── */
   var card = el('article', 'card');
+
+  /* Aggiungere un attributo id all'articolo che
+   * rappresenta la card, consente di creare link
+   * puntuali ciascuna di esse facendo seguire
+   * alla pagina web il cancelletto e l'id della
+   * card cui si vuole puntare: es.:
+   * https://alcampetto.org/index.html#041 */
+  card.setAttribute('id', campetto.id);
   card._campetto = campetto;
 
 
