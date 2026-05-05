@@ -1745,5 +1745,47 @@
         "note": "Good surface, both rim with their net. Six benches alongside the court and a fountain too. Lighting is provided by four street lamps."
       }
     }
+  },
+  {
+    "id": "042",
+    "created": "2026-04-26",
+    "updated": "2026-04-26",
+    "address": "Parco Walter Chiari",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.51562,
+      "lng": 9.15284
+    },
+    "hoops": 2,
+    "surface": null,
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/042/042-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-26",
+        "overview": "photos/042/overview.webp",
+        "context": null,
+        "details": [
+          "photos/042/hoop-1.webp",
+          "photos/042/hoop-2.webp",
+          "photos/042/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco Walter Chiari",
+        "note": "Superficie usurata e con erbacce. Un canestro senza retina. Qualche rifiuto ai lati del campo."
+      },
+      "en": {
+        "nome": "Parco Walter Chiari Basketball Court",
+        "note": "The surface is worn out with scattered overgrown grass. A rim without net. Some trash on the sides of the court."
+      }
+    }
   }
 ]
