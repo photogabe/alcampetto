@@ -1787,5 +1787,47 @@
         "note": "The surface is worn out with scattered overgrown grass. A rim without net. Some trash on the sides of the court."
       }
     }
+  },
+  {
+    "id": "043",
+    "created": "2026-05-02",
+    "updated": "2026-05-02",
+    "address": "Giardino Pierluigi Torregiani",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.50400,
+      "lng": 9.16897
+    },
+    "hoops": 2,
+    "surface": null,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/043/043-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-02",
+        "overview": "photos/043/overview.webp",
+        "context": "photos/043/context.webp",
+        "details": [
+          "photos/043/hoop-1.webp",
+          "photos/043/hoop-2.webp",
+          "photos/043/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di giardino Pierluigi Torregiani",
+        "note": "Superficie usurata, canestro divelto e piccioni a farla da padrone. Sei lampioni attorno al campo e ben dieci panchine."
+      },
+      "en": {
+        "nome": "Giardino Pierluigi Torregiani Basketball Court",
+        "note": "The surface is worn out, one hoop has been torn off and piegeons lord it. Six street lamps and ten benches around the court."
+      }
+    }
   }
 ]
