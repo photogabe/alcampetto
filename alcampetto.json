@@ -59,7 +59,7 @@
     "id": "002",
     "created": "2026-02-28",
     "updated": "2026-02-28",
-    "address": "Via del Futurismo",
+    "address": "Parco dell’Alberello",
     "city": "Milano",
     "district": "Municipio 4",
     "coordinates": {
@@ -155,7 +155,7 @@
     "id": "004",
     "created": "2026-02-21",
     "updated": "2026-02-21",
-    "address": "Via delle Rimembranze",
+    "address": "Parco Donatori del sangue",
     "city": "Novate Milanese",
     "district": null,
     "coordinates": {
@@ -1665,7 +1665,7 @@
     "id": "040",
     "created": "2026-04-18",
     "updated": "2026-04-18",
-    "address": "Piazzale Maciacchini",
+    "address": "Piazzale Maciachini",
     "city": "Milano",
     "district": "Municipio 9",
     "coordinates": {
@@ -1695,11 +1695,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di piazzale Maciacchini",
+        "nome": "Campetto di piazzale Maciachini",
         "note": "Campetto accogliente circondato da alberi, cinque piccoli lampioni intorno, quattro panchine e una fontanella"
       },
       "en": {
-        "nome": "Piazzale Maciacchini Basketball Court",
+        "nome": "Piazzale Maciachini Basketball Court",
         "note": "A cozy little court surrounded by trees, five small street lamps, four benches and a fountain"
       }
     }
@@ -1758,7 +1758,7 @@
       "lng": 9.15284
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "gomma",
     "half_court": false,
     "three_pt_line": false,
     "fenced": false,
@@ -1800,7 +1800,7 @@
       "lng": 9.16897
     },
     "hoops": 2,
-    "surface": null,
+    "surface": "granulato sferoidale di quarzo",
     "half_court": false,
     "three_pt_line": true,
     "fenced": false,
