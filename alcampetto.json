@@ -1829,5 +1829,47 @@
         "note": "The surface is worn out, one hoop has been torn off and piegeons lord it. Six street lamps and ten benches around the court."
       }
     }
+  },
+  {
+    "id": "044",
+    "created": "2026-05-03",
+    "updated": "2026-05-03",
+    "address": "Via Paolo Giacometti",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.51370,
+      "lng": 9.21891
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/044/044-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-03",
+        "overview": "photos/044/overview.webp",
+        "context": "photos/044/context.webp",
+        "details": [
+          "photos/044/hoop-1.webp",
+          "photos/044/hoop-2.webp",
+          "photos/044/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Paolo Giacometti",
+        "note": "Piccolo campetto con superfice usurata, un canestro con retina quasi completamente strappata e uno quasi divelto. Strisce appena visibili, alcune non contrassegnate."
+      },
+      "en": {
+        "nome": "Via Paolo Giacometti Basketball Court",
+        "note": "Little court with worn out surface, a hoop with an almost completely shredded net, the other one about to be torn off. Lines barely visible, some not marked at all."
+      }
+    }
   }
 ]
