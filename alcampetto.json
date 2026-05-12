@@ -88,7 +88,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco dell'Alberello",
+        "nome": "Campetto di parco dell'Alberello",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sulla recinzione è esposta una tabella degli orari di apertura."
       },
       "en": {
@@ -155,7 +155,7 @@
     "id": "004",
     "created": "2026-02-21",
     "updated": "2026-02-21",
-    "address": "Parco Donatori del sangue",
+    "address": "Parco donatori del sangue",
     "city": "Novate Milanese",
     "district": null,
     "coordinates": {
@@ -183,11 +183,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco Donatori del sangue",
+        "nome": "Campetto di parco donatori del sangue",
         "note": "Superficie in buone condizioni."
       },
       "en": {
-        "nome": "Parco Donatori del sangue Basketball Court",
+        "nome": "Parco donatori del sangue Basketball Court",
         "note": "Surface in good condition."
       }
     }
@@ -238,7 +238,7 @@
     "id": "006",
     "created": "2026-02-24",
     "updated": "2026-02-24",
-    "address": "Via Collecchio",
+    "address": "Via Angelo Salmoiraghi",
     "city": "Milano",
     "district": "Municipio 8",
     "coordinates": {
@@ -266,11 +266,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Via Collecchio",
+        "nome": "Campetto di via Angelo Salmoiraghi",
         "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione."
       },
       "en": {
-        "nome": "Via Collecchio Basketball Court",
+        "nome": "Via Angelo Salmoiraghi Basketball Court",
         "note": "Little basketball court on asphalt, both rims with their net. Lit by one street light."
       }
     }
@@ -350,7 +350,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Via Ravenna",
+        "nome": "Campetto di via Ravenna",
         "note": "Piccolo campetto con un canestro sprovvisto di retina. Superficie usurata."
       },
       "en": {
@@ -363,7 +363,7 @@
     "id": "009",
     "created": "2026-02-22",
     "updated": "2026-02-22",
-    "address": "Via Alessandro Manzoni",
+    "address": "Parco Carlo Ghezzi",
     "city": "Novate Milanese",
     "district": null,
     "coordinates": {
@@ -392,7 +392,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco Carlo Ghezzi",
+        "nome": "Campetto di parco Carlo Ghezzi",
         "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina."
       },
       "en": {
@@ -434,7 +434,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Via Arcivescovo Calabiana",
+        "nome": "Campetto di via Arcivescovo Calabiana",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa."
       },
       "en": {
@@ -447,7 +447,7 @@
     "id": "011",
     "created": "2026-02-28",
     "updated": "2026-02-28",
-    "address": "Via Moisè Loria",
+    "address": "Giardino Vincenzo Muccioli",
     "city": "Milano",
     "district": "Municipio 6",
     "coordinates": {
@@ -474,7 +474,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Giardino Vincenzo Muccioli",
+        "nome": "Campetto di giardino Vincenzo Muccioli",
         "note": "Campetto in discrete condizioni, entrambi i canestri senza retina. Due lampioni disposti su un lato del campo."
       },
       "en": {
@@ -655,7 +655,7 @@
     "id": "016",
     "created": "2026-03-14",
     "updated": "2026-03-14",
-    "address": "Via Toce",
+    "address": "Giardino Bruno Munari",
     "city": "Milano",
     "district": "Municipio 9",
     "coordinates": {
@@ -781,7 +781,7 @@
     "id": "019",
     "created": "2026-03-14",
     "updated": "2026-03-14",
-    "address": "Via Enrico Ibsen",
+    "address": "Parco Sempione",
     "city": "Milano",
     "district": "Municipio 1",
     "coordinates": {
@@ -852,7 +852,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Piazzale Salvatore Farina",
+        "nome": "Campetto di piazzale Salvatore Farina",
         "note": "Superficie usurata, canestri con retina rotta."
       },
       "en": {
@@ -893,7 +893,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto#1 di Viale Argonne",
+        "nome": "Campetto#1 di viale Argonne",
         "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina quasi totalmente strappata. Buona superficie."
       },
       "en": {
@@ -934,7 +934,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto#2 di Viale Argonne",
+        "nome": "Campetto#2 di viale Argonne",
         "note": "Campetto con superficie in ottimo stato, un canestro mancante."
       },
       "en": {
@@ -974,7 +974,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto#3 di Viale Argonne",
+        "nome": "Campetto#3 di viale Argonne",
         "note": "Piccolo campetto a un solo canestro con superficie in ottimo stato."
       },
       "en": {
@@ -1016,7 +1016,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Corso Indipendenza",
+        "nome": "Campetto di corso Indipendenza",
         "note": "Campetto con tabelloni piccoli e retine rotte, superficie discreta"
       },
       "en": {
@@ -1029,7 +1029,7 @@
     "id": "025",
     "created": "2026-03-22",
     "updated": "2026-03-22",
-    "address": "Largo Marinai d'Italia",
+    "address": "Parco Vittorio Formentano",
     "city": "Milano",
     "district": "Municipio 4",
     "coordinates": {
@@ -1058,11 +1058,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Largo Marinai d'Italia (Parco Vittorio Formentano)",
+        "nome": "Campetto di parco Vittorio Formentano",
         "note": "Superficie in discrete condizioni. Un canestro con retina rotta e l'altro con rete di ferro. Illuminazione garantita da due faretti posto lungo uno stesso lato del campo."
       },
       "en": {
-        "nome": "Largo Marinai d'Italia Basketball Court (Vittorio Formentano Park)",
+        "nome": "Parco Vittorio Formentano Basketball Court",
         "note": "Court surface in fair condition. A basketball hoops with an iron net the other one with a shredded ned. Lit by two street lights placed on the same court side."
       }
     }
@@ -1100,7 +1100,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Viale Lazio",
+        "nome": "Campetto di viale Lazio",
         "note": "Superficie in buone condizioni. Entrambi i canestri con retina. Tabelloni trasparenti."
       },
       "en": {
@@ -1142,7 +1142,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto#1 di Parco Aldo Aniasi",
+        "nome": "Campetto#1 di parco Aldo Aniasi",
         "note": "Superficie in condizioni discrete. Entrambi i canestri con retina."
       },
       "en": {
@@ -1184,7 +1184,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto#2 di Parco Aldo Aniasi",
+        "nome": "Campetto#2 di parco Aldo Aniasi",
         "note": "Superficie in condizioni discrete. Entrambi i canestri con retina."
       },
       "en": {
@@ -1227,7 +1227,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Piazzale Accursio",
+        "nome": "Campetto di piazzale Accursio",
         "note": "Superficie in condizioni discrete. Canestri senza retina."
       },
       "en": {
@@ -1269,7 +1269,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco delle Cave #1",
+        "nome": "Campetto#1 di parco delle Cave",
         "note": "Linee di campo sbiadite o inesistenti. Canestri con retina. Adiacente ad un altro campetto in condizioni analoghe."
       },
       "en": {
@@ -1311,7 +1311,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco delle Cave #2",
+        "nome": "Campetto#2 di parco delle Cave",
         "note": "Linee di campo sbiadite o inesistenti. Canestri con retina. Adiacente ad un altro campetto in condizioni analoghe."
       },
       "en": {
@@ -1354,7 +1354,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco Villa Litta",
+        "nome": "Campetto di parco Villa Litta",
         "note": "Ottima superficie di gioco. Uno dei due canestri presenta la retina sfilacciata. Quattro panchine disponibili. Il vivace parco offre un gradevole contesto."
       },
       "en": {
@@ -1396,7 +1396,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Piazza Aspromonte (giardino Giulio Polotti)",
+        "nome": "Campetto di piazza Aspromonte (giardino Giulio Polotti)",
         "note": "Piccolo campetto piacevolmente ombreggiato, superficie in buono stato ma con poco attrito. Entrambi i canestri hanno la retina. Una fontanella subito fuori dal campo."
       },
       "en": {
@@ -1438,7 +1438,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Viale Teodorico (angolo via Gattamelata)",
+        "nome": "Campetto di viale Teodorico (angolo via Gattamelata)",
         "note": "Superficie in buone condizioni, canestri integri, tabelloni trasparenti."
       },
       "en": {
@@ -1480,7 +1480,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco Assietta Cervi",
+        "nome": "Campetto di parco Assietta Cervi",
         "note": "Superficie in discrete condizioni; entrambi i canestri con retina; illuminazione garantita da tre fari dedicati posti sullo stesso lato. Sei panchine attorno al campo. Una fontanella a pochi metri."
       },
       "en": {
@@ -1523,7 +1523,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Via Bovisasca",
+        "nome": "Campetto di via Bovisasca",
         "note": "Superficie in discrete condizioni; entrambi i canestri con retina."
       },
       "en": {
@@ -1567,7 +1567,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Giardino Roberto Bazlen",
+        "nome": "Campetto di giardino Roberto Bazlen",
         "note": "Il tiglio che offre riparo dal sole, è infestato da afidi, responsabili della sostanza appiccicosa che compromette la superficie del campo. Peccato per il tiglio che meriterebbe un intervento di disinfestazione e per i giocatori che non possono godere del tutto di questo piccolo campetto."
       },
       "en": {
@@ -1610,7 +1610,7 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Giardino Oriana Fallaci",
+        "nome": "Campetto di giardino Oriana Fallaci",
         "note": "Mezzo campetto che offre tre canestri, due dei quali (quelli laterali rispetto alla linea da tre) con un tabellone ridotto rispetto alle dimensioni standard. Superficie adeguata."
       },
       "en": {
@@ -1863,11 +1863,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di via Paolo Giacometti #1",
+        "nome": "Campetto#1 di via Paolo Giacometti",
         "note": "Piccolo campetto con superfice usurata, un canestro con retina quasi completamente strappata e uno quasi divelto. Strisce appena visibili, alcune non contrassegnate."
       },
       "en": {
-        "nome": "Via Paolo Giacometti Basketball Court",
+        "nome": "Via Paolo Giacometti Basketball Court#1",
         "note": "Little court with worn out surface, a hoop with an almost completely shredded net, the other one about to be torn off. Lines barely visible, some not marked at all."
       }
     }
@@ -1906,11 +1906,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di via Paolo Giacometti #2",
+        "nome": "Campetto#2 di via Paolo Giacometti",
         "note": "Piccolo campetto con superfice usurata, i cerchi del canestro sono stati entrambi divelti. Strisce non contrassegnate."
       },
       "en": {
-        "nome": "Via Paolo Giacometti Basketball Court #2",
+        "nome": "Via Paolo Giacometti Basketball Court#2",
         "note": "Little court with worn out surface, both rims have been torn off. Lines not marked at all."
       }
     }
