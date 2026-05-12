@@ -1863,12 +1863,55 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di via Paolo Giacometti",
+        "nome": "Campetto di via Paolo Giacometti #1",
         "note": "Piccolo campetto con superfice usurata, un canestro con retina quasi completamente strappata e uno quasi divelto. Strisce appena visibili, alcune non contrassegnate."
       },
       "en": {
         "nome": "Via Paolo Giacometti Basketball Court",
         "note": "Little court with worn out surface, a hoop with an almost completely shredded net, the other one about to be torn off. Lines barely visible, some not marked at all."
+      }
+    }
+  },
+  {
+    "id": "045",
+    "created": "2026-05-03",
+    "updated": "2026-05-03",
+    "address": "Via Paolo Giacometti",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.51377,
+      "lng": 9.21852
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/045/045-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-03",
+        "overview": "photos/045/overview.webp",
+        "context": "photos/045/context.webp",
+        "details": [
+          "photos/045/hoop-1.webp",
+          "photos/045/hoop-2.webp",
+          "photos/045/surface.webp",
+          "photos/045/bench.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Paolo Giacometti #2",
+        "note": "Piccolo campetto con superfice usurata, i cerchi del canestro sono stati entrambi divelti. Strisce non contrassegnate."
+      },
+      "en": {
+        "nome": "Via Paolo Giacometti Basketball Court #2",
+        "note": "Little court with worn out surface, both rims have been torn off. Lines not marked at all."
       }
     }
   }
