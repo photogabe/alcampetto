@@ -1,7 +1,7 @@
 [
   {
     "id": "001",
-    "created": "2026-02-20",
+    "created": "2026-03-30",
     "updated": "2026-04-16",
     "address": "Giardino Sergio Vieira de Mello",
     "city": "Milano",
@@ -34,12 +34,12 @@
         "autore": [ "photos/001/2026-04-16/auth-1.webp" ]
       },
       {
-        "date": "2026-02-20",
-        "overview": "photos/001/2026-02-20/overview.webp",
+        "date": "2026-03-30",
+        "overview": "photos/001/2026-03-30/overview.webp",
         "context": null,
         "details": [
-          "photos/001/2026-02-20/hoop-1.webp",
-          "photos/001/2026-02-20/hoop-2.webp"
+          "photos/001/2026-03-30/hoop-1.webp",
+          "photos/001/2026-03-30/hoop-2.webp"
         ],
         "autore": []
       }
@@ -51,7 +51,7 @@
       },
       "en": {
         "nome": "Giardino Sergio Vieira de Mello Basketball Court",
-        "note": "Court well mantained, with eleven benches along its sides. Four small streetlights on the sides should provide nighttime illumination. One rim without net."
+        "note": "Court well mantained, with eleven benches along its sides. Four small court lights on the sides should provide nighttime illumination. One rim without net."
       }
     }
   },
