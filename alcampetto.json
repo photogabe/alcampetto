@@ -47,11 +47,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di Giardino Sergio Vieira de Mello",
-        "note": "Campetto in buono stato, presenta ben undici panchine lungo i lati. Quattro piccoli lampioni ai lati dovrebbero garantire l'illuminazione notturna. Un canestro senza retina."
+        "note": "Campetto in buono stato, presenta ben undici panchine lungo i lati. Sette piccoli lampioni ai lati dovrebbero garantire l'illuminazione notturna. Un canestro senza retina. Uno stallo per sei posti bici a bordo campo."
       },
       "en": {
         "nome": "Giardino Sergio Vieira de Mello Basketball Court",
-        "note": "Court well mantained, with eleven benches along its sides. Four small court lights on the sides should provide nighttime illumination. One rim without net."
+        "note": "Court well mantained, with eleven benches along its sides. Seven small court lights on the sides should provide nighttime illumination. One rim without net. A six-space bike rack right beside the court."
       }
     }
   },
@@ -76,12 +76,13 @@
     "photos": [
       {
         "date": "2026-02-28",
-        "overview": "photos/002/overview.webp",
+        "overview": "photos/002/2026-02-28/overview.webp",
         "context": null,
         "details": [
-          "photos/002/dettaglio-1.webp",
-          "photos/002/dettaglio-2.webp",
-          "photos/002/dettaglio-3.webp"
+          "photos/002/2026-02-28/hoop-1.webp",
+          "photos/002/2026-02-28/hoop-2.webp",
+          "photos/002/2026-02-28/surface.webp",
+          "photos/002/2026-02-28/timetable.webp"
         ],
         "autore": []
       }
