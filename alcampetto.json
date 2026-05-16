@@ -1915,5 +1915,47 @@
         "note": "Little court with worn out surface, both rims have been torn off. Lines not marked at all."
       }
     }
+  },
+  {
+    "id": "046",
+    "created": "2026-03-28",
+    "updated": "2026-03-28",
+    "address": "Giardino Cesare Pagani",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.50374,
+      "lng": 9.1781
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-03-28",
+        "overview": "photos/046/2026-03-28/overview.webp",
+        "context": null,
+        "details": [
+          "photos/046/2026-03-28/hoop-1.webp",
+          "photos/046/2026-03-28/hoop-2.webp",
+          "photos/046/2026-03-28/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di giardino Cesare Pagani",
+        "note": "Superficie usurata. Linee di gioco completamente sbiadite, difficile tenerne conto durante azioni di gioco."
+      },
+      "en": {
+        "nome": "Giardino Cesare Pagani Basketball Court",
+        "note": "Worn out surface. Lines are completely faded, useless during gameplay."
+      }
+    }
   }
 ]
