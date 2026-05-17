@@ -196,7 +196,7 @@
   {
     "id": "005",
     "created": "2026-02-23",
-    "updated": "2026-02-23",
+    "updated": "2026-04-02",
     "address": "Via Enrico Terzaghi",
     "city": "Milano",
     "district": "Municipio 8",
@@ -213,13 +213,24 @@
     "audio": "audio/005/005-beat.mp3",
     "photos": [
       {
-        "date": "2026-02-23",
-        "overview": "photos/005/overview.webp",
+        "date": "2026-04-02",
+        "overview": "photos/005/2026-04-02/overview.webp",
         "context": null,
         "details": [
-          "photos/005/dettaglio-1.webp",
-          "photos/005/dettaglio-2.webp",
-          "photos/005/dettaglio-3.webp"
+          "photos/005/2026-04-02/hoop-1.webp",
+          "photos/005/2026-04-02/hoop-2.webp",
+          "photos/005/2026-04-02/surface.webp"
+        ],
+        "autore": []
+      },
+      {
+        "date": "2026-02-23",
+        "overview": "photos/005/2026-02-23/overview.webp",
+        "context": null,
+        "details": [
+          "photos/005/2026-02-23/hoop-1.webp",
+          "photos/005/2026-02-23/hoop-2.webp",
+          "photos/005/2026-02-23/surface.webp"
         ],
         "autore": []
       }
