@@ -172,12 +172,23 @@
     "audio": "audio/004/004-beat.mp3",
     "photos": [
       {
+        "date": "2026-05-01",
+        "overview": "photos/004/2026-05-01/overview.webp",
+        "context": "photos/004/2026-05-01/context.webp",
+        "details": [
+          "photos/004/2026-05-01/hoop-1.webp",
+          "photos/004/2026-05-01/hoop-2.webp",
+          "photos/004/2026-05-01/surface.webp"
+        ],
+        "autore": []
+      },
+      {
         "date": "2026-02-21",
-        "overview": "photos/004/overview.webp",
+        "overview": "photos/004/2026-02-21/overview.webp",
         "context": null,
         "details": [
-          "photos/004/dettaglio-1.webp",
-          "photos/004/dettaglio-2.webp"
+          "photos/004/2026-02-21/hoop-1.webp",
+          "photos/004/2026-02-21/hoop-2.webp"
         ],
         "autore": []
       }
@@ -185,11 +196,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di parco donatori del sangue",
-        "note": "Superficie in buone condizioni."
+        "note": "Superficie in buone condizioni. Entrambi i canestri con retina."
       },
       "en": {
         "nome": "Parco donatori del sangue Basketball Court",
-        "note": "Surface in good condition."
+        "note": "Surface in good condition. Both rims with their nets"
       }
     }
   },
