@@ -6,7 +6,7 @@
 
 A photographic atlas of free-access basketball courts in Milan and surrounding areas.
 
-**[Browse the atlas →](https://photogabe.github.io/alcampetto/index.en.html)**
+**[Browse the atlas →](https://alcampetto.org/index.html)**
 
 For each court, the following data points are available:
 
@@ -106,43 +106,61 @@ Each court is described by a JSON object. Fields are grouped by category.
 
 ```json
 {
-  "id": "001",
-  "created": "2026-02-20",
-  "updated": "2026-02-20",
-  "address": "Via Benedetto Croce",
-  "city": "Milano",
-  "district": "Municipio 8",
-  "coordinates": { "lat": 45.49409, "lng": 9.11730 },
-  "hoops": 2,
-  "surface": "cemento",
-  "half_court": false,
-  "three_pt_line": true,
-  "fenced": false,
-  "lit": false,
-  "photos": [
-    {
-      "date": "2026-02-20",
-      "overview": "photos/001/overview.webp",
-      "context": null,
-      "details": [
-        "photos/001/dettaglio-1.webp",
-        "photos/001/dettaglio-2.webp",
-        "photos/001/dettaglio-3.webp"
-      ],
-      "autore": []
-    }
-  ],
-  "i18n": {
-    "it": {
-      "nome": "Campetto di Giardino Vieira De Mello",
-      "note": "Ben tenuto. Superficie in ottime condizioni."
+    "id": "001",
+    "created": "2026-03-30",
+    "updated": "2026-04-16",
+    "address": "Giardino Sergio Vieira de Mello",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.49409,
+      "lng": 9.1173
     },
-    "en": {
-      "nome": "Giardino Vieira De Mello Basketball Court",
-      "note": "Well maintained. Surface in good condition."
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/001/001-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-04-16",
+        "overview": "photos/001/2026-04-16/overview.webp",
+        "context": "photos/001/2026-04-16/context.webp",
+        "details": [
+          "photos/001/2026-04-16/hoop-1.webp",
+          "photos/001/2026-04-16/hoop-2.webp",
+          "photos/001/2026-04-16/surface.webp",
+          "photos/001/2026-04-16/benches.webp",
+          "photos/001/2026-04-16/flyer.webp",
+          "photos/001/2026-04-16/shopping-cart.webp",
+          "photos/001/2026-04-16/noticeboard.webp"
+        ],
+        "autore": [ "photos/001/2026-04-16/auth-1.webp" ]
+      },
+      {
+        "date": "2026-03-30",
+        "overview": "photos/001/2026-03-30/overview.webp",
+        "context": null,
+        "details": [
+          "photos/001/2026-03-30/hoop-1.webp",
+          "photos/001/2026-03-30/hoop-2.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di Giardino Sergio Vieira de Mello",
+        "note": "Campetto in buono stato, presenta ben undici panchine lungo i lati. Sette piccoli lampioni ai lati dovrebbero garantire l'illuminazione notturna. Un canestro senza retina. Uno stallo per sei posti bici a bordo campo."
+      },
+      "en": {
+        "nome": "Giardino Sergio Vieira de Mello Basketball Court",
+        "note": "Court well mantained, with eleven benches along its sides. Seven small court lights on the sides should provide nighttime illumination. One rim without net. A six-space bike rack right beside the court."
+      }
     }
   }
-}
 ```
 
 
