@@ -200,7 +200,7 @@
       },
       "en": {
         "nome": "Parco donatori del sangue Basketball Court",
-        "note": "Surface in good condition. Both rims with their nets"
+        "note": "Surface in good condition. Both rims with their nets."
       }
     }
   },
@@ -1977,6 +1977,49 @@
       "en": {
         "nome": "Giardino Cesare Pagani Basketball Court",
         "note": "Worn out surface. Lines are completely faded, useless during gameplay."
+      }
+    }
+  },
+  {
+    "id": "047",
+    "created": "2026-05-14",
+    "updated": "2026-05-14",
+    "address": "Giardino Angelo Poletti",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.49943,
+      "lng": 9.09833
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/047/047-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-14",
+        "overview": "photos/047/2026-05-14/overview.webp",
+        "context": "photos/047/2026-05-14/context.webp",
+        "details": [
+          "photos/047/2026-05-14/hoop-1.webp",
+          "photos/047/2026-05-14/hoop-2.webp",
+          "photos/047/2026-05-14/surface.webp",
+          "photos/047/2026-05-14/timetable.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di giardino Angelo Poletti",
+        "note": "Superficie usurata. Linee di gioco sbiadite; reti contenitive poste dietro i canestri; illuminazione offerta da sei piccoli lampioni. Il campetto si trova all'interno del giardino Angelo Poletti che osserva gli orari esposti in ingresso e riportati anche in foto."
+      },
+      "en": {
+        "nome": "Giardino Angelo Poletti Basketball Court#1",
+        "note": "Worn out surface. Lines are faded; supporting nets placed behind the hoops; lighting provided by six court lights. This court is placed within Giardino Angelo Poletti whose access follows a timetable provided near the entry gate."
       }
     }
   }
