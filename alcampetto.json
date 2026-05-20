@@ -260,7 +260,7 @@
   {
     "id": "006",
     "created": "2026-02-24",
-    "updated": "2026-02-24",
+    "updated": "2026-05-12",
     "address": "Via Angelo Salmoiraghi",
     "city": "Milano",
     "district": "Municipio 8",
@@ -274,15 +274,26 @@
     "three_pt_line": false,
     "fenced": false,
     "lit": true,
-    "audio": null,
+    "audio": "audio/006/006-beat.mp3",
     "photos": [
       {
+        "date": "2026-05-12",
+        "overview": "photos/006/2026-05-12/overview.webp",
+        "context": "photos/006/2026-05-12/context.webp",
+        "details": [
+          "photos/006/2026-05-12/hoop-1.webp",
+          "photos/006/2026-05-12/hoop-2.webp",
+          "photos/006/2026-05-12/surface.webp"
+        ],
+        "autore": []
+      },
+      {
         "date": "2026-02-24",
-        "overview": "photos/006/overview.webp",
+        "overview": "photos/006/2026-02-24/overview.webp",
         "context": null,
         "details": [
-          "photos/006/dettaglio-1.webp",
-          "photos/006/dettaglio-2.webp"
+          "photos/006/2026-02-24/hoop-1.webp",
+          "photos/006/2026-02-24/hoop-2.webp"
         ],
         "autore": []
       }
@@ -290,11 +301,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di via Angelo Salmoiraghi",
-        "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo lampione."
+        "note": "Piccolo campetto su asfalto, entrambi i canestri sono provvisti di retina. Illuminazione garantita da un solo grande lampione con due faretti. Visibile dalla strada: sia da via Salmoiraghi, sia da via Collecchio."
       },
       "en": {
         "nome": "Via Angelo Salmoiraghi Basketball Court",
-        "note": "Little basketball court on asphalt, both rims with their net. Lit by one street light."
+        "note": "Little basketball court on asphalt, both rims with their net. Lit by one tall pole with two flood lights. Visible from streets, both via Salmoiraghi and via Collecchio."
       }
     }
   },
