@@ -2008,7 +2008,7 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": true,
-    "audio": "audio/047/047-beat.mp3",
+    "audio": "audio/048/048-beat.mp3",
     "photos": [
       {
         "date": "2026-05-14",
@@ -2025,12 +2025,54 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di giardino Angelo Poletti",
+        "nome": "Campetto#1 di giardino Angelo Poletti",
         "note": "Superficie usurata. Linee di gioco sbiadite; reti contenitive poste dietro i canestri; illuminazione offerta da sei piccoli lampioni. Il campetto si trova all'interno del giardino Angelo Poletti che osserva gli orari esposti in ingresso e riportati anche in foto."
       },
       "en": {
         "nome": "Giardino Angelo Poletti Basketball Court#1",
         "note": "Worn out surface. Lines are faded; supporting nets placed behind the hoops; lighting provided by six court lights. This court is placed within Giardino Angelo Poletti whose access follows a timetable provided near the entry gate."
+      }
+    }
+  },
+  {
+    "id": "048",
+    "created": "2026-05-14",
+    "updated": "2026-05-14",
+    "address": "Giardino Angelo Poletti",
+    "city": "Milano",
+    "district": "Municipio 9",
+    "coordinates": {
+      "lat": 45.49955,
+      "lng": 9.09847
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/048/048-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-14",
+        "overview": "photos/048/2026-05-14/overview.webp",
+        "context": "photos/048/2026-05-14/context.webp",
+        "details": [
+          "photos/048/2026-05-14/hoop-1.webp",
+          "photos/048/2026-05-14/hoop-2.webp",
+          "photos/048/2026-05-14/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto#2 di giardino Angelo Poletti",
+        "note": "Come il campo gemello che lo fiancheggia, presenta superficie usurata e linee di gioco sbiadite. Questo è il campetto più vicino ad un rinfrescante pergolato ma dovrebbe essere il meno illuminato dei due."
+      },
+      "en": {
+        "nome": "Giardino Angelo Poletti Basketball Court#2",
+        "note": "Like its neighboring court, it has a worn surface and faded playing lines. This is the closest court to a refreshing pergola, but it's likely the one with the worst lighting conditions."
       }
     }
   }
