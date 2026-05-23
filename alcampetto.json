@@ -330,23 +330,23 @@
     "photos": [
       {
         "date": "2026-02-28",
-        "overview": "photos/007/overview.webp",
+        "overview": "photos/007/2026-02-28/overview.webp",
         "context": null,
         "details": [
-          "photos/007/dettaglio-1.webp",
-          "photos/007/dettaglio-2.webp",
-          "photos/007/dettaglio-3.webp"
+          "photos/007/2026-02-28/hoop-1.webp",
+          "photos/007/2026-02-28/hoop-2.webp",
+          "photos/007/2026-02-28/surface.webp"
         ],
         "autore": []
       }
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Via Giovanni Montemartini",
+        "nome": "Campetto di via Giovanni Montemartini / via Fabio Massimo",
         "note": "Campetto con entrambi i canestri senza retina. Superficie usurata."
       },
       "en": {
-        "nome": "Via Giovanni Montemartini Basketball Court",
+        "nome": "Via Giovanni Montemartini / via Fabio Massimo Basketball Court",
         "note": "Both rims without net. Court surface worn out."
       }
     }
