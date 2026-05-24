@@ -372,12 +372,12 @@
     "photos": [
       {
         "date": "2026-02-28",
-        "overview": "photos/008/overview.webp",
+        "overview": "photos/008/2026-02-28/overview.webp",
         "context": null,
         "details": [
-          "photos/008/dettaglio-1.webp",
-          "photos/008/dettaglio-2.webp",
-          "photos/008/dettaglio-3.webp"
+          "photos/008/2026-02-28/hoop-1.webp",
+          "photos/008/2026-02-28/hoop-2.webp",
+          "photos/008/2026-02-28/surface.webp"
         ],
         "autore": []
       }
@@ -389,7 +389,7 @@
       },
       "en": {
         "nome": "Via Ravenna Basketball Court",
-        "note": "Small court with both rims without net. Court surface worn out."
+        "note": "Small court, one rim without net. Court surface worn out."
       }
     }
   },
