@@ -2075,5 +2075,47 @@
         "note": "Like its neighboring court, it has a worn surface and faded playing lines. This is the closest court to a refreshing pergola, but it's likely the one with the worst lighting conditions."
       }
     }
+  },
+  {
+    "id": "049",
+    "created": "2026-05-09",
+    "updated": "2026-05-09",
+    "address": "Parco Chiesa Rossa",
+    "city": "Milano",
+    "district": "Municipio 5",
+    "coordinates": {
+      "lat": 45.43131,
+      "lng": 9.17485
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/049/049-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-09",
+        "overview": "photos/049/2026-05-09/overview.webp",
+        "context": "photos/049/2026-05-09/context.webp",
+        "details": [
+          "photos/049/2026-05-09/hoop-1.webp",
+          "photos/049/2026-05-09/hoop-2.webp",
+          "photos/049/2026-05-09/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco Chiesa Rossa",
+        "note": "Superficie usurata con linee di campo sbiadite. Illuminazione garantita da due fari posti ai due vertici del campo. Uno stallo per 5 posti bici, diverse panchine nei paraggi anche se nessuna a bordo campo."
+      },
+      "en": {
+        "nome": "Parco Chiesa Rossa Basketball Court",
+        "note": "Worn out surface and faded playing lines. Lighting is provided by two flood lights placed in two opposite corner of the field. A five-bike parking space is provided, along with several nearby benches, though none are on the sidelines."
+      }
+    }
   }
 ]
