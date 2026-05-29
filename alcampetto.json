@@ -396,7 +396,7 @@
   {
     "id": "009",
     "created": "2026-02-22",
-    "updated": "2026-02-22",
+    "updated": "2026-05-02",
     "address": "Parco Carlo Ghezzi",
     "city": "Novate Milanese",
     "district": null,
@@ -413,13 +413,24 @@
     "audio": "audio/009/009-beat.mp3",
     "photos": [
       {
-        "date": "2026-02-22",
-        "overview": "photos/009/overview.webp",
+        "date": "2026-05-01",
+        "overview": "photos/009/2026-05-01/overview.webp",
         "context": null,
         "details": [
-          "photos/009/dettaglio-1.webp",
-          "photos/009/dettaglio-2.webp",
-          "photos/009/dettaglio-3.webp"
+          "photos/009/2026-05-01/hoop-1.webp",
+          "photos/009/2026-05-01/hoop-2.webp",
+          "photos/009/2026-05-01/surface.webp"
+        ],
+        "autore": []
+      },
+      {
+        "date": "2026-02-22",
+        "overview": "photos/009/2026-02-22/overview.webp",
+        "context": null,
+        "details": [
+          "photos/009/2026-02-22/hoop-1.webp",
+          "photos/009/2026-02-22/hoop-2.webp",
+          "photos/009/2026-02-22/surface.webp"
         ],
         "autore": []
       }
@@ -427,11 +438,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di parco Carlo Ghezzi",
-        "note": "Superficie in discrete condizioni, uno dei due canestri è sprovvisto di retina."
+        "note": "Superficie in buone condizioni, entrambi i canestri con retina."
       },
       "en": {
         "nome": "Parco Carlo Ghezzi Basketball Court",
-        "note": "Surface in fair condition. In one of the basket the net is missing."
+        "note": "Surface in good condition. Both rims with their nets."
       }
     }
   },
