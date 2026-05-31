@@ -2128,5 +2128,48 @@
         "note": "Worn out surface and faded playing lines. Lighting is provided by two flood lights placed in two opposite corner of the field. A five-bike parking space is provided, along with several nearby benches, though none are on the sidelines."
       }
     }
+  },
+  {
+    "id": "050",
+    "created": "2026-05-09",
+    "updated": "2026-05-09",
+    "address": "Via Corradino D'Ascanio (angolo via Adalberto Garelli)",
+    "city": "Milano",
+    "district": "Municipio 5",
+    "coordinates": {
+      "lat": 45.43131,
+      "lng": 9.17485
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/050/050-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-09",
+        "overview": "photos/050/2026-05-09/overview.webp",
+        "context": "photos/050/2026-05-09/context.webp",
+        "details": [
+          "photos/050/2026-05-09/hoop-1.webp",
+          "photos/050/2026-05-09/hoop-2.webp",
+          "photos/050/2026-05-09/surface.webp",
+          "photos/050/2026-05-09/bench.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Corradino D'Ascanio (angolo via Adalberto Garelli)",
+        "note": "Superficie usurata con linee di campo sbiadite o assenti. Un canestro senza retina. Quattro lampioni sono posti ai vertici del campo. Otto panchine a bordo campo."
+      },
+      "en": {
+        "nome": "Via Corradino D'Ascanio (corner via Adalberto Garelli) Basketball Court",
+        "note": "Worn out surface and faded playing lines or not available at all. A rim is without net. Four court lights, one at each corner of the court. Eight benches on the courtside."
+      }
+    }
   }
 ]
