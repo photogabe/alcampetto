@@ -2,14 +2,12 @@
    ALCAMPETTO · style.css
    Foglio di stile condiviso da tutte le pagine del progetto.
 
-   DIPENDENZE ESTERNE:
-   Google Fonts — caricato nell'<head> di ogni pagina HTML con:
-     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue
-               &family=IBM+Plex+Mono:wght@400;600
-               &family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400
-               &display=swap" rel="stylesheet">
-   Senza connessione a internet il browser usa i font di sistema
-   come fallback (sans-serif e monospace).
+   FONT (nessuna dipendenza esterna):
+   Bebas Neue, IBM Plex Mono e IBM Plex Sans sono ospitati
+   localmente in assets/fonts/ e dichiarati più sotto con @font-face.
+   Licenza SIL Open Font License 1.1 (vedi assets/fonts/OFL-*.txt).
+   Senza quei file il browser usa i font di sistema come ripiego
+   (sans-serif e monospace).
    ============================================================= */
 
 
@@ -48,6 +46,57 @@
   --font-display: 'Bebas Neue', sans-serif;
   --font-mono:    'IBM Plex Mono', monospace;
   --font-body:    'IBM Plex Sans', sans-serif;
+}
+
+
+/* -------------------------------------------------------------
+   FONT LOCALI (@font-face)
+   I tre font del sito, ospitati in assets/fonts/ come file .woff2.
+   Niente Google Fonts: nessuna chiamata a server esterni, nessun
+   tracciamento. font-display: swap mostra subito il testo con un
+   font di ripiego e lo scambia col font vero appena è pronto.
+   ------------------------------------------------------------- */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/bebas-neue-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/ibm-plex-mono-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/ibm-plex-mono-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/ibm-plex-sans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/ibm-plex-sans-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/ibm-plex-sans-400-italic.woff2') format('woff2');
 }
 
 
