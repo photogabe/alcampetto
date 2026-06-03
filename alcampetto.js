@@ -192,6 +192,7 @@ function setFullImg(imgEl, src) {
    Se il campetto ha più di una rilevazione, una sezione
    "contact sheet" mostra le versioni precedenti delle foto. */
 function openLightbox(campetto) {
+  currentId     = campetto.id;
   var loc       = getLocalised(campetto);
   var nome      = loc.nome || '';
   var allPhotos = campetto.photos || [];
@@ -419,6 +420,11 @@ function buildContactSheet(allPhotos, latestDate) {
 function closeLightbox() {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
+  currentId = null;
+  /* Toglie l'hash dall'URL senza ricaricare e senza lasciare il '#' */
+  if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
 }
 
 lightboxClose.addEventListener('click', closeLightbox);
@@ -428,6 +434,31 @@ document.addEventListener('keydown', function (e) {
     closeLightbox();
   }
 });
+
+
+/* =============================================================
+   HASH ROUTING / DEEP-LINK
+   L'URL è la fonte di verità per l'overlay: "#001" apre il
+   campetto con id "001". Il click su una card scrive l'hash;
+   apertura, chiusura e avvio della pagina reagiscono qui.
+   currentId tiene l'id del campetto aperto (null = overlay chiuso),
+   così non ricostruiamo l'overlay quando l'hash non cambia.
+   Un id inesistente o spazzatura viene ignorato senza errori.
+   ============================================================= */
+var currentId = null;
+
+function openFromHash() {
+  var id = location.hash.replace(/^#/, '');
+  if (!id) {                        /* nessun hash → overlay chiuso */
+    if (currentId) { closeLightbox(); }
+    return;
+  }
+  if (id === currentId) { return; } /* già aperto su questo campetto */
+  var campetto = DATA.find(function (c) { return c.id === id; });
+  if (campetto) { openLightbox(campetto); }
+}
+
+window.addEventListener('hashchange', openFromHash);
 
 
 /* =============================================================
@@ -881,7 +912,9 @@ document.getElementById('grid').addEventListener('click', function (event) {
   if (img) {
     var card = img.closest('.card');
     if (card && card._campetto) {
-      openLightbox(card._campetto);
+      /* L'URL è la fonte di verità: scrivere l'hash apre l'overlay
+         tramite il listener 'hashchange' (vedi openFromHash). */
+      location.hash = card._campetto.id;
     }
   }
 });
@@ -1049,6 +1082,7 @@ fetch('alcampetto.json?v=' + Date.now())
     DATA = json;
     updateTagline();
     applyFilters();
+    openFromHash();   /* se l'URL ha già un hash (#001), apre quel campetto */
   })
   .catch(function () {
     /* Fallback: il fetch fallisce con il protocollo file://
