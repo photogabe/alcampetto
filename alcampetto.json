@@ -2171,5 +2171,48 @@
         "note": "Worn out surface and faded playing lines or not available at all. A rim is without net. Four court lights, one at each corner of the court. Eight benches on the courtside."
       }
     }
+  },
+  {
+    "id": "051",
+    "created": "2026-05-09",
+    "updated": "2026-05-09",
+    "address": "Via San Paolino",
+    "city": "Milano",
+    "district": "Municipio 6",
+    "coordinates": {
+      "lat": 45.42896,
+      "lng": 9.16218
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/051/051-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-09",
+        "overview": "photos/051/2026-05-09/overview.webp",
+        "context": "photos/051/2026-05-09/context.webp",
+        "details": [
+          "photos/051/2026-05-09/hoop-1.webp",
+          "photos/051/2026-05-09/hoop-2.webp",
+          "photos/051/2026-05-09/surface.webp",
+          "photos/051/2026-05-09/ball.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via San Paolino",
+        "note": "Superficie in ottime condizioni. Retine sfilacciate su entrambi i canestri. Sensibile rumore di fondo prodotto dal traffico dell'A7 Autostrada dei Giovi che scorre di fianco al campetto."
+      },
+      "en": {
+        "nome": "Via San Paolino Basketball Court",
+        "note": "The surface is in very good condition. Nets shredded on both rims. There is a noticeable background noise from traffic on the A7 motorway (Autostrada dei Giovi), which runs alongside the court."
+      }
+    }
   }
 ]
