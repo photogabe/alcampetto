@@ -396,7 +396,7 @@
   {
     "id": "009",
     "created": "2026-02-22",
-    "updated": "2026-05-02",
+    "updated": "2026-05-01",
     "address": "Parco Carlo Ghezzi",
     "city": "Novate Milanese",
     "district": null,
@@ -415,13 +415,13 @@
       {
         "date": "2026-05-01",
         "overview": "photos/009/2026-05-01/overview.webp",
-        "context": null,
+        "context": "photos/009/2026-05-01/context.webp",
         "details": [
           "photos/009/2026-05-01/hoop-1.webp",
           "photos/009/2026-05-01/hoop-2.webp",
           "photos/009/2026-05-01/surface.webp"
         ],
-        "autore": []
+        "autore": ["photos/009/2026-05-01/ball-1.webp", "photos/009/2026-05-01/hoop-from-below.webp", "photos/009/2026-05-01/ball-2.webp"]
       },
       {
         "date": "2026-02-22",
