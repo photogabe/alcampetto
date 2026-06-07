@@ -2214,5 +2214,54 @@
         "note": "The surface is in very good condition. Nets shredded on both rims. There is a noticeable background noise from traffic on the A7 motorway (Autostrada dei Giovi), which runs alongside the court."
       }
     }
+  },
+  {
+    "id": "052",
+    "created": "2026-06-07",
+    "updated": "2026-06-07",
+    "address": "Via Giuseppe Dezza",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.46102,
+      "lng": 9.16023
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "lit": true,
+    "audio": "audio/052/052-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-06-07",
+        "overview": "photos/052/2026-06-07/overview.webp",
+        "context": "photos/052/2026-06-07/context.webp",
+        "details": [
+          "photos/052/2026-06-07/hoop-1.webp",
+          "photos/052/2026-06-07/hoop-2.webp",
+          "photos/052/2026-06-07/surface.webp",
+          "photos/052/2026-06-07/ball-1.webp",
+          "photos/052/2026-06-07/ball-2.webp",
+          "photos/052/2026-06-07/ball-3.webp",
+          "photos/052/2026-06-07/ball-4.webp",
+          "photos/052/2026-06-07/places-4-bikes.webp",
+          "photos/052/2026-06-07/timecard.webp",
+          "photos/052/2026-06-07/flood-lights.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Giuseppe Dezza",
+        "note": "Campetto in ottime condizioni, rimesso a nuovo e inaugurato il 9 maggio 2026 con il lavoro dell'artista Nineinthepaint. Difficile trovare parcheggio in zona, tuttavia sono presenti venti stalli per bici appena fuori dal campo. Prima assoluta fin qui: un distributore di palloni da basket, ne può contenere tre e se ne trovano due, usabile attraverso un app che non ho provato. Ben undici panchine a bordo campo. Una fontanella a pochi metri."
+      },
+      "en": {
+        "nome": "Via Giuseppe Dezza Basketball Court",
+        "note": "Court in very good condition, renewed starting from May 9, 2026, with artwork by artist Nineinthepaint. Parking is difficult to find in the area, but twenty bike racks are available just outside the court. For the first time I saw a  basketball dispenser that holds three balls (but only two available), you can unlock the ball via an app I haven't tried. Eleven benches around the court. A drinking fountain is just a few meters away."
+      }
+    }
   }
 ]
