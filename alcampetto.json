@@ -450,7 +450,7 @@
     "id": "010",
     "created": "2026-03-01",
     "updated": "2026-03-01",
-    "address": "Via Arcivescovo Calabiana",
+    "address": "Via Arcivescovo Calabiana (angolo via Balduccio da Pisa)",
     "city": "Milano",
     "district": "Municipio 5",
     "coordinates": {
@@ -467,23 +467,23 @@
     "photos": [
       {
         "date": "2026-03-01",
-        "overview": "photos/010/overview.webp",
+        "overview": "photos/010/2026-03-01/overview.webp",
         "context": null,
         "details": [
-          "photos/010/dettaglio-1.webp",
-          "photos/010/dettaglio-2.webp",
-          "photos/010/dettaglio-3.webp"
+          "photos/010/2026-03-01/hoop-1.webp",
+          "photos/010/2026-03-01/hoop-2.webp",
+          "photos/010/2026-03-01/surface.webp"
         ],
         "autore": []
       }
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di via Arcivescovo Calabiana",
+        "nome": "Campetto di via Arcivescovo Calabiana (angolo via Balduccio da Pisa)",
         "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa."
       },
       "en": {
-        "nome": "Via Arcivescovo Calabiana Basketball Court",
+        "nome": "Via Arcivescovo Calabiana (corner via Balduccio da Pisa) Basketball Court",
         "note": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden."
       }
     }
