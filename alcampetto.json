@@ -2263,5 +2263,47 @@
         "note": "Court in very good condition, renewed starting from May 9, 2026, with artwork by artist Nineinthepaint. Parking is difficult to find in the area, but twenty bike racks are available just outside the court. For the first time I saw a  basketball dispenser that holds three balls (but only two available), you can unlock the ball via an app I haven't tried. Eleven benches around the court. A drinking fountain is just a few meters away."
       }
     }
+  },
+  {
+    "id": "053",
+    "created": "2026-05-17",
+    "updated": "2026-05-17",
+    "address": "Parco dei Fontanili",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.44960,
+      "lng": 9.10280
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/053/053-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-17",
+        "overview": "photos/053/2026-05-17/overview.webp",
+        "context": "photos/053/2026-05-17/context.webp",
+        "details": [
+          "photos/053/2026-05-17/hoop-1.webp",
+          "photos/053/2026-05-17/hoop-2.webp",
+          "photos/053/2026-05-17/surface.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto#1 di parco dei Fontanili",
+        "note": "Superficie in buono stato. Reti di contenimento dietro i canestri. Quattro lampioni lungo i lati. Le due porte di calcetto potrebbero dare fastidio in alcune azioni sotto canestro."
+      },
+      "en": {
+        "nome": "Parco dei Fontanili Basketball Court#1",
+        "note": "Court in good condition. Retaining nets are provided behind the hoops. Four court lights available. The two mini-goals could be a hurdle during some plays near the basket."
+      }
+    }
   }
 ]
