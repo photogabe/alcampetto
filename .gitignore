@@ -1,1 +1,11 @@
 .DS_Store
+mentoring.md
+
+# Blog: progetto Zola separato, non versionato in questo repo.
+# blog-src/ = sorgenti (config, template, post) · blog/ = sito generato,
+# servito in locale su localhost:8000/blog e caricato manualmente su Bunny.
+/blog/
+/blog-src/
+
+# Configurazione e worktree locali di Claude Code (non fanno parte del sito)
+.claude/
