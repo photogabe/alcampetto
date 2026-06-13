@@ -172,8 +172,8 @@ This project uses different licenses for different components:
 | Component | License | Applies to |
 |-----------|---------|------------|
 | Codice sorgente | [EUPL-1.2](LICENSE-CODE) | README, .js, .html, .css, .json-schema files |
-| Dati (JSON) | [CC BY 4.0](LICENSE-DATA) | all photographs and audio files |
-| Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) | all data files (*.json) |
+| Dati (JSON) | [CC BY 4.0](LICENSE-DATA) | all data files (*.json) |
+| Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) | all photographs and audio files |
 
 Originally the whole project was under a single MIT license; on 18 April 2026 it was split into the component-specific licenses listed above. From **v0.5.0** the source-code component moves from MIT to the **EUPL-1.2** (European Union Public Licence): releases up to and including **v0.4.0** remain available under MIT — a license already granted cannot be revoked — while v0.5.0 and later are under the EUPL-1.2.
 Photographs and audio were always subject to copyright law regardless of the license applied to the software component.
