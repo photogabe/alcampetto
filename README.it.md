@@ -172,11 +172,11 @@ Questo progetto usa licenze diverse per diverse componenti:
 
 | Componente | Licenza | Perimetro |
 |-----------|----------|-----------|
-| Codice sorgente | [MIT](LICENSE-CODE) | README, .js, .html, .css, .json-schema files |
+| Codice sorgente | [EUPL-1.2](LICENSE-CODE) | README, .js, .html, .css, .json-schema files |
 | Dati (JSON) | [CC BY 4.0](LICENSE-DATA) | tutte le foto e i file audio |
 | Foto e audio | [CC BY-NC-ND 4.0](LICENSE-MEDIA) | tutti i dati (*.json) |
 
-La licenza MIT precedentemente estesa a tutto il progetto è stata sostituita da licenze con perimetro circoscritto a componenti specifiche, ciò al fine di riflettere meglio la natura di ciascun asset. Questa modifica entra in vigore a partire dal 18 aprile 2026.
+In origine l'intero progetto era sotto un'unica licenza MIT; il 18 aprile 2026 è stata suddivisa nelle licenze per componente elencate sopra. Dalla **v0.5.0** la componente di codice passa da MIT alla **EUPL-1.2** (Licenza Pubblica dell'Unione Europea): le versioni fino alla **v0.4.0** inclusa restano disponibili sotto MIT — una licenza già concessa non è revocabile — mentre dalla v0.5.0 in avanti vale la EUPL-1.2.
 Foto e audio sono sempre state soggette alla legge sul diritto d'autore indipendentemente dalla licenza applicata alla componente software.
 
 
