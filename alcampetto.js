@@ -463,36 +463,76 @@ window.addEventListener('hashchange', openFromHash);
 
 /* =============================================================
    PLAYER AUDIO "BATTITO"
-   Tracciato ECG animato che riproduce l'audio del rimbalzo
-   di una palla sul campetto — il battito del campetto.
+   Forma d'onda reale della registrazione (letta dal .peaks.json
+   e disegnata a barre), che si colora di arancione durante la
+   riproduzione — il battito del campetto.
    ============================================================= */
 
-/* Dati del tracciato ECG (tre cicli con micro-variazioni).
-   Ogni ciclo occupa ~27 unità SVG: baseline → onda P (Bézier) →
-   complesso QRS (picco netto) → onda T (Bézier) → baseline.
-   Le lievi differenze tra i cicli (ampiezza P/T, picco QRS,
-   lunghezza segmenti) rendono il battito più organico.
-   Tre cicli anziché quattro alleggeriscono la resa visiva
-   quando l'animazione si ripete su molte card in parallelo.
-   La durata dell'animazione in style.css deve corrispondere
-   alla durata dell'audio (10.104 s — audio/001/001_beat.mp3). */
-var ECG_PATH = 'M0,12 L4,12 Q6,10 8,12 L10,12 L11.5,2 L13,20 L14.5,12 L16.5,12 Q19,7.5 21.5,12 L27,12 L31,12 Q33,9.5 35,12 L37,12 L38.5,1.5 L40,20.5 L41.5,12 L43.5,12 Q46,8 48.5,12 L53,12 L57,12 Q59,10.5 61,12 L63,12 L64.5,2.5 L66,19.5 L67.5,11.5 L69.5,12 Q72,8.5 74.5,12 L80,12';
-/* Crea un elemento SVG con il tracciato ECG.
-   cssClass distingue sfondo (muted) e primo piano (orange). */
-function buildEcgSvg(cssClass) {
-  var ns  = 'http://www.w3.org/2000/svg';
+/* Piccola freccia "play" mostrata all'inizio del player battito. */
+function buildPlaySvg() {
+  var ns = 'http://www.w3.org/2000/svg';
   var svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('viewBox', '0 0 80 24');
+  svg.setAttribute('class', 'battito-play');
+  svg.setAttribute('width', '20');
+  svg.setAttribute('height', '20');
+  svg.setAttribute('viewBox', '0 0 12 12');
+  svg.setAttribute('aria-hidden', 'true');
+  var triangle = document.createElementNS(ns, 'path');
+  triangle.setAttribute('d', 'M2 1 L11 6 L2 11 Z');
+  triangle.setAttribute('fill', 'currentColor');
+  svg.appendChild(triangle);
+  return svg;
+}
+
+/* Costruisce la forma d'onda come barre verticali, a partire dai
+   picchi (valori 0..1) letti dal .peaks.json. cssClass distingue lo
+   sfondo (grigio) dal primo piano (arancione, che si "riempie" al play). */
+function buildWaveformSvg(peaks, cssClass) {
+  var ns = 'http://www.w3.org/2000/svg';
+  var height = 24;
+  var center = height / 2;
+
+  var svg = document.createElementNS(ns, 'svg');
+  // Una unita' di viewBox per ogni barra; "preserveAspectRatio none"
+  // poi la stira a riempire tutta la larghezza del player.
+  svg.setAttribute('viewBox', '0 0 ' + peaks.length + ' ' + height);
+  svg.setAttribute('preserveAspectRatio', 'none');
   svg.setAttribute('class', cssClass);
   svg.setAttribute('aria-hidden', 'true');
-  var path = document.createElementNS(ns, 'path');
-  path.setAttribute('d', ECG_PATH);
-  path.setAttribute('fill', 'none');
-  path.setAttribute('stroke', 'currentColor');
-  path.setAttribute('stroke-width', '1.5');
-  path.setAttribute('stroke-linejoin', 'round');
-  svg.appendChild(path);
+
+  for (var i = 0; i < peaks.length; i++) {
+    var barHeight = peaks[i] * (height - 2);
+    if (barHeight < 0.5) {
+      barHeight = 0.5;          // anche il silenzio resta una traccia visibile
+    }
+    var bar = document.createElementNS(ns, 'rect');
+    bar.setAttribute('x', i + 0.15);
+    bar.setAttribute('y', center - barHeight / 2);
+    bar.setAttribute('width', 0.7);
+    bar.setAttribute('height', barHeight);
+    bar.setAttribute('fill', 'currentColor');
+    svg.appendChild(bar);
+  }
   return svg;
+}
+
+/* Carica il .peaks.json dell'audio e disegna la forma d'onda dentro
+   il player: due copie sovrapposte (sfondo grigio + primo piano
+   arancione). Imposta anche la durata dell'animazione pari a quella
+   reale della registrazione. E' asincrona: il tracciato compare
+   appena il file dei picchi e' stato letto. */
+function loadWaveform(button, container, audioUrl) {
+  var peaksUrl = audioUrl.replace(/\.mp3$/, '.peaks.json');
+  fetch(peaksUrl)
+    .then(function (response) { return response.json(); })
+    .then(function (peaks) {
+      container.appendChild(buildWaveformSvg(peaks.data, 'battito-ecg-bg'));
+      container.appendChild(buildWaveformSvg(peaks.data, 'battito-ecg-fg'));
+      button.style.setProperty('--battito-duration', peaks.duration + 's');
+    })
+    .catch(function () {
+      // Se il .peaks.json manca, il player resta semplicemente senza tracciato.
+    });
 }
 
 /* Avvia o ferma la riproduzione audio del battito.
@@ -702,6 +742,45 @@ function getMapsUrl(lat, lng) {
   return 'https://www.google.com/maps?q=' + lat + ',' + lng;
 }
 
+/* Icona "segnaposto" (pin) della mappa, in SVG. */
+function buildPinSvg() {
+  var ns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('width', '13');
+  svg.setAttribute('height', '16');
+  svg.setAttribute('viewBox', '0 0 12 16');
+  svg.setAttribute('aria-hidden', 'true');
+  var drop = document.createElementNS(ns, 'path');
+  drop.setAttribute('d', 'M6 0C2.7 0 0 2.7 0 6c0 4.5 6 10 6 10s6-5.5 6-10c0-3.3-2.7-6-6-6z');
+  drop.setAttribute('fill', 'none');
+  drop.setAttribute('stroke', 'currentColor');
+  drop.setAttribute('stroke-width', '1.5');
+  var dot = document.createElementNS(ns, 'circle');
+  dot.setAttribute('cx', '6');
+  dot.setAttribute('cy', '6');
+  dot.setAttribute('r', '2');
+  dot.setAttribute('fill', 'currentColor');
+  svg.appendChild(drop);
+  svg.appendChild(dot);
+  return svg;
+}
+
+/* Crea il link "apri sulla mappa" (pin) da affiancare all'indirizzo,
+   nel body della card. Mantiene i dataset lat/lng usati da
+   updateAllMapsLinks per aggiornare l'URL al cambio di provider. */
+function buildMapsPin(lat, lng) {
+  var link = el('a', 'addr-pin');
+  link.href = getMapsUrl(lat, lng);
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.dataset.lat = lat;
+  link.dataset.lng = lng;
+  link.setAttribute('aria-label', T.openInMaps);
+  link.title = T.openInMaps;
+  link.appendChild(buildPinSvg());
+  return link;
+}
+
 
 /* =============================================================
    COSTRUZIONE DI UNA CARD
@@ -721,13 +800,12 @@ function getMapsUrl(lat, lng) {
    │   ├── div.card-name
    │   └── div.card-date + span.freshness
    ├── div.card-body
-   │   ├── div.info-row  (Indirizzo)
+   │   ├── div.info-row  (Indirizzo + a.addr-pin -> mappa)
    │   ├── div.info-row  (Zona)
    │   ├── div.info-row  (Note)
    │   └── div.booleans  (pill canestri, illuminato, ecc.)
-   └── footer.card-footer
-       ├── a.maps-btn
-       └── button.battito-btn (player audio, opzionale)
+   └── footer.card-footer  (solo se il campetto ha audio)
+       └── button.battito-btn  (play + "Battito" + forma d'onda)
    ============================================================= */
 function buildCard(campetto) {
 
@@ -809,7 +887,10 @@ function buildCard(campetto) {
 
   var body = el('div', 'card-body');
 
-  body.appendChild(infoRow(T.labelAddress, campetto.address));
+  /* Riga indirizzo, con il pin della mappa allineato a destra */
+  var addressRow = infoRow(T.labelAddress, campetto.address);
+  addressRow.appendChild(buildMapsPin(lat, lng));
+  body.appendChild(addressRow);
 
   var area = campetto.city
            + (campetto.district ? ' \u2014 ' + campetto.district : '');
@@ -832,36 +913,31 @@ function buildCard(campetto) {
   card.appendChild(body);
 
 
-  /* ── Footer: link a Google Maps + player audio battito ── */
+  /* ── Footer: il player "battito".
+     Esiste SOLO per i campetti che hanno una registrazione audio
+     (campo "audio" nel JSON); il link alla mappa ora vive nel body,
+     accanto all'indirizzo. ── */
 
-  var footer = el('footer', 'card-footer');
-  var mapsLink    = el('a', 'maps-btn');
-  mapsLink.dataset.lat = lat;
-  mapsLink.dataset.lng = lng;
-  mapsLink.href   = getMapsUrl(lat, lng);
-  mapsLink.target = '_blank';
-  mapsLink.rel    = 'noopener';
-  mapsLink.textContent = T.openInMaps;
-  footer.appendChild(mapsLink);
-
-  /* Player audio "battito" — visibile solo se il campetto
-     ha un file audio associato (campo "audio" nel JSON) */
   var audioUrl = campetto.audio ? safeAudioUrl(campetto.audio) : '';
   if (audioUrl) {
+    var footer = el('footer', 'card-footer');
+
     var battitoBtn = el('button', 'battito-btn');
     battitoBtn.type = 'button';
     battitoBtn.dataset.audio = audioUrl;
 
-    var ecgWrap = el('div', 'battito-ecg');
-    ecgWrap.appendChild(buildEcgSvg('battito-ecg-bg'));
-    ecgWrap.appendChild(buildEcgSvg('battito-ecg-fg'));
-    battitoBtn.appendChild(ecgWrap);
-
+    /* freccia play + etichetta "Battito" + forma d'onda */
+    battitoBtn.appendChild(buildPlaySvg());
     battitoBtn.appendChild(textEl('span', 'battito-label', T.labelBattito));
-    footer.appendChild(battitoBtn);
-  }
 
-  card.appendChild(footer);
+    var ecgWrap = el('div', 'battito-ecg');
+    battitoBtn.appendChild(ecgWrap);
+    /* disegna la forma d'onda reale leggendo il .peaks.json (async) */
+    loadWaveform(battitoBtn, ecgWrap, audioUrl);
+
+    footer.appendChild(battitoBtn);
+    card.appendChild(footer);
+  }
 
   return card;
 }
@@ -1015,7 +1091,7 @@ document.querySelectorAll('.view-tab').forEach(function (tab) {
    LISTENER — TOGGLE PROVIDER MAPPE
    ============================================================= */
 function updateAllMapsLinks() {
-  document.querySelectorAll('.maps-btn').forEach(function (btn) {
+  document.querySelectorAll('.addr-pin').forEach(function (btn) {
     var lat = parseFloat(btn.dataset.lat);
     var lng = parseFloat(btn.dataset.lng);
     btn.href = getMapsUrl(lat, lng);

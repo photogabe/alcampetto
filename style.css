@@ -653,20 +653,22 @@ main#grid {
   flex-wrap: wrap;
 }
 
-.maps-btn {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: transparent;
-  border: 1px solid var(--orange);
-  color: var(--orange);
-  padding: 0.35rem 0.75rem;
+/* Pin Maps: piccola icona accanto all'indirizzo, nel body.
+   Allineata a destra della riga; apre la mappa del campetto. */
+.addr-pin {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--line);
   border-radius: 2px;
+  color: var(--orange);
   transition: all 0.15s;
 }
-.maps-btn:hover { background: var(--orange); color: white; }
+.addr-pin:hover { background: var(--orange); border-color: var(--orange); color: white; }
 
 .coord {
   font-family: var(--font-mono);
@@ -683,25 +685,26 @@ main#grid {
    da sinistra a destra per la durata della registrazione.
    Visibile solo se il campetto ha un file audio associato.
    ------------------------------------------------------------- */
+/* Player "battito": occupa l'intero footer della card.
+   freccia play + etichetta "Battito" + forma d'onda a riempire. */
 .battito-btn {
-  display: inline-flex;
+  flex: 1;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   background: transparent;
-  border: 1px solid var(--line);
-  padding: 0.35rem 0.75rem;
-  border-radius: 2px;
+  border: none;
+  padding: 0.15rem 0;
   cursor: pointer;
-  transition: border-color 0.15s;
-  margin-left: auto;
+  color: var(--orange);
 }
-.battito-btn:hover { border-color: var(--orange); }
+.battito-play { flex-shrink: 0; display: flex; }
 
 .battito-ecg {
   position: relative;
-  width: 80px;
+  flex: 1;
+  min-width: 0;
   height: 24px;
-  flex-shrink: 0;
 }
 
 .battito-ecg-bg,
@@ -719,7 +722,9 @@ main#grid {
 }
 
 .battito-btn.playing .battito-ecg-fg {
-  animation: ecg-sweep 10.104s linear forwards;
+  /* la durata reale arriva dal .peaks.json (impostata via JS);
+     10s e' solo un valore di sicurezza se mancasse. */
+  animation: ecg-sweep var(--battito-duration, 10s) linear forwards;
 }
 
 @keyframes ecg-sweep {
@@ -728,16 +733,14 @@ main#grid {
 }
 
 .battito-label {
+  flex-shrink: 0;
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
-  transition: color 0.15s;
+  color: var(--orange);
   white-space: nowrap;
 }
-.battito-btn:hover .battito-label,
-.battito-btn.playing .battito-label { color: var(--orange); }
 
 
 /* -------------------------------------------------------------
