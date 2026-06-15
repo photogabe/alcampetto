@@ -700,34 +700,34 @@ main#grid {
 }
 .battito-play { flex-shrink: 0; display: flex; }
 
-.battito-ecg {
+.battito-wave {
   position: relative;
   flex: 1;
   min-width: 0;
   height: 24px;
 }
 
-.battito-ecg-bg,
-.battito-ecg-fg {
+.battito-wave-bg,
+.battito-wave-fg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.battito-ecg-bg { color: var(--muted); }
-.battito-ecg-fg {
+.battito-wave-bg { color: var(--muted); }
+.battito-wave-fg {
   color: var(--orange);
   clip-path: inset(0 100% 0 0);
 }
 
-.battito-btn.playing .battito-ecg-fg {
+.battito-btn.playing .battito-wave-fg {
   /* la durata reale arriva dal .peaks.json (impostata via JS);
      10s e' solo un valore di sicurezza se mancasse. */
-  animation: ecg-sweep var(--battito-duration, 10s) linear forwards;
+  animation: wave-sweep var(--battito-duration, 10s) linear forwards;
 }
 
-@keyframes ecg-sweep {
+@keyframes wave-sweep {
   from { clip-path: inset(0 100% 0 0); }
   to   { clip-path: inset(0 0% 0 0); }
 }
@@ -1169,7 +1169,7 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .card-photo-placeholder { height: 180px; }
   .card > .thumbs { margin-top: -22px; }
   .thumbs img { width: 60px; height: 60px; }
-  .battito-ecg { width: 60px; }
+  .battito-wave { width: 60px; }
 
   /* Contact sheet — thumbs più piccole */
   .cs-thumb { width: 110px; }

@@ -526,8 +526,8 @@ function loadWaveform(button, container, audioUrl) {
   fetch(peaksUrl)
     .then(function (response) { return response.json(); })
     .then(function (peaks) {
-      container.appendChild(buildWaveformSvg(peaks.data, 'battito-ecg-bg'));
-      container.appendChild(buildWaveformSvg(peaks.data, 'battito-ecg-fg'));
+      container.appendChild(buildWaveformSvg(peaks.data, 'battito-wave-bg'));
+      container.appendChild(buildWaveformSvg(peaks.data, 'battito-wave-fg'));
       button.style.setProperty('--battito-duration', peaks.duration + 's');
     })
     .catch(function () {
@@ -930,10 +930,10 @@ function buildCard(campetto) {
     battitoBtn.appendChild(buildPlaySvg());
     battitoBtn.appendChild(textEl('span', 'battito-label', T.labelBattito));
 
-    var ecgWrap = el('div', 'battito-ecg');
-    battitoBtn.appendChild(ecgWrap);
+    var waveWrap = el('div', 'battito-wave');
+    battitoBtn.appendChild(waveWrap);
     /* disegna la forma d'onda reale leggendo il .peaks.json (async) */
-    loadWaveform(battitoBtn, ecgWrap, audioUrl);
+    loadWaveform(battitoBtn, waveWrap, audioUrl);
 
     footer.appendChild(battitoBtn);
     card.appendChild(footer);
