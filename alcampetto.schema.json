@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://photogabe.github.io/alcampetto/alcampetto.schema.json",
+  "$id": "https://alcampetto.org/alcampetto.schema.json",
   "title": "ALCAMPETTO dataset",
   "description": "Atlante dei campetti di basket a Milano",
   "type": "array",
