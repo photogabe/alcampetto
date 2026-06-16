@@ -1081,7 +1081,9 @@ document.querySelectorAll('.sort-btn').forEach(function (btn) {
 /* =============================================================
    LISTENER — TAB VISTA (Griglia / Mappa)
    ============================================================= */
-document.querySelectorAll('.view-tab').forEach(function (tab) {
+/* Solo i tab con data-view sono toggle in-pagina (Griglia/Mappa);
+   il link "Blog" e' un <a> senza data-view e naviga da solo. */
+document.querySelectorAll('.view-tab[data-view]').forEach(function (tab) {
   tab.addEventListener('click', function () {
     switchView(tab.dataset.view);
   });
