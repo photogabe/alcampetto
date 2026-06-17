@@ -491,7 +491,7 @@
   {
     "id": "011",
     "created": "2026-02-28",
-    "updated": "2026-02-28",
+    "updated": "2026-06-07",
     "address": "Giardino Vincenzo Muccioli",
     "city": "Milano",
     "district": "Municipio 6",
@@ -505,14 +505,26 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": true,
-    "audio": null,
+    "audio": "audio/011/011-beat.mp3",
     "photos": [
       {
+        "date": "2026-06-07",
+        "overview": "photos/011/2026-06-07/overview.webp",
+        "context": "photos/011/2026-06-07/context.webp",
+        "details": [
+          "photos/011/2026-06-07/hoop-1.webp",
+          "photos/011/2026-06-07/hoop-2.webp",
+          "photos/011/2026-06-07/surface.webp",
+          "photos/011/2026-06-07/surface-2.webp"
+        ],
+        "autore": []
+      },
+      {
         "date": "2026-02-28",
-        "overview": "photos/011/overview.webp",
+        "overview": "photos/011/2026-02-28/overview.webp",
         "context": null,
         "details": [
-          "photos/011/dettaglio-1.webp"
+          "photos/011/2026-02-28/another-view.webp"
         ],
         "autore": []
       }
@@ -524,7 +536,7 @@
       },
       "en": {
         "nome": "Giardino Vincenzo Muccioli Basketball Court",
-        "note": "Court in fair condition, both rims without their net. Two lamp posts on one side of the court."
+        "note": "Court in fair condition, both rims without their net. Two flood lights on one side of the court."
       }
     }
   },
