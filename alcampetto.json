@@ -2293,7 +2293,7 @@
     "updated": "2026-05-17",
     "address": "Parco dei Fontanili",
     "city": "Milano",
-    "district": "Municipio 7",
+    "district": "Municipio 6",
     "coordinates": {
       "lat": 45.44960,
       "lng": 9.10280
@@ -2326,6 +2326,50 @@
       "en": {
         "nome": "Parco dei Fontanili Basketball Court#1",
         "note": "Court in good condition. Retaining nets are provided behind the hoops. Four court lights available. The two mini-goals could be a hurdle during some plays near the basket."
+      }
+    }
+  },
+  {
+    "id": "054",
+    "created": "2026-05-17",
+    "updated": "2026-05-17",
+    "address": "Parco dei Fontanili",
+    "city": "Milano",
+    "district": "Municipio 6",
+    "coordinates": {
+      "lat": 45.44948,
+      "lng": 9.10243
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/054/054-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-17",
+        "overview": "photos/054/2026-05-17/overview.webp",
+        "context": "photos/054/2026-05-17/context.webp",
+        "details": [
+          "photos/054/2026-05-17/hoop-1.webp",
+          "photos/054/2026-05-17/hoop-2.webp",
+          "photos/054/2026-05-17/surface.webp",
+          "photos/054/2026-05-17/surface-2.webp",
+          "photos/054/2026-05-17/surface-3.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto#2 di parco dei Fontanili",
+        "note": "Situazione analoga al campetto gemello che vive di fianco nello stesso parco: superficie in buono stato, reti di contenimento, Quattro lampioni e due porte di calcetto che rischiano di dare fastidio in alcune azioni di gioco."
+      },
+      "en": {
+        "nome": "Parco dei Fontanili Basketball Court#2",
+        "note": "Similar situation to the twin court that lives right beside this one, in the same park: surface in good condition, containment nets, four court lights and two soccer goals that might pose a risk for players, at least in some game actions."
       }
     }
   }
