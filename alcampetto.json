@@ -2372,5 +2372,48 @@
         "note": "Similar situation to the twin court that lives right beside this one, in the same park: surface in good condition, containment nets, four court lights and two soccer goals that might pose a risk for players, at least in some game actions."
       }
     }
+  },
+  {
+    "id": "055",
+    "created": "2026-05-17",
+    "updated": "2026-05-17",
+    "address": "Via Bisceglie (angolo via Lorenteggio)",
+    "city": "Milano",
+    "district": "Municipio 6",
+    "coordinates": {
+      "lat": 45.44740,
+      "lng": 9.12198
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/055/055-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-17",
+        "overview": "photos/055/2026-05-17/overview.webp",
+        "context": "photos/055/2026-05-17/context.webp",
+        "details": [
+          "photos/055/2026-05-17/hoop-1.webp",
+          "photos/055/2026-05-17/hoop-2.webp",
+          "photos/055/2026-05-17/surface.webp",
+          "photos/055/2026-05-17/alternative-hoop.webp"
+        ],
+        "autore": []
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto#1 di via Bisceglie (angolo via Lorenteggio)",
+        "note": "Illuminato da piccoli lampioni disposti lungo il perimetro di gioco; quattro panchine, due per lato. Dei due campetti affiancati questo ha la superficie più usurata."
+      },
+      "en": {
+        "nome": "Via Bisceglie (angolo via Lorenteggio) Basketball Court#1",
+        "note": "Lit by court lights placed around the court; four benches, two for each sideline. Of the two sibling courts placed one beside the other, this has the most worn out surface."
+      }
+    }
   }
 ]
