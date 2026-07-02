@@ -21,7 +21,6 @@
 var I18N = {
 
   it: {
-    loading:       'Caricamento dati…',
     noResults:     'Nessun campetto trovato 🏀',
     serverError:   '⚠ Per visualizzare i dati, avvia un server locale',
     serverCmd:     'python3 -m http.server',
@@ -49,7 +48,6 @@ var I18N = {
   },
 
   en: {
-    loading:       'Loading data…',
     noResults:     'No courts found 🏀',
     serverError:   '⚠ To view data, start a local server',
     serverCmd:     'python3 -m http.server',
@@ -98,7 +96,6 @@ var DATA          = [];
 var activeFilter  = 'all';
 var activeSort    = 'id';
 var mapsProvider = localStorage.getItem('mapsProvider') || 'google';
-var activeView    = 'grid';
 var leafletMap    = null;
 var markersLayer  = null;
 var lastFiltered  = [];
@@ -706,7 +703,6 @@ function updateMapMarkers(lista) {
 
 /* Alterna tra vista griglia e vista mappa */
 function switchView(view) {
-  activeView = view;
   var grid = document.getElementById('grid');
   var map  = document.getElementById('map');
 
