@@ -217,8 +217,6 @@ body::before {
   white-space: nowrap;
 }
 .lang-btn:hover  { border-color: var(--orange); color: var(--text); }
-/* Pagina corrente: bordo e testo arancione */
-.lang-btn.active { border-color: var(--orange); color: var(--orange); }
 .lang-btn .flag  { font-size: 1rem; line-height: 1; }
 
 .provider-btn {
@@ -673,13 +671,6 @@ main#grid {
   transition: all 0.15s;
 }
 .addr-pin:hover { background: var(--orange); border-color: var(--orange); color: white; }
-
-.coord {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--muted);
-  margin-left: auto;
-}
 
 
 /* -------------------------------------------------------------
