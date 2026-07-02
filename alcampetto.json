@@ -680,7 +680,7 @@
   {
     "id": "015",
     "created": "2026-02-22",
-    "updated": "2026-02-22",
+    "updated": "2026-05-10",
     "address": "Via Antonio Gramsci",
     "city": "Novate Milanese",
     "district": null,
@@ -694,16 +694,27 @@
     "three_pt_line": true,
     "fenced": true,
     "lit": true,
-    "audio": null,
+    "audio": "audio/015/015-beat.mp3",
     "photos": [
+    {
+        "date": "2026-05-10",
+        "overview": "photos/015/2026-05-10/overview.webp",
+        "context": "photos/015/2026-05-10/context.webp",
+        "details": [
+          "photos/015/2026-05-10/hoop-1.webp",
+          "photos/015/2026-05-10/hoop-2.webp",
+          "photos/015/2026-05-10/surface.webp"
+        ],
+        "autore": []
+      },
       {
         "date": "2026-02-22",
         "overview": "photos/015/overview.webp",
         "context": null,
         "details": [
-          "photos/015/dettaglio-1.webp",
-          "photos/015/dettaglio-2.webp",
-          "photos/015/dettaglio-3.webp"
+          "photos/015/2026-02-22/hoop-1.webp",
+          "photos/015/2026-02-22/hoop-2.webp",
+          "photos/015/2026-02-22/surface.webp"
         ],
         "autore": []
       }
