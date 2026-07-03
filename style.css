@@ -430,6 +430,129 @@ body::before {
 
 
 /* -------------------------------------------------------------
+   VISTA SERIE (index.html e index.en.html)
+   Griglia comparativa in stile tipologico: foto dello stesso
+   tipo affiancate, una cella per campetto, 4px di nero tra
+   l'una e l'altra (come il mosaico del lightbox).
+   Barra del selettore e griglia sono nascoste per default;
+   la classe .active (gestita da switchView) le mostra.
+   La configurazione delle serie è in alcampetto.js (SERIES).
+   ------------------------------------------------------------- */
+
+/* Barra del selettore: etichetta + pulsanti + contatore */
+.serie-bar {
+  display: none;
+  position: relative;
+  z-index: 1;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.1rem 2rem 0.4rem;
+  flex-wrap: wrap;
+}
+.serie-bar.active { display: flex; }
+
+.serie-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Il gruppo di pulsanti, uniti in un unico blocco */
+.serie-select {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.serie-btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--dark);
+  border: none;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.serie-btn:last-child { border-right: none; }
+.serie-btn:hover  { color: var(--text); }
+.serie-btn.active { background: var(--orange); color: white; }
+
+.serie-count {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+
+/* La griglia vera e propria.
+   L'effetto comparativo regge solo con celle uniformi: il
+   ratio è fisso e cambia con l'orientamento della serie —
+   orizzontale (3:2) per gli insieme, verticale (3:4, celle
+   più strette) per canestri e superfici.
+   · Per celle più grandi: aumentare i minmax qui sotto */
+#serie {
+  display: none;
+  position: relative;
+  z-index: 1;
+  padding: 0.8rem 2rem 2rem;
+  gap: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+#serie.active { display: grid; }
+#serie.verticale { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+
+/* Ogni cella è un link: foto + etichetta in hover */
+.s-cell {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--mid);
+}
+.s-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 3 / 2;
+}
+#serie.verticale .s-cell img { aspect-ratio: 3 / 4; }
+
+/* Etichetta #id + indirizzo: compare solo al passaggio del
+   mouse, su un gradiente scuro in basso nella cella */
+.s-tag {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.4rem 0.6rem 0.45rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.s-tag strong {
+  color: var(--orange);
+  font-weight: 600;
+  margin-right: 0.45rem;
+}
+.s-cell:hover .s-tag { opacity: 1; }
+.s-cell:hover img    { filter: brightness(1.06); }
+
+
+/* -------------------------------------------------------------
    GRIGLIA CARD (index.html e index.en.html)
    Colonne automatiche: minimo 320px ciascuna.
    · Per card più larghe: aumentare 320px
@@ -1155,6 +1278,8 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .site-header,
   .controls,
   .view-tabs,
+  .serie-bar,
+  #serie,
   main#grid,
   .site-footer { padding-left: 1rem; padding-right: 1rem; }
   main.about { padding: 0 1rem; margin: 2rem auto; }
@@ -1169,4 +1294,8 @@ main.about ~ .site-footer { margin-top: 4rem; }
   /* Contact sheet — thumbs più piccole */
   .cs-thumb { width: 110px; }
   .cs-thumb img { width: 110px; }
+
+  /* Vista serie — celle più piccole */
+  #serie { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  #serie.verticale { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
 }

@@ -42,6 +42,7 @@ var I18N = {
     labelOverview: 'overview',
     labelContext:  'contesto',
     labelDetail:   'dettaglio',
+    labelInSeries: 'campetti in serie',
     fresh:         'Aggiornato',
     aging:         'Da riverificare',
     stale:         'Datato'
@@ -69,6 +70,7 @@ var I18N = {
     labelOverview: 'overview',
     labelContext:  'context',
     labelDetail:   'detail',
+    labelInSeries: 'courts in series',
     fresh:         'Up to date',
     aging:         'Needs check',
     stale:         'Outdated'
@@ -701,27 +703,246 @@ function updateMapMarkers(lista) {
   }
 }
 
-/* Alterna tra vista griglia e vista mappa */
+/* Alterna tra le viste interne: schede, mappa e serie.
+   Una vista alla volta: la griglia delle schede usa display,
+   mappa e serie la classe .active; la barra del selettore di
+   serie compare e scompare insieme alla sua vista. */
 function switchView(view) {
-  var grid = document.getElementById('grid');
-  var map  = document.getElementById('map');
+  var grid      = document.getElementById('grid');
+  var map       = document.getElementById('map');
+  var serie     = document.getElementById('serie');
+  var serieBar  = document.getElementById('serie-bar');
 
   document.querySelectorAll('.view-tab').forEach(function (tab) {
     tab.classList.remove('active');
     if (tab.dataset.view === view) { tab.classList.add('active'); }
   });
 
-  if (view === 'grid') {
-    grid.style.display = '';
-    map.classList.remove('active');
-  } else {
-    grid.style.display = 'none';
-    map.classList.add('active');
+  grid.style.display = (view === 'grid') ? '' : 'none';
+  map.classList.toggle('active',      view === 'map');
+  serie.classList.toggle('active',    view === 'serie');
+  serieBar.classList.toggle('active', view === 'serie');
+
+  if (view === 'map') {
     initMap();
     /* Leaflet ha bisogno di ricalcolare le dimensioni dopo
        che il contenitore diventa visibile */
     setTimeout(function () { leafletMap.invalidateSize(); }, 100);
   }
+}
+
+
+/* =============================================================
+   VISTA SERIE — CONFIGURAZIONE
+   Griglia comparativa in stile tipologico: foto dello stesso
+   tipo affiancate, una cella per campetto.
+
+   Ogni riga di questa lista diventa un pulsante del selettore,
+   nell'ordine in cui compare qui; la prima riga è la serie
+   mostrata all'apertura della vista.
+
+   Significato dei campi:
+     key          identificatore interno (niente spazi)
+     label        etichetta del pulsante, una per lingua
+     fileNames    nomi di file (senza estensione) che identificano
+                  questo tipo di foto dentro "details" del JSON;
+                  più nomi = sinonimi accettati
+     position     indice della foto dentro "details" per le
+                  rilevazioni vecchie coi nomi generici
+                  dettaglio-1/2/3, che seguono l'ordine del
+                  protocollo fotografico. RAMO TRANSITORIO: gli
+                  audit stanno convertendo i nomi generici in
+                  specifici; quando l'ultimo sarà migrato,
+                  "position" e la mappatura per posizione in
+                  seriesPhoto() potranno essere rimossi
+     dedicatedField  solo per la serie "insieme": la foto vive
+                  nel campo dedicato "overview" del JSON,
+                  non dentro "details"
+     orientation  forma della cella: 'landscape' (3:2) oppure
+                  'portrait' (3:4)
+
+   COME AGGIUNGERE UNA SERIE (esempio: le panchine)
+     1. aggiungere una riga nella posizione voluta:
+          { key: 'panchine',
+            label: { it: 'Panchine', en: 'Benches' },
+            fileNames: ['benches', 'bench'],
+            orientation: 'portrait' },
+     2. ricaricare la pagina: pulsante e griglia si costruiscono
+        da soli a partire da questa lista. Nessun altro punto
+        da toccare, né in HTML né in CSS.
+   COME RIMUOVERE UNA SERIE: cancellare la sua riga.
+   COME CAMBIARE L'ORDINE DEI PULSANTI: spostare le righe.
+   ============================================================= */
+var SERIES = [
+  { key: 'insieme',
+    label: { it: 'Insieme', en: 'Overview' },
+    dedicatedField: 'overview',
+    orientation: 'landscape' },
+
+  { key: 'canestro1',
+    label: { it: 'Canestro 1', en: 'Hoop 1' },
+    fileNames: ['hoop-1'],
+    position: 0,
+    orientation: 'portrait' },
+
+  { key: 'canestro2',
+    label: { it: 'Canestro 2', en: 'Hoop 2' },
+    fileNames: ['hoop-2'],
+    position: 1,
+    orientation: 'portrait' },
+
+  { key: 'superficie',
+    label: { it: 'Superficie', en: 'Surface' },
+    fileNames: ['surface'],
+    position: 2,
+    orientation: 'portrait' }
+];
+
+/* La serie attualmente selezionata (default: la prima) */
+var activeSeries = SERIES[0].key;
+
+/* Restituisce la configurazione della serie attiva */
+function activeSeriesConfig() {
+  for (var i = 0; i < SERIES.length; i++) {
+    if (SERIES[i].key === activeSeries) { return SERIES[i]; }
+  }
+  return SERIES[0];
+}
+
+/* Dal percorso completo al solo nome file senza estensione
+   (photos/001/2026-04-16/hoop-1.webp -> hoop-1) */
+function photoBaseName(path) {
+  var fileName = path.split('/').pop();
+  return fileName.replace(/\.[^.]+$/, '');
+}
+
+/* Vero se la rilevazione usa i nomi file espliciti (hoop-1,
+   surface, ...): basta che un dettaglio ne abbia uno. */
+function surveyHasExplicitNames(survey) {
+  var details = survey.details || [];
+  return details.some(function (path) {
+    return SERIES.some(function (series) {
+      var names = series.fileNames || [];
+      return names.indexOf(photoBaseName(path)) !== -1;
+    });
+  });
+}
+
+/* Percorso della foto di una serie dentro una rilevazione,
+   o '' se quel tipo di scatto manca.
+
+   Due criteri, mutuamente esclusivi per non sbagliare mai:
+   - se la rilevazione ha ALMENO UN nome file esplicito, vale
+     SOLO la corrispondenza per nome: una foto mancante resta
+     mancante (mai ripiegare sulla posizione, che potrebbe
+     restituire un soggetto sbagliato);
+   - se ha solo nomi generici (dettaglio-1/2/3), vale la
+     posizione secondo l'ordine del protocollo fotografico
+     (ramo transitorio: vedi nota su "position" in SERIES). */
+function seriesPhoto(survey, series) {
+  /* Caso "Insieme": la foto è nel campo dedicato del JSON */
+  if (series.dedicatedField) {
+    return survey[series.dedicatedField] || '';
+  }
+
+  var details = survey.details || [];
+
+  if (surveyHasExplicitNames(survey)) {
+    for (var i = 0; i < details.length; i++) {
+      if (series.fileNames.indexOf(photoBaseName(details[i])) !== -1) {
+        return details[i];
+      }
+    }
+    return '';
+  }
+
+  if (typeof series.position === 'number' && series.position < details.length) {
+    return details[series.position];
+  }
+  return '';
+}
+
+
+/* =============================================================
+   RENDERING DELLA VISTA SERIE
+   Una cella per campetto: la foto del tipo scelto, con #id e
+   indirizzo visibili al passaggio del mouse. Ogni cella è un
+   link all'hash del campetto (#001): il click passa dal solito
+   hash routing e apre il lightbox.
+   I campetti senza foto per la serie attiva non compaiono;
+   il contatore accanto al selettore dice quanti sono in serie.
+   ============================================================= */
+function renderSeries(lista) {
+  var container = document.getElementById('serie');
+  container.innerHTML = '';
+
+  var series = activeSeriesConfig();
+
+  /* Forma delle celle: orizzontale (3:2) o verticale (3:4) */
+  container.classList.toggle('verticale', series.orientation === 'portrait');
+
+  /* Solo i campetti che hanno la foto della serie attiva
+     (nella rilevazione più recente, photos[0]) */
+  var cells = [];
+  lista.forEach(function (campetto) {
+    var latest = (campetto.photos && campetto.photos[0]) || {};
+    var url = safePhotoUrl(seriesPhoto(latest, series));
+    if (url) { cells.push({ campetto: campetto, url: url }); }
+  });
+
+  document.getElementById('serie-count').textContent =
+    cells.length + ' ' + T.labelInSeries;
+
+  if (cells.length === 0) {
+    container.appendChild(textEl('div', 'state-msg', T.noResults));
+    return;
+  }
+
+  var fragment = document.createDocumentFragment();
+  cells.forEach(function (cell) {
+    var campetto = cell.campetto;
+
+    var link  = el('a', 's-cell');
+    link.href = '#' + campetto.id;
+
+    var img     = el('img');
+    img.src     = cell.url;
+    img.alt     = '#' + campetto.id + ' — ' + campetto.address;
+    img.loading = 'lazy';
+    link.appendChild(img);
+
+    /* Etichetta #id + indirizzo (visibile solo in hover, via CSS).
+       L'indirizzo al posto del nome: nello spazio stretto della
+       cella "Campetto di..." si troncava sempre, la via no. */
+    var tag = el('div', 's-tag');
+    tag.appendChild(textEl('strong', '', '#' + campetto.id));
+    tag.appendChild(document.createTextNode(campetto.address));
+    link.appendChild(tag);
+
+    fragment.appendChild(link);
+  });
+  container.appendChild(fragment);
+}
+
+/* Costruisce i pulsanti del selettore di serie, uno per ogni
+   riga di SERIES, nell'ordine in cui compaiono lì. */
+function buildSeriesSelector() {
+  var box = document.getElementById('serie-select');
+  SERIES.forEach(function (series) {
+    var btn = el('button',
+      'serie-btn' + (series.key === activeSeries ? ' active' : ''));
+    btn.type = 'button';
+    btn.textContent = series.label[LANG] || series.label.it;
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.serie-btn').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      activeSeries = series.key;
+      renderSeries(lastFiltered);
+    });
+    box.appendChild(btn);
+  });
 }
 
 
@@ -1035,6 +1256,7 @@ function applyFilters() {
   lastFiltered = filtered;
   renderCards(filtered);
   updateMapMarkers(filtered);
+  renderSeries(filtered);
 }
 
 
@@ -1075,15 +1297,20 @@ document.querySelectorAll('.sort-btn').forEach(function (btn) {
 
 
 /* =============================================================
-   LISTENER — TAB VISTA (Griglia / Mappa)
+   LISTENER — TAB VISTA (Schede / Mappa / Serie)
    ============================================================= */
-/* Solo i tab con data-view sono toggle in-pagina (Griglia/Mappa);
+/* Solo i tab con data-view sono toggle in-pagina;
    il link "Blog" e' un <a> senza data-view e naviga da solo. */
 document.querySelectorAll('.view-tab[data-view]').forEach(function (tab) {
   tab.addEventListener('click', function () {
     switchView(tab.dataset.view);
   });
 });
+
+/* I pulsanti del selettore di serie si costruiscono una volta
+   sola, all'avvio: dipendono solo dalla configurazione SERIES,
+   non dai dati del JSON. */
+buildSeriesSelector();
 
 /* =============================================================
    LISTENER — TOGGLE PROVIDER MAPPE
