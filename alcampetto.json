@@ -554,7 +554,7 @@
   {
     "id": "012",
     "created": "2026-03-10",
-    "updated": "2026-03-10",
+    "updated": "2026-07-03",
     "address": "Via Sapri",
     "city": "Milano",
     "district": "Municipio 8",
@@ -568,16 +568,27 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": false,
-    "audio": null,
+    "audio": "audio/012/012-beat.mp3",
     "photos": [
       {
+        "date": "2026-07-03",
+        "overview": "photos/012/2026-07-03/overview.webp",
+        "context": "photos/012/2026-07-03/context.webp",
+        "details": [
+          "photos/012/2026-07-03/hoop-1.webp",
+          "photos/012/2026-07-03/hoop-2.webp",
+          "photos/012/2026-07-03/surface.webp"
+        ],
+        "autore": []
+      },
+      {
         "date": "2026-03-10",
-        "overview": "photos/012/overview.webp",
+        "overview": "photos/012/2026-03-10/overview.webp",
         "context": null,
         "details": [
-          "photos/012/dettaglio-1.webp",
-          "photos/012/dettaglio-2.webp",
-          "photos/012/dettaglio-3.webp"
+          "photos/012/2026-03-10/hoop-1.webp",
+          "photos/012/2026-03-10/hoop-2.webp",
+          "photos/012/2026-03-10/surface.webp"
         ],
         "autore": []
       }
@@ -585,11 +596,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di via Sapri",
-        "note": "Campetto in discrete condizioni, entrambi i canestri con retina."
+        "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Il campo si trova proprio nel mezzo di un sentiero-scorciatoia che permette di accorciare i temi di percorrenza di via Sapri."
       },
       "en": {
         "nome": "Via Sapri Basketball Court",
-        "note": "Court in fair condition, both rims with net."
+        "note": "Court in fair condition, both rims with net. This court is located right in the middle of a shortcut path that allows you to shorten the walking path along Via Sapri."
       }
     }
   },
