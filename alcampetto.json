@@ -29,9 +29,9 @@
           "photos/001/2026-04-16/benches.webp",
           "photos/001/2026-04-16/flyer.webp",
           "photos/001/2026-04-16/shopping-cart.webp",
-          "photos/001/2026-04-16/noticeboard.webp"
-        ],
-        "autore": [ "photos/001/2026-04-16/auth-1.webp" ]
+          "photos/001/2026-04-16/noticeboard.webp",
+          "photos/001/2026-04-16/auth-1.webp"
+        ]
       },
       {
         "date": "2026-03-30",
@@ -40,8 +40,7 @@
         "details": [
           "photos/001/2026-03-30/hoop-1.webp",
           "photos/001/2026-03-30/hoop-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -83,8 +82,7 @@
           "photos/002/2026-02-28/hoop-2.webp",
           "photos/002/2026-02-28/surface.webp",
           "photos/002/2026-02-28/timetable.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -126,8 +124,7 @@
           "photos/003/2026-04-18/hoop-2.webp",
           "photos/003/2026-04-18/surface.webp",
           "photos/003/2026-04-18/more-surface.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-03-14",
@@ -137,8 +134,7 @@
           "photos/003/2026-03-14/hoop-1.webp",
           "photos/003/2026-03-14/hoop-2.webp",
           "photos/003/2026-03-14/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -179,8 +175,7 @@
           "photos/004/2026-05-01/hoop-1.webp",
           "photos/004/2026-05-01/hoop-2.webp",
           "photos/004/2026-05-01/surface.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-02-21",
@@ -189,8 +184,7 @@
         "details": [
           "photos/004/2026-02-21/hoop-1.webp",
           "photos/004/2026-02-21/hoop-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -231,8 +225,7 @@
           "photos/005/2026-04-02/hoop-1.webp",
           "photos/005/2026-04-02/hoop-2.webp",
           "photos/005/2026-04-02/surface.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-02-23",
@@ -242,8 +235,7 @@
           "photos/005/2026-02-23/hoop-1.webp",
           "photos/005/2026-02-23/hoop-2.webp",
           "photos/005/2026-02-23/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -284,8 +276,7 @@
           "photos/006/2026-05-12/hoop-1.webp",
           "photos/006/2026-05-12/hoop-2.webp",
           "photos/006/2026-05-12/surface.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-02-24",
@@ -294,8 +285,7 @@
         "details": [
           "photos/006/2026-02-24/hoop-1.webp",
           "photos/006/2026-02-24/hoop-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -336,8 +326,7 @@
           "photos/007/2026-02-28/hoop-1.webp",
           "photos/007/2026-02-28/hoop-2.webp",
           "photos/007/2026-02-28/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -378,8 +367,7 @@
           "photos/008/2026-02-28/hoop-1.webp",
           "photos/008/2026-02-28/hoop-2.webp",
           "photos/008/2026-02-28/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -419,9 +407,11 @@
         "details": [
           "photos/009/2026-05-01/hoop-1.webp",
           "photos/009/2026-05-01/hoop-2.webp",
-          "photos/009/2026-05-01/surface.webp"
-        ],
-        "autore": ["photos/009/2026-05-01/ball-1.webp", "photos/009/2026-05-01/hoop-from-below.webp", "photos/009/2026-05-01/ball-2.webp"]
+          "photos/009/2026-05-01/surface.webp",
+          "photos/009/2026-05-01/ball-1.webp",
+          "photos/009/2026-05-01/hoop-from-below.webp",
+          "photos/009/2026-05-01/ball-2.webp"
+        ]
       },
       {
         "date": "2026-02-22",
@@ -431,8 +421,7 @@
           "photos/009/2026-02-22/hoop-1.webp",
           "photos/009/2026-02-22/hoop-2.webp",
           "photos/009/2026-02-22/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -473,8 +462,7 @@
           "photos/010/2026-03-01/hoop-1.webp",
           "photos/010/2026-03-01/hoop-2.webp",
           "photos/010/2026-03-01/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -516,8 +504,7 @@
           "photos/011/2026-06-07/hoop-2.webp",
           "photos/011/2026-06-07/surface.webp",
           "photos/011/2026-06-07/surface-2.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-04-11",
@@ -527,8 +514,7 @@
           "photos/011/2026-04-11/hoop-1.webp",
           "photos/011/2026-04-11/hoop-2.webp",
           "photos/011/2026-04-11/another-view.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-02-28",
@@ -536,8 +522,7 @@
         "context": null,
         "details": [
           "photos/011/2026-02-28/another-view.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -578,8 +563,7 @@
           "photos/012/2026-07-03/hoop-1.webp",
           "photos/012/2026-07-03/hoop-2.webp",
           "photos/012/2026-07-03/surface.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-03-10",
@@ -589,8 +573,7 @@
           "photos/012/2026-03-10/hoop-1.webp",
           "photos/012/2026-03-10/hoop-2.webp",
           "photos/012/2026-03-10/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -631,8 +614,7 @@
           "photos/013/dettaglio-1.webp",
           "photos/013/dettaglio-2.webp",
           "photos/013/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -673,8 +655,7 @@
           "photos/014/dettaglio-1.webp",
           "photos/014/dettaglio-2.webp",
           "photos/014/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -715,8 +696,7 @@
           "photos/015/2026-05-10/hoop-1.webp",
           "photos/015/2026-05-10/hoop-2.webp",
           "photos/015/2026-05-10/surface.webp"
-        ],
-        "autore": []
+        ]
       },
       {
         "date": "2026-02-22",
@@ -726,8 +706,7 @@
           "photos/015/2026-02-22/hoop-1.webp",
           "photos/015/2026-02-22/hoop-2.webp",
           "photos/015/2026-02-22/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -768,8 +747,7 @@
           "photos/016/dettaglio-1.webp",
           "photos/016/dettaglio-2.webp",
           "photos/016/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -810,8 +788,7 @@
           "photos/017/dettaglio-1.webp",
           "photos/017/dettaglio-2.webp",
           "photos/017/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -852,8 +829,7 @@
           "photos/018/dettaglio-1.webp",
           "photos/018/dettaglio-2.webp",
           "photos/018/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -894,8 +870,7 @@
           "photos/019/dettaglio-1.webp",
           "photos/019/dettaglio-2.webp",
           "photos/019/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -936,8 +911,7 @@
           "photos/020/dettaglio-1.webp",
           "photos/020/dettaglio-2.webp",
           "photos/020/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -977,8 +951,7 @@
         "details": [
           "photos/021/dettaglio-1.webp",
           "photos/021/dettaglio-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1018,8 +991,7 @@
         "details": [
           "photos/022/dettaglio-1.webp",
           "photos/022/dettaglio-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1058,8 +1030,7 @@
         "context": null,
         "details": [
           "photos/023/dettaglio-1.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1100,8 +1071,7 @@
           "photos/024/dettaglio-1.webp",
           "photos/024/dettaglio-2.webp",
           "photos/024/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1142,8 +1112,7 @@
           "photos/025/dettaglio-1.webp",
           "photos/025/dettaglio-2.webp",
           "photos/025/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1184,8 +1153,7 @@
           "photos/026/dettaglio-1.webp",
           "photos/026/dettaglio-2.webp",
           "photos/026/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1226,8 +1194,7 @@
           "photos/027/dettaglio-1.webp",
           "photos/027/dettaglio-2.webp",
           "photos/027/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1268,8 +1235,7 @@
           "photos/028/dettaglio-1.webp",
           "photos/028/dettaglio-2.webp",
           "photos/028/dettaglio-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1311,8 +1277,7 @@
           "photos/029/hoop-2.webp",
           "photos/029/surface.webp",
           "photos/029/timecard.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1353,8 +1318,7 @@
           "photos/030/hoop-1.webp",
           "photos/030/hoop-2.webp",
           "photos/030/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1395,8 +1359,7 @@
           "photos/031/hoop-1.webp",
           "photos/031/hoop-2.webp",
           "photos/031/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1437,9 +1400,9 @@
           "photos/032/hoop-1.webp",
           "photos/032/hoop-2.webp",
           "photos/032/surface.webp",
-          "photos/032/timetable.webp"
-        ],
-        "autore": ["photos/032/auth-1.webp"]
+          "photos/032/timetable.webp",
+          "photos/032/auth-1.webp"
+        ]
       }
     ],
     "i18n": {
@@ -1480,8 +1443,7 @@
           "photos/033/hoop-1.webp",
           "photos/033/hoop-2.webp",
           "photos/033/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1522,8 +1484,7 @@
           "photos/034/hoop-1.webp",
           "photos/034/hoop-2.webp",
           "photos/034/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1564,8 +1525,7 @@
           "photos/035/hoop-1.webp",
           "photos/035/hoop-2.webp",
           "photos/035/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1607,8 +1567,7 @@
           "photos/036/hoop-2.webp",
           "photos/036/surface.webp",
           "photos/036/surface-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1651,8 +1610,7 @@
           "photos/037/surface.webp",
           "photos/037/lime-tree.webp",
           "photos/037/lime-tree-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1694,8 +1652,7 @@
           "photos/038/hoop-2.webp",
           "photos/038/hoop-3.webp",
           "photos/038/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1736,8 +1693,7 @@
           "photos/039/hoop-1.webp",
           "photos/039/hoop-2.webp",
           "photos/039/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1779,8 +1735,7 @@
           "photos/040/hoop-2.webp",
           "photos/040/surface.webp",
           "photos/040/bench.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1821,8 +1776,7 @@
           "photos/041/hoop-1.webp",
           "photos/041/hoop-2.webp",
           "photos/041/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1863,8 +1817,7 @@
           "photos/042/hoop-1.webp",
           "photos/042/hoop-2.webp",
           "photos/042/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1905,8 +1858,7 @@
           "photos/043/hoop-1.webp",
           "photos/043/hoop-2.webp",
           "photos/043/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1947,8 +1899,7 @@
           "photos/044/hoop-1.webp",
           "photos/044/hoop-2.webp",
           "photos/044/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -1990,8 +1941,7 @@
           "photos/045/hoop-2.webp",
           "photos/045/surface.webp",
           "photos/045/bench.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2032,8 +1982,7 @@
           "photos/046/2026-03-28/hoop-1.webp",
           "photos/046/2026-03-28/hoop-2.webp",
           "photos/046/2026-03-28/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2075,8 +2024,7 @@
           "photos/047/2026-05-14/hoop-2.webp",
           "photos/047/2026-05-14/surface.webp",
           "photos/047/2026-05-14/timetable.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2117,8 +2065,7 @@
           "photos/048/2026-05-14/hoop-1.webp",
           "photos/048/2026-05-14/hoop-2.webp",
           "photos/048/2026-05-14/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2159,8 +2106,7 @@
           "photos/049/2026-05-09/hoop-1.webp",
           "photos/049/2026-05-09/hoop-2.webp",
           "photos/049/2026-05-09/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2202,8 +2148,7 @@
           "photos/050/2026-05-09/hoop-2.webp",
           "photos/050/2026-05-09/surface.webp",
           "photos/050/2026-05-09/bench.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2245,8 +2190,7 @@
           "photos/051/2026-05-09/hoop-2.webp",
           "photos/051/2026-05-09/surface.webp",
           "photos/051/2026-05-09/ball.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2294,8 +2238,7 @@
           "photos/052/2026-06-07/places-4-bikes.webp",
           "photos/052/2026-06-07/timecard.webp",
           "photos/052/2026-06-07/flood-lights.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2336,8 +2279,7 @@
           "photos/053/2026-05-17/hoop-1.webp",
           "photos/053/2026-05-17/hoop-2.webp",
           "photos/053/2026-05-17/surface.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2380,8 +2322,7 @@
           "photos/054/2026-05-17/surface.webp",
           "photos/054/2026-05-17/surface-2.webp",
           "photos/054/2026-05-17/surface-3.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {
@@ -2423,8 +2364,7 @@
           "photos/055/2026-05-17/hoop-2.webp",
           "photos/055/2026-05-17/surface.webp",
           "photos/055/2026-05-17/alternative-hoop.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {

@@ -863,8 +863,8 @@ main#grid {
 
 /* -------------------------------------------------------------
    LIGHTBOX
-   Overlay fullscreen con hero, mosaico Mondrian e sezione
-   foto d'autore. Contenuto costruito da alcampetto.js.
+   Overlay fullscreen con hero e mosaico Mondrian.
+   Contenuto costruito da alcampetto.js.
    ------------------------------------------------------------- */
 #lightbox {
   display: none;
@@ -969,33 +969,6 @@ main#grid {
   height: auto;
   display: block;
 }
-
-/* ── Foto d'autore (staccata dal mosaico) ── */
-
-.lb-autore {
-  padding: 4rem 0 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.lb-autore-sep {
-  width: 40px;
-  height: 1px;
-  background: var(--line);
-  margin-bottom: 2.5rem;
-}
-.lb-autore-item {
-  max-width: 900px;
-  width: 88%;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.lb-autore-item img {
-  width: 100%;
-  max-height: 78vh;
-  object-fit: contain;
-}
-
 
 /* ── Contact sheet temporale (archivio rilevazioni) ──
    Sezione visibile nel lightbox solo quando un campetto
@@ -1262,9 +1235,6 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .lb-mondrian {
     column-count: 1;
   }
-
-  .lb-autore-item { width: 100%; }
-  .lb-autore-item img { max-height: none; }
 
   /* Contact sheet */
   .cs-expand-inner { max-width: 100%; }
