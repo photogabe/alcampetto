@@ -99,7 +99,6 @@ Each court is described by a JSON object. Fields are grouped by category.
 | `photos[].overview` | `string\|null` | Wide-angle photo. Path relative to the project root. |
 | `photos[].context` | `string\|null` | Context photo (optional). |
 | `photos[].details` | `array` | Array of close-up photos. See photography protocol section. |
-| `photos[].autore` | `array` | Array of artistic photos (optional). |
 | `i18n` | `object` | Localised text, keyed by ISO 639-1 language code (`it`, `en`, …). Each language provides `nome` (court name) and `note` (free-text description). |
 
 ### Example
@@ -135,9 +134,9 @@ Each court is described by a JSON object. Fields are grouped by category.
           "photos/001/2026-04-16/benches.webp",
           "photos/001/2026-04-16/flyer.webp",
           "photos/001/2026-04-16/shopping-cart.webp",
-          "photos/001/2026-04-16/noticeboard.webp"
-        ],
-        "autore": [ "photos/001/2026-04-16/auth-1.webp" ]
+          "photos/001/2026-04-16/noticeboard.webp",
+          "photos/001/2026-04-16/auth-1.webp"
+        ]
       },
       {
         "date": "2026-03-30",
@@ -146,8 +145,7 @@ Each court is described by a JSON object. Fields are grouped by category.
         "details": [
           "photos/001/2026-03-30/hoop-1.webp",
           "photos/001/2026-03-30/hoop-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {

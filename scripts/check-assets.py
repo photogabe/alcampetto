@@ -90,13 +90,6 @@ def collect_references(data):
                     f"{ctx}, campo: details[{i}]",
                 ))
 
-            # Foto d'autore: lista opzionale, spesso vuota.
-            for i, photo_path in enumerate(survey["autore"]):
-                references.append((
-                    photo_path,
-                    f"{ctx}, campo: autore[{i}]",
-                ))
-
     return references
 
 

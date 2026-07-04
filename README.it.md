@@ -101,7 +101,6 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
 | `photos[].overview` | `string\|null` | Foto panoramica. Percorso relativo alla root del progetto. |
 | `photos[].context` | `string\|null` | Foto di contesto (opzionale). |
 | `photos[].details` | `array` | Array di foto di dettaglio. Vedi sezione sul protocollo fotografico. |
-| `photos[].autore` | `array` | Array di foto d'autore (opzionale). |
 | `i18n` | `object` | Testi localizzati, indicizzati per codice lingua ISO 639-1 (`it`, `en`, …). Ogni lingua fornisce `nome` (nome del campetto) e `note` (descrizione libera). |
 
 ### Esempio
@@ -137,9 +136,9 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
           "photos/001/2026-04-16/benches.webp",
           "photos/001/2026-04-16/flyer.webp",
           "photos/001/2026-04-16/shopping-cart.webp",
-          "photos/001/2026-04-16/noticeboard.webp"
-        ],
-        "autore": [ "photos/001/2026-04-16/auth-1.webp" ]
+          "photos/001/2026-04-16/noticeboard.webp",
+          "photos/001/2026-04-16/auth-1.webp"
+        ]
       },
       {
         "date": "2026-03-30",
@@ -148,8 +147,7 @@ Ogni campetto è descritto da un oggetto JSON. I campi sono raggruppati per cate
         "details": [
           "photos/001/2026-03-30/hoop-1.webp",
           "photos/001/2026-03-30/hoop-2.webp"
-        ],
-        "autore": []
+        ]
       }
     ],
     "i18n": {

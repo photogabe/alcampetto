@@ -166,7 +166,7 @@ function infoRow(label, value) {
 
 /* =============================================================
    LIGHTBOX
-   Overlay fullscreen: hero + mosaico Mondrian + foto d'autore.
+   Overlay fullscreen: hero + mosaico Mondrian.
    Il contenuto viene costruito dinamicamente dal dato del
    campetto cliccato.
    ============================================================= */
@@ -250,24 +250,6 @@ function openLightbox(campetto) {
       mondrian.appendChild(cell);
     });
     lightbox.appendChild(mondrian);
-  }
-
-  /* ── Foto d'autore (opzionale, staccata) ── */
-  var autorePhotos = latest.autore || [];
-  if (autorePhotos.length > 0) {
-    var section = el('section', 'lb-autore');
-    section.appendChild(el('div', 'lb-autore-sep'));
-    autorePhotos.forEach(function (url) {
-      var safe = safePhotoUrl(url);
-      if (!safe) { return; }
-      var item = el('div', 'lb-autore-item');
-      var img  = el('img');
-      setFullImg(img, safe);
-      img.alt = '';
-      item.appendChild(img);
-      section.appendChild(item);
-    });
-    lightbox.appendChild(section);
   }
 
   /* ── Contact sheet (solo se più di una rilevazione) ── */
