@@ -27,6 +27,7 @@ var I18N = {
     serverHint:    'oppure usa GitHub Pages.',
     labelAddress:  'Indirizzo',
     labelArea:     'Zona',
+    labelManto:    'Manto',
     labelNotes:    'Note',
     labelPhotos:   'Foto',
     labelLit:      'Illuminato',
@@ -55,6 +56,7 @@ var I18N = {
     serverHint:    'or deploy to GitHub Pages.',
     labelAddress:  'Address',
     labelArea:     'Area',
+    labelManto:    'Surface',
     labelNotes:    'Notes',
     labelPhotos:   'Photos',
     labelLit:      'Lit',
@@ -89,6 +91,29 @@ if (!I18N[LANG]) { LANG = 'it'; }
 
 /* Scorciatoia per leggere le stringhe della lingua attiva */
 var T = I18N[LANG];
+
+
+/* -------------------------------------------------------------
+   TRADUZIONE DEI VALORI DI "surface" (manto)
+   Nel JSON il manto è il valore rilevato, in italiano: qui c'è
+   solo la sua presentazione per le pagine non italiane.
+   I valori ammessi sono fissati dall'enum dello schema
+   (alcampetto.schema.json): un valore nuovo va aggiunto prima
+   lì, poi qui con la sua traduzione.
+   ------------------------------------------------------------- */
+var SURFACE_EN = {
+  'cemento':                        'concrete',
+  'asfalto':                        'asphalt',
+  'gomma':                          'rubber',
+  'granulato sferoidale di quarzo': 'quartz'
+};
+
+/* Il valore di surface nella lingua attiva. Se la traduzione
+   manca, si mostra il valore italiano del JSON. */
+function surfaceLabel(value) {
+  if (LANG === 'en' && SURFACE_EN[value]) { return SURFACE_EN[value]; }
+  return value;
+}
 
 
 /* -------------------------------------------------------------
@@ -1232,6 +1257,12 @@ function buildCard(campetto) {
   var area = campetto.city
            + (campetto.district ? ' \u2014 ' + campetto.district : '');
   body.appendChild(infoRow(T.labelArea, area));
+
+  /* Riga del manto: solo se la superficie è stata rilevata
+     (null = non rilevato = riga assente) */
+  if (campetto.surface) {
+    body.appendChild(infoRow(T.labelManto, surfaceLabel(campetto.surface)));
+  }
 
   body.appendChild(infoRow(T.labelNotes, note));
 
