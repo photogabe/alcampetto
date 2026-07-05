@@ -8,7 +8,7 @@
 
   <!-- Foglio di stile condiviso -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20260704">
+  <link rel="stylesheet" href="style.css?v=20260705">
 
   <!-- DIPENDENZA ESTERNA: Leaflet
        Libreria per mappe interattive. Tile OpenStreetMap. -->
@@ -70,6 +70,8 @@
       <span class="sort-label">Ordina</span>
       <button class="sort-btn active" data-sort="id">Per #ID</button>
       <button class="sort-btn" data-sort="date">Più recenti</button>
+      <!-- visibile solo nella serie Colore (gestito da alcampetto.js) -->
+      <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>Per tinta</button>
     </div>
     <div class="count-label">Risultati: <strong id="count">—</strong></div>
   </div>
@@ -142,7 +144,7 @@
   <!-- JavaScript condiviso — deve essere incluso dopo il DOM,
        prima della chiusura di </body>, così trova tutti gli
        elementi HTML che deve gestire (lightbox, griglia, ecc.) -->
-  <script src="alcampetto.js?v=20260704"></script>
+  <script src="alcampetto.js?v=20260705"></script>
 
 </body>
 </html>

@@ -95,9 +95,11 @@ var T = I18N[LANG];
    STATO DELL'INTERFACCIA
    ------------------------------------------------------------- */
 var DATA          = [];
+var COLORS        = {};    /* colori dei manti, da colors.json (derivato) */
 var activeFilter  = 'all';
 var activeSort    = 'id';
 var mapsProvider = localStorage.getItem('mapsProvider') || 'google';
+var activeView    = 'grid';  /* vista attiva: 'grid', 'map' o 'serie' */
 var leafletMap    = null;
 var markersLayer  = null;
 var lastFiltered  = [];
@@ -130,6 +132,15 @@ function safeAudioUrl(url) {
   if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed)) { return ''; }
   if (!trimmed.startsWith('audio/'))           { return ''; }
   return trimmed;
+}
+
+/* Verifica che un colore letto da colors.json sia una tripletta
+   esadecimale (#rrggbb): è l'unico formato che finisce dentro
+   uno stile della pagina. Restituisce il colore se valido,
+   stringa vuota altrimenti. */
+function safeHexColor(value) {
+  if (typeof value !== 'string') { return ''; }
+  return /^#[0-9a-f]{6}$/i.test(value) ? value : '';
 }
 
 
@@ -700,10 +711,16 @@ function switchView(view) {
     if (tab.dataset.view === view) { tab.classList.add('active'); }
   });
 
+  activeView = view;
+
   grid.style.display = (view === 'grid') ? '' : 'none';
   map.classList.toggle('active',      view === 'map');
   serie.classList.toggle('active',    view === 'serie');
   serieBar.classList.toggle('active', view === 'serie');
+
+  /* il pulsante di ordinamento "Per tinta" esiste solo nella
+     vista Serie con la serie Colore attiva */
+  syncTintaButton();
 
   if (view === 'map') {
     initMap();
@@ -742,6 +759,13 @@ function switchView(view) {
                   non dentro "details"
      orientation  forma della cella: 'landscape' (3:2) oppure
                   'portrait' (3:4)
+     type         'color' segna la serie speciale "Colore": le
+                  celle non mostrano una foto ma un tassello del
+                  colore dominante del manto, letto da colors.json
+                  (file derivato, rigenerato con scripts/gen-colors.py).
+                  Al passaggio del mouse compare la foto surface
+                  da cui il colore proviene; è disponibile
+                  l'ordinamento "Per tinta".
 
    COME AGGIUNGERE UNA SERIE (esempio: le panchine)
      1. aggiungere una riga nella posizione voluta:
@@ -777,7 +801,12 @@ var SERIES = [
     label: { it: 'Superficie', en: 'Surface' },
     fileNames: ['surface'],
     position: 2,
-    orientation: 'portrait' }
+    orientation: 'portrait' },
+
+  { key: 'colore',
+    label: { it: 'Colore', en: 'Color' },
+    type: 'color',
+    orientation: 'landscape' }
 ];
 
 /* La serie attualmente selezionata (default: la prima) */
@@ -846,6 +875,75 @@ function seriesPhoto(survey, series) {
 
 
 /* =============================================================
+   ORDINAMENTO PER TINTA (solo serie Colore)
+   ============================================================= */
+
+/* Chiave di ordinamento per i tasselli della serie Colore.
+   Due criteri insieme, fusi in un'unica stringa confrontabile:
+   - la ruota cromatica decide la FAMIGLIA: bande di 30 gradi
+     (bruni/rossi, aranci, gialli, verdi, azzurri, blu, viola,
+     rosa...), con i quasi-grigi in una banda finale a parte;
+   - DENTRO la banda si ordina per luminanza percepita, dal buio
+     alla luce. Non si confronta la tripletta esadecimale: quel
+     confronto mette il canale rosso davanti a tutto, mentre
+     l'occhio pesa i canali in modo molto diverso (verde ~71%,
+     rosso ~21%, blu ~7% — i coefficienti standard usati sotto).
+   Esempio di chiave: "06078" = banda 06 (azzurri), luminanza 78. */
+function colorSortKey(hex) {
+  var r = parseInt(hex.slice(1, 3), 16);
+  var g = parseInt(hex.slice(3, 5), 16);
+  var b = parseInt(hex.slice(5, 7), 16);
+
+  /* luminanza percepita (0-255), scritta su tre cifre */
+  var luminanza = String(Math.round(0.2126 * r + 0.7152 * g + 0.0722 * b));
+  while (luminanza.length < 3) { luminanza = '0' + luminanza; }
+
+  var max = Math.max(r, g, b);
+  var min = Math.min(r, g, b);
+  var croma = max - min;
+
+  var saturazione = (max === 0) ? 0 : croma / max;
+  if (saturazione < 0.15) {
+    /* quasi-grigio: banda finale, dal più scuro al più chiaro */
+    return '99' + luminanza;
+  }
+
+  /* formula standard della tinta (hue, 0-360 gradi): in quale
+     zona della ruota cade dipende dal canale più forte */
+  var tinta;
+  if (max === r)      { tinta = ((g - b) / croma + 6) % 6; }
+  else if (max === g) { tinta = (b - r) / croma + 2; }
+  else                { tinta = (r - g) / croma + 4; }
+  var gradi = tinta * 60;
+
+  /* banda di 30 gradi, scritta su due cifre (00-11) */
+  var banda = String(Math.floor(gradi / 30));
+  if (banda.length < 2) { banda = '0' + banda; }
+  return banda + luminanza;
+}
+
+/* Mostra o nasconde il pulsante "Per tinta": esiste solo nella
+   vista Serie con la serie Colore attiva. Uscendone, se era
+   l'ordinamento attivo, si torna all'ordine per id. */
+function syncTintaButton() {
+  var btn = document.getElementById('sort-tinta');
+  if (!btn) { return; }
+
+  var visible = (activeView === 'serie' && activeSeriesConfig().type === 'color');
+  btn.hidden = !visible;
+
+  if (!visible && activeSort === 'tinta') {
+    activeSort = 'id';
+    document.querySelectorAll('.sort-btn').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    document.querySelector('.sort-btn[data-sort="id"]').classList.add('active');
+    applyFilters();
+  }
+}
+
+
+/* =============================================================
    RENDERING DELLA VISTA SERIE
    Una cella per campetto: la foto del tipo scelto, con #id e
    indirizzo visibili al passaggio del mouse. Ogni cella è un
@@ -853,24 +951,49 @@ function seriesPhoto(survey, series) {
    hash routing e apre il lightbox.
    I campetti senza foto per la serie attiva non compaiono;
    il contatore accanto al selettore dice quanti sono in serie.
+   Nella serie Colore la cella è un tassello del colore dominante
+   del manto (da colors.json): la foto surface sta sopra,
+   invisibile, e compare in hover per mostrare l'origine.
    ============================================================= */
 function renderSeries(lista) {
   var container = document.getElementById('serie');
   container.innerHTML = '';
 
   var series = activeSeriesConfig();
+  var isColorSeries = (series.type === 'color');
 
   /* Forma delle celle: orizzontale (3:2) o verticale (3:4) */
   container.classList.toggle('verticale', series.orientation === 'portrait');
 
-  /* Solo i campetti che hanno la foto della serie attiva
-     (nella rilevazione più recente, photos[0]) */
+  /* Solo i campetti che hanno il contenuto della serie attiva:
+     la foto (nella rilevazione più recente), oppure il colore
+     estratto per la serie Colore */
   var cells = [];
   lista.forEach(function (campetto) {
-    var latest = (campetto.photos && campetto.photos[0]) || {};
-    var url = safePhotoUrl(seriesPhoto(latest, series));
-    if (url) { cells.push({ campetto: campetto, url: url }); }
+    if (isColorSeries) {
+      var voce = COLORS[campetto.id];
+      if (!voce) { return; }
+      var colore = safeHexColor(voce.color);
+      if (!colore) { return; }
+      cells.push({ campetto: campetto,
+                   colore: colore,
+                   url: safePhotoUrl(voce.surface) });
+    } else {
+      var latest = (campetto.photos && campetto.photos[0]) || {};
+      var url = safePhotoUrl(seriesPhoto(latest, series));
+      if (url) { cells.push({ campetto: campetto, url: url }); }
+    }
   });
+
+  /* Ordine per tinta: famiglie lungo la ruota cromatica, dentro
+     ogni famiglia dal buio alla luce, grigi in coda */
+  if (isColorSeries && activeSort === 'tinta') {
+    cells.sort(function (a, b) {
+      var ka = colorSortKey(a.colore);
+      var kb = colorSortKey(b.colore);
+      return ka < kb ? -1 : 1;
+    });
+  }
 
   document.getElementById('serie-count').textContent =
     cells.length + ' ' + T.labelInSeries;
@@ -887,17 +1010,30 @@ function renderSeries(lista) {
     var link  = el('a', 's-cell');
     link.href = '#' + campetto.id;
 
-    var img     = el('img');
-    img.src     = cell.url;
-    img.alt     = '#' + campetto.id + ' — ' + campetto.address;
-    img.loading = 'lazy';
-    link.appendChild(img);
+    if (isColorSeries) {
+      /* tassello pieno del colore dominante; la foto surface è
+         sopra, invisibile finché il mouse non la rivela */
+      link.classList.add('s-cell-colore');
+      link.style.backgroundColor = cell.colore;
+    }
+
+    if (cell.url) {
+      var img     = el('img');
+      img.src     = cell.url;
+      img.alt     = '#' + campetto.id + ' — ' + campetto.address;
+      img.loading = 'lazy';
+      link.appendChild(img);
+    }
 
     /* Etichetta #id + indirizzo (visibile solo in hover, via CSS).
        L'indirizzo al posto del nome: nello spazio stretto della
-       cella "Campetto di..." si troncava sempre, la via no. */
+       cella "Campetto di..." si troncava sempre, la via no.
+       Nella serie Colore compare anche la tripletta estratta. */
     var tag = el('div', 's-tag');
     tag.appendChild(textEl('strong', '', '#' + campetto.id));
+    if (isColorSeries) {
+      tag.appendChild(textEl('span', 's-tag-hex', cell.colore));
+    }
     tag.appendChild(document.createTextNode(campetto.address));
     link.appendChild(tag);
 
@@ -921,6 +1057,8 @@ function buildSeriesSelector() {
       });
       btn.classList.add('active');
       activeSeries = series.key;
+      /* il pulsante "Per tinta" segue la serie Colore */
+      syncTintaButton();
       renderSeries(lastFiltered);
     });
     box.appendChild(btn);
@@ -1224,14 +1362,16 @@ function applyFilters() {
     });
   }
 
-  /* Ordinamento */
-  if (activeSort === 'id') {
-    filtered.sort(function (a, b) {
-      return a.id.localeCompare(b.id, undefined, { numeric: true });
-    });
-  } else if (activeSort === 'date') {
+  /* Ordinamento. "tinta" riguarda solo i tasselli della serie
+     Colore (vedi renderSeries): qui la lista generale resta
+     ordinata per id. */
+  if (activeSort === 'date') {
     filtered.sort(function (a, b) {
       return new Date(b.updated || b.created) - new Date(a.updated || a.created);
+    });
+  } else {
+    filtered.sort(function (a, b) {
+      return a.id.localeCompare(b.id, undefined, { numeric: true });
     });
   }
 
@@ -1356,13 +1496,23 @@ function updateTagline() {
 
 /* =============================================================
    CARICAMENTO DATI
+   Prima il dataset, poi colors.json (il derivato coi colori dei
+   manti, per la serie Colore). colors.json è opzionale: se il
+   fetch fallisce, la serie Colore resta semplicemente vuota e
+   il resto del sito non ne risente.
    Il parametro ?v= con il timestamp impedisce al browser
-   di usare una versione in cache del file JSON.
+   di usare una versione in cache dei file JSON.
    ============================================================= */
 fetch('alcampetto.json?v=' + Date.now())
   .then(function (response) { return response.json(); })
   .then(function (json) {
     DATA = json;
+    return fetch('colors.json?v=' + Date.now())
+      .then(function (response) { return response.json(); })
+      .then(function (derivato) { COLORS = derivato.colors || {}; })
+      .catch(function () { /* senza colori il sito vive lo stesso */ });
+  })
+  .then(function () {
     updateTagline();
     applyFilters();
     openFromHash();   /* se l'URL ha già un hash (#001), apre quel campetto */

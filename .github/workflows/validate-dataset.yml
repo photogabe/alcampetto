@@ -7,6 +7,7 @@
 # Cosa verifica:
 #   1. alcampetto.json rispetta la forma descritta in alcampetto.schema.json
 #   2. tutti i file foto/audio referenziati nel JSON esistono davvero sul disco
+#   3. colors.json (file derivato coi colori dei manti) è allineato al dataset
 
 name: Validate dataset
 
@@ -47,3 +48,12 @@ jobs:
       # In caso negativo, lo script elenca i file mancanti con il loro contesto.
       - name: Verify asset paths
         run: python3 scripts/check-assets.py
+
+      # Controllo 3: colors.json è allineato al dataset?
+      # colors.json è un file derivato (come i .peaks.json dell'audio): se una
+      # PR aggiunge un campetto o rinomina una foto in surface.webp senza
+      # rigenerarlo (python3 scripts/gen-colors.py), questo controllo fallisce
+      # e lo segnala. Confronta campetti e percorsi, non ridecodifica le foto:
+      # niente ffmpeg sul runner, esito identico su qualunque macchina.
+      - name: Verify colors.json is up to date
+        run: python3 scripts/gen-colors.py --check

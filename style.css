@@ -551,6 +551,25 @@ body::before {
 .s-cell:hover .s-tag { opacity: 1; }
 .s-cell:hover img    { filter: brightness(1.06); }
 
+/* ── Serie "Colore" ──
+   La cella è un tassello pieno del colore dominante del manto
+   (letto da colors.json); la foto surface sta sopra, invisibile,
+   e compare al passaggio del mouse per mostrare da dove il
+   colore proviene. L'etichetta riporta anche la tripletta. */
+.s-cell-colore { aspect-ratio: 3 / 2; }
+.s-cell-colore img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.s-cell-colore:hover img { opacity: 1; }
+
+.s-tag-hex {
+  opacity: 0.75;
+  margin-right: 0.45rem;
+}
+
 
 /* -------------------------------------------------------------
    GRIGLIA CARD (index.html e index.en.html)
