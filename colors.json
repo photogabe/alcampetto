@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "colors": {
+    "001": {
+      "surface": "photos/001/2026-04-16/surface.webp",
+      "color": "#708c58"
+    },
+    "002": {
+      "surface": "photos/002/2026-02-28/surface.webp",
+      "color": "#88b8a7"
+    },
+    "003": {
+      "surface": "photos/003/2026-04-18/surface.webp",
+      "color": "#8e3225"
+    },
+    "004": {
+      "surface": "photos/004/2026-05-01/surface.webp",
+      "color": "#c78e78"
+    },
+    "005": {
+      "surface": "photos/005/2026-04-02/surface.webp",
+      "color": "#874d57"
+    },
+    "006": {
+      "surface": "photos/006/2026-05-12/surface.webp",
+      "color": "#a5aaad"
+    },
+    "007": {
+      "surface": "photos/007/2026-02-28/surface.webp",
+      "color": "#ad938f"
+    },
+    "008": {
+      "surface": "photos/008/2026-02-28/surface.webp",
+      "color": "#b0ac92"
+    },
+    "009": {
+      "surface": "photos/009/2026-05-01/surface.webp",
+      "color": "#363932"
+    },
+    "010": {
+      "surface": "photos/010/2026-03-01/surface.webp",
+      "color": "#988798"
+    },
+    "011": {
+      "surface": "photos/011/2026-06-07/surface.webp",
+      "color": "#714f4e"
+    },
+    "012": {
+      "surface": "photos/012/2026-07-03/surface.webp",
+      "color": "#77b1c3"
+    },
+    "015": {
+      "surface": "photos/015/2026-05-10/surface.webp",
+      "color": "#0e5a92"
+    },
+    "029": {
+      "surface": "photos/029/surface.webp",
+      "color": "#ac5749"
+    },
+    "030": {
+      "surface": "photos/030/surface.webp",
+      "color": "#787878"
+    },
+    "031": {
+      "surface": "photos/031/surface.webp",
+      "color": "#8c8988"
+    },
+    "032": {
+      "surface": "photos/032/surface.webp",
+      "color": "#88b5c6"
+    },
+    "033": {
+      "surface": "photos/033/surface.webp",
+      "color": "#132b33"
+    },
+    "034": {
+      "surface": "photos/034/surface.webp",
+      "color": "#676f76"
+    },
+    "035": {
+      "surface": "photos/035/surface.webp",
+      "color": "#92766c"
+    },
+    "036": {
+      "surface": "photos/036/surface.webp",
+      "color": "#4e5953"
+    },
+    "037": {
+      "surface": "photos/037/surface.webp",
+      "color": "#c98fb2"
+    },
+    "038": {
+      "surface": "photos/038/surface.webp",
+      "color": "#a8b5b0"
+    },
+    "039": {
+      "surface": "photos/039/surface.webp",
+      "color": "#756855"
+    },
+    "040": {
+      "surface": "photos/040/surface.webp",
+      "color": "#c8b7b5"
+    },
+    "041": {
+      "surface": "photos/041/surface.webp",
+      "color": "#535445"
+    },
+    "042": {
+      "surface": "photos/042/surface.webp",
+      "color": "#684f4e"
+    },
+    "043": {
+      "surface": "photos/043/surface.webp",
+      "color": "#96888a"
+    },
+    "044": {
+      "surface": "photos/044/surface.webp",
+      "color": "#b4a891"
+    },
+    "045": {
+      "surface": "photos/045/surface.webp",
+      "color": "#736c5a"
+    },
+    "046": {
+      "surface": "photos/046/2026-03-28/surface.webp",
+      "color": "#b6aca6"
+    },
+    "047": {
+      "surface": "photos/047/2026-05-14/surface.webp",
+      "color": "#a89895"
+    },
+    "048": {
+      "surface": "photos/048/2026-05-14/surface.webp",
+      "color": "#938988"
+    },
+    "049": {
+      "surface": "photos/049/2026-05-09/surface.webp",
+      "color": "#aaa9aa"
+    },
+    "050": {
+      "surface": "photos/050/2026-05-09/surface.webp",
+      "color": "#b8a695"
+    },
+    "051": {
+      "surface": "photos/051/2026-05-09/surface.webp",
+      "color": "#7098a9"
+    },
+    "052": {
+      "surface": "photos/052/2026-06-07/surface.webp",
+      "color": "#b7a774"
+    },
+    "053": {
+      "surface": "photos/053/2026-05-17/surface.webp",
+      "color": "#744f49"
+    },
+    "054": {
+      "surface": "photos/054/2026-05-17/surface.webp",
+      "color": "#94706b"
+    },
+    "055": {
+      "surface": "photos/055/2026-05-17/surface.webp",
+      "color": "#968789"
+    }
+  }
+}
