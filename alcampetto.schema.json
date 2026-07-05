@@ -42,7 +42,14 @@
           }
         },
         "hoops":         { "type": "integer", "minimum": 1, "maximum": 5 },
-        "surface":       { "type": ["string", "null"] },
+        "surface": {
+          "type": ["string", "null"],
+          "enum": [
+            "cemento", "asfalto", "gomma",
+            "granulato sferoidale di quarzo",
+            null
+          ]
+        },
         "half_court":    { "type": "boolean" },
         "three_pt_line": { "type": "boolean" },
         "fenced":        { "type": "boolean" },
