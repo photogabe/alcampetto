@@ -626,6 +626,63 @@ function freshnessNode(isoDateString) {
 
 
 /* =============================================================
+   INDICATORE ARCHIVIO FOTOGRAFICO
+   Compare nell'intestazione della scheda, accanto alla
+   freschezza, solo quando il campetto ha più di una rilevazione:
+   segnala che nel lightbox c'è il contact sheet (l'archivio
+   delle foto nel tempo). Icona "due foto sovrapposte" + numero
+   totale delle rilevazioni.
+   ============================================================= */
+
+/* L'icona: due cornici fotografiche sovrapposte. Quella davanti
+   è riempita col colore di fondo dell'header (via CSS, classe
+   archivio-front) per staccarsi da quella dietro. */
+function buildArchiveSvg() {
+  var ns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('width', '13');
+  svg.setAttribute('height', '13');
+  svg.setAttribute('viewBox', '0 0 14 14');
+  svg.setAttribute('aria-hidden', 'true');
+
+  var dietro = document.createElementNS(ns, 'rect');
+  dietro.setAttribute('x', '4.5');
+  dietro.setAttribute('y', '1');
+  dietro.setAttribute('width', '8.5');
+  dietro.setAttribute('height', '8.5');
+  dietro.setAttribute('rx', '1');
+  dietro.setAttribute('fill', 'none');
+  dietro.setAttribute('stroke', 'currentColor');
+  dietro.setAttribute('stroke-width', '1.3');
+
+  var davanti = document.createElementNS(ns, 'rect');
+  davanti.setAttribute('class', 'archivio-front');
+  davanti.setAttribute('x', '1');
+  davanti.setAttribute('y', '4.5');
+  davanti.setAttribute('width', '8.5');
+  davanti.setAttribute('height', '8.5');
+  davanti.setAttribute('rx', '1');
+  davanti.setAttribute('stroke', 'currentColor');
+  davanti.setAttribute('stroke-width', '1.3');
+
+  svg.appendChild(dietro);
+  svg.appendChild(davanti);
+  return svg;
+}
+
+/* Il nodo completo: icona + numero, con la spiegazione nel
+   tooltip ("Archivio fotografico · N rilevazioni" — le stesse
+   stringhe usate dal titolo del contact sheet). */
+function archiveNode(surveyCount) {
+  var span = el('span', 'archivio');
+  span.title = T.labelArchive + ' · ' + surveyCount + ' ' + T.labelSurveys;
+  span.appendChild(buildArchiveSvg());
+  span.appendChild(document.createTextNode(surveyCount));
+  return span;
+}
+
+
+/* =============================================================
    PILL BOOLEANE
    label : stringa da mostrare (es. "Illuminato")
    value : true → pill verde · false → pill grigia
@@ -1229,7 +1286,7 @@ function buildCard(campetto) {
   }
 
 
-  /* ── Header: numero, nome, data + freschezza ── */
+  /* ── Header: numero, nome, data + freschezza + archivio ── */
 
   var header = el('header', 'card-header');
 
@@ -1240,6 +1297,10 @@ function buildCard(campetto) {
   var dateDiv = el('div', 'card-date');
     dateDiv.appendChild(document.createTextNode(dateStr));
     dateDiv.appendChild(freshnessNode(dateStr));
+    /* indicatore archivio: solo se ci sono più rilevazioni */
+    if (campetto.photos && campetto.photos.length > 1) {
+      dateDiv.appendChild(archiveNode(campetto.photos.length));
+    }
   header.appendChild(dateDiv);
 
   card.appendChild(header);
