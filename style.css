@@ -730,6 +730,28 @@ main#grid {
 
 
 /* -------------------------------------------------------------
+   INDICATORE ARCHIVIO FOTOGRAFICO
+   Icona "due foto sovrapposte" + numero di rilevazioni, accanto
+   alla freschezza. Compare solo per i campetti con più di una
+   rilevazione (costruito da archiveNode in alcampetto.js);
+   il dettaglio è nel contact sheet del lightbox.
+   ------------------------------------------------------------- */
+.archivio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+}
+
+/* la cornice davanti si riempie del colore dell'header,
+   per staccarsi da quella dietro */
+.archivio-front { fill: var(--mid); }
+
+
+/* -------------------------------------------------------------
    PILL BOOLEANE (illuminato / recintato / coperto)
    .yes = verde · .no = grigio scuro
    ------------------------------------------------------------- */
