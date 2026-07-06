@@ -8,6 +8,7 @@
 #   1. alcampetto.json rispetta la forma descritta in alcampetto.schema.json
 #   2. tutti i file foto/audio referenziati nel JSON esistono davvero sul disco
 #   3. colors.json (file derivato coi colori dei manti) è allineato al dataset
+#   4. ogni audio ha il suo .peaks.json (derivato) aggiornato
 
 name: Validate dataset
 
@@ -57,3 +58,11 @@ jobs:
       # niente ffmpeg sul runner, esito identico su qualunque macchina.
       - name: Verify colors.json is up to date
         run: python3 scripts/gen-colors.py --check
+
+      # Controllo 4: ogni audio ha il suo tracciato dei picchi aggiornato?
+      # I .peaks.json sono derivati (scripts/gen-peaks.py): se si aggiunge o
+      # sostituisce un audio senza rigenerarli, o se cambia la risoluzione
+      # dei picchi, questo controllo fallisce e dice cosa rigenerare.
+      # Non decodifica gli audio: niente ffmpeg sul runner.
+      - name: Verify audio peaks are up to date
+        run: python3 scripts/gen-peaks.py --check

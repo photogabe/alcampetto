@@ -533,6 +533,34 @@ function buildWaveformSvg(peaks, cssClass) {
   return svg;
 }
 
+/* Quante barre mostra il tracciato della scheda. Il .peaks.json
+   contiene una risoluzione più alta (680 picchi, 4 volte tanto:
+   vedi PEAK_COUNT in scripts/gen-peaks.py) pensata per il player
+   grande del lightbox; la scheda ne usa una versione condensata.
+   Un solo file serve entrambi i tracciati. */
+var CARD_PEAK_COUNT = 170;
+
+/* Condensa i picchi al numero voluto: li raggruppa e tiene il
+   massimo di ogni gruppo — la stessa logica con cui gen-peaks.py
+   ricava i picchi dai campioni audio, un piano più su.
+   Il rapporto di raggruppamento è calcolato dai dati: un
+   .peaks.json non ancora rigenerato (170 picchi) passa intatto,
+   senza rompere il tracciato. */
+function condensePeaks(peaks, targetCount) {
+  var groupSize = Math.max(1, Math.round(peaks.length / targetCount));
+  if (groupSize === 1) { return peaks; }
+
+  var condensed = [];
+  for (var i = 0; i < peaks.length; i += groupSize) {
+    var groupMax = 0;
+    for (var j = i; j < i + groupSize && j < peaks.length; j++) {
+      if (peaks[j] > groupMax) { groupMax = peaks[j]; }
+    }
+    condensed.push(groupMax);
+  }
+  return condensed;
+}
+
 /* Carica il .peaks.json dell'audio e disegna la forma d'onda dentro
    il player: due copie sovrapposte (sfondo grigio + primo piano
    arancione). Imposta anche la durata dell'animazione pari a quella
@@ -543,8 +571,10 @@ function loadWaveform(button, container, audioUrl) {
   fetch(peaksUrl)
     .then(function (response) { return response.json(); })
     .then(function (peaks) {
-      container.appendChild(buildWaveformSvg(peaks.data, 'battito-wave-bg'));
-      container.appendChild(buildWaveformSvg(peaks.data, 'battito-wave-fg'));
+      /* la scheda mostra la versione condensata del tracciato */
+      var cardPeaks = condensePeaks(peaks.data, CARD_PEAK_COUNT);
+      container.appendChild(buildWaveformSvg(cardPeaks, 'battito-wave-bg'));
+      container.appendChild(buildWaveformSvg(cardPeaks, 'battito-wave-fg'));
       button.style.setProperty('--battito-duration', peaks.duration + 's');
     })
     .catch(function () {

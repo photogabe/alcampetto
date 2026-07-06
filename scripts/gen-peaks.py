@@ -8,13 +8,19 @@
 # delle centinaia di migliaia di campioni dell'mp3, solo 170
 # numeri (i "picchi"), che il sito disegna come barre nel player.
 #
-# COME SI USA
+# COME SI USA (dalla radice del repository)
 #   python3 scripts/gen-peaks.py
 #       -> rigenera i picchi per TUTTI gli audio
 #   python3 scripts/gen-peaks.py audio/054/054-beat.mp3
 #       -> rigenera i picchi solo per il file indicato
+#   python3 scripts/gen-peaks.py --check
+#       -> verifica che ogni audio del dataset abbia il suo
+#          .peaks.json aggiornato (esiste e ha PEAK_COUNT picchi),
+#          senza toccare nulla: exit 0 se allineato, 1 se no.
+#          È il controllo usato dalla CI; non richiede ffmpeg.
 #
-# RICHIEDE: ffmpeg installato nel PATH. Nessuna libreria esterna.
+# RICHIEDE: ffmpeg installato nel PATH per la generazione.
+#           Il --check non ne ha bisogno. Nessuna libreria esterna.
 # =============================================================
 
 import subprocess   # per lanciare ffmpeg
@@ -25,9 +31,12 @@ import glob         # per trovare tutti i file audio
 import os           # per costruire il nome del file di output
 
 
-# Quanti picchi (barre) compongono il tracciato: più sono, più il
-# tracciato è fine. 170 e' la risoluzione scelta per le card.
-PEAK_COUNT = 170
+# Quanti picchi compongono il tracciato: più sono, più il tracciato
+# è fine. 680 è la risoluzione del player grande nel lightbox; il
+# player della scheda ne deriva 170 (un quarto) raggruppando i
+# picchi a quattro a quattro in JavaScript (condensePeaks in
+# alcampetto.js). Un solo file serve entrambi.
+PEAK_COUNT = 680
 
 # Frequenza di campionamento usata per decodificare l'mp3.
 # 44100 campioni al secondo e' lo standard CD: ci basta, ed essendo
@@ -125,10 +134,57 @@ def generate_peaks(mp3_path):
     return True
 
 
+def verify():
+    """Controlla che ogni audio referenziato da alcampetto.json abbia
+       il suo .peaks.json accanto, con il numero di picchi atteso
+       (PEAK_COUNT). Non decodifica nulla: niente ffmpeg, esito
+       identico su qualunque macchina. Usato dalla CI.
+       Restituisce 0 se tutto è allineato, 1 altrimenti."""
+    with open("alcampetto.json") as f:
+        dataset = json.load(f)
+
+    problemi = []
+    controllati = 0
+    for campetto in dataset:
+        audio = campetto["audio"]
+        if not audio:
+            continue
+        controllati += 1
+        peaks_path = os.path.splitext(audio)[0] + ".peaks.json"
+
+        if not os.path.isfile(peaks_path):
+            problemi.append(f"manca {peaks_path} (campetto {campetto['id']})")
+            continue
+
+        with open(peaks_path) as f:
+            payload = json.load(f)
+        picchi = len(payload.get("data", []))
+        if picchi != PEAK_COUNT:
+            problemi.append(f"{peaks_path}: {picchi} picchi invece di "
+                            f"{PEAK_COUNT} (campetto {campetto['id']})")
+
+    if problemi:
+        for p in problemi:
+            print(f"✗ {p}")
+        print()
+        print("I tracciati dei picchi non sono allineati agli audio.")
+        print("Rigenerali con: python3 scripts/gen-peaks.py")
+        return 1
+
+    print(f"Tracciati allineati: {controllati} audio, "
+          f"{PEAK_COUNT} picchi ciascuno.")
+    return 0
+
+
 def main():
+    args = sys.argv[1:]
+
+    # Modalità di verifica (per la CI): nessuna rigenerazione.
+    if args == ["--check"]:
+        return verify()
+
     # Se passo dei file come argomenti uso quelli; altrimenti cerco
     # tutti gli audio dei campetti secondo il loro schema di nome.
-    args = sys.argv[1:]
     if args:
         files = args
     else:
@@ -136,7 +192,7 @@ def main():
 
     if not files:
         print("Nessun file audio trovato (atteso: audio/<id>/<id>-beat.mp3).")
-        return
+        return 1
 
     print(f"Genero i picchi per {len(files)} file…")
     ok_count = 0
@@ -144,7 +200,8 @@ def main():
         if generate_peaks(mp3_path):
             ok_count += 1
     print(f"Fatto: {ok_count} su {len(files)} file.")
+    return 0 if ok_count == len(files) else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
