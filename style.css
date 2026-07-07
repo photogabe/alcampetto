@@ -1011,6 +1011,94 @@ main#grid {
   display: block;
 }
 
+/* ── Battito (la registrazione del campetto) ──
+   Sezione tra il mosaico e il contact sheet, solo per i
+   campetti con audio. La stessa registrazione ha due
+   presentazioni: tracciato pieno con play circolare sugli
+   schermi grandi, player compatto identico alla scheda
+   sotto i 600px. Costruita da buildBattitoSection in
+   alcampetto.js. ── */
+
+.lb-battito {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.lb-battito-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.6rem;
+}
+
+/* Player ricco: play circolare + tracciato pieno (680 picchi).
+   · Per un tracciato più alto: aumentare height di .lb-wave */
+.lb-battito-rich {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lb-play-big {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid var(--orange);
+  background: none;
+  color: var(--orange);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.lb-play-big:hover { background: var(--orange); color: var(--black); }
+
+/* L'altezza deve coincidere con RICH_HEIGHT_PX in alcampetto.js */
+.lb-wave {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 72px;
+  overflow: hidden;
+}
+
+/* I due strati del tracciato ricco: disegnati in spazio pixel
+   (1 unità = 1px, larghezza dall'attributo SVG, nessuno
+   stiramento). Sfondo grigio + primo piano arancione che si
+   riempie durante la riproduzione. */
+.lb-wave-bg,
+.lb-wave-fg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.lb-wave-bg { color: var(--muted); }
+.lb-wave-fg {
+  color: var(--orange);
+  clip-path: inset(0 100% 0 0);
+}
+
+/* Player compatto: nascosto sugli schermi grandi */
+.lb-battito-compact { display: none; }
+
+/* L'animazione del riempimento vale per entrambi i tracciati
+   della sezione (la classe .playing sta sul contenitore) */
+.lb-battito.playing .battito-wave-fg,
+.lb-battito.playing .lb-wave-fg {
+  animation: wave-sweep var(--battito-duration, 10s) linear forwards;
+}
+
+@media (max-width: 600px) {
+  .lb-battito { padding: 1.6rem 1rem; }
+  .lb-battito-rich    { display: none; }
+  .lb-battito-compact { display: flex; }
+}
+
+
 /* ── Contact sheet temporale (archivio rilevazioni) ──
    Sezione visibile nel lightbox solo quando un campetto
    ha più di una rilevazione fotografica.  Per ogni slot
