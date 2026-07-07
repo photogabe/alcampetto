@@ -233,6 +233,9 @@ function openLightbox(campetto) {
   var allPhotos = campetto.photos || [];
   var latest    = allPhotos[0] || {};
 
+  /* Ferma l'eventuale battito del campetto precedente */
+  stopLightboxAudio();
+
   /* Rimuove il contenuto precedente (mantiene il pulsante ✕) */
   while (lightbox.lastChild !== lightboxClose) {
     lightbox.removeChild(lightbox.lastChild);
@@ -288,6 +291,12 @@ function openLightbox(campetto) {
     lightbox.appendChild(mondrian);
   }
 
+  /* ── Battito (solo se il campetto ha una registrazione) ── */
+  var lightboxAudioUrl = campetto.audio ? safeAudioUrl(campetto.audio) : '';
+  if (lightboxAudioUrl) {
+    lightbox.appendChild(buildBattitoSection(lightboxAudioUrl));
+  }
+
   /* ── Contact sheet (solo se più di una rilevazione) ── */
   if (allPhotos.length > 1) {
     lightbox.appendChild(buildContactSheet(allPhotos, latest.date));
@@ -297,6 +306,196 @@ function openLightbox(campetto) {
   lightbox.classList.add('open');
   lightbox.scrollTop = 0;
   document.body.style.overflow = 'hidden';
+}
+
+
+/* =============================================================
+   BATTITO NEL LIGHTBOX
+   Sezione tra il mosaico e il contact sheet, per i campetti che
+   hanno la registrazione audio. La stessa registrazione ha due
+   presentazioni, scelte dal CSS in base alla larghezza:
+     - schermi grandi: tracciato pieno (680 picchi) alto 72px,
+       con pulsante play circolare;
+     - fino a 600px: player compatto, identico a quello della
+       scheda (tracciato condensato a 170 picchi).
+   Un solo oggetto Audio serve entrambi i pulsanti; viene fermato
+   alla chiusura del lightbox o aprendo un altro campetto.
+   ============================================================= */
+
+/* L'audio in riproduzione nel lightbox (null = nessuno) */
+var lightboxAudio = null;
+
+function stopLightboxAudio() {
+  if (lightboxAudio && !lightboxAudio.paused) {
+    lightboxAudio.pause();
+  }
+  lightboxAudio = null;
+}
+
+/* Geometria del tracciato ricco, in pixel: ogni barra è larga
+   RICH_BAR_PX con RICH_GAP_PX di aria — la stessa proporzione
+   pieno/vuoto del tracciato della scheda (circa 70/30), ma
+   inchiodata alla griglia dei pixel: niente stiramento, niente
+   barre sfocate o vuoti irregolari. RICH_HEIGHT_PX deve
+   coincidere con l'altezza di .lb-wave nel CSS. */
+var RICH_BAR_PX    = 2;
+var RICH_GAP_PX    = 1;
+var RICH_HEIGHT_PX = 72;
+
+/* Disegna il tracciato del player ricco in spazio pixel:
+   1 unità di viewBox = 1 pixel, nessuna deformazione. */
+function buildRichWaveformSvg(peaks, cssClass) {
+  var ns = 'http://www.w3.org/2000/svg';
+  var pitch  = RICH_BAR_PX + RICH_GAP_PX;
+  var width  = peaks.length * pitch - RICH_GAP_PX;
+  var center = RICH_HEIGHT_PX / 2;
+
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', '0 0 ' + width + ' ' + RICH_HEIGHT_PX);
+  svg.setAttribute('width', width);
+  svg.setAttribute('height', RICH_HEIGHT_PX);
+  svg.setAttribute('class', cssClass);
+  svg.setAttribute('aria-hidden', 'true');
+
+  for (var i = 0; i < peaks.length; i++) {
+    var barHeight = peaks[i] * (RICH_HEIGHT_PX - 4);
+    if (barHeight < 1) {
+      barHeight = 1;            // anche il silenzio resta una traccia visibile
+    }
+    var bar = document.createElementNS(ns, 'rect');
+    bar.setAttribute('x', i * pitch);
+    bar.setAttribute('y', center - barHeight / 2);
+    bar.setAttribute('width', RICH_BAR_PX);
+    bar.setAttribute('height', barHeight);
+    bar.setAttribute('fill', 'currentColor');
+    svg.appendChild(bar);
+  }
+  return svg;
+}
+
+/* (Ri)disegna il tracciato ricco alla larghezza attuale del suo
+   contenitore: ricampiona i picchi al numero di barre che ci
+   stanno (una ogni RICH_BAR_PX + RICH_GAP_PX pixel) e sovrappone
+   i due strati, sfondo grigio + primo piano arancione animabile.
+   Chiamata alla costruzione della sezione e a ogni
+   ridimensionamento della finestra. */
+function fillRichWave(waveRich, peaksData) {
+  waveRich.innerHTML = '';
+  var pitch = RICH_BAR_PX + RICH_GAP_PX;
+  var barCount = Math.floor(waveRich.clientWidth / pitch)
+                 || CARD_PEAK_COUNT;
+  var richPeaks = resamplePeaks(peaksData, barCount);
+  waveRich.appendChild(buildRichWaveformSvg(richPeaks, 'lb-wave-bg'));
+  waveRich.appendChild(buildRichWaveformSvg(richPeaks, 'lb-wave-fg'));
+}
+
+/* Al ridimensionamento della finestra il tracciato ricco viene
+   ridisegnato alla nuova larghezza. Un solo listener globale,
+   con una piccola attesa (debounce) per non ridisegnare a ogni
+   pixel di trascinamento. Se il battito sta suonando viene
+   fermato: la posizione dell'animazione non sopravviverebbe
+   al ridisegno e resterebbe fuori sincrono. */
+var battitoResizeTimer = null;
+window.addEventListener('resize', function () {
+  clearTimeout(battitoResizeTimer);
+  battitoResizeTimer = setTimeout(function () {
+    var section = document.querySelector('.lb-battito');
+    if (!section || !section._peaksData) { return; }
+
+    if (section.classList.contains('playing')) {
+      stopLightboxAudio();
+      section.classList.remove('playing');
+    }
+    fillRichWave(section.querySelector('.lb-wave'), section._peaksData);
+  }, 150);
+});
+
+/* Costruisce l'intera sezione del battito per il lightbox.
+   audioUrl è già passato da safeAudioUrl. */
+function buildBattitoSection(audioUrl) {
+  var section = el('section', 'lb-battito');
+
+  section.appendChild(textEl('div', 'lb-battito-title', T.labelBattito));
+
+  /* Player ricco (schermi grandi): play circolare + tracciato pieno */
+  var rich = el('div', 'lb-battito-rich');
+  var playBig = el('button', 'lb-play-big');
+  playBig.type = 'button';
+  playBig.setAttribute('aria-label', T.labelBattito);
+  playBig.appendChild(buildPlaySvg());
+  var waveRich = el('div', 'lb-wave');
+  rich.appendChild(playBig);
+  rich.appendChild(waveRich);
+  section.appendChild(rich);
+
+  /* Player compatto (smartphone): come nella scheda */
+  var compact = el('button', 'battito-btn lb-battito-compact');
+  compact.type = 'button';
+  compact.appendChild(buildPlaySvg());
+  compact.appendChild(textEl('span', 'battito-label', T.labelBattito));
+  var waveCompact = el('div', 'battito-wave');
+  compact.appendChild(waveCompact);
+  section.appendChild(compact);
+
+  /* Tracciati dal .peaks.json. Il player ricco è ADATTIVO e
+     disegnato in SPAZIO PIXEL (vedi fillRichWave): il numero di
+     barre discende dalla larghezza reale del contenitore — più
+     schermo, più barre — e si ricalcola anche al ridimensionamento
+     della finestra. Il file a 680 picchi è il serbatoio.
+     Il player compatto usa la stessa risoluzione della scheda. */
+  fetch(audioUrl.replace(/\.mp3$/, '.peaks.json'))
+    .then(function (response) { return response.json(); })
+    .then(function (peaks) {
+      /* i picchi restano sul nodo: servono ai ridisegni futuri */
+      section._peaksData = peaks.data;
+      fillRichWave(waveRich, peaks.data);
+
+      var cardPeaks = resamplePeaks(peaks.data, CARD_PEAK_COUNT);
+      waveCompact.appendChild(buildWaveformSvg(cardPeaks, 'battito-wave-bg'));
+      waveCompact.appendChild(buildWaveformSvg(cardPeaks, 'battito-wave-fg'));
+
+      section.style.setProperty('--battito-duration', peaks.duration + 's');
+    })
+    .catch(function () {
+      /* senza .peaks.json i player restano senza tracciato */
+    });
+
+  /* Riproduzione: un solo Audio per la sezione, creato al primo
+     play. L'animazione parte quando l'audio suona davvero (la
+     promise di play() si risolve all'avvio effettivo), non al
+     click: l'mp3 va prima scaricato e decodificato, e un
+     tracciato partito in anticipo resterebbe avanti rispetto
+     al suono per tutta la corsa. */
+  var audio = null;
+
+  function toggle() {
+    if (audio && !audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+      section.classList.remove('playing');
+      return;
+    }
+    if (!audio) {
+      audio = new Audio(audioUrl);
+      audio.addEventListener('ended', function () {
+        section.classList.remove('playing');
+      });
+    }
+    audio.currentTime = 0;
+    section.classList.remove('playing');
+    lightboxAudio = audio;
+    audio.play().then(function () {
+      void section.offsetWidth;   /* reset dell'animazione CSS */
+      section.classList.add('playing');
+    }).catch(function () {
+      section.classList.remove('playing');
+    });
+  }
+
+  playBig.addEventListener('click', toggle);
+  compact.addEventListener('click', toggle);
+
+  return section;
 }
 
 
@@ -435,6 +634,7 @@ function buildContactSheet(allPhotos, latestDate) {
 }
 
 function closeLightbox() {
+  stopLightboxAudio();   /* il battito non sopravvive alla chiusura */
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
   currentId = null;
@@ -540,25 +740,29 @@ function buildWaveformSvg(peaks, cssClass) {
    Un solo file serve entrambi i tracciati. */
 var CARD_PEAK_COUNT = 170;
 
-/* Condensa i picchi al numero voluto: li raggruppa e tiene il
-   massimo di ogni gruppo — la stessa logica con cui gen-peaks.py
-   ricava i picchi dai campioni audio, un piano più su.
-   Il rapporto di raggruppamento è calcolato dai dati: un
-   .peaks.json non ancora rigenerato (170 picchi) passa intatto,
-   senza rompere il tracciato. */
-function condensePeaks(peaks, targetCount) {
-  var groupSize = Math.max(1, Math.round(peaks.length / targetCount));
-  if (groupSize === 1) { return peaks; }
+/* Ricampiona i picchi al numero di barre voluto: divide il
+   tracciato in targetCount segmenti e tiene il massimo di
+   ciascuno — la stessa logica con cui gen-peaks.py ricava i
+   picchi dai campioni audio, un piano più su.
+   Per la scheda (680 -> 170) i segmenti sono esattamente di
+   quattro picchi e il risultato coincide col vecchio tracciato;
+   il player del lightbox chiede invece il numero di barre che
+   il suo schermo può mostrare, qualunque esso sia. */
+function resamplePeaks(peaks, targetCount) {
+  if (targetCount >= peaks.length) { return peaks; }
 
-  var condensed = [];
-  for (var i = 0; i < peaks.length; i += groupSize) {
-    var groupMax = 0;
-    for (var j = i; j < i + groupSize && j < peaks.length; j++) {
-      if (peaks[j] > groupMax) { groupMax = peaks[j]; }
+  var resampled = [];
+  for (var i = 0; i < targetCount; i++) {
+    var start = Math.floor(i * peaks.length / targetCount);
+    var end   = Math.max(Math.floor((i + 1) * peaks.length / targetCount),
+                         start + 1);
+    var segmentMax = 0;
+    for (var j = start; j < end; j++) {
+      if (peaks[j] > segmentMax) { segmentMax = peaks[j]; }
     }
-    condensed.push(groupMax);
+    resampled.push(segmentMax);
   }
-  return condensed;
+  return resampled;
 }
 
 /* Carica il .peaks.json dell'audio e disegna la forma d'onda dentro
@@ -571,8 +775,8 @@ function loadWaveform(button, container, audioUrl) {
   fetch(peaksUrl)
     .then(function (response) { return response.json(); })
     .then(function (peaks) {
-      /* la scheda mostra la versione condensata del tracciato */
-      var cardPeaks = condensePeaks(peaks.data, CARD_PEAK_COUNT);
+      /* la scheda mostra la versione ricampionata del tracciato */
+      var cardPeaks = resamplePeaks(peaks.data, CARD_PEAK_COUNT);
       container.appendChild(buildWaveformSvg(cardPeaks, 'battito-wave-bg'));
       container.appendChild(buildWaveformSvg(cardPeaks, 'battito-wave-fg'));
       button.style.setProperty('--battito-duration', peaks.duration + 's');
@@ -605,12 +809,17 @@ function toggleBattito(btn) {
     });
   }
 
-  /* Avvia riproduzione con reset animazione */
+  /* Avvia la riproduzione. L'animazione del tracciato parte
+     quando l'audio suona davvero (la promise di play() si
+     risolve all'avvio effettivo), non al click: l'mp3 va prima
+     scaricato e decodificato, e un tracciato partito in anticipo
+     resterebbe avanti rispetto al suono per tutta la corsa. */
   btn._audio.currentTime = 0;
   btn.classList.remove('playing');
-  void btn.offsetWidth;
-  btn.classList.add('playing');
-  btn._audio.play().catch(function () {
+  btn._audio.play().then(function () {
+    void btn.offsetWidth;   /* reset dell'animazione CSS */
+    btn.classList.add('playing');
+  }).catch(function () {
     btn.classList.remove('playing');
   });
 }
