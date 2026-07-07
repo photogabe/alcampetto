@@ -38,6 +38,7 @@ var I18N = {
     labelThreePt:  'Linea da tre',
     openInMaps:    '📍 Apri in Maps',
     labelBattito:  'Battito',
+    labelRacconto: 'Il racconto del battito',
     labelArchive:  'Archivio fotografico',
     labelSurveys:  'rilevazioni',
     labelOverview: 'overview',
@@ -67,6 +68,7 @@ var I18N = {
     labelThreePt:  'Three-pt line',
     openInMaps:    '📍 Open in Maps',
     labelBattito:  'Heartbeat',
+    labelRacconto: 'The story of this heartbeat',
     labelArchive:  'Photo archive',
     labelSurveys:  'surveys',
     labelOverview: 'overview',
@@ -410,12 +412,119 @@ window.addEventListener('resize', function () {
   }, 150);
 });
 
+/* =============================================================
+   IL RACCONTO DEL BATTITO
+   Testo opzionale che accompagna la registrazione (es. la voce
+   di un abitante del quartiere). NON vive nel JSON: è un file
+   di testo accanto all'mp3, uno per lingua —
+       audio/<id>/<id>-beat.it.txt
+       audio/<id>/<id>-beat.en.txt
+   Se il file esiste, nella sezione battito compare l'icona "i"
+   che apre un overlay sopra il lightbox; se manca, niente icona.
+   Per aggiungere un racconto basta quindi creare il file nella
+   cartella dell'audio: nessuna rigenerazione, nessun build.
+   ============================================================= */
+
+/* Cerca il racconto nella lingua attiva, con ripiego
+   sull'italiano. Chiama trovato(testo) solo se un file esiste
+   e ha contenuto. Il controllo response.ok è essenziale: per
+   fetch un 404 non è un errore, e senza il controllo finiremmo
+   per mostrare la pagina d'errore del server come racconto. */
+function loadBattitoStory(audioUrl, trovato) {
+  var base = audioUrl.replace(/\.mp3$/, '');
+
+  function prova(lingua, altrimenti) {
+    fetch(base + '.' + lingua + '.txt')
+      .then(function (response) {
+        if (!response.ok) { throw new Error('file assente'); }
+        return response.text();
+      })
+      .then(function (testo) {
+        testo = testo.trim();
+        if (testo) { trovato(testo); }
+        else if (altrimenti) { altrimenti(); }
+      })
+      .catch(function () {
+        if (altrimenti) { altrimenti(); }
+      });
+  }
+
+  if (LANG !== 'it') {
+    prova(LANG, function () { prova('it', null); });
+  } else {
+    prova('it', null);
+  }
+}
+
+/* L'overlay del racconto: costruito una volta sola, appeso al
+   body (sta SOPRA il lightbox), riempito a ogni apertura.
+   Si chiude con ✕, con un click fuori dal pannello o con Escape
+   (gestito nel listener globale della tastiera). */
+var infoOverlay = null;
+
+function ensureInfoOverlay() {
+  if (infoOverlay) { return; }
+
+  infoOverlay = el('div', 'lb-info-overlay');
+
+  var panel = el('div', 'lb-info-panel');
+  var close = el('button', 'lb-info-close');
+  close.type = 'button';
+  close.textContent = '✕';
+  close.addEventListener('click', closeBattitoInfo);
+  panel.appendChild(close);
+  panel.appendChild(textEl('h3', '', T.labelBattito));
+  panel.appendChild(el('div', 'lb-info-testo'));
+  infoOverlay.appendChild(panel);
+
+  /* click sul fondo scuro (non sul pannello) → chiudi */
+  infoOverlay.addEventListener('click', function (event) {
+    if (event.target === infoOverlay) { closeBattitoInfo(); }
+  });
+
+  document.body.appendChild(infoOverlay);
+}
+
+function openBattitoInfo(testo) {
+  ensureInfoOverlay();
+
+  /* un paragrafo per ogni blocco separato da riga vuota;
+     tutto passa da textContent: nessun HTML dal file */
+  var contenitore = infoOverlay.querySelector('.lb-info-testo');
+  contenitore.innerHTML = '';
+  testo.split(/\n\s*\n/).forEach(function (paragrafo) {
+    contenitore.appendChild(textEl('p', '', paragrafo.trim()));
+  });
+
+  infoOverlay.classList.add('open');
+}
+
+function closeBattitoInfo() {
+  if (infoOverlay) { infoOverlay.classList.remove('open'); }
+}
+
+
 /* Costruisce l'intera sezione del battito per il lightbox.
    audioUrl è già passato da safeAudioUrl. */
 function buildBattitoSection(audioUrl) {
   var section = el('section', 'lb-battito');
 
-  section.appendChild(textEl('div', 'lb-battito-title', T.labelBattito));
+  var title = el('div', 'lb-battito-title');
+  title.appendChild(textEl('span', '', T.labelBattito));
+  section.appendChild(title);
+
+  /* Se il racconto esiste, accanto al titolo compare l'icona "i" */
+  loadBattitoStory(audioUrl, function (testo) {
+    var infoBtn = el('button', 'lb-info-btn');
+    infoBtn.type = 'button';
+    infoBtn.textContent = 'i';
+    infoBtn.title = T.labelRacconto;
+    infoBtn.setAttribute('aria-label', T.labelRacconto);
+    infoBtn.addEventListener('click', function () {
+      openBattitoInfo(testo);
+    });
+    title.appendChild(infoBtn);
+  });
 
   /* Player ricco (schermi grandi): play circolare + tracciato pieno */
   var rich = el('div', 'lb-battito-rich');
@@ -635,6 +744,7 @@ function buildContactSheet(allPhotos, latestDate) {
 
 function closeLightbox() {
   stopLightboxAudio();   /* il battito non sopravvive alla chiusura */
+  closeBattitoInfo();    /* e nemmeno il suo racconto */
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
   currentId = null;
@@ -647,7 +757,14 @@ function closeLightbox() {
 lightboxClose.addEventListener('click', closeLightbox);
 
 document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+  if (e.key !== 'Escape') { return; }
+  /* gli strati si chiudono dal più alto: prima il racconto
+     del battito (se aperto), poi il lightbox */
+  if (infoOverlay && infoOverlay.classList.contains('open')) {
+    closeBattitoInfo();
+    return;
+  }
+  if (lightbox.classList.contains('open')) {
     closeLightbox();
   }
 });
