@@ -2377,5 +2377,49 @@
         "note": "Lit by court lights placed around the court; four benches, two for each sideline. Of the two sibling courts placed one beside the other, this has the most worn out surface."
       }
     }
+  },
+  {
+    "id": "056",
+    "created": "2026-05-17",
+    "updated": "2026-05-17",
+    "address": "Via Bisceglie (angolo via Lorenteggio)",
+    "city": "Milano",
+    "district": "Municipio 6",
+    "coordinates": {
+      "lat": 45.44718,
+      "lng": 9.12211
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/056/056-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-17",
+        "overview": "photos/056/2026-05-17/overview.webp",
+        "context": "photos/056/2026-05-17/context.webp",
+        "details": [
+          "photos/056/2026-05-17/hoop-1.webp",
+          "photos/056/2026-05-17/hoop-2.webp",
+          "photos/056/2026-05-17/surface.webp",
+          "photos/056/2026-05-17/ball-1.webp",
+          "photos/056/2026-05-17/ball-2.webp",
+          "photos/056/2026-05-17/ball-3.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto#2 di via Bisceglie (angolo via Lorenteggio)",
+        "note": "Rispetto al campetto gemello che vive di fianco, gode di una superficie appena migliore."
+      },
+      "en": {
+        "nome": "Via Bisceglie (angolo via Lorenteggio) Basketball Court#2",
+        "note": "Compared to the twin court that lives right beside this one, it enjoys a slightly better surface."
+      }
+    }
   }
 ]
