@@ -3,11 +3,11 @@
   "colors": {
     "001": {
       "surface": "photos/001/2026-04-16/surface.webp",
-      "color": "#708c58"
+      "color": "#8ca56e"
     },
     "002": {
       "surface": "photos/002/2026-02-28/surface.webp",
-      "color": "#88b8a7"
+      "color": "#87c7b2"
     },
     "003": {
       "surface": "photos/003/2026-04-18/surface.webp",
@@ -35,7 +35,7 @@
     },
     "009": {
       "surface": "photos/009/2026-05-01/surface.webp",
-      "color": "#363932"
+      "color": "#363933"
     },
     "010": {
       "surface": "photos/010/2026-03-01/surface.webp",
@@ -43,7 +43,7 @@
     },
     "011": {
       "surface": "photos/011/2026-06-07/surface.webp",
-      "color": "#714f4e"
+      "color": "#714e4d"
     },
     "012": {
       "surface": "photos/012/2026-07-03/surface.webp",
@@ -51,7 +51,7 @@
     },
     "015": {
       "surface": "photos/015/2026-05-10/surface.webp",
-      "color": "#0e5a92"
+      "color": "#0f5a92"
     },
     "029": {
       "surface": "photos/029/surface.webp",
