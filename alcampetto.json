@@ -608,12 +608,12 @@
     "photos": [
       {
         "date": "2026-03-10",
-        "overview": "photos/013/overview.webp",
+        "overview": "photos/013/2026-03-10/overview.webp",
         "context": null,
         "details": [
-          "photos/013/dettaglio-1.webp",
-          "photos/013/dettaglio-2.webp",
-          "photos/013/dettaglio-3.webp"
+          "photos/013/2026-03-10/hoop-1.webp",
+          "photos/013/2026-03-10/hoop-2.webp",
+          "photos/013/2026-03-10/surface.webp"
         ]
       }
     ],
