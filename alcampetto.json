@@ -2421,5 +2421,48 @@
         "note": "Compared to the twin court that lives right beside this one, it enjoys a slightly better surface."
       }
     }
+  },
+  {
+    "id": "057",
+    "created": "2026-05-24",
+    "updated": "2026-05-24",
+    "address": "Via Remigio Paone",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.47023,
+      "lng": 9.10642
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/057/057-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-24",
+        "overview": "photos/057/2026-05-24/overview.webp",
+        "context": "photos/057/2026-05-24/context.webp",
+        "details": [
+          "photos/057/2026-05-24/hoop-1.webp",
+          "photos/057/2026-05-24/hoop-2.webp",
+          "photos/057/2026-05-24/surface.webp",
+          "photos/057/2026-05-24/surface-2.webp",
+          "photos/057/2026-05-24/surface-3.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Remigio Paone",
+        "note": "Superficie accettabile, panchine lungo i lati, un canestro senza retina. Un grande riflettore garantisce l'illuminazione notturna."
+      },
+      "en": {
+        "nome": "Via Remigio Paone Basketball Court",
+        "note": "Surface in fair conditions, benches along the sidelines, a rim without net. A high mast light provides nighttime illumination."
+      }
+    }
   }
 ]
