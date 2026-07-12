@@ -57,6 +57,14 @@
       "surface": "photos/015/2026-05-10/surface.webp",
       "color": "#0f5a92"
     },
+    "016": {
+      "surface": "photos/016/2026-03-14/surface.webp",
+      "color": "#6d7668"
+    },
+    "020": {
+      "surface": "photos/020/2026-03-14/surface.webp",
+      "color": "#93776f"
+    },
     "029": {
       "surface": "photos/029/surface.webp",
       "color": "#ac5749"
