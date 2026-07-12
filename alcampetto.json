@@ -741,12 +741,13 @@
     "photos": [
       {
         "date": "2026-03-14",
-        "overview": "photos/016/overview.webp",
+        "overview": "photos/016/2026-03-14/overview.webp",
         "context": null,
         "details": [
-          "photos/016/dettaglio-1.webp",
-          "photos/016/dettaglio-2.webp",
-          "photos/016/dettaglio-3.webp"
+          "photos/016/2026-03-14/hoop-1.webp",
+          "photos/016/2026-03-14/hoop-2.webp",
+          "photos/016/2026-03-14/surface.webp",
+          "photos/016/2026-03-14/timetable.webp"
         ]
       }
     ],
@@ -887,7 +888,7 @@
   {
     "id": "020",
     "created": "2026-03-14",
-    "updated": "2026-03-21",
+    "updated": "2026-03-14",
     "address": "Piazzale Salvatore Farina",
     "city": "Milano",
     "district": "Municipio 2",
@@ -905,12 +906,13 @@
     "photos": [
       {
         "date": "2026-03-14",
-        "overview": "photos/020/overview.webp",
+        "overview": "photos/020/2026-03-14/overview.webp",
         "context": null,
         "details": [
-          "photos/020/dettaglio-1.webp",
-          "photos/020/dettaglio-2.webp",
-          "photos/020/dettaglio-3.webp"
+          "photos/020/2026-03-14/hoop-1.webp",
+          "photos/020/2026-03-14/hoop-2.webp",
+          "photos/020/2026-03-14/surface.webp",
+          "photos/020/2026-03-14/timetable.webp"
         ]
       }
     ],
