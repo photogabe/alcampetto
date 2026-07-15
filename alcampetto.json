@@ -2466,5 +2466,48 @@
         "note": "Surface in fair conditions, benches along the sidelines, a rim without net. A high mast light provides nighttime illumination."
       }
     }
+  },
+  {
+    "id": "058",
+    "created": "2026-05-24",
+    "updated": "2026-05-24",
+    "address": "Parco delle Cave",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.46132,
+      "lng": 9.10264
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/058/058-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-24",
+        "overview": "photos/058/2026-05-24/overview.webp",
+        "context": null,
+        "details": [
+          "photos/058/2026-05-24/hoop-1.webp",
+          "photos/058/2026-05-24/hoop-2.webp",
+          "photos/058/2026-05-24/surface.webp",
+          "photos/058/2026-05-24/surface-2.webp",
+          "photos/058/2026-05-24/surface-3.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco delle Cave#3",
+        "note": "Buona superfice, un canestro senza retina, due riflettori, quattro panchine attorno al campetto. Visibile dalla strada, posto di fronte ad un comando dei carabinieri."
+      },
+      "en": {
+        "nome": "Parco delle Cave#3 Basketball Court",
+        "note": "Good surface, a rim without net, two flood lights, four benches around the court. Visible from the street, placed in front of a Carabinieri station."
+      }
+    }
   }
 ]
