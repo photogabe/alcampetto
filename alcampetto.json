@@ -2509,5 +2509,48 @@
         "note": "Good surface, a rim without net, two flood lights, four benches around the court. Visible from the street, placed in front of a Carabinieri station."
       }
     }
+  },
+  {
+    "id": "059",
+    "created": "2026-05-24",
+    "updated": "2026-05-24",
+    "address": "Giardino A.I.D.O.",
+    "city": "Milano",
+    "district": "Municipio 7",
+    "coordinates": {
+      "lat": 45.45882,
+      "lng": 9.10735
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": false,
+    "audio": "audio/059/059-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-24",
+        "overview": "photos/059/2026-05-24/overview.webp",
+        "context": "photos/059/2026-05-24/context.webp",
+        "details": [
+          "photos/059/2026-05-24/hoop-1.webp",
+          "photos/059/2026-05-24/hoop-2.webp",
+          "photos/059/2026-05-24/surface.webp",
+          "photos/059/2026-05-24/shopping-cart.webp",
+          "photos/059/2026-05-24/hoop-alternative-view.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di giardino A.I.D.O.",
+        "note": "Superficie in buone condizioni. Retine su entrambi i canestri, una delle due e metallica."
+      },
+      "en": {
+        "nome": "Giardino A.I.D.O. Basketball Court",
+        "note": "Surface in fair conditions. Both rims with net, one of which is a metal net."
+      }
+    }
   }
 ]
