@@ -631,7 +631,7 @@
   {
     "id": "014",
     "created": "2026-03-14",
-    "updated": "2026-03-14",
+    "updated": "2026-07-11",
     "address": "Via Dora Baltea",
     "city": "Milano",
     "district": "Municipio 9",
@@ -645,27 +645,37 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": false,
-    "audio": null,
+    "audio": "audio/014/014-beat.mp3",
     "photos": [
       {
+        "date": "2026-07-11",
+        "overview": "photos/014/2026-07-11/overview.webp",
+        "context": "photos/014/2026-07-11/context.webp",
+        "details": [
+          "photos/014/2026-07-11/hoop-1.webp",
+          "photos/014/2026-07-11/hoop-2.webp",
+          "photos/014/2026-07-11/surface.webp"
+        ]
+      },
+      {
         "date": "2026-03-14",
-        "overview": "photos/014/overview.webp",
+        "overview": "photos/014/2026-03-14/overview.webp",
         "context": null,
         "details": [
-          "photos/014/dettaglio-1.webp",
-          "photos/014/dettaglio-2.webp",
-          "photos/014/dettaglio-3.webp"
+          "photos/014/2026-03-14/hoop-1.webp",
+          "photos/014/2026-03-14/hoop-2.webp",
+          "photos/014/2026-03-14/surface.webp"
         ]
       }
     ],
     "i18n": {
       "it": {
         "nome": "Campetto di via Dora Baltea",
-        "note": "Un canestro senza rete. Superficie di gioco decente."
+        "note": "Un canestro senza rete. Superficie di gioco decente, rete di contentimento dietro ai canestri. Cinque panchine attorno al campo, una fontanella poco distante."
       },
       "en": {
         "nome": "Via Dora Baltea Basketball Court",
-        "note": "One rim without net. Surface in fair condition."
+        "note": "One rim without net. Surface in fair condition, contain net behind both hoops. Five benches surround the court and a fountain nearby."
       }
     }
   },
