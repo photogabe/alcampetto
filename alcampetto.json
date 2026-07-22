@@ -2562,5 +2562,47 @@
         "note": "Surface in fair conditions. Both rims with net, one of which is a metal net."
       }
     }
+  },
+  {
+    "id": "060",
+    "created": "2026-05-09",
+    "updated": "2026-05-09",
+    "address": "Via Rodrigo",
+    "city": "Milano",
+    "district": "Municipio 5",
+    "coordinates": {
+      "lat": 45.43377,
+      "lng": 9.17031
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/060/060-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-05-09",
+        "overview": "photos/060/2026-05-09/overview.webp",
+        "context": "photos/060/2026-05-09/context.webp",
+        "details": [
+          "photos/060/2026-05-09/hoop-1.webp",
+          "photos/060/2026-05-09/hoop-2.webp",
+          "photos/060/2026-05-09/surface.webp",
+          "photos/060/2026-05-09/hoop-alternative-view.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Rodrigo",
+        "note": "Una striscia di asfalto ai cui estremi si trovano un tabellone divelto, senza canestro e, dall'altro lato, un imbuto con tre uscite che dovrebbe fungere da canestro. Una volta sarà stato un campetto di pallacanestro, ora non lo so."
+      },
+      "en": {
+        "nome": "Via Rodrigo Basketball Court",
+        "note": "A strip of asphalt at each end features a torn-down backboard, missing a hoop, and on the opposite end a funnel with three exits that should serve as a hoop. Once upon a time it might have been a basketball court, now I don't know."
+      }
+    }
   }
 ]
