@@ -1160,7 +1160,7 @@ main#grid {
 }
 
 /* Player compatto: nascosto sugli schermi grandi */
-.lb-battito-compact { display: none; }
+.lb-battito-compact { display: none; width: 100%;}
 
 /* L'animazione del riempimento vale per entrambi i tracciati
    della sezione (la classe .playing sta sul contenitore) */
