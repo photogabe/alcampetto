@@ -2604,5 +2604,46 @@
         "note": "A strip of asphalt at each end features a torn-down backboard, missing a hoop, and on the opposite end a funnel with three exits that should serve as a hoop. Once upon a time it might have been a basketball court, now I don't know."
       }
     }
+  },
+  {
+    "id": "061",
+    "created": "2026-07-04",
+    "updated": "2026-07-04",
+    "address": "Via Boves",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.49518,
+      "lng": 9.23691
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/061/061-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-07-04",
+        "overview": "photos/061/2026-07-04/overview.webp",
+        "context": "photos/061/2026-07-04/context.webp",
+        "details": [
+          "photos/061/2026-07-04/hoop-1.webp",
+          "photos/061/2026-07-04/hoop-2.webp",
+          "photos/061/2026-07-04/surface.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Boves",
+        "note": "Superfice accettabile, mancano le linee di gioco. Un canestro è senza retina."
+      },
+      "en": {
+        "nome": "Via Boves Basketball Court",
+        "note": "Surface in fair condition, no court lines available. One rim is without net."
+      }
+    }
   }
 ]
