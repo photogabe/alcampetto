@@ -2645,5 +2645,46 @@
         "note": "Surface in fair condition, no court lines available. One rim is without net."
       }
     }
+  },
+  {
+    "id": "062",
+    "created": "2026-07-11",
+    "updated": "2026-07-11",
+    "address": "Parco Papa Giovanni Paolo II",
+    "city": "Milano",
+    "district": "Municipio 1",
+    "coordinates": {
+      "lat": 45.45632,
+      "lng": 9.18175
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/062/062-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-07-11",
+        "overview": "photos/062/2026-07-11/overview.webp",
+        "context": "photos/062/2026-07-11/context.webp",
+        "details": [
+          "photos/062/2026-07-11/hoop-1.webp",
+          "photos/062/2026-07-11/hoop-2.webp",
+          "photos/062/2026-07-11/surface.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco Papa Giovanni Paolo II",
+        "note": "Superficie in discrete condizioni. Un canestro senza retina, l’altro con la retina quasi completamente divelta. Diverse panchine nei pressi, nessuna rivolta verso il campo. Uno stallo per le bici da cinque posti. Alcuni gelsi offrono ombra ai lati del campo, peccato siano infestati da cocciniglia."
+      },
+      "en": {
+        "nome": "Parco Papa Giovanni Paolo II Basketball Court",
+        "note": "Surface in fair conditions. One rim without net, the other one with the net almost completely torn off. Several benches nearby, none facing the field. A five-seater bike stall. Some linden trees offer shade on the sides of the field, too bad they are infested with cochineal."
+      }
+    }
   }
 ]
