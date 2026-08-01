@@ -214,7 +214,13 @@ var lightboxClose = document.getElementById('lightbox-close');
 
 /* Tenta di caricare la variante -full.webp di una foto.
    Se il file non esiste, il browser ricade sulla versione
-   standard tramite l'handler onerror. */
+   standard tramite l'handler onerror.
+
+   Va usata SOLO per le foto overview: sono le uniche di cui
+   viene prodotta una variante ad alta risoluzione, perché sono
+   quelle che occupano più spazio nel lightbox. Per le foto di
+   contesto e di dettaglio la variante non esiste, quindi
+   chiamarla qui produrrebbe soltanto un 404 e un ritardo. */
 function setFullImg(imgEl, src) {
   var fullSrc = src.replace(/\.webp$/, '-full.webp');
   imgEl.src = fullSrc;
@@ -284,9 +290,13 @@ function openLightbox(campetto) {
     mosaicPhotos.forEach(function (src) {
       var cell = el('div', 'm-cell');
       var img  = el('img');
-      setFullImg(img, src);
+      /* Il mosaico contiene solo contesto e dettagli: nessuna
+         variante -full, quindi si carica direttamente la foto.
+         loading va impostato prima di src, altrimenti il browser
+         può aver già avviato il caricamento e lo ignora. */
       img.alt     = '';
       img.loading = 'lazy';
+      img.src     = src;
       cell.appendChild(img);
       mondrian.appendChild(cell);
     });
@@ -713,7 +723,21 @@ function buildContactSheet(allPhotos, latestDate) {
 
           var inner = el('div', 'cs-expand-inner');
           var expImg = el('img');
-          setFullImg(expImg, e.url);
+          /* Si riparte dall'URL ripulito, come per la miniatura qui
+             sopra: e.url è il valore grezzo del JSON, e un eventuale
+             spazio in coda impedirebbe a setFullImg di riconoscere
+             l'estensione .webp, facendo perdere la variante -full
+             senza alcun errore visibile.
+
+             La variante -full esiste solo per la riga degli overview:
+             sulle righe di contesto e dettaglio si carica la foto
+             standard, che è comunque l'unica disponibile. */
+          var expUrl = safePhotoUrl(e.url);
+          if (slotName === 'overview') {
+            setFullImg(expImg, expUrl);
+          } else {
+            expImg.src = expUrl;
+          }
           expImg.alt = label + ' — ' + shortDate(e.date);
           inner.appendChild(expImg);
 
