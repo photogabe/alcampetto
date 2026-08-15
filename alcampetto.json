@@ -857,7 +857,7 @@
   {
     "id": "019",
     "created": "2026-03-14",
-    "updated": "2026-03-14",
+    "updated": "2026-07-05",
     "address": "Parco Sempione",
     "city": "Milano",
     "district": "Municipio 1",
@@ -871,22 +871,33 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": false,
-    "audio": null,
+    "audio": "audio/019/019-beat.mp3",
     "photos": [
       {
+        "date": "2026-07-05",
+        "overview": "photos/019/2026-07-05/overview.webp",
+        "context": "photos/019/2026-07-05/context.webp",
+        "details": [
+          "photos/019/2026-07-05/hoop-1.webp",
+          "photos/019/2026-07-05/hoop-2.webp",
+          "photos/019/2026-07-05/surface.webp",
+          "photos/019/2026-07-05/timetable.webp"
+        ]
+      },
+      {
         "date": "2026-03-14",
-        "overview": "photos/019/overview.webp",
+        "overview": "photos/019/2026-03-14/overview.webp",
         "context": null,
         "details": [
-          "photos/019/dettaglio-1.webp",
-          "photos/019/dettaglio-2.webp",
-          "photos/019/dettaglio-3.webp"
+          "photos/019/2026-03-14/hoop-1.webp",
+          "photos/019/2026-03-14/hoop-2.webp",
+          "photos/019/2026-03-14/surface.webp"
         ]
       }
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di Parco Sempione",
+        "nome": "Campetto di parco Sempione",
         "note": "Ben tenuto. Superficie in buone condizioni."
       },
       "en": {
