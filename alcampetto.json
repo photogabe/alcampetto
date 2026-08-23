@@ -2701,5 +2701,47 @@
         "note": "Surface in fair conditions. One rim without net, the other one with the net almost completely torn off. Three benches shaaded by linden trees, none facing the field. Two five-seater bike stall. Some linden trees offer shade on the sides of the field, too bad they are infested with cochineal."
       }
     }
+  },
+  {
+    "id": "063",
+    "created": "2026-08-23",
+    "updated": "2026-08-23",
+    "address": "Parco della Lambretta",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.48035,
+      "lng": 9.25304
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "lit": true,
+    "audio": "audio/063/063-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-08-23",
+        "overview": "photos/063/2026-08-23/overview.webp",
+        "context": "photos/063/2026-08-23/context.webp",
+        "details": [
+          "photos/063/2026-08-23/hoop-1.webp",
+          "photos/063/2026-08-23/hoop-2.webp",
+          "photos/063/2026-08-23/surface.webp",
+          "photos/063/2026-08-23/hoop-alternative-view.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco della Lambretta",
+        "note": "Fondo ben tenuto suppure le linee del campo siano usurate al punto da essere spesso appena visibili. Una illuminazione garantita da un solo palo, posto dietro uno dei due canestri, su cui sono montati due faretti: dubito siano sufficienti. Reti dei canestri quasi completamente divelte."
+      },
+      "en": {
+        "nome": "Parco della Lambretta Basketball Court",
+        "note": "Surface in fair condition even if the court lines are so worn they're often barely visible. Lighting is provided by a single flood light, located behind one of the two hoops, with two spotlights mounted on it: I am afraid it couldn't be enough. Nets are almost completely torn down."
+      }
+    }
   }
 ]
