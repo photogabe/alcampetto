@@ -2743,5 +2743,48 @@
         "note": "Surface in fair condition even if the court lines are so worn they're often barely visible. Lighting is provided by a single flood light, located behind one of the two hoops, with two spotlights mounted on it: I am afraid it couldn't be enough. Nets are almost completely torn down."
       }
     }
+  },
+  {
+    "id": "064",
+    "created": "2026-08-27",
+    "updated": "2026-08-27",
+    "address": "Parco Autieri d'Italia",
+    "city": "Milano",
+    "district": "Municipio 5",
+    "coordinates": {
+      "lat": 45.43903,
+      "lng": 9.20926
+    },
+    "hoops": 2,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": false,
+    "audio": "audio/064/064-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-08-27",
+        "overview": "photos/064/2026-08-27/overview.webp",
+        "context": "photos/064/2026-08-27/context.webp",
+        "details": [
+          "photos/064/2026-08-27/hoop-1.webp",
+          "photos/064/2026-08-27/hoop-2.webp",
+          "photos/064/2026-08-27/surface.webp",
+          "photos/064/2026-08-27/hoop-alternative-view.webp",
+          "photos/064/2026-08-27/hoop-alternative-view-2.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco Autieri d'Italia",
+        "note": "Linee di gioco mancanti, da un lato del campo sono state tuttavia disegnate con gesso la linea dei tre punti, quella del tiro libero e la lunetta. Nei pressi del campetto si trovano cinque piccoli lampioni che sono più intesi come illuminazione del parco che non del campetto. Una sola panchina posta dietro uno dei due canestri. Una fontanella a pochi metri."
+      },
+      "en": {
+        "nome": "Parco Autieri d'Italia Basketball Court",
+        "note": "Court lines are missing, but the three-point line and the free throw line have been drawn in chalk on one side. Five small streetlights, that seems to me to be intended more to illuminate the park than the court itself. A single bench is located behind one of the two rims. A fountain is a few meters away."
+      }
+    }
   }
 ]
