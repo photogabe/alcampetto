@@ -1,0 +1,1 @@
+Audio registrato con funzione di cancellazione del rumore di fondo inavvertitamente attivata.
