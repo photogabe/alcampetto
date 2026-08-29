@@ -2786,5 +2786,49 @@
         "note": "Court lines are missing, but the three-point line and the free throw line have been drawn in chalk on one side. Five small streetlights, that seems to me to be intended more to illuminate the park than the court itself. A single bench is located behind one of the two rims. A fountain is a few meters away."
       }
     }
+  },
+  {
+    "id": "065",
+    "created": "2026-08-29",
+    "updated": "2026-08-29",
+    "address": "Via Riccardo Pitteri",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.47544,
+      "lng": 9.24759
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": true,
+    "lit": true,
+    "audio": "audio/065/065-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-08-29",
+        "overview": "photos/065/2026-08-29/overview.webp",
+        "context": "photos/065/2026-08-29/context.webp",
+        "details": [
+          "photos/065/2026-08-29/hoop-1.webp",
+          "photos/065/2026-08-29/hoop-2.webp",
+          "photos/065/2026-08-29/surface.webp",
+          "photos/065/2026-08-29/surface-2.webp",
+          "photos/065/2026-08-29/surface-3.webp",
+          "photos/065/2026-08-29/surface-4.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Riccardo Pitteri",
+        "note": "Buona superficie di un campo ben tenuto, entrambi i canestri con retina. Dieci pancine, cinque per lato, dietro i canestri."
+      },
+      "en": {
+        "nome": "Via Riccardo Pitteri Basketball Court",
+        "note": "Good surface of a court in overall good conditions, both rims with their net. Ten benches, five for each side, right behind the hoops."
+      }
+    }
   }
 ]
