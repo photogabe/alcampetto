@@ -438,7 +438,7 @@
   {
     "id": "010",
     "created": "2026-03-01",
-    "updated": "2026-03-01",
+    "updated": "2026-08-27",
     "address": "Via Arcivescovo Calabiana (angolo via Balduccio da Pisa)",
     "city": "Milano",
     "district": "Municipio 5",
@@ -452,8 +452,19 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": true,
-    "audio": null,
+    "audio": "audio/010/010-beat.mp3",
     "photos": [
+      {
+        "date": "2026-08-27",
+        "overview": "photos/010/2026-08-27/overview.webp",
+        "context": null,
+        "details": [
+          "photos/010/2026-08-27/hoop-1.webp",
+          "photos/010/2026-08-27/hoop-2.webp",
+          "photos/010/2026-08-27/surface.webp"
+
+        ]
+      },
       {
         "date": "2026-03-01",
         "overview": "photos/010/2026-03-01/overview.webp",
@@ -468,11 +479,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di via Arcivescovo Calabiana (angolo via Balduccio da Pisa)",
-        "note": "Campetto in discrete condizioni, entrambi i canestri con retina. Sito all'interno del Giardino Calabiana / Balduccio da Pisa."
+        "note": "Campetto rimesso a nuovo tra marzo e agosto 2026, purtroppo è probabile che un canestro sia stato vandalizzato."
       },
       "en": {
         "nome": "Via Arcivescovo Calabiana (corner via Balduccio da Pisa) Basketball Court",
-        "note": "Court in fair condition, both rims with their net. Placed within the Calabiana / Balduccio da Pisa Garden."
+        "note": "Court with bright colours, regenerated between March and August 2026, unfortunately it is likely one basket has been vandalised."
       }
     }
   },
