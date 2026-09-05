@@ -1494,7 +1494,7 @@
   {
     "id": "034",
     "created": "2026-03-28",
-    "updated": "2026-03-28",
+    "updated": "2026-08-27",
     "address": "Viale Teodorico",
     "city": "Milano",
     "district": "Municipio 8",
@@ -1508,16 +1508,26 @@
     "three_pt_line": true,
     "fenced": false,
     "lit": false,
-    "audio": null,
+    "audio": "audio/034/034-beat.mp3",
     "photos": [
       {
+        "date": "2026-08-27",
+        "overview": "photos/034/2026-08-27/overview.webp",
+        "context": "photos/034/2026-08-27/context.webp",
+        "details": [
+          "photos/034/2026-08-27/hoop-1.webp",
+          "photos/034/2026-08-27/hoop-2.webp",
+          "photos/034/2026-08-27/surface.webp"
+        ]
+      },
+      {
         "date": "2026-03-28",
-        "overview": "photos/034/overview.webp",
+        "overview": "photos/034/2026-03-28/overview.webp",
         "context": null,
         "details": [
-          "photos/034/hoop-1.webp",
-          "photos/034/hoop-2.webp",
-          "photos/034/surface.webp"
+          "photos/034/2026-03-28/hoop-1.webp",
+          "photos/034/2026-03-28/hoop-2.webp",
+          "photos/034/2026-03-28/surface.webp"
         ]
       }
     ],
@@ -1527,7 +1537,7 @@
         "note": "Superficie in buone condizioni, canestri integri, tabelloni trasparenti."
       },
       "en": {
-        "nome": "Viale Teodorico (via Gattamelata corner) Basketball Court",
+        "nome": "Viale Teodorico (corner via Gattamelata) Basketball Court",
         "note": "Surface in good condition, unimpaired rims, transparent backboards."
       }
     }
