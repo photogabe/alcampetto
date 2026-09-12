@@ -2851,5 +2851,46 @@
         "note": "Good surface of a court in overall good conditions, both rims with their net. Ten benches, five for each side, right behind the hoops."
       }
     }
+  },
+  {
+    "id": "066",
+    "created": "2026-09-05",
+    "updated": "2026-09-05",
+    "address": "Via Ponte Nuovo",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.50980,
+      "lng": 9.235539
+    },
+    "hoops": 2,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/066/066-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-09-05",
+        "overview": "photos/066/2026-09-05/overview.webp",
+        "context": "photos/066/2026-09-05/context.webp",
+        "details": [
+          "photos/066/2026-09-05/hoop-1.webp",
+          "photos/066/2026-09-05/hoop-2.webp",
+          "photos/066/2026-09-05/surface.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Ponte Nuovo",
+        "note": "Posto all'interno di una piccola area verde recintata, il campetto in cemento non ha linee di gioco, un canestro è sprovvisto di retina, un unico lampione per l'illuminazione notturna, le zanzare sono di casa. Una fontanella si trova dietro il canestro rivolto verso la strada."
+      },
+      "en": {
+        "nome": "Via Ponte Nuovo Basketball Court",
+        "note": "Located within a small, fenced green area, the concrete court has no playing lines, one hoop is missing its net, and there is only a flood light for night-time lighting; mosquitoes are right at home here. A drinking fountain is located behind the hoop facing the street."
+      }
+    }
   }
 ]
