@@ -2893,4 +2893,46 @@
       }
     }
   }
+,
+  {
+    "id": "067",
+    "created": "2026-09-05",
+    "updated": "2026-09-05",
+    "address": "Via Policarpo Petrocchi, via Luigi Bertelli",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.50326,
+      "lng": 9.22631
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/067/067-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-09-05",
+        "overview": "photos/067/2026-09-05/overview.webp",
+        "context": "photos/067/2026-09-05/context.webp",
+        "details": [
+          "photos/067/2026-09-05/hoop-1.webp",
+          "photos/067/2026-09-05/hoop-2.webp",
+          "photos/067/2026-09-05/surface.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Policarpo Petrocchi, via Luigi Bertelli",
+        "note": "L'impressione è quella di trovarsi davanti a due metà campetti messi l'uno di fronte all'altro con un evidente solco di demarcazione lungo la linea di centrocampo. Una fontanella a pochi metri. Il campetto è visibile dalla strada."
+      },
+      "en": {
+        "nome": "Via Policarpo Petrocchi, via Luigi Bertelli Basketball Court",
+        "note": "It feels like standing before two halves of a small court facing each other, with a clear dividing line running across the midfield. There is a drinking fountain just a few meters away. The court is visible from the road."
+      }
+    }
+  }
 ]
