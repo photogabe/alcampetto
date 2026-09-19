@@ -1949,7 +1949,7 @@
     "i18n": {
       "it": {
         "nome": "Campetto#1 di via Paolo Giacometti",
-        "note": "Piccolo campetto con superfice usurata, un canestro con retina quasi completamente strappata e uno quasi divelto. Strisce appena visibili, alcune non contrassegnate."
+        "note": "Piccolo campetto con superficie usurata, un canestro con retina quasi completamente strappata e uno quasi divelto. Strisce appena visibili, alcune non contrassegnate."
       },
       "en": {
         "nome": "Via Paolo Giacometti Basketball Court#1",
@@ -1991,7 +1991,7 @@
     "i18n": {
       "it": {
         "nome": "Campetto#2 di via Paolo Giacometti",
-        "note": "Piccolo campetto con superfice usurata, i cerchi del canestro sono stati entrambi divelti. Strisce non contrassegnate."
+        "note": "Piccolo campetto con superficie usurata, i cerchi del canestro sono stati entrambi divelti. Strisce non contrassegnate."
       },
       "en": {
         "nome": "Via Paolo Giacometti Basketball Court#2",
@@ -2544,7 +2544,7 @@
     "i18n": {
       "it": {
         "nome": "Campetto di parco delle Cave#3",
-        "note": "Buona superfice, un canestro senza retina, due riflettori, quattro panchine attorno al campetto. Visibile dalla strada, posto di fronte ad un comando dei carabinieri."
+        "note": "Buona superficie, un canestro senza retina, due riflettori, quattro panchine attorno al campetto. Visibile dalla strada, posto di fronte ad un comando dei carabinieri."
       },
       "en": {
         "nome": "Parco delle Cave#3 Basketball Court",
@@ -2892,8 +2892,7 @@
         "note": "Located within a small, fenced green area, the concrete court has no playing lines, one hoop is missing its net, and there is only a flood light for night-time lighting; mosquitoes are right at home here. A drinking fountain is located behind the hoop facing the street."
       }
     }
-  }
-,
+  },
   {
     "id": "067",
     "created": "2026-09-05",
@@ -2932,6 +2931,49 @@
       "en": {
         "nome": "Via Policarpo Petrocchi, via Luigi Bertelli Basketball Court",
         "note": "It feels like standing before two halves of a small court facing each other, with a clear dividing line running across the midfield. There is a drinking fountain just a few meters away. The court is visible from the road."
+      }
+    }
+  },
+  {
+    "id": "068",
+    "created": "2026-09-05",
+    "updated": "2026-09-05",
+    "address": "Via Pompei Mariano (angolo via Fratelli Bazzaro)",
+    "city": "Milano",
+    "district": "Municipio 2",
+    "coordinates": {
+      "lat": 45.51131,
+      "lng": 9.23132
+    },
+    "hoops": 2,
+    "surface": "asfalto",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/068/068-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-09-05",
+        "overview": "photos/068/2026-09-05/overview.webp",
+        "context": "photos/068/2026-09-05/context.webp",
+        "details": [
+          "photos/068/2026-09-05/hoop-1.webp",
+          "photos/068/2026-09-05/hoop-2.webp",
+          "photos/068/2026-09-05/surface.webp",
+          "photos/068/2026-09-05/surface-2.webp",
+          "photos/068/2026-09-05/hoop-alternative-view.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Pompei Mariano (angolo via Fratelli Bazzaro)",
+        "note": "Campo ombreggiato, buona superficie di gioco, un tabellone con angolo mancante in basso a destra."
+      },
+      "en": {
+        "nome": "Via Pompei Mariano (corner via Fratelli Bazzaro) Basketball Court",
+        "note": "Shaded court, good playing surface, a backboard with missing bottom-right corner."
       }
     }
   }
