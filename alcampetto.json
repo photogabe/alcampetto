@@ -2983,7 +2983,7 @@
     "updated": "2026-09-13",
     "address": "Via Luigi Sordello",
     "city": "Milano",
-    "district": "Municipio 2",
+    "district": "Municipio 4",
     "coordinates": {
       "lat": 45.44401,
       "lng": 9.24538
@@ -3018,6 +3018,48 @@
       "en": {
         "nome": "Via Luigi Sordello Basketball Court",
         "note": "Worn out surface, a netless rim, four benches facing the court, the court itself is visibile from the street."
+      }
+    }
+  },
+  {
+    "id": "070",
+    "created": "2026-09-26",
+    "updated": "2026-09-26",
+    "address": "Piazza Leonardo da Vinci",
+    "city": "Milano",
+    "district": "Municipio 3",
+    "coordinates": {
+      "lat": 45.47774,
+      "lng": 9.22503
+    },
+    "hoops": 1,
+    "surface": "granulato sferoidale di quarzo",
+    "half_court": true,
+    "three_pt_line": false,
+    "fenced": false,
+    "lit": false,
+    "audio": "audio/070/070-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-09-26",
+        "overview": "photos/070/2026-09-26/overview.webp",
+        "context": null,
+        "details": [
+          "photos/070/2026-09-26/hoop-1.webp",
+          "photos/070/2026-09-26/hoop-alternative-view.webp",
+          "photos/070/2026-09-26/surface.webp",
+          "photos/070/2026-09-26/dispenser.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di piazza Leonardo da Vinci",
+        "note": "Un solo canestro, senza retina, nessuna linea da tre e linee di gioco appena visibili. Uno smart locker completo di tre palle da basket, imbrattato da tag. Una fontanella poco distante."
+      },
+      "en": {
+        "nome": "Piazza Leonardo da Vinci Basketball Court",
+        "note": "One and only netless rim, no three point line and other lines barely visible. A smart locker with three basketball in it, stained by tags. A drinking fountain not so far from the court."
       }
     }
   }
