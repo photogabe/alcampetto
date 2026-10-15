@@ -1755,7 +1755,7 @@
     "id": "040",
     "created": "2026-04-18",
     "updated": "2026-04-18",
-    "address": "Piazzale Maciachini",
+    "address": "Piazzale Carlo Maciachini",
     "city": "Milano",
     "district": "Municipio 9",
     "coordinates": {
@@ -1784,11 +1784,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di piazzale Maciachini",
+        "nome": "Campetto di piazzale Carlo Maciachini",
         "note": "Campetto accogliente circondato da alberi, cinque piccoli lampioni intorno, quattro panchine e una fontanella"
       },
       "en": {
-        "nome": "Piazzale Maciachini Basketball Court",
+        "nome": "Piazzale Carlo Maciachini Basketball Court",
         "note": "A cozy little court surrounded by trees, five small street lamps, four benches and a fountain"
       }
     }
@@ -1797,7 +1797,7 @@
     "id": "041",
     "created": "2026-04-18",
     "updated": "2026-04-18",
-    "address": "Via Sammartini",
+    "address": "Via Giovani Battista Sammartini",
     "city": "Milano",
     "district": "Municipio 2",
     "coordinates": {
@@ -1825,11 +1825,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di via Sammartini",
+        "nome": "Campetto di via Giovanni Battista Sammartini",
         "note": "Buona superficie, entrambi i canestri con retina, ben sei panchine ai lati e una fontanella a bordo campo. L'illuminazione è garantita da 4 lampioni."
       },
       "en": {
-        "nome": "Via Sammartini Basketball Court",
+        "nome": "Via Giovanni Battista Sammartini Basketball Court",
         "note": "Good surface, both rim with their net. Six benches alongside the court and a fountain too. Lighting is provided by four street lamps."
       }
     }
@@ -2926,11 +2926,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di via Policarpo Petrocchi, via Luigi Bertelli",
-        "note": "L'impressione è quella di trovarsi davanti a due metà campetti messi l'uno di fronte all'altro con un evidente solco di demarcazione lungo la linea di centrocampo. Una fontanella a pochi metri. Il campetto è visibile dalla strada."
+        "note": "L'impressione è quella di trovarsi davanti a due metà campetti messi l'uno di fronte all'altro con un evidente solco di demarcazione lungo la linea di centrocampo. Un canestro è stato divelto. Una fontanella a pochi metri. Il campetto è visibile dalla strada."
       },
       "en": {
         "nome": "Via Policarpo Petrocchi, via Luigi Bertelli Basketball Court",
-        "note": "It feels like standing before two halves of a small court facing each other, with a clear dividing line running across the midfield. There is a drinking fountain just a few meters away. The court is visible from the road."
+        "note": "It feels like standing before two halves of a small court facing each other, with a clear dividing line running across the midfield. A rim has been ripped off. There is a drinking fountain just a few meters away. The court is visible from the road."
       }
     }
   },
