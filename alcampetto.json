@@ -482,7 +482,7 @@
         "note": "Campetto rimesso a nuovo tra marzo e agosto 2026, purtroppo è probabile che un canestro sia stato vandalizzato."
       },
       "en": {
-        "nome": "Via Arcivescovo Calabiana (corner via Balduccio da Pisa) Basketball Court",
+        "nome": "Via Arcivescovo Calabiana (corner of via Balduccio da Pisa) Basketball Court",
         "note": "Court with bright colours, regenerated between March and August 2026, unfortunately it is likely one basket has been vandalised."
       }
     }
@@ -1084,7 +1084,7 @@
     "updated": "2026-03-22",
     "address": "Corso Indipendenza",
     "city": "Milano",
-    "district": "Municipio 4",
+    "district": "Municipio 3",
     "coordinates": {
       "lat": 45.46806,
       "lng": 9.21535
@@ -1537,7 +1537,7 @@
         "note": "Superficie in buone condizioni, canestri integri, tabelloni trasparenti."
       },
       "en": {
-        "nome": "Viale Teodorico (corner via Gattamelata) Basketball Court",
+        "nome": "Viale Teodorico (corner of via Gattamelata) Basketball Court",
         "note": "Surface in good condition, unimpaired rims, transparent backboards."
       }
     }
@@ -2201,7 +2201,7 @@
         "note": "Superficie usurata con linee di campo sbiadite o assenti. Un canestro senza retina. Quattro lampioni sono posti ai vertici del campo. Otto panchine a bordo campo."
       },
       "en": {
-        "nome": "Via Corradino D'Ascanio (corner via Adalberto Garelli) Basketball Court",
+        "nome": "Via Corradino D'Ascanio (corner of via Adalberto Garelli) Basketball Court",
         "note": "Worn out surface and faded playing lines or not available at all. A rim is without net. Four court lights, one at each corner of the court. Eight benches on the courtside."
       }
     }
@@ -2599,7 +2599,7 @@
     "id": "060",
     "created": "2026-05-09",
     "updated": "2026-05-09",
-    "address": "Via Rodrigo",
+    "address": "Via Don Rodrigo",
     "city": "Milano",
     "district": "Municipio 5",
     "coordinates": {
@@ -2628,11 +2628,11 @@
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto di via Rodrigo",
+        "nome": "Campetto di via Don Rodrigo",
         "note": "Una striscia di asfalto ai cui estremi si trovano un tabellone divelto, senza canestro e, dall'altro lato, un imbuto con tre uscite che dovrebbe fungere da canestro. Una volta sarà stato un campetto di pallacanestro, ora non lo so."
       },
       "en": {
-        "nome": "Via Rodrigo Basketball Court",
+        "nome": "Via Don Rodrigo Basketball Court",
         "note": "A strip of asphalt at each end features a torn-down backboard, missing a hoop, and on the opposite end a funnel with three exits that should serve as a hoop. Once upon a time it might have been a basketball court, now I don't know."
       }
     }
@@ -2969,11 +2969,11 @@
     "i18n": {
       "it": {
         "nome": "Campetto di via Pompei Mariano (angolo via Fratelli Bazzaro)",
-        "note": "Campo ombreggiato, buona superficie di gioco, un tabellone con angolo mancante in basso a destra."
+        "note": "Campo ombreggiato, buona superficie di gioco, un tabellone con angolo mancante in basso a destra. Un canestro con retina metallica."
       },
       "en": {
-        "nome": "Via Pompei Mariano (corner via Fratelli Bazzaro) Basketball Court",
-        "note": "Shaded court, good playing surface, a backboard with missing bottom-right corner."
+        "nome": "Via Pompei Mariano (corner of via Fratelli Bazzaro) Basketball Court",
+        "note": "Shaded court, good playing surface, a backboard with missing bottom-right corner. A basketball hoop with a metal net."
       }
     }
   },
