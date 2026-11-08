@@ -3062,5 +3062,47 @@
         "note": "One and only netless rim, no three point line and other lines barely visible. A smart locker with three basketball in it, stained by tags. A drinking fountain not so far from the court."
       }
     }
+  },
+  {
+    "id": "071",
+    "created": "2026-11-07",
+    "updated": "2026-11-07",
+    "address": "Parco Franco Verga",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.50935,
+      "lng": 9.14031
+    },
+    "hoops": 1,
+    "surface": "cemento",
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": true,
+    "audio": "audio/071/071-beat.mp3",
+    "photos": [
+      {
+        "date": "2026-11-07",
+        "overview": "photos/071/2026-11-07/overview.webp",
+        "context": null,
+        "details": [
+          "photos/071/2026-11-07/hoop-1.webp",
+          "photos/071/2026-11-07/hoop-2.webp",
+          "photos/071/2026-11-07/surface.webp",
+          "photos/071/2026-11-07/surface-2.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di parco Franco Verga",
+        "note": "Entrambi i canestri con retina; linee da gioco usurate ma ancora ben visibili."
+      },
+      "en": {
+        "nome": "Parco Franco Verga Basketball Court",
+        "note": "Both hoops have nets; the playing lines are worn but still clearly visible."
+      }
+    }
   }
 ]
