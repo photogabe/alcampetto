@@ -8,7 +8,7 @@
 
   <!-- Shared stylesheet -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20260723">
+  <link rel="stylesheet" href="style.css?v=20261109">
 
   <!-- EXTERNAL DEPENDENCY: Leaflet
        Interactive map library. OpenStreetMap tiles. -->
@@ -45,8 +45,6 @@
       </div>
     </div>
     <div class="lang-switch">
-      <button class="provider-btn active" data-provider="google">Google Maps</button>
-      <button class="provider-btn" data-provider="osm">OSM</button>
       <a class="lang-btn" href="index.html"><span class="flag">🇮🇹</span> IT</a>
     </div>
   </header>
@@ -132,9 +130,18 @@
       Contribute on <a href="https://github.com/photogabe/alcampetto" target="_blank" rel="noopener">GitHub</a> ·
       <a href="about.en.html">About</a>
     </div>
-    <a class="json-btn" href="alcampetto.json" target="_blank" download>
-      ⬇ Download alcampetto.json
-    </a>
+    <div class="footer-actions">
+      <!-- Preference for the pin link on the cards: set once and
+           remembered by the browser (alcampetto.js). -->
+      <div class="maps-choice">
+        <span class="maps-choice-label">Open maps with</span>
+        <button class="provider-btn active" data-provider="google">Google Maps</button>
+        <button class="provider-btn" data-provider="osm">OSM</button>
+      </div>
+      <a class="json-btn" href="alcampetto.json" target="_blank" download>
+        ⬇ Download alcampetto.json
+      </a>
+    </div>
   </footer>
 
 

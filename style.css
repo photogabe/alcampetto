@@ -219,24 +219,6 @@ body::before {
 .lang-btn:hover  { border-color: var(--orange); color: var(--text); }
 .lang-btn .flag  { font-size: 1rem; line-height: 1; }
 
-.provider-btn {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  background: var(--mid);
-  border: 1px solid var(--line);
-  color: var(--muted);
-  padding: 0.4rem 0.8rem;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.provider-btn:hover  { border-color: var(--orange); color: var(--text); }
-.provider-btn.active { border-color: var(--orange); color: var(--orange); }
-
 
 /* -------------------------------------------------------------
    BARRA CONTROLLI (index.html e index.en.html)
@@ -1399,6 +1381,49 @@ main.about ~ .site-footer { margin-top: 4rem; }
   line-height: 1.8;
 }
 .footer-meta a { color: var(--orange); text-decoration: none; }
+
+/* Gruppo a destra del footer: scelta delle mappe e download del
+   dataset. flex-wrap li manda a capo quando lo spazio non basta. */
+.footer-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+/* Scelta del servizio aperto dal pin sulle schede */
+.maps-choice {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.maps-choice-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-right: 0.2rem;
+}
+
+.provider-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  background: var(--mid);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.provider-btn:hover  { border-color: var(--orange); color: var(--text); }
+.provider-btn.active { border-color: var(--orange); color: var(--orange); }
 
 .json-btn {
   display: inline-flex;
