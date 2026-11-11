@@ -222,8 +222,9 @@ body::before {
 
 /* -------------------------------------------------------------
    BARRA CONTROLLI (index.html e index.en.html)
-   Contiene: ricerca testuale, filtri booleani, ordinamento,
-   contatore risultati. Nella pagina sta sotto i tab vista.
+   Contiene: ricerca testuale, filtri booleani (interruttori
+   che si sommano), ordinamento, contatore risultati.
+   Nella pagina sta sotto i tab vista.
    ------------------------------------------------------------- */
 .controls {
   position: relative;
@@ -317,13 +318,39 @@ body::before {
 .sort-btn:hover  { border-color: var(--orange); color: var(--text); }
 .sort-btn.active { color: var(--orange); border-color: var(--orange); }
 
+/* Contatore dei risultati ("12 di 71 campetti") con accanto il
+   comando "Azzera". Compare solo con un filtro acceso o un
+   testo cercato: lo decide alcampetto.js con l'attributo hidden. */
 .count-label {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--muted);
   margin-left: auto;
 }
+/* display:flex qui sopra avrebbe la meglio sull'attributo
+   hidden: questa regola lo fa rispettare */
+.count-label[hidden] { display: none; }
 .count-label strong { color: var(--orange); }
+
+/* "Azzera": spegne i filtri e svuota la ricerca. Ha l'aspetto
+   di un link, per non sembrare un altro filtro. */
+.reset-btn {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.2rem 0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.reset-btn:hover { color: var(--orange); border-bottom-color: var(--orange); }
 
 
 /* -------------------------------------------------------------
@@ -1499,6 +1526,14 @@ main.about ~ .site-footer { margin-top: 4rem; }
     padding: 0.7rem 0.2rem;
     text-align: center;
     white-space: nowrap;
+  }
+
+  /* Contatore dei risultati: riga propria, numero a sinistra
+     e "Azzera" a destra */
+  .count-label {
+    flex-basis: 100%;
+    justify-content: space-between;
+    margin-left: 0;
   }
 
   /* Meno vuoto tra la barra controlli e la prima scheda */
