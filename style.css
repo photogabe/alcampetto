@@ -223,7 +223,7 @@ body::before {
 /* -------------------------------------------------------------
    BARRA CONTROLLI (index.html e index.en.html)
    Contiene: ricerca testuale, filtri booleani, ordinamento,
-   contatore risultati.
+   contatore risultati. Nella pagina sta sotto i tab vista.
    ------------------------------------------------------------- */
 .controls {
   position: relative;
@@ -327,8 +327,9 @@ body::before {
 
 
 /* -------------------------------------------------------------
-   TAB VISTA (Griglia / Mappa)
-   Due tab minimali tra la barra controlli e il contenuto.
+   TAB VISTA (Schede / Mappa / Serie / Blog)
+   Tab minimali subito sotto l'header, prima della barra
+   controlli: prima si sceglie la vista, poi la si affina.
    La tab attiva ha un bordo inferiore arancione.
    ------------------------------------------------------------- */
 .view-tabs {
@@ -1485,6 +1486,24 @@ main.about ~ .site-footer { margin-top: 4rem; }
   .site-footer { padding-left: 1rem; padding-right: 1rem; }
   main.about { padding: 0 1rem; margin: 2rem auto; }
   .tagline   { display: none; }
+
+  /* Header più basso: meno aria sopra e sotto il logo
+     (vale per tutte le pagine, anche About) */
+  .header-left { padding: 0.6rem 0; }
+
+  /* Tab vista: si dividono la larghezza in parti uguali, così
+     restano su una riga sola anche sugli schermi da 320px
+     (prima "Blog ↗" andava a capo e sforava a destra) */
+  .view-tab {
+    flex: 1;
+    padding: 0.7rem 0.2rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Meno vuoto tra la barra controlli e la prima scheda */
+  main#grid { padding-top: 1rem; }
+
   #map { height: calc(100vh - 160px); min-height: 300px; }
   .card-photo,
   .card-photo-placeholder { height: 180px; }

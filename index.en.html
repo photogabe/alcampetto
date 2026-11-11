@@ -8,7 +8,7 @@
 
   <!-- Shared stylesheet -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261109">
+  <link rel="stylesheet" href="style.css?v=20261111">
 
   <!-- EXTERNAL DEPENDENCY: Leaflet
        Interactive map library. OpenStreetMap tiles. -->
@@ -51,7 +51,24 @@
 
 
   <!-- ═══════════════════════════════════════════════════════
+       VIEW TABS
+       Switch between the internal views (cards, map, series);
+       "Blog" is a link to another page.
+       They sit right below the header: first pick the view,
+       then refine it with the controls below.
+       ═══════════════════════════════════════════════════════ -->
+  <div class="view-tabs">
+    <button class="view-tab active" data-view="grid">Cards</button>
+    <button class="view-tab" data-view="map">Map</button>
+    <button class="view-tab" data-view="serie">Series</button>
+    <a class="view-tab" href="blog/">Blog <span class="view-tab-arrow" aria-hidden="true">↗</span></a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
        CONTROLS BAR
+       Search, filters and sorting: they act on every view
+       (cards, map, series).
        ═══════════════════════════════════════════════════════ -->
   <div class="controls">
     <div class="search-wrap">
@@ -72,19 +89,6 @@
       <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>By hue</button>
     </div>
     <div class="count-label">Results: <strong id="count">—</strong></div>
-  </div>
-
-
-  <!-- ═══════════════════════════════════════════════════════
-       VIEW TABS
-       Switch between the internal views (cards, map, series);
-       "Blog" is a link to another page.
-       ═══════════════════════════════════════════════════════ -->
-  <div class="view-tabs">
-    <button class="view-tab active" data-view="grid">Cards</button>
-    <button class="view-tab" data-view="map">Map</button>
-    <button class="view-tab" data-view="serie">Series</button>
-    <a class="view-tab" href="blog/">Blog <span class="view-tab-arrow" aria-hidden="true">↗</span></a>
   </div>
 
 

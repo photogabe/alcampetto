@@ -8,7 +8,7 @@
 
   <!-- Foglio di stile condiviso -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261109">
+  <link rel="stylesheet" href="style.css?v=20261111">
 
   <!-- DIPENDENZA ESTERNA: Leaflet
        Libreria per mappe interattive. Tile OpenStreetMap. -->
@@ -51,7 +51,24 @@
 
 
   <!-- ═══════════════════════════════════════════════════════
+       TAB VISTA
+       Permette di alternare tra le viste interne (schede,
+       mappa, serie); "Blog" è un link a un'altra pagina.
+       Stanno subito sotto l'header: prima si sceglie la vista,
+       poi la si affina con i controlli qui sotto.
+       ═══════════════════════════════════════════════════════ -->
+  <div class="view-tabs">
+    <button class="view-tab active" data-view="grid">Schede</button>
+    <button class="view-tab" data-view="map">Mappa</button>
+    <button class="view-tab" data-view="serie">Serie</button>
+    <a class="view-tab" href="blog/">Blog <span class="view-tab-arrow" aria-hidden="true">↗</span></a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
        BARRA CONTROLLI
+       Ricerca, filtri e ordinamento: agiscono su tutte le
+       viste (schede, mappa, serie).
        ═══════════════════════════════════════════════════════ -->
   <div class="controls">
     <div class="search-wrap">
@@ -72,19 +89,6 @@
       <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>Per tinta</button>
     </div>
     <div class="count-label">Risultati: <strong id="count">—</strong></div>
-  </div>
-
-
-  <!-- ═══════════════════════════════════════════════════════
-       TAB VISTA
-       Permette di alternare tra le viste interne (schede,
-       mappa, serie); "Blog" è un link a un'altra pagina.
-       ═══════════════════════════════════════════════════════ -->
-  <div class="view-tabs">
-    <button class="view-tab active" data-view="grid">Schede</button>
-    <button class="view-tab" data-view="map">Mappa</button>
-    <button class="view-tab" data-view="serie">Serie</button>
-    <a class="view-tab" href="blog/">Blog <span class="view-tab-arrow" aria-hidden="true">↗</span></a>
   </div>
 
 
