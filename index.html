@@ -8,7 +8,7 @@
 
   <!-- Foglio di stile condiviso -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261111">
+  <link rel="stylesheet" href="style.css?v=20261111b">
 
   <!-- DIPENDENZA ESTERNA: Leaflet
        Libreria per mappe interattive. Tile OpenStreetMap. -->
@@ -75,11 +75,12 @@
       <span class="search-icon">⌕</span>
       <input type="search" id="search" placeholder="Cerca per nome, zona, indirizzo…" autofocus>
     </div>
+    <!-- Interruttori: un clic accende il filtro, un secondo clic
+         lo spegne. Più filtri accesi si sommano (alcampetto.js). -->
     <div class="filter-group">
-      <button class="filter-btn active" data-filter="all">Tutti</button>
-      <button class="filter-btn" data-filter="lit">Illuminati</button>
-      <button class="filter-btn" data-filter="three_pt_line">Linea da 3</button>
-      <button class="filter-btn" data-filter="fenced">Recintati</button>
+      <button class="filter-btn" data-filter="lit" aria-pressed="false">Illuminati</button>
+      <button class="filter-btn" data-filter="three_pt_line" aria-pressed="false">Linea da 3</button>
+      <button class="filter-btn" data-filter="fenced" aria-pressed="false">Recintati</button>
     </div>
     <div class="sort-group">
       <span class="sort-label">Ordina</span>
@@ -88,7 +89,12 @@
       <!-- visibile solo nella serie Colore (gestito da alcampetto.js) -->
       <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>Per tinta</button>
     </div>
-    <div class="count-label">Risultati: <strong id="count">—</strong></div>
+    <!-- Compare solo con un filtro acceso o un testo cercato
+         (attributo hidden gestito da alcampetto.js) -->
+    <div class="count-label" id="count-label" hidden>
+      <span><strong id="count">—</strong> di <span id="count-total">—</span> campetti</span>
+      <button class="reset-btn" id="filters-reset">Azzera <span aria-hidden="true">✕</span></button>
+    </div>
   </div>
 
 
@@ -155,7 +161,7 @@
   <!-- JavaScript condiviso — deve essere incluso dopo il DOM,
        prima della chiusura di </body>, così trova tutti gli
        elementi HTML che deve gestire (lightbox, griglia, ecc.) -->
-  <script src="alcampetto.js?v=20260801"></script>
+  <script src="alcampetto.js?v=20261111"></script>
 
 </body>
 </html>

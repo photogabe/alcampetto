@@ -8,7 +8,7 @@
 
   <!-- Shared stylesheet -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261111">
+  <link rel="stylesheet" href="style.css?v=20261111b">
 
   <!-- EXTERNAL DEPENDENCY: Leaflet
        Interactive map library. OpenStreetMap tiles. -->
@@ -75,11 +75,12 @@
       <span class="search-icon">⌕</span>
       <input type="search" id="search" placeholder="Search by name, area, address…" autofocus>
     </div>
+    <!-- Toggles: one click turns the filter on, a second click
+         turns it off. Active filters add up (alcampetto.js). -->
     <div class="filter-group">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="lit">Lit</button>
-      <button class="filter-btn" data-filter="three_pt_line">Three-pt line</button>
-      <button class="filter-btn" data-filter="fenced">Fenced</button>
+      <button class="filter-btn" data-filter="lit" aria-pressed="false">Lit</button>
+      <button class="filter-btn" data-filter="three_pt_line" aria-pressed="false">Three-pt line</button>
+      <button class="filter-btn" data-filter="fenced" aria-pressed="false">Fenced</button>
     </div>
     <div class="sort-group">
       <span class="sort-label">Sort</span>
@@ -88,7 +89,12 @@
       <!-- visible only in the Color series (managed by alcampetto.js) -->
       <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>By hue</button>
     </div>
-    <div class="count-label">Results: <strong id="count">—</strong></div>
+    <!-- Shown only with an active filter or a search text
+         (hidden attribute managed by alcampetto.js) -->
+    <div class="count-label" id="count-label" hidden>
+      <span><strong id="count">—</strong> of <span id="count-total">—</span> courts</span>
+      <button class="reset-btn" id="filters-reset">Clear <span aria-hidden="true">✕</span></button>
+    </div>
   </div>
 
 
@@ -154,7 +160,7 @@
 
   <!-- Shared JavaScript — included after the DOM so it can
        find all HTML elements it needs to manage. -->
-  <script src="alcampetto.js?v=20260801"></script>
+  <script src="alcampetto.js?v=20261111"></script>
 
 </body>
 </html>

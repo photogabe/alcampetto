@@ -123,7 +123,7 @@ function surfaceLabel(value) {
    ------------------------------------------------------------- */
 var DATA          = [];
 var COLORS        = {};    /* colori dei manti, da colors.json (derivato) */
-var activeFilter  = 'all';
+var activeFilters = [];    /* filtri accesi, es. ['lit', 'fenced']; lista vuota = tutti i campetti */
 var activeSort    = 'id';
 var mapsProvider = localStorage.getItem('mapsProvider') || 'google';
 var activeView    = 'grid';  /* vista attiva: 'grid', 'map' o 'serie' */
@@ -1812,13 +1812,14 @@ function applyFilters() {
   var query    = document.getElementById('search').value.toLowerCase().trim();
   var filtered = DATA.slice();
 
-  /* Filtro per proprietà booleana */
-  var boolFilters = ['lit', 'three_pt_line', 'fenced'];
-  if (boolFilters.indexOf(activeFilter) !== -1) {
-    filtered = filtered.filter(function (c) {
-      return c[activeFilter] === true;
+  /* Filtri per proprietà booleana. Si sommano: un campetto
+     resta in lista solo se supera TUTTI i filtri accesi
+     (con nessun filtro acceso restano tutti). */
+  filtered = filtered.filter(function (c) {
+    return activeFilters.every(function (key) {
+      return c[key] === true;
     });
-  }
+  });
 
   /* Filtro per testo libero nella lingua attiva */
   if (query) {
@@ -1851,6 +1852,29 @@ function applyFilters() {
   renderCards(filtered);
   updateMapMarkers(filtered);
   renderSeries(filtered);
+  updateFilterStatus(query);
+}
+
+
+/* =============================================================
+   STATO DEI FILTRI
+   Tiene allineato ciò che si vede con ciò che è attivo:
+   · ogni pulsante filtro è acceso (.active) se il suo filtro
+     è nella lista activeFilters;
+   · il contatore "12 di 71" con il comando "Azzera" compare
+     solo quando c'è un filtro acceso o un testo cercato.
+   Il numero dei risultati (#count) lo scrive renderCards.
+   ============================================================= */
+function updateFilterStatus(query) {
+  document.querySelectorAll('.filter-btn').forEach(function (btn) {
+    var isOn = activeFilters.indexOf(btn.dataset.filter) !== -1;
+    btn.classList.toggle('active', isOn);
+    btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+  });
+
+  var somethingActive = activeFilters.length > 0 || query !== '';
+  document.getElementById('count-total').textContent = DATA.length;
+  document.getElementById('count-label').hidden = !somethingActive;
 }
 
 
@@ -1862,16 +1886,39 @@ document.getElementById('search').addEventListener('input', applyFilters);
 
 /* =============================================================
    LISTENER — PULSANTI FILTRO
+   Ogni pulsante è un interruttore: un clic accende il filtro,
+   un secondo clic lo spegne. Più filtri accesi si sommano
+   (vedi applyFilters).
    ============================================================= */
+
+/* Le sole proprietà del JSON che possono diventare filtri */
+var BOOL_FILTERS = ['lit', 'three_pt_line', 'fenced'];
+
 document.querySelectorAll('.filter-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
-    document.querySelectorAll('.filter-btn').forEach(function (b) {
-      b.classList.remove('active');
-    });
-    btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
+    var key = btn.dataset.filter;
+    if (BOOL_FILTERS.indexOf(key) === -1) { return; }
+
+    var position = activeFilters.indexOf(key);
+    if (position === -1) {
+      activeFilters.push(key);            /* era spento: si accende */
+    } else {
+      activeFilters.splice(position, 1);  /* era acceso: si spegne */
+    }
     applyFilters();
   });
+});
+
+
+/* =============================================================
+   LISTENER — "AZZERA"
+   Spegne tutti i filtri e svuota la ricerca: si torna a vedere
+   tutti i campetti. L'ordinamento scelto resta com'è.
+   ============================================================= */
+document.getElementById('filters-reset').addEventListener('click', function () {
+  activeFilters = [];
+  document.getElementById('search').value = '';
+  applyFilters();
 });
 
 
