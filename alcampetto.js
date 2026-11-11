@@ -1862,7 +1862,10 @@ function applyFilters() {
    · ogni pulsante filtro è acceso (.active) se il suo filtro
      è nella lista activeFilters;
    · il contatore "12 di 71" con il comando "Azzera" compare
-     solo quando c'è un filtro acceso o un testo cercato.
+     solo quando c'è un filtro acceso o un testo cercato;
+   · il pulsante "Filtri" (visibile solo su telefono) mostra
+     quanti filtri sono accesi, es. "Filtri · 2", così lo si
+     sa anche quando il pannello è chiuso.
    Il numero dei risultati (#count) lo scrive renderCards.
    ============================================================= */
 function updateFilterStatus(query) {
@@ -1875,6 +1878,10 @@ function updateFilterStatus(query) {
   var somethingActive = activeFilters.length > 0 || query !== '';
   document.getElementById('count-total').textContent = DATA.length;
   document.getElementById('count-label').hidden = !somethingActive;
+
+  var howMany = activeFilters.length;
+  document.getElementById('filters-badge').textContent = howMany > 0 ? ' · ' + howMany : '';
+  document.getElementById('filters-toggle').classList.toggle('has-active', howMany > 0);
 }
 
 
@@ -1919,6 +1926,20 @@ document.getElementById('filters-reset').addEventListener('click', function () {
   activeFilters = [];
   document.getElementById('search').value = '';
   applyFilters();
+});
+
+
+/* =============================================================
+   LISTENER — PULSANTE "FILTRI" (solo telefono)
+   Apre e chiude il pannello con filtri e ordinamento. Su
+   schermi larghi il pulsante non si vede e il pannello è
+   sempre in riga: l'aspetto nei due casi lo decide style.css,
+   qui si aggiunge o toglie soltanto la classe .open.
+   aria-expanded dice agli screen reader se il pannello è aperto.
+   ============================================================= */
+document.getElementById('filters-toggle').addEventListener('click', function () {
+  var isOpen = document.getElementById('filters-panel').classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 

@@ -8,7 +8,7 @@
 
   <!-- Shared stylesheet -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261111b">
+  <link rel="stylesheet" href="style.css?v=20261111c">
 
   <!-- EXTERNAL DEPENDENCY: Leaflet
        Interactive map library. OpenStreetMap tiles. -->
@@ -73,22 +73,37 @@
   <div class="controls">
     <div class="search-wrap">
       <span class="search-icon">⌕</span>
-      <input type="search" id="search" placeholder="Search by name, area, address…" autofocus>
+      <input type="search" id="search" placeholder="Search name, area, street…" autofocus>
     </div>
-    <!-- Toggles: one click turns the filter on, a second click
-         turns it off. Active filters add up (alcampetto.js). -->
-    <div class="filter-group">
-      <button class="filter-btn" data-filter="lit" aria-pressed="false">Lit</button>
-      <button class="filter-btn" data-filter="three_pt_line" aria-pressed="false">Three-pt line</button>
-      <button class="filter-btn" data-filter="fenced" aria-pressed="false">Fenced</button>
+
+    <!-- "Filters" button: shown only on phones (style.css), where
+         it opens and closes the panel below. Next to the label
+         alcampetto.js writes the number of active filters. -->
+    <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-panel">
+      Filters<span id="filters-badge"></span> <span class="filters-caret" aria-hidden="true">▾</span>
+    </button>
+
+    <!-- Filters and sorting panel. On wide screens it is
+         "transparent": filters and sorting sit in a row next to
+         the search. On phones it stays closed until the "Filters"
+         button is tapped. -->
+    <div class="filters-panel" id="filters-panel">
+      <!-- Toggles: one click turns the filter on, a second click
+           turns it off. Active filters add up (alcampetto.js). -->
+      <div class="filter-group">
+        <button class="filter-btn" data-filter="lit" aria-pressed="false">Lit</button>
+        <button class="filter-btn" data-filter="three_pt_line" aria-pressed="false">Three-pt line</button>
+        <button class="filter-btn" data-filter="fenced" aria-pressed="false">Fenced</button>
+      </div>
+      <div class="sort-group">
+        <span class="sort-label">Sort</span>
+        <button class="sort-btn active" data-sort="id">By #ID</button>
+        <button class="sort-btn" data-sort="date">Most recent</button>
+        <!-- visible only in the Color series (managed by alcampetto.js) -->
+        <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>By hue</button>
+      </div>
     </div>
-    <div class="sort-group">
-      <span class="sort-label">Sort</span>
-      <button class="sort-btn active" data-sort="id">By #ID</button>
-      <button class="sort-btn" data-sort="date">Most recent</button>
-      <!-- visible only in the Color series (managed by alcampetto.js) -->
-      <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>By hue</button>
-    </div>
+
     <!-- Shown only with an active filter or a search text
          (hidden attribute managed by alcampetto.js) -->
     <div class="count-label" id="count-label" hidden>
@@ -160,7 +175,7 @@
 
   <!-- Shared JavaScript — included after the DOM so it can
        find all HTML elements it needs to manage. -->
-  <script src="alcampetto.js?v=20261111"></script>
+  <script src="alcampetto.js?v=20261111b"></script>
 
 </body>
 </html>

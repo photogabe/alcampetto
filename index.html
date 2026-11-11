@@ -8,7 +8,7 @@
 
   <!-- Foglio di stile condiviso -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261111b">
+  <link rel="stylesheet" href="style.css?v=20261111c">
 
   <!-- DIPENDENZA ESTERNA: Leaflet
        Libreria per mappe interattive. Tile OpenStreetMap. -->
@@ -73,22 +73,37 @@
   <div class="controls">
     <div class="search-wrap">
       <span class="search-icon">⌕</span>
-      <input type="search" id="search" placeholder="Cerca per nome, zona, indirizzo…" autofocus>
+      <input type="search" id="search" placeholder="Cerca nome, zona, via…" autofocus>
     </div>
-    <!-- Interruttori: un clic accende il filtro, un secondo clic
-         lo spegne. Più filtri accesi si sommano (alcampetto.js). -->
-    <div class="filter-group">
-      <button class="filter-btn" data-filter="lit" aria-pressed="false">Illuminati</button>
-      <button class="filter-btn" data-filter="three_pt_line" aria-pressed="false">Linea da 3</button>
-      <button class="filter-btn" data-filter="fenced" aria-pressed="false">Recintati</button>
+
+    <!-- Pulsante "Filtri": si vede solo su telefono (style.css),
+         dove apre e chiude il pannello qui sotto. Accanto alla
+         scritta alcampetto.js mette il numero dei filtri accesi. -->
+    <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-panel">
+      Filtri<span id="filters-badge"></span> <span class="filters-caret" aria-hidden="true">▾</span>
+    </button>
+
+    <!-- Pannello di filtri e ordinamento. Su schermi larghi è
+         "trasparente": filtri e ordinamento stanno in riga accanto
+         alla ricerca. Su telefono resta chiuso finché non si tocca
+         il pulsante "Filtri". -->
+    <div class="filters-panel" id="filters-panel">
+      <!-- Interruttori: un clic accende il filtro, un secondo clic
+           lo spegne. Più filtri accesi si sommano (alcampetto.js). -->
+      <div class="filter-group">
+        <button class="filter-btn" data-filter="lit" aria-pressed="false">Illuminati</button>
+        <button class="filter-btn" data-filter="three_pt_line" aria-pressed="false">Linea da 3</button>
+        <button class="filter-btn" data-filter="fenced" aria-pressed="false">Recintati</button>
+      </div>
+      <div class="sort-group">
+        <span class="sort-label">Ordina</span>
+        <button class="sort-btn active" data-sort="id">Per #ID</button>
+        <button class="sort-btn" data-sort="date">Più recenti</button>
+        <!-- visibile solo nella serie Colore (gestito da alcampetto.js) -->
+        <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>Per tinta</button>
+      </div>
     </div>
-    <div class="sort-group">
-      <span class="sort-label">Ordina</span>
-      <button class="sort-btn active" data-sort="id">Per #ID</button>
-      <button class="sort-btn" data-sort="date">Più recenti</button>
-      <!-- visibile solo nella serie Colore (gestito da alcampetto.js) -->
-      <button class="sort-btn" data-sort="tinta" id="sort-tinta" hidden>Per tinta</button>
-    </div>
+
     <!-- Compare solo con un filtro acceso o un testo cercato
          (attributo hidden gestito da alcampetto.js) -->
     <div class="count-label" id="count-label" hidden>
@@ -161,7 +176,7 @@
   <!-- JavaScript condiviso — deve essere incluso dopo il DOM,
        prima della chiusura di </body>, così trova tutti gli
        elementi HTML che deve gestire (lightbox, griglia, ecc.) -->
-  <script src="alcampetto.js?v=20261111"></script>
+  <script src="alcampetto.js?v=20261111b"></script>
 
 </body>
 </html>
