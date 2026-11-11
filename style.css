@@ -489,7 +489,9 @@ body::before {
    La configurazione delle serie è in alcampetto.js (SERIES).
    ------------------------------------------------------------- */
 
-/* Barra del selettore: etichetta + pulsanti + contatore */
+/* Barra del selettore: etichetta + pulsanti + contatore.
+   Su telefono cambia forma (una riga sola, senza etichetta):
+   vedi "RESPONSIVE — schermi stretti" in fondo al file. */
 .serie-bar {
   display: none;
   position: relative;
@@ -1624,6 +1626,39 @@ main.about ~ .site-footer { margin-top: 4rem; }
   /* Contact sheet — thumbs più piccole */
   .cs-thumb { width: 110px; }
   .cs-thumb img { width: 110px; }
+
+  /* Vista serie — selettore su una riga sola, larga quanto lo
+     schermo (prima i pulsanti andavano su due righe e gli
+     ultimi, "Superficie" e "Colore", restavano tagliati fuori).
+     · l'etichetta "Serie" sparisce: la dice già il tab acceso
+     · i pulsanti si stringono e si dividono la larghezza
+     · il contatore va sotto, allineato a destra */
+  .serie-bar {
+    padding-top: 0.8rem;
+    gap: 0.4rem;
+  }
+  .serie-label { display: none; }
+  .serie-select {
+    display: flex;
+    width: 100%;
+    /* Se i pulsanti non ci stanno tutti (schermi da 320px, o
+       altre serie aggiunte in futuro) la riga scorre col dito
+       invece di tagliare gli ultimi */
+    overflow-x: auto;
+  }
+  .serie-btn {
+    /* 1 = si allarga per riempire la riga; 0 = non si stringe
+       mai sotto la larghezza del proprio testo */
+    flex: 1 0 auto;
+    padding: 0.65rem 0.25rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .serie-count {
+    flex-basis: 100%;
+    text-align: right;
+  }
 
   /* Vista serie — celle più piccole */
   #serie { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
