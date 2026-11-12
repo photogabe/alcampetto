@@ -8,7 +8,7 @@
 
   <!-- Foglio di stile condiviso -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261111d">
+  <link rel="stylesheet" href="style.css?v=20261111e">
 
   <!-- DIPENDENZA ESTERNA: Leaflet
        Libreria per mappe interattive. Tile OpenStreetMap. -->
@@ -42,6 +42,11 @@
       <div class="tagline">
         Atlante dei campetti di basket a Milano<br>
         <span id="progress-bar">[░░░░░░░░░░░░░░░░░░░░]</span> <span id="court-count">…</span> di ~<span id="court-total">…</span> · <span id="court-percent">…</span>%
+        <!-- Novità: terza riga della tagline. Resta nascosta finché
+             alcampetto.js non trova in update.json una notifica con
+             meno di due settimane; su telefono, dove la tagline non
+             si vede, la stessa notifica sta nella barra controlli. -->
+        <span class="news-tagline" id="news-tagline" hidden></span>
       </div>
     </div>
     <div class="lang-switch">
@@ -110,6 +115,13 @@
       <span><strong id="count">—</strong> di <span id="count-total">—</span> campetti</span>
       <button class="reset-btn" id="filters-reset">Azzera <span aria-hidden="true">✕</span></button>
     </div>
+
+    <!-- Novità, su telefono: una riga in fondo alla barra controlli
+         (su schermi larghi sta nella tagline, qui sopra nell'header).
+         Nascosta finché alcampetto.js non trova in update.json una
+         notifica con meno di due settimane. Quando compare il
+         contatore qui sopra, gli lascia il posto (style.css). -->
+    <div class="news-row" id="news-row" hidden></div>
   </div>
 
 
@@ -176,7 +188,7 @@
   <!-- JavaScript condiviso — deve essere incluso dopo il DOM,
        prima della chiusura di </body>, così trova tutti gli
        elementi HTML che deve gestire (lightbox, griglia, ecc.) -->
-  <script src="alcampetto.js?v=20261111b"></script>
+  <script src="alcampetto.js?v=20261111c"></script>
 
 </body>
 </html>

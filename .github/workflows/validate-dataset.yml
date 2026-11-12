@@ -9,6 +9,7 @@
 #   2. tutti i file foto/audio referenziati nel JSON esistono davvero sul disco
 #   3. colors.json (file derivato coi colori dei manti) è allineato al dataset
 #   4. ogni audio ha il suo .peaks.json (derivato) aggiornato
+#   5. update.json (le notifiche di novità) rispetta update.schema.json
 
 name: Validate dataset
 
@@ -66,3 +67,12 @@ jobs:
       # Non decodifica gli audio: niente ffmpeg sul runner.
       - name: Verify audio peaks are up to date
         run: python3 scripts/gen-peaks.py --check
+
+      # Controllo 5: update.json è scritto nella forma giusta?
+      # È il file delle notifiche di novità, compilato a mano. Il sito lo
+      # tratta come facoltativo: se è scritto male non mostra nulla e non
+      # avvisa nessuno. Questo controllo serve proprio a questo: accorgersi
+      # qui di una virgola dimenticata, di una data scritta male o di un
+      # testo mancante, invece di scoprirlo a sito pubblicato.
+      - name: Validate update.json against schema
+        run: check-jsonschema --schemafile update.schema.json update.json

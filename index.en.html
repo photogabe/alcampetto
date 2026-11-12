@@ -8,7 +8,7 @@
 
   <!-- Shared stylesheet -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261111d">
+  <link rel="stylesheet" href="style.css?v=20261111e">
 
   <!-- EXTERNAL DEPENDENCY: Leaflet
        Interactive map library. OpenStreetMap tiles. -->
@@ -42,6 +42,11 @@
       <div class="tagline">
         Atlas of Free basketball courts in Milan<br>
         <span id="progress-bar">[░░░░░░░░░░░░░░░░░░░░]</span> <span id="court-count">…</span> of ~<span id="court-total">…</span> · <span id="court-percent">…</span>%
+        <!-- News: third line of the tagline. It stays hidden until
+             alcampetto.js finds in update.json a notification less
+             than two weeks old; on phones, where the tagline is not
+             shown, the same notification sits in the controls bar. -->
+        <span class="news-tagline" id="news-tagline" hidden></span>
       </div>
     </div>
     <div class="lang-switch">
@@ -110,6 +115,13 @@
       <span><strong id="count">—</strong> of <span id="count-total">—</span> courts</span>
       <button class="reset-btn" id="filters-reset">Clear <span aria-hidden="true">✕</span></button>
     </div>
+
+    <!-- News, on phones: a row at the bottom of the controls bar
+         (on wide screens it sits in the tagline, up in the header).
+         Hidden until alcampetto.js finds in update.json a
+         notification less than two weeks old. When the counter
+         above shows up, it gives way to it (style.css). -->
+    <div class="news-row" id="news-row" hidden></div>
   </div>
 
 
@@ -175,7 +187,7 @@
 
   <!-- Shared JavaScript — included after the DOM so it can
        find all HTML elements it needs to manage. -->
-  <script src="alcampetto.js?v=20261111b"></script>
+  <script src="alcampetto.js?v=20261111c"></script>
 
 </body>
 </html>

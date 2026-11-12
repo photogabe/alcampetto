@@ -45,6 +45,9 @@ var I18N = {
     labelContext:  'contesto',
     labelDetail:   'dettaglio',
     labelInSeries: 'campetti in serie',
+    labelNews:     'Novità',
+    months:        ['gen', 'feb', 'mar', 'apr', 'mag', 'giu',
+                    'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
     fresh:         'Aggiornato',
     aging:         'Da riverificare',
     stale:         'Datato'
@@ -75,6 +78,9 @@ var I18N = {
     labelContext:  'context',
     labelDetail:   'detail',
     labelInSeries: 'courts in series',
+    labelNews:     'News',
+    months:        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     fresh:         'Up to date',
     aging:         'Needs check',
     stale:         'Outdated'
@@ -158,6 +164,22 @@ function safeAudioUrl(url) {
   var trimmed = url.trim();
   if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed)) { return ''; }
   if (!trimmed.startsWith('audio/'))           { return ''; }
+  return trimmed;
+}
+
+/* Verifica il link di una notifica letta da update.json.
+   Accetta "#071" (un campetto), un percorso dentro il sito
+   ("blog/...") oppure un indirizzo https. Rifiuta ogni altro
+   schema (javascript:, data:, http:, ecc.) e gli indirizzi che
+   cominciano con "//". Restituisce il link se valido, stringa
+   vuota altrimenti: in quel caso la notifica resta testo semplice. */
+function safeNewsLink(link) {
+  if (typeof link !== 'string') { return ''; }
+  var trimmed = link.trim();
+  if (trimmed === '')                          { return ''; }
+  if (/^https:\/\//i.test(trimmed))            { return trimmed; }
+  if (/^[a-z][a-z0-9+.\-]*:/i.test(trimmed))   { return ''; }
+  if (trimmed.startsWith('//'))                { return ''; }
   return trimmed;
 }
 
@@ -2035,6 +2057,139 @@ function updateTagline() {
 
 
 /* =============================================================
+   NOVITÀ
+   Mostra la notifica più recente scritta in update.json.
+   Una notifica è fatta di:
+     date   il giorno, nella forma "2026-11-08"
+     it     il testo in italiano
+     en     il testo in inglese
+     link   facoltativo: dove porta un clic sul testo
+            ("#071" per un campetto, oppure un percorso)
+   Il testo viene scritto così com'è. Con "link" è cliccabile e
+   ha una freccia in coda; senza, è testo semplice.
+
+   La notifica compare in due punti (se ne vede sempre uno solo,
+   decide style.css): nella tagline su schermi larghi, in fondo
+   alla barra controlli su telefono.
+
+   SCADENZA: una notifica più vecchia di NEWS_MAX_AGE_DAYS giorni
+   non è più una novità e non viene mostrata. Non serve
+   cancellarla da update.json: sparisce da sola.
+
+   COME PUBBLICARE UNA NOVITÀ: aggiungere una voce in cima a
+   update.json. Nessun altro punto da toccare.
+   ============================================================= */
+
+/* Dopo quanti giorni una notifica smette di essere mostrata.
+   · Per tenerla in vista più a lungo: aumentare questo numero */
+var NEWS_MAX_AGE_DAYS = 14;
+
+/* Da "2026-11-08" a una data (a mezzanotte, ora locale).
+   Restituisce null se il testo non è una data valida. */
+function parseNewsDate(text) {
+  if (typeof text !== 'string') { return null; }
+  var parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(text.trim());
+  if (!parts) { return null; }
+  var year  = Number(parts[1]);
+  var month = Number(parts[2]) - 1;   /* in JavaScript gennaio è 0 */
+  var day   = Number(parts[3]);
+  var date  = new Date(year, month, day);
+  /* una data impossibile ("2026-02-31") verrebbe spostata al
+     mese dopo: si riconosce dal mese cambiato e si scarta */
+  if (date.getMonth() !== month) { return null; }
+  return date;
+}
+
+/* Quanti giorni sono passati da quella data (0 = oggi) */
+function daysSince(date) {
+  var now   = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var MS_PER_DAY = 24 * 60 * 60 * 1000;
+  return Math.round((today - date) / MS_PER_DAY);
+}
+
+/* Sceglie la notifica da mostrare: quella con la data più
+   recente; a parità di data, quella scritta più in alto nel
+   file. Le voci incomplete (senza data valida o senza testo)
+   vengono ignorate. Restituisce null se non ce n'è nessuna. */
+function pickLatestNews(list) {
+  if (!Array.isArray(list)) { return null; }
+  var latest = null;
+  list.forEach(function (item) {
+    if (!item || typeof item !== 'object') { return; }
+    var date = parseNewsDate(item.date);
+    /* testo nella lingua della pagina; se manca, quello italiano */
+    var text = (typeof item[LANG] === 'string' && item[LANG].trim() !== '')
+      ? item[LANG] : item.it;
+    if (!date || typeof text !== 'string' || text.trim() === '') { return; }
+    if (latest === null || date > latest.date) {
+      latest = { date: date, text: text.trim(), link: safeNewsLink(item.link) };
+    }
+  });
+  return latest;
+}
+
+/* Costruisce la notifica da mettere in pagina: pallino, data,
+   testo e, solo se c'è un link, la freccia.
+     "● 8 nov 2026 · #071 campetto nuovo →"
+   separator è ciò che sta tra data e testo: ' · ' nella
+   tagline, ': ' nella riga del telefono. */
+function newsItem(news, separator) {
+  var node = el(news.link ? 'a' : 'span', 'news-item');
+  if (news.link) { node.href = news.link; }
+
+  node.appendChild(el('span', 'news-dot'));
+
+  /* l'anno sta in un elemento a parte: su telefono si nasconde */
+  var dateNode = textEl('span', 'news-date',
+    news.date.getDate() + ' ' + T.months[news.date.getMonth()]);
+  dateNode.appendChild(textEl('span', 'news-year', ' ' + news.date.getFullYear()));
+  node.appendChild(dateNode);
+
+  node.appendChild(document.createTextNode(separator));
+  node.appendChild(textEl('span', 'news-text', news.text));
+  if (news.link) { node.appendChild(textEl('span', 'news-arrow', ' →')); }
+  return node;
+}
+
+/* Mostra la notifica più recente della lista nei due punti
+   della pagina, oppure li nasconde se non c'è nulla da mostrare
+   (lista vuota, o notifica più vecchia di NEWS_MAX_AGE_DAYS). */
+function showNews(list) {
+  var tagline = document.getElementById('news-tagline');
+  var row     = document.getElementById('news-row');
+  if (!tagline || !row) { return; }
+
+  var news    = pickLatestNews(list);
+  var visible = news !== null && daysSince(news.date) <= NEWS_MAX_AGE_DAYS;
+
+  tagline.textContent = '';
+  row.textContent = '';
+  if (visible) {
+    tagline.appendChild(document.createTextNode(T.labelNews + ' '));
+    tagline.appendChild(newsItem(news, ' · '));
+    row.appendChild(newsItem(news, ': '));
+  }
+  tagline.hidden = !visible;
+  row.hidden = !visible;
+
+  /* su telefono la mappa deve sapere che la barra controlli ha
+     una riga in più (vedi style.css) */
+  document.body.classList.toggle('has-news', visible);
+}
+
+/* Carica update.json e mostra la notifica. Il file è
+   facoltativo: se manca o è scritto male non compare nessuna
+   notifica e il resto del sito non ne risente. */
+function loadNews() {
+  fetch('update.json?v=' + Date.now())
+    .then(function (response) { return response.ok ? response.json() : []; })
+    .then(showNews)
+    .catch(function () { showNews([]); });
+}
+
+
+/* =============================================================
    CARICAMENTO DATI
    Prima il dataset, poi colors.json (il derivato coi colori dei
    manti, per la serie Colore). colors.json è opzionale: se il
@@ -2073,3 +2228,7 @@ fetch('alcampetto.json?v=' + Date.now())
     errMsg.appendChild(document.createTextNode(T.serverHint));
     grid.appendChild(errMsg);
   });
+
+/* Le novità si caricano per conto loro: non dipendono dal
+   dataset e non devono ritardarlo. */
+loadNews();
