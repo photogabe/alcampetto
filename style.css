@@ -221,9 +221,61 @@ body::before {
 
 
 /* -------------------------------------------------------------
+   NOVITÀ (index.html e index.en.html)
+   La notifica più recente scritta in update.json: data e testo,
+   con o senza link. La scrive alcampetto.js (showNews) in due
+   punti della pagina, e se ne vede sempre uno solo:
+     .news-tagline  terza riga della tagline, su schermi larghi
+     .news-row      riga in fondo alla barra controlli, su
+                    telefono (dove la tagline è nascosta)
+   Entrambi nascono con l'attributo hidden e restano invisibili
+   se non c'è una notifica, o se ha più di due settimane.
+   ------------------------------------------------------------- */
+
+/* Schermi larghi: una riga in più dentro la tagline, di cui
+   eredita carattere, maiuscole e colore. Se il testo è lungo
+   va a capo come le altre righe. */
+.news-tagline { display: block; }
+
+/* Telefono: si accende nel blocco RESPONSIVE in fondo al file */
+.news-row { display: none; }
+
+/* L'attributo hidden deve vincere sulle regole qui sopra */
+.news-tagline[hidden],
+.news-row[hidden] { display: none; }
+
+/* Data + testo. È un link (<a>) se la notifica ne ha uno,
+   altrimenti testo semplice (<span>): stessa classe, e solo il
+   link cambia colore al passaggio del mouse. */
+.news-item {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+a.news-item:hover { color: var(--orange); }
+
+/* Il pallino arancione davanti alla data */
+.news-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.55em;
+  border-radius: 50%;
+  background: var(--orange);
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* La freccia in coda al link non resta mai sola a capo */
+.news-arrow { white-space: nowrap; }
+
+
+/* -------------------------------------------------------------
    BARRA CONTROLLI (index.html e index.en.html)
    Contiene: ricerca testuale, filtri booleani (interruttori
-   che si sommano), ordinamento, contatore risultati.
+   che si sommano), ordinamento, contatore risultati e, su
+   telefono, la riga delle novità (vedi NOVITÀ qui sopra).
    Nella pagina sta sotto i tab vista. Su telefono filtri e
    ordinamento stanno in un pannello che si apre col pulsante
    "Filtri" (regole nel blocco RESPONSIVE in fondo al file).
@@ -1611,12 +1663,39 @@ main.about ~ .site-footer { margin-top: 4rem; }
     margin-left: 0;
   }
 
+  /* Novità: riga propria in fondo alla barra controlli (su
+     schermi larghi sta nella tagline, che qui è nascosta).
+     Se il testo è lungo va a capo. */
+  .news-row {
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+  /* su telefono la data va senza anno: "8 nov" */
+  .news-year { display: none; }
+
+  /* Con un filtro o una ricerca attivi compare il contatore
+     "6 di 71 campetti · Azzera": la novità gli lascia il posto,
+     così la barra non cresce di un'altra riga */
+  .count-label:not([hidden]) + .news-row { display: none; }
+
+  /* Stessa altezza minima per le due righe: quando si scambiano
+     il posto la barra non si muove */
+  .news-row,
+  .count-label { min-height: 1.4rem; }
+
   /* Meno vuoto tra la barra controlli e la prima scheda */
   main#grid { padding-top: 1rem; }
 
   /* Mappa: occupa lo schermo meno header, tab e barra controlli
      (circa 170px ora che la barra è su una riga) */
   #map { height: calc(100vh - 170px); min-height: 300px; }
+  /* con la riga delle novità in vista (classe messa da
+     alcampetto.js) la barra controlli è più alta di circa 30px */
+  body.has-news #map { height: calc(100vh - 200px); }
   .card-photo,
   .card-photo-placeholder { height: 180px; }
   .card > .thumbs { margin-top: -22px; }
