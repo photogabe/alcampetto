@@ -25,6 +25,8 @@ var I18N = {
     serverError:   '⚠ Per visualizzare i dati, avvia un server locale',
     serverCmd:     'python3 -m http.server',
     serverHint:    'oppure usa GitHub Pages.',
+    loadError:     '⚠ Non riesco a caricare i dati dei campetti. Riprova tra qualche minuto.',
+    renderError:   '⚠ Qualcosa non ha funzionato nel mostrare i campetti. Prova a ricaricare la pagina.',
     labelAddress:  'Indirizzo',
     labelArea:     'Zona',
     labelManto:    'Manto',
@@ -58,6 +60,8 @@ var I18N = {
     serverError:   '⚠ To view data, start a local server',
     serverCmd:     'python3 -m http.server',
     serverHint:    'or deploy to GitHub Pages.',
+    loadError:     '⚠ The court data could not be loaded. Please try again in a few minutes.',
+    renderError:   '⚠ Something went wrong while showing the courts. Try reloading the page.',
     labelAddress:  'Address',
     labelArea:     'Area',
     labelManto:    'Surface',
@@ -125,13 +129,55 @@ function surfaceLabel(value) {
 
 
 /* -------------------------------------------------------------
+   PREFERENZA RICORDATA DAL BROWSER
+   L'unica preferenza del sito è il servizio di mappe scelto nel
+   footer (Google Maps oppure OpenStreetMap). Viene ricordata
+   nella memoria del browser (localStorage), così vale anche
+   nelle visite successive.
+
+   ATTENZIONE: un browser impostato per bloccare tutti i cookie
+   nega l'accesso a quella memoria, e lo fa sollevando un errore.
+   Senza i try/catch qui sotto quell'errore fermerebbe l'intero
+   script e la pagina resterebbe vuota. Con l'accesso negato il
+   sito funziona lo stesso: la scelta vale per la visita in corso
+   e semplicemente non viene ricordata.
+   ------------------------------------------------------------- */
+
+/* I servizi di mappe ammessi; il primo è quello predefinito */
+var MAPS_PROVIDERS = ['google', 'osm'];
+
+/* Legge il servizio ricordato. Restituisce quello predefinito se
+   non c'è nulla di salvato, se il valore salvato non è tra quelli
+   ammessi, oppure se il browser nega l'accesso. */
+function readMapsProvider() {
+  var saved = null;
+  try {
+    saved = localStorage.getItem('mapsProvider');
+  } catch (error) {
+    /* accesso negato: si prosegue con il valore predefinito */
+  }
+  return MAPS_PROVIDERS.indexOf(saved) !== -1 ? saved : MAPS_PROVIDERS[0];
+}
+
+/* Ricorda il servizio scelto. Se il browser nega l'accesso non
+   succede nulla: la scelta resta valida finché la pagina è aperta. */
+function saveMapsProvider(provider) {
+  try {
+    localStorage.setItem('mapsProvider', provider);
+  } catch (error) {
+    /* preferenza non salvata: vale solo per questa visita */
+  }
+}
+
+
+/* -------------------------------------------------------------
    STATO DELL'INTERFACCIA
    ------------------------------------------------------------- */
 var DATA          = [];
 var COLORS        = {};    /* colori dei manti, da colors.json (derivato) */
 var activeFilters = [];    /* filtri accesi, es. ['lit', 'fenced']; lista vuota = tutti i campetti */
 var activeSort    = 'id';
-var mapsProvider = localStorage.getItem('mapsProvider') || 'google';
+var mapsProvider  = readMapsProvider();   /* 'google' oppure 'osm' */
 var activeView    = 'grid';  /* vista attiva: 'grid', 'map' o 'serie' */
 var leafletMap    = null;
 var markersLayer  = null;
@@ -2014,12 +2060,13 @@ document.querySelectorAll('.provider-btn').forEach(function (btn) {
     });
     btn.classList.add('active');
     mapsProvider = btn.dataset.provider;
-    localStorage.setItem('mapsProvider', mapsProvider);
+    saveMapsProvider(mapsProvider);
     updateAllMapsLinks();
   });
 });
 
-/* Inizializza lo stato del toggle dal localStorage */
+/* All'avvio accende il pulsante del servizio ricordato
+   (letto da readMapsProvider, in cima al file) */
 if (mapsProvider !== 'google') {
   document.querySelectorAll('.provider-btn').forEach(function (btn) {
     btn.classList.remove('active');
@@ -2197,37 +2244,111 @@ function loadNews() {
    il resto del sito non ne risente.
    Il parametro ?v= con il timestamp impedisce al browser
    di usare una versione in cache dei file JSON.
+
+   Le cose possono andare storte in due momenti diversi, e a
+   ciascuno corrisponde un messaggio diverso:
+     · i dati non arrivano (rete, file mancante, file scritto
+       male)                               -> showLoadError
+     · i dati arrivano ma il codice inciampa nel disegnarli
+       (un difetto del codice)             -> drawPage
+   Tenerli separati serve soprattutto a chi mantiene il sito:
+   un difetto del codice non viene più scambiato per un problema
+   di caricamento, e l'errore vero resta leggibile nella console
+   del browser.
    ============================================================= */
+
+/* Vero se la voce ha il minimo indispensabile per essere
+   mostrata: i campi che il codice legge senza controllarli
+   (id, indirizzo, città, coordinate). Una voce che non li ha
+   viene lasciata fuori, con un avviso nella console, invece di
+   far saltare l'intera pagina. È l'ultima rete di sicurezza: la
+   forma completa dei dati la garantisce lo schema, controllato
+   dal workflow a ogni pull request. */
+function isUsableCourt(c) {
+  var usable = c !== null && typeof c === 'object'
+      && typeof c.id === 'string' && c.id !== ''
+      && typeof c.address === 'string'
+      && typeof c.city === 'string'
+      && c.coordinates !== null && typeof c.coordinates === 'object';
+  if (!usable) {
+    console.warn('ALCAMPETTO: voce del dataset ignorata perché incompleta.', c);
+  }
+  return usable;
+}
+
+/* Mette un messaggio al posto delle schede */
+function showGridMessage(node) {
+  var grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  grid.appendChild(node);
+}
+
+/* I dati non sono arrivati. Due casi:
+   · la pagina è stata aperta con un doppio clic sul file
+     (indirizzo file://): il browser vieta di leggere il JSON e
+     serve un server locale. È il caso di chi lavora sul codice.
+   · il sito è in rete e il file non è arrivato: al visitatore
+     si dice di riprovare. */
+function showLoadError(error) {
+  console.error('ALCAMPETTO: dati non caricati.', error);
+
+  var message = el('div', 'state-msg');
+  if (location.protocol === 'file:') {
+    message.appendChild(document.createTextNode(T.serverError));
+    message.appendChild(el('br'));
+    message.appendChild(textEl('code', '', T.serverCmd));
+    message.appendChild(el('br'));
+    message.appendChild(document.createTextNode(T.serverHint));
+  } else {
+    message.textContent = T.loadError;
+  }
+  showGridMessage(message);
+}
+
+/* Disegna la pagina con i dati arrivati. Un errore qui dentro è
+   un difetto del codice, non dei dati: lo si scrive per intero
+   nella console e, se le schede non sono state disegnate, al
+   loro posto compare un messaggio. Se invece le schede ci sono
+   già (l'errore è arrivato dopo, per esempio nella vista Serie)
+   restano dove sono: meglio una pagina parziale che vuota. */
+function drawPage() {
+  try {
+    updateTagline();
+    applyFilters();
+    openFromHash();   /* se l'URL ha già un hash (#001), apre quel campetto */
+  } catch (error) {
+    console.error('ALCAMPETTO: errore nel disegnare la pagina.', error);
+    if (!document.querySelector('#grid .card')) {
+      showGridMessage(textEl('div', 'state-msg', T.renderError));
+    }
+  }
+}
+
 fetch('alcampetto.json?v=' + Date.now())
-  .then(function (response) { return response.json(); })
+  .then(function (response) {
+    /* per fetch una risposta 404 non è un errore: va controllata
+       qui, altrimenti si proverebbe a leggere come dati la
+       pagina d'errore del server */
+    if (!response.ok) {
+      throw new Error('alcampetto.json: risposta ' + response.status);
+    }
+    return response.json();
+  })
   .then(function (json) {
-    DATA = json;
+    if (!Array.isArray(json)) {
+      throw new Error('alcampetto.json: atteso un elenco di campetti');
+    }
+    DATA = json.filter(isUsableCourt);
     return fetch('colors.json?v=' + Date.now())
       .then(function (response) { return response.json(); })
       .then(function (derivato) { COLORS = derivato.colors || {}; })
       .catch(function () { /* senza colori il sito vive lo stesso */ });
   })
-  .then(function () {
-    updateTagline();
-    applyFilters();
-    openFromHash();   /* se l'URL ha già un hash (#001), apre quel campetto */
-  })
-  .catch(function () {
-    /* Fallback: il fetch fallisce con il protocollo file://
-       Avviare un server locale: python3 -m http.server */
-    var grid = document.getElementById('grid');
-    grid.innerHTML = '';
-    var errMsg = document.createElement('div');
-    errMsg.className = 'state-msg';
-    errMsg.appendChild(document.createTextNode(T.serverError));
-    errMsg.appendChild(document.createElement('br'));
-    var cmd = document.createElement('code');
-    cmd.textContent = T.serverCmd;
-    errMsg.appendChild(cmd);
-    errMsg.appendChild(document.createElement('br'));
-    errMsg.appendChild(document.createTextNode(T.serverHint));
-    grid.appendChild(errMsg);
-  });
+  /* Due strade nella stessa then: drawPage se i dati sono
+     arrivati, showLoadError se il caricamento è fallito. Scritto
+     così, un errore DENTRO drawPage non finisce in showLoadError
+     (come accadeva con un .catch in coda alla catena). */
+  .then(drawPage, showLoadError);
 
 /* Le novità si caricano per conto loro: non dipendono dal
    dataset e non devono ritardarlo. */
