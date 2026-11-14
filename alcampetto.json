@@ -962,7 +962,7 @@
   {
     "id": "021",
     "created": "2026-03-22",
-    "updated": "2026-03-22",
+    "updated": "2026-09-26",
     "address": "Viale Argonne",
     "city": "Milano",
     "district": "Municipio 3",
@@ -976,26 +976,35 @@
     "three_pt_line": true,
     "fenced": true,
     "lit": false,
-    "audio": null,
+    "audio": "audio/021/021-beat.mp3",
     "photos": [
       {
+        "date": "2026-09-26",
+        "overview": "photos/021/2026-09-26/overview.webp",
+        "context": "photos/021/2026-09-26/context.webp",
+        "details": [
+          "photos/021/2026-09-26/hoop-1.webp",
+          "photos/021/2026-09-26/surface.webp"
+        ]
+      },
+      {
         "date": "2026-03-22",
-        "overview": "photos/021/overview.webp",
+        "overview": "photos/021/2026-03-22/overview.webp",
         "context": null,
         "details": [
-          "photos/021/dettaglio-1.webp",
-          "photos/021/dettaglio-2.webp"
+          "photos/021/2026-03-22/hoop-1.webp",
+          "photos/021/2026-03-22/surface.webp"
         ]
       }
     ],
     "i18n": {
       "it": {
         "nome": "Campetto#1 di viale Argonne",
-        "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina quasi totalmente strappata. Buona superficie."
+        "note": "Campetto sotto copertura: un campetto di calcio che offre un canestro lungo uno dei suoi lati. Retina presente. Buona superficie."
       },
       "en": {
         "nome": "Viale Argonne Basketball Court#1",
-        "note": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is almost completely shredded. Good surface."
+        "note": "Court in disguise: a basketball hoop placed on a side of an actual football court. The net is available. Good surface."
       }
     }
   },
