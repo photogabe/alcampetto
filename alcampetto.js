@@ -298,6 +298,39 @@ function setFullImg(imgEl, src) {
   };
 }
 
+/* Tenta di caricare la miniatura (-thumb.webp) di una foto.
+   Se il file non esiste, il browser ricade sulla foto intera
+   tramite l'handler onerror: la scheda non mostra mai
+   un'immagine rotta.
+
+   Va usata SOLO per le tre foto piccole della scheda (60-76px
+   di lato). Senza miniatura il browser scarica per ciascuna la
+   foto intera: centinaia di KB per un riquadro grande come un
+   francobollo.
+
+   COME SI PREPARA UNA MINIATURA: si esporta la foto in WebP con
+   il lato lungo a 270px e le stesse proporzioni, e la si salva
+   accanto all'originale aggiungendo "-thumb" al nome:
+       hoop-1.webp  ->  hoop-1-thumb.webp
+   Il ritaglio quadrato lo fa il CSS (.thumbs img), al centro.
+   Se un audit rinomina la foto, va rinominata anche la miniatura.
+
+   Finché la miniatura non esiste il sito funziona come prima,
+   con una richiesta a vuoto in più per ogni foto: le miniature
+   si possono quindi aggiungere poco per volta. */
+function setThumbImg(imgEl, src) {
+  var thumbSrc = src.replace(/\.webp$/, '-thumb.webp');
+  /* l'handler va impostato PRIMA di src: così è già pronto
+     quando il browser scopre che la miniatura manca */
+  imgEl.onerror = function () {
+    /* un solo ripiego: se manca anche la foto intera ci si ferma
+       qui, senza riprovare all'infinito */
+    imgEl.onerror = null;
+    imgEl.src = src;
+  };
+  imgEl.src = thumbSrc;
+}
+
 /* Costruisce l'intero overlay a partire da un oggetto campetto.
    photos è un array di rilevazioni (photos[0] = più recente).
    Se il campetto ha più di una rilevazione, una sezione
@@ -1724,9 +1757,12 @@ function buildCard(campetto) {
       var safe = safePhotoUrl(url);
       if (!safe) { return; }
       var img     = el('img');
-      img.src     = safe;
-      img.alt     = T.labelPhotos;
+      /* loading va impostato prima di src, altrimenti il browser
+         può aver già avviato il caricamento e lo ignora */
       img.loading = 'lazy';
+      img.alt     = T.labelPhotos;
+      /* si chiede la miniatura; se manca, la foto intera */
+      setThumbImg(img, safe);
       img.dataset.photo = safe;
       thumbs.appendChild(img);
     });
