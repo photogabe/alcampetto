@@ -435,14 +435,15 @@ function openLightbox(campetto) {
    alla chiusura del lightbox o aprendo un altro campetto.
    ============================================================= */
 
-/* L'audio in riproduzione nel lightbox (null = nessuno) */
-var lightboxAudio = null;
-
+/* Ferma il battito del lightbox, se è lui che sta suonando
+   (alla chiusura, aprendo un altro campetto, ridimensionando la
+   finestra). Un battito partito da una scheda non viene toccato.
+   Chi sta suonando lo dice currentBattito: vedi "UN SOLO BATTITO
+   ALLA VOLTA", più sotto. */
 function stopLightboxAudio() {
-  if (lightboxAudio && !lightboxAudio.paused) {
-    lightboxAudio.pause();
+  if (currentBattito && lightbox.contains(currentBattito.element)) {
+    stopCurrentBattito();
   }
-  lightboxAudio = null;
 }
 
 /* Geometria del tracciato ricco, in pixel: ogni barra è larga
@@ -681,35 +682,18 @@ function buildBattitoSection(audioUrl) {
     });
 
   /* Riproduzione: un solo Audio per la sezione, creato al primo
-     play. L'animazione parte quando l'audio suona davvero (la
-     promise di play() si risolve all'avvio effettivo), non al
-     click: l'mp3 va prima scaricato e decodificato, e un
-     tracciato partito in anticipo resterebbe avanti rispetto
-     al suono per tutta la corsa. */
+     play e condiviso dai due pulsanti. Avvio, arresto e la
+     regola "uno alla volta" stanno in toggleBattitoAudio. */
   var audio = null;
 
   function toggle() {
-    if (audio && !audio.paused) {
-      audio.pause();
-      audio.currentTime = 0;
-      section.classList.remove('playing');
-      return;
-    }
     if (!audio) {
       audio = new Audio(audioUrl);
       audio.addEventListener('ended', function () {
-        section.classList.remove('playing');
+        battitoEnded(audio, section);
       });
     }
-    audio.currentTime = 0;
-    section.classList.remove('playing');
-    lightboxAudio = audio;
-    audio.play().then(function () {
-      void section.offsetWidth;   /* reset dell'animazione CSS */
-      section.classList.add('playing');
-    }).catch(function () {
-      section.classList.remove('playing');
-    });
+    toggleBattitoAudio(audio, section);
   }
 
   playBig.addEventListener('click', toggle);
@@ -1028,42 +1012,94 @@ function loadWaveform(button, container, audioUrl) {
     });
 }
 
-/* Avvia o ferma la riproduzione audio del battito.
-   Gestisce il ciclo play/pause e l'animazione CSS. */
-function toggleBattito(btn) {
-  var url = btn.dataset.audio;
+/* -------------------------------------------------------------
+   UN SOLO BATTITO ALLA VOLTA
+   Il battito può partire da una scheda o dal lightbox, ma due
+   registrazioni insieme sono solo rumore: avviarne una ferma
+   quella in corso, ovunque sia partita.
 
-  /* Se sta suonando → ferma e resetta */
-  if (btn._audio && !btn._audio.paused) {
-    btn._audio.pause();
-    btn._audio.currentTime = 0;
-    btn.classList.remove('playing');
+   currentBattito ricorda chi sta suonando:
+     audio    l'oggetto Audio in riproduzione
+     element  l'elemento che ne mostra l'animazione (classe
+              .playing): il pulsante della scheda, oppure la
+              sezione del battito nel lightbox
+   Vale null quando non suona nulla.
+
+   Una ricerca o un filtro ridisegnano le schede: il pulsante da
+   cui il battito era partito sparisce, ma la registrazione NON
+   viene interrotta e arriva alla fine da sola (dura pochi
+   secondi). Resta comunque annotata qui, così un nuovo play la
+   ferma prima di partire: mai due insieme.
+   ------------------------------------------------------------- */
+var currentBattito = null;
+
+/* Ferma il battito in corso (se c'è) e spegne la sua animazione */
+function stopCurrentBattito() {
+  if (!currentBattito) { return; }
+  currentBattito.audio.pause();
+  currentBattito.audio.currentTime = 0;
+  currentBattito.element.classList.remove('playing');
+  currentBattito = null;
+}
+
+/* Una registrazione è arrivata alla fine da sola: si spegne
+   l'animazione e, se era lei quella annotata, non suona più nulla */
+function battitoEnded(audio, element) {
+  element.classList.remove('playing');
+  if (currentBattito && currentBattito.audio === audio) {
+    currentBattito = null;
+  }
+}
+
+/* Avvia una registrazione, oppure la ferma se è lei che sta
+   suonando. Prima di partire ferma qualunque altro battito.
+
+   L'animazione del tracciato parte quando l'audio suona davvero
+   (la promise di play() si risolve all'avvio effettivo), non al
+   click: l'mp3 va prima scaricato e decodificato, e un tracciato
+   partito in anticipo resterebbe avanti rispetto al suono per
+   tutta la corsa. */
+function toggleBattitoAudio(audio, element) {
+  /* è lei che sta suonando: un secondo clic la ferma */
+  if (currentBattito && currentBattito.audio === audio) {
+    stopCurrentBattito();
     return;
   }
 
-  /* Crea l'elemento Audio al primo utilizzo */
+  stopCurrentBattito();
+
+  /* annotata subito, prima ancora che il suono parta: se nel
+     frattempo arriva un altro play, sa già chi fermare */
+  currentBattito = { audio: audio, element: element };
+
+  audio.currentTime = 0;
+  element.classList.remove('playing');
+  audio.play().then(function () {
+    /* nel frattempo è stata fermata o superata da un'altra:
+       niente animazione */
+    if (!currentBattito || currentBattito.audio !== audio) { return; }
+    void element.offsetWidth;   /* reset dell'animazione CSS */
+    element.classList.add('playing');
+  }).catch(function () {
+    element.classList.remove('playing');
+    if (currentBattito && currentBattito.audio === audio) {
+      currentBattito = null;
+    }
+  });
+}
+
+/* Il pulsante battito di una scheda: crea il suo Audio al primo
+   utilizzo, poi avvia o ferma la riproduzione. */
+function toggleBattito(btn) {
   if (!btn._audio) {
-    var safe = safeAudioUrl(url);
+    var safe = safeAudioUrl(btn.dataset.audio);
     if (!safe) { return; }
     btn._audio = new Audio(safe);
     btn._audio.addEventListener('ended', function () {
-      btn.classList.remove('playing');
+      battitoEnded(btn._audio, btn);
     });
   }
-
-  /* Avvia la riproduzione. L'animazione del tracciato parte
-     quando l'audio suona davvero (la promise di play() si
-     risolve all'avvio effettivo), non al click: l'mp3 va prima
-     scaricato e decodificato, e un tracciato partito in anticipo
-     resterebbe avanti rispetto al suono per tutta la corsa. */
-  btn._audio.currentTime = 0;
-  btn.classList.remove('playing');
-  btn._audio.play().then(function () {
-    void btn.offsetWidth;   /* reset dell'animazione CSS */
-    btn.classList.add('playing');
-  }).catch(function () {
-    btn.classList.remove('playing');
-  });
+  toggleBattitoAudio(btn._audio, btn);
 }
 
 
