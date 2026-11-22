@@ -3083,7 +3083,7 @@
       "lat": 45.50935,
       "lng": 9.14031
     },
-    "hoops": 1,
+    "hoops": 2,
     "surface": "cemento",
     "half_court": false,
     "three_pt_line": true,
@@ -3111,6 +3111,48 @@
       "en": {
         "nome": "Parco Franco Verga Basketball Court",
         "note": "Both hoops have nets; the playing lines are worn but still clearly visible."
+      }
+    }
+  },
+  {
+    "id": "072",
+    "created": "2026-11-19",
+    "updated": "2026-11-19",
+    "address": "Via Appennini",
+    "city": "Milano",
+    "district": "Municipio 8",
+    "coordinates": {
+      "lat": 45.50579,
+      "lng": 9.09919
+    },
+    "hoops": 2,
+    "surface": null,
+    "half_court": false,
+    "three_pt_line": true,
+    "fenced": false,
+    "lit": false,
+    "audio": null,
+    "photos": [
+      {
+        "date": "2026-11-19",
+        "overview": "photos/072/2026-11-19/overview.webp",
+        "context": "photos/072/2026-11-19/context.webp",
+        "details": [
+          "photos/072/2026-11-19/hoop-1.webp",
+          "photos/072/2026-11-19/hoop-2.webp",
+          "photos/072/2026-11-19/surface.webp",
+          "photos/072/2026-11-19/surface-2.webp"
+        ]
+      }
+    ],
+    "i18n": {
+      "it": {
+        "nome": "Campetto di via Appennini",
+        "note": "Campetto circondato da aceri campestri, riqualificato a inizio settembre 2026 con superficie di gioco ideata, disegnata e dipinta da 905lab."
+      },
+      "en": {
+        "nome": "Via Appennini Basketball Court",
+        "note": "Court surrounded by field maples, renovated in early September 2026, featuring a play area conceived, designed, and painted by 905lab."
       }
     }
   }
