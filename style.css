@@ -1115,6 +1115,36 @@ main#grid {
   display: block;
 }
 
+/* ── Mosaico con Grid Lanes: il contesto su due colonne ──
+   Miglioramento progressivo: vale solo nei browser che
+   supportano display: grid-lanes (a novembre 2026 soltanto
+   Safari 26.4 e successivi) e solo sopra i 1024px, dove il
+   mosaico ha tre colonne. Lì la foto di contesto occupa due
+   colonne su tre. Cambia anche la disposizione di tutti i
+   mosaici, con o senza contesto: Grid Lanes mette ogni foto
+   nella colonna più corta, quindi l'ordine si legge per righe
+   e non più per colonne. Gli altri browser saltano il blocco
+   e restano sulle colonne qui sopra. column-count non va
+   azzerato: su un contenitore grid-lanes non ha effetto.
+   Specifica: CSS Grid Layout Module Level 3 (bozza del W3C).
+   ─────────────────────────────────────────────── */
+
+@supports (display: grid-lanes) {
+  @media (min-width: 1025px) {   /* il contrario del max-width: 1024px più sotto */
+    .lb-mondrian {
+      display: grid-lanes;
+      grid-template-columns: repeat(3, 1fr);   /* tre colonne uguali */
+      gap: 4px;   /* sostituisce column-gap e il margin-bottom delle celle */
+    }
+    .lb-mondrian .m-cell {
+      margin-bottom: 0;
+    }
+    .lb-mondrian .m-context {
+      grid-column: span 2;   /* la foto di contesto su due colonne */
+    }
+  }
+}
+
 /* ── Battito (la registrazione del campetto) ──
    Sezione tra il mosaico e il contact sheet, solo per i
    campetti con audio. La stessa registrazione ha due
