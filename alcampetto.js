@@ -390,6 +390,13 @@ function openLightbox(campetto) {
     var mondrian = el('section', 'lb-mondrian');
     mosaicPhotos.forEach(function (src) {
       var cell = el('div', 'm-cell');
+      /* La foto di contesto riceve una classe in più, m-context:
+         dove il browser supporta Grid Lanes il CSS la allarga su
+         due colonne (style.css, "Mosaico con Grid Lanes").
+         Negli altri browser la classe non ha alcun effetto. */
+      if (src === contextUrl) {
+        cell.classList.add('m-context');
+      }
       var img  = el('img');
       /* Il mosaico contiene solo contesto e dettagli: nessuna
          variante -full, quindi si carica direttamente la foto.
