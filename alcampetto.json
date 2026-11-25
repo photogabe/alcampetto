@@ -804,18 +804,18 @@
     "photos": [
       {
         "date": "2026-03-14",
-        "overview": "photos/017/overview.webp",
+        "overview": "photos/017/2026-03-14/overview.webp",
         "context": null,
         "details": [
-          "photos/017/dettaglio-1.webp",
-          "photos/017/dettaglio-2.webp",
-          "photos/017/dettaglio-3.webp"
+          "photos/017/2026-03-14/hoop-1.webp",
+          "photos/017/2026-03-14/hoop-2.webp",
+          "photos/017/2026-03-14/surface.webp"
         ]
       }
     ],
     "i18n": {
       "it": {
-        "nome": "Campetto#1 di Via San Barnaba",
+        "nome": "Campetto#1 di via San Barnaba",
         "note": "Campetto recintato di piccole dimensioni, gemello di un campetto collocato a pochi metri di distanza. A bordo campo lungo la linea centrale, si trova un cassonetto AMSA con la base arrugginita. Superficie usurata."
       },
       "en": {
